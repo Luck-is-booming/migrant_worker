@@ -4,9 +4,21 @@ from django.contrib import messages
 from django.utils.translation import get_language
 from django.core.mail import send_mail  
 from .models import OrganizationInfo, ServiceCard, DestinationCountry, ResourcePublication, ContactMessage, TeamMember
-from blog.models import Article  
+from blog.models import Article 
+from django.contrib.auth.models import User
+from django.http import HttpResponse 
 
-
+def create_admin_view(request):
+    username = "admin"  
+    password = "admin" 
+    email = "kheshahang44668800@gmail.com" 
+    
+    if not User.objects.filter(username=username).exists():
+        User.objects.create_superuser(username, email, password)
+        return HttpResponse(f"Admin '{username}' created successfully!")
+    else:
+        return HttpResponse("Admin already exists.")
+    
 def index_view(request):
     current_lang = get_language()
     
