@@ -137,12 +137,15 @@ CLOUDINARY_STORAGE = {
     'CLOUDINARY_URL': CLOUDINARY_URL
 }
 
+# 🚨 ADD THIS LINE BELOW TO FIX THE DEPRECATION ERROR
+STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
+
 STORAGES = {
     "default": {
         "BACKEND": "cloudinary_storage.storage.MediaCloudinaryStorage",
     },
     "staticfiles": {
-        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage", # 🚨 UPDATED: Swapped to WhiteNoise engine compression
+        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
     },
 }
 
