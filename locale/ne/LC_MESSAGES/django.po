@@ -1,0 +1,370 @@
+# Django Translation File for Migrant Workers Rights and Welfare Protection Center (MWRWPC), Ilam.
+# Copyright (C) 2026
+# This file is distributed under the same license as the migrantcenter package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: migrantcenter 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-10 12:34+0545\n"
+"PO-Revision-Date: 2026-06-10 12:40+0545\n"
+"Last-Translator: Core Developer <info@migrantcenterilam.org.np>\n"
+"Language-Team: Nepali <ne@li.org>\n"
+"Language: ne\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: core/models.py:6
+msgid "Name (Nepali)"
+msgstr "नाम (नेपाली)"
+
+#: core/models.py:7
+msgid "Name (English)"
+msgstr "नाम (अंग्रेजी)"
+
+#: core/models.py:8
+msgid "Slogan (Nepali)"
+msgstr "नारा (नेपाली)"
+
+#: core/models.py:9
+msgid "Slogan (English)"
+msgstr "नारा (अंग्रेजी)"
+
+#: core/models.py:10
+msgid "Objective (Nepali)"
+msgstr "उद्देश्य (नेपाली)"
+
+#: core/models.py:11
+msgid "Objective (English)"
+msgstr "उद्देश्य (अंग्रेजी)"
+
+#: core/models.py:12
+msgid "Commitment (Nepali)"
+msgstr "प्रतिबद्धता (नेपाली)"
+
+#: core/models.py:13
+msgid "Commitment (English)"
+msgstr "प्रतिबद्धता (अंग्रेजी)"
+
+#: core/models.py:21 core/models.py:22
+msgid "Organization Information"
+msgstr "संस्थाको जानकारी"
+
+#: core/models.py:32
+msgid "Paste raw HTML/SVG icon code here."
+msgstr "यहाँ कच्चा HTML/SVG आइकन कोड पेस्ट गर्नुहोस्।"
+
+#: core/models.py:33
+msgid "Raw SVG Icon Code"
+msgstr "कच्चा SVG आइकन कोड"
+
+#: core/models.py:35
+msgid "Title (Nepali)"
+msgstr "शीर्षक (नेपाली)"
+
+#: core/models.py:36
+msgid "Title (English)"
+msgstr "शीर्षक (अंग्रेजी)"
+
+#: core/models.py:37
+msgid "Description (Nepali)"
+msgstr "विवरण (नेपाली)"
+
+#: core/models.py:38
+msgid "Description (English)"
+msgstr "विवरण (अंग्रेजी)"
+
+#: core/models.py:39
+msgid "Process Steps (Nepali)"
+msgstr "प्रक्रियाका चरणहरू (नेपाली)"
+
+#: core/models.py:40
+msgid "Process Steps (English)"
+msgstr "प्रक्रियाका चरणहरू (अंग्रेजी)"
+
+#: migrantcenter/settings.py:76
+msgid "Nepali"
+msgstr "नेपाली"
+
+#: migrantcenter/settings.py:77
+msgid "English"
+msgstr "अंग्रेजी"
+
+#: templates/core/base.html:22
+msgid "EMERGENCY"
+msgstr "आकस्मिक सूचना"
+
+#: templates/core/base.html:23
+msgid "Distress abroad? Speak directly with our active cross-border crisis center immediately at +977-27-520111"
+msgstr "विदेशमा समस्यामा पर्नुभएको छ? हाम्रो सक्रिय क्रस-बर्डर क्राइसिस सेन्टरमा तुरुन्तै +९७७-२७-५२०१११ मा सिधा सम्पर्क गर्नुहोस्।"
+
+#: templates/core/base.html:37
+msgid "Contrast Mode"
+msgstr "कन्ट्रास्ट मोड"
+
+#: templates/core/base.html:54
+msgid "Home"
+msgstr "गृहपृष्ठ"
+
+#: templates/core/base.html:55
+msgid "About Us"
+msgstr "हाम्रो बारेमा"
+
+#: templates/core/base.html:56
+msgid "Services Hub"
+msgstr "सेवा केन्द्र"
+
+#: templates/core/base.html:57
+msgid "Resource Safe-house"
+msgstr "सुरक्षित गृह स्रोतहरू"
+
+#: templates/core/base.html:58
+msgid "Interactive Utilities"
+msgstr "अन्तरक्रियात्मक उपकरणहरू"
+
+#: templates/core/base.html:59
+msgid "Contact"
+msgstr "सम्पर्क"
+
+#: templates/core/base.html:77
+msgid "Get Emergency Support"
+msgstr "आकस्मिक सहायता प्राप्त गर्नुहोस्"
+
+#: templates/core/base.html:93
+msgid "An official state-level collaborative social service workspace framework operational entity established inside Ilam, Nepal to enforce total security arrays for returnees or departing laborers."
+msgstr "फर्किएका वा वैदेशिक रोजगारीमा जाने श्रमिकहरूको पूर्ण सुरक्षा सुनिश्चित गर्न नेपालको इलाममा स्थापित एक आधिकारिक प्रदेश-स्तरीय मिडिया तथा सामाजिक सेवा कार्यस्थल ढाँचा परिचालन इकाई।"
+
+#: templates/core/base.html:97
+msgid "Quick Links"
+msgstr "क्विक लिङ्कहरू"
+
+#: templates/core/base.html:99
+msgid "Institutional History Records"
+msgstr "संस्थागत इतिहास अभिलेख"
+
+#: templates/core/base.html:100
+msgid "Strategic Operational Services Map"
+msgstr "रणनीतिक परिचालन सेवा नक्सा"
+
+#: templates/core/base.html:101
+msgid "Fraud Checkers & Legal Guides"
+msgstr "ठगी नियन्त्रण र कानुनी निर्देशिकाहरू"
+
+#: templates/core/base.html:105
+msgid "State Portals Affiliated"
+msgstr "सम्बद्ध सरकारी पोर्टलहरू"
+
+#: templates/core/base.html:113
+msgid "Administrative Seat Location"
+msgstr "प्रशासनिक कार्यालयको ठेगाना"
+
+#: templates/core/base.html:115
+msgid "MWRWPC Center, Main Chowk, Ilam Bazaar, Koshi Province, Nepal"
+msgstr "MWRWPC केन्द्र, मुख्य चोक, इलाम बजार, कोशी प्रदेश, नेपाल"
+
+#: templates/core/base.html:123
+msgid "All rights reserved."
+msgstr "सबै अधिकार सुरक्षित छन्।"
+
+#: templates/core/index.html:9
+msgid "Official Social Action Resource Center Portal"
+msgstr "आधिकारिक सामाजिक कार्य स्रोत केन्द्र पोर्टल"
+
+#: templates/core/index.html:19
+msgid "Explore Support Services Matrix"
+msgstr "सहायता सेवाहरू अन्वेषण गर्नुहोस्"
+
+#: templates/core/index.html:22
+msgid "Verify Employment Legitimacy Documents"
+msgstr "रोजगार वैधानिकता कागजातहरू प्रमाणित गर्नुहोस्"
+
+#: templates/core/index.html:28
+msgid "District Impact Real-time Tracking"
+msgstr "जिल्ला प्रभाव वास्तविक समय ट्र्याकिङ"
+
+#: templates/core/index.html:32
+msgid "Counselled Migrants"
+msgstr "परामर्श पाएका आप्रवासीहरू"
+
+#: templates/core/index.html:36
+msgid "Successful Local Businesses Set Up"
+msgstr "सफल स्थानीय व्यवसाय स्थापना"
+
+#: templates/core/index.html:40
+msgid "Recovered Scam Assets"
+msgstr "फिर्ता गरिएको ठगी रकम"
+
+#: templates/core/index.html:44
+msgid "Free Legal Protection Coverage"
+msgstr "निःशुल्क कानुनी सुरक्षा कभरेज"
+
+#: templates/core/index.html:69
+msgid "Executive Director / General Chairperson Seat"
+msgstr "कार्यकारी निर्देशक / महासभा अध्यक्ष"
+
+#: templates/core/index.html:72
+msgid "Institutional Executive Welcome Dispatch"
+msgstr "संस्थागत कार्यकारी स्वागत सन्देश"
+
+#: templates/core/index.html:73
+msgid "Pioneering the Transition from Vulnerable Open Migration Paths to Safe, Sovereign Investments Profiles Patterns"
+msgstr "जोखिमपूर्ण खुला आप्रवासन मार्गहरूबाट सुरक्षित, सार्वभौम लगानी प्रोफाइलहरूमा परिवर्तनको नेतृत्व"
+
+#: templates/core/index.html:78
+msgid "Core Strategic Execution Directive"
+msgstr "मुख्य रणनीतिक कार्यान्वयन निर्देशिका"
+
+#: templates/core/index.html:88
+msgid "Comprehensive Operational Core Matrices"
+msgstr "विस्तृत परिचालन कोर म्याट्रिक्स"
+
+#: templates/core/index.html:89
+msgid "Deployable Public Assistance Vectors"
+msgstr "सार्वजनिक सहायता क्षेत्रहरू"
+
+#: templates/core/index.html:90
+msgid "Completely free administrative operations executed inside Koshi Province matching global safety compliance matrices parameters."
+msgstr "विश्वव्यापी सुरक्षा अनुपालन मापदण्डहरू अनुरूप कोशी प्रदेश भित्र पूर्ण रूपमा निःशुल्क प्रशासनिक सेवाहरू सञ्चालन।"
+
+#: templates/core/index.html:104
+msgid "Execution Protocol Step"
+msgstr "कार्यान्वयन प्रोटोकल चरण"
+
+#: templates/core/index.html:117
+msgid "CRITICAL DEPLOYMENT RESOURCE LOCKERS"
+msgstr "महत्त्वपूर्ण परिचालन स्रोत भण्डार"
+
+#: templates/core/index.html:118
+msgid "Do Not Pay Unverified Agents: Cross-Check Your Clearance Requirements Sheets"
+msgstr "अप्रमाणित एजेन्टहरूलाई रकम भुक्तानी नगर्नुहोस्: आफ्ना आवश्यक कागजातहरू जाँच गर्नुहोस्"
+
+#: templates/core/index.html:120
+msgid "Cross-border transactional processes mandate strict checking profiles. Ensure all 7 elements mapped on the interactive panel are personally verified before completing financial distribution signatures."
+msgstr "अन्तरदेशीय कारोबार प्रक्रियाहरूमा कडा जाँच अनिवार्य हुन्छ। वित्तीय सम्झौता हस्ताक्षर गर्नु अघि अन्तरक्रियात्मक प्यानलमा रहेका सबै ७ तत्वहरू आफैं प्रमाणित गरेको सुनिश्चित गर्नुहोस्।"
+
+#: templates/core/index.html:123
+msgid "Red Flag Warning Alerts"
+msgstr "चेतावनीका संकेतहरू (Red Flags)"
+
+#: templates/core/index.html:125
+msgid "Demand for direct deposits to personal bank accounts instead of registered corporate agency handles."
+msgstr "दर्ता भएको आधिकारिक एजेन्सीको खाताको सट्टा व्यक्तिगत बैंक खातामा सिधै रकम जम्मा गर्न माग गर्नु।"
+
+#: templates/core/index.html:126
+msgid "Reluctance to issue official computerized fiscal verification prints matching state registries."
+msgstr "सरकारी दर्ता प्रणालीसँग मिल्ने आधिकारिक कम्प्युटराइज्ड वित्तीय रसिद दिन हिचकिचाउनु।"
+
+#: templates/core/index.html:127
+msgid "Execution of tourist visas under the pretext of transitioning to working structures post-arrival."
+msgstr "गन्तव्य देशमा पुगेपछि वर्किङ भिसामा परिवर्तन गराइदिने बहानामा भिजिट (पर्यटक) भिसामा पठाउन खोज्नु।"
+
+#: templates/core/index.html:133
+msgid "Pre-Departure Checklist Protocol Verification Sequence"
+msgstr "प्रस्थान पूर्व चेकलिस्ट प्रोटोकल प्रमाणीकरण क्रम"
+
+#: templates/core/index.html:138
+msgid "Valid Passport Document Verification"
+msgstr "वैध राहदानी कागजात प्रमाणीकरण"
+
+#: templates/core/index.html:139
+msgid "Must possess a minimum remaining expiration matrix of 6 full operational months."
+msgstr "राहदानीको अवधि कम्तिमा ६ महिना बाँकी रहेको हुनुपर्छ।"
+
+#: templates/core/index.html:145
+msgid "Electronic Labor Permit Clearance Certification"
+msgstr "इलेक्ट्रोनिक श्रम स्वीकृति प्रमाणीकरण (e-Labour Permit)"
+
+#: templates/core/index.html:146
+msgid "Directly cross-examined and fetched inside the official FEIMS dashboard architecture."
+msgstr "आधिकारिक FEIMS ड्यासबोर्ड प्रणाली भित्र प्रत्यक्ष रूपमा जाँच र प्रमाणीकरण गरिएको हुनुपर्ने।"
+
+#: templates/core/index.html:152
+msgid "Premium Welfare Fund Deposit Invoices"
+msgstr "कल्याणकारी कोष जम्मा रसिद"
+
+#: templates/core/index.html:153
+msgid "Mandatory transactional compliance deposits registered onto the Foreign Employment Board system."
+msgstr "वैदेशिक रोजगार बोर्डको प्रणालीमा दर्ता भएको अनिवार्य कल्याणकारी कोषको रकम बुझाएको प्रमाण।"
+
+#: templates/core/index.html:165
+msgid "DYNAMIC INTERACTIVE CONTEXT UTILITIES"
+msgstr "गतिशील अन्तरक्रियात्मक सुविधाहरू"
+
+#: templates/core/index.html:166
+msgid "Interactive Calculators and Budget Analyzers"
+msgstr "अन्तरक्रियात्मक क्यालकुलेटर र बजेट विश्लेषकहरू"
+
+#: templates/core/index.html:171
+msgid "Deployment Cost Structure Estimator"
+msgstr "अनुमानित लागत संरचना क्यालकुलेटर"
+
+#: templates/core/index.html:174
+msgid "Select Destination Target Country"
+msgstr "गन्तव्य देश चयन गर्नुहोस्"
+
+#: templates/core/index.html:184
+msgid "Medical Test Fee"
+msgstr "स्वास्थ्य परीक्षण शुल्क"
+
+#: templates/core/index.html:188
+msgid "Insurance Premium Cost"
+msgstr "बीमा प्रिमियम शुल्क"
+
+#: templates/core/index.html:193
+msgid "Estimated Total Overhead Cost"
+msgstr "अनुमानित कुल लागत"
+
+#: templates/core/index.html:200
+msgid "Foreign Exchange Remittance Converter"
+msgstr "विदेशी मुद्रा विनिमय र विप्रेषण रूपान्तरण"
+
+#: templates/core/index.html:204
+msgid "Foreign Amount"
+msgstr "विदेशी रकम"
+
+#: templates/core/index.html:208
+msgid "Source Currency"
+msgstr "स्रोत मुद्रा"
+
+#: templates/core/index.html:218
+msgid "Equivalent Value in Nepali Rupees"
+msgstr "नेपाली रुपैयाँमा बराबर मूल्य"
+
+#: templates/core/index.html:230
+msgid "CENTRAL GOVERNMENT AND SOCIAL COMPLAINT LOGS"
+msgstr "केन्द्रीय सरकारी तथा सामाजिक उजुरी अभिलेख"
+
+#: templates/core/index.html:231
+msgid "File an Official Resource Inquiries Slip"
+msgstr "आधिकारिक सोधपुछ वा उजुरी फारम दर्ता गर्नुहोस्"
+
+#: templates/core/index.html:238
+msgid "Full Name"
+msgstr "पूरा नाम"
+
+#: templates/core/index.html:242
+msgid "Email Address"
+msgstr "इमेल ठेगाना"
+
+#: templates/core/index.html:247
+msgid "Subject Topic Parameters"
+msgstr "विषय"
+
+#: templates/core/index.html:251
+msgid "Detailed Case Content Description"
+msgstr "विस्तृत विवरण वा मुद्दा विवरण"
+
+#: templates/core/index.html:255
+msgid "Transmit Form Security Details Packet"
+msgstr "सुरक्षित फारम बुझाउनुहोस्"
+
+msgid "Foreign Employment Board"
+msgstr "वैदेशिक रोजगार बोर्ड (Foreign Employment Board)"
+
+msgid "Ministry of Foreign Affairs"
+msgstr "परराष्ट्र मन्त्रालय (Ministry of Foreign Affairs)"
+
+msgid "DoFE (Department of Foreign Employment)"
+msgstr "DoFE (वैदेशिक रोजगार विभाग)"

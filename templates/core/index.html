@@ -1,0 +1,391 @@
+{% extends 'core/base.html' %}
+{% load i18n %}
+
+{% block content %}
+<section id="home" class="relative bg-gradient-to-br from-slate-900 via-blue-950 to-indigo-950 text-white py-24 lg:py-32 overflow-hidden border-b border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div class="lg:col-span-7 space-y-6">
+            <span class="inline-flex items-center gap-1.5 bg-blue-500/10 text-blue-400 text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full border border-blue-500/20">
+                🛡️ {% translate "Official Social Action Resource Center Portal" %}
+            </span>
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-none text-white">
+                {{ info.name }}
+            </h1>
+            <p class="text-lg sm:text-xl text-slate-300 italic border-l-4 border-blue-500 pl-4 py-1 leading-relaxed">
+                "{{ info.slogan }}"
+            </p>
+            <div class="flex flex-wrap gap-4 pt-4">
+                <a href="#services" class="bg-blue-600 hover:bg-blue-700 text-white font-bold text-sm px-6 py-3.5 rounded-xl shadow-md shadow-blue-600/10 transition-all transform hover:-translate-y-0.5 no-underline!">
+                    🚀 {% translate "Explore Support Services Matrix" %}
+                </a>
+                <a href="#resource-center" class="bg-slate-800 hover:bg-slate-700 text-slate-200 font-bold text-sm px-6 py-3.5 rounded-xl border border-slate-700 transition-all transform hover:-translate-y-0.5 no-underline!">
+                    🔎 {% translate "Verify Employment Legitimacy Documents" %}
+                </a>
+            </div>
+        </div>
+        
+        <div class="lg:col-span-5 bg-white/5 backdrop-blur-md p-8 rounded-3xl border border-white/10 shadow-2xl relative">
+            <h3 class="text-sm font-bold uppercase tracking-wider text-blue-400 mb-6">📊 {% translate "District Impact Real-time Tracking" %}</h3>
+            <div class="grid grid-cols-2 gap-6">
+                <div class="bg-white/10 p-4 rounded-xl border border-white/10">
+                    <p class="text-3xl font-extrabold text-white">४५,२००+</p>
+                    <p class="text-xs text-slate-300 mt-1">{% translate "Counselled Migrants" %}</p>
+                </div>
+                <div class="bg-white/10 p-4 rounded-xl border border-white/10">
+                    <p class="text-3xl font-extrabold text-emerald-400">१,२००+</p>
+                    <p class="text-xs text-slate-300 mt-1">{% translate "Successful Local Businesses Set Up" %}</p>
+                </div>
+                <div class="bg-white/10 p-4 rounded-xl border border-white/10">
+                    <p class="text-3xl font-extrabold text-amber-400">रु २.५ करोड</p>
+                    <p class="text-xs text-slate-300 mt-1">{% translate "Recovered Scam Assets" %}</p>
+                </div>
+                <div class="bg-white/10 p-4 rounded-xl border border-white/10">
+                    <p class="text-3xl font-extrabold text-blue-400">१००%</p>
+                    <p class="text-xs text-slate-300 mt-1">{% translate "Free Legal Protection Coverage" %}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="absolute inset-0 opacity-5 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:24px_24px]"></div>
+</section>
+
+{% if messages %}
+<div class="max-w-7xl mx-auto mt-6 px-4">
+    {% for message in messages %}
+    <div class="p-4 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-800 text-sm font-medium shadow-sm animate-fade-in flex items-center gap-2">
+        ✅ {{ message }}
+    </div>
+    {% endfor %}
+</div>
+{% endif %}
+
+<section id="about" class="py-20 bg-white border-b border-slate-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div class="lg:col-span-4 flex flex-col items-center text-center">
+            <div class="w-48 h-48 bg-slate-100 rounded-2xl shadow-inner border border-slate-200 flex items-center justify-center text-slate-500 font-bold mb-4 border-2">
+                📷 Placeholder: Chairperson Photo
+            </div>
+            <h4 class="font-bold text-lg text-slate-900 mb-0.5">{{ info.chairperson }}</h4>
+            <p class="text-xs text-blue-600 font-bold uppercase tracking-wider">{% translate "Executive Director / General Chairperson Seat" %}</p>
+        </div>
+        <div class="lg:col-span-8 space-y-6">
+            <h2 class="text-xs font-bold uppercase tracking-widest text-blue-600">{% translate "Institutional Executive Welcome Dispatch" %}</h2>
+            <h3 class="text-3xl font-bold text-slate-900 tracking-tight">{% translate "Pioneering the Transition from Vulnerable Open Migration Paths to Safe, Sovereign Investments Profiles" %}</h3>
+            <blockquote class="text-lg text-slate-700 leading-relaxed italic font-medium bg-slate-50 border-l-4 border-blue-600 p-5 rounded-r-xl">
+                "{{ info.message }}"
+            </blockquote>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2">
+                <div class="bg-indigo-50/50 rounded-2xl p-6 border border-indigo-100/50">
+                    <h4 class="font-bold text-sm text-indigo-950 mb-2 flex items-center gap-2">🎯 {% translate "Core Strategic Directive" %}</h4>
+                    <p class="text-sm text-slate-700 leading-relaxed">{{ info.objective }}</p>
+                </div>
+
+                <div class="bg-emerald-50/50 rounded-2xl p-6 border border-emerald-100/50">
+                    <h4 class="font-bold text-sm text-emerald-950 mb-2 flex items-center gap-2">🤝 {% translate "Institutional Commitment" %}</h4>
+                    <p class="text-sm text-slate-700 leading-relaxed">{{ info.commitment }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="team" class="py-20 bg-slate-50 border-b border-slate-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="mb-12 text-center md:text-left">
+            <h2 class="text-xs font-bold uppercase tracking-widest text-blue-600">👥 {% translate "ACCOUNTABILITY & CASE SEAT TEAM" %}</h2>
+            <p class="text-3xl font-bold text-slate-900 tracking-tight mt-1">{% translate "Our Certified Officers & Counselors" %}</p>
+            <p class="text-sm text-slate-500 mt-2 max-w-2xl">{% translate "Connect directly with verified administrative desk authorities to oversee security protocols or handle immediate field grievances." %}</p>
+        </div>
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+            {% for member in team_members %}
+            <div class="bg-white border border-slate-200/60 rounded-2xl overflow-hidden shadow-sm flex flex-col items-center p-6 text-center transition-all hover:shadow-md group">
+                <div class="w-24 h-24 rounded-full overflow-hidden mb-4 border-2 border-slate-100 shadow-sm group-hover:border-blue-500 transition-colors shrink-0 bg-slate-50 flex items-center justify-center">
+                    {% if member.image %}
+                        <img src="{{ member.image.url }}" alt="{{ member.name }}" class="w-full h-full object-cover">
+                    {% else %}
+                        <svg class="w-10 h-10 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                        </svg>
+                    {% endif %}
+                </div>
+                
+                <div class="space-y-1 flex-grow">
+                    <h3 class="text-base font-bold text-slate-900 group-hover:text-blue-600 transition-colors">{{ member.name }}</h3>
+                    <p class="text-xs text-slate-500 font-semibold uppercase tracking-wider">{{ member.designation }}</p>
+                </div>
+                
+                {% if member.email or member.phone %}
+                <div class="mt-4 pt-3 border-t border-slate-100 w-full text-left space-y-1 text-xs text-slate-600">
+                    {% if member.phone %}
+                        <span class="block">📞 <a href="tel:{{ member.phone }}" class="hover:text-blue-600 transition-colors font-medium">{{ member.phone }}</a></span>
+                    {% endif %}
+                    {% if member.email %}
+                        <span class="block truncate">✉️ <a href="mailto:{{ member.email }}" class="hover:text-blue-600 transition-colors font-medium">{{ member.email }}</a></span>
+                    {% endif %}
+                </div>
+                {% endif %}
+            </div>
+            {% empty %}
+            <div class="col-span-full text-center py-12 bg-white rounded-2xl border-2 border-dashed border-slate-200 text-sm text-slate-400 italic">
+                📭 {% translate "Directory rosters are undergoing verification database loops. Check back shortly." %}
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<section id="services" class="py-20 bg-white border-b border-slate-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+            <h2 class="text-xs font-bold uppercase tracking-widest text-blue-600">{% translate "Comprehensive Operational Core Matrices" %}</h2>
+            <p class="text-3xl font-bold text-slate-900 sm:text-4xl tracking-tight">{% translate "Deployable Public Assistance Vectors" %}</p>
+            <p class="text-sm text-slate-500">{% translate "Completely free administrative operations executed inside Koshi Province matching global safety compliance matrices parameters." %}</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {% for service in services %}
+            <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-all flex flex-col justify-between group">
+                <div class="space-y-4">
+                    <div class="w-12 h-12 bg-blue-50 text-blue-600 rounded-xl flex items-center justify-center transform group-hover:scale-110 transition-transform border">
+                        {{ service.icon|safe }}
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900">{{ service.title }}</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">{{ service.desc }}</p>
+                </div>
+                <div class="mt-6 pt-4 border-t border-slate-100 bg-white -mx-8 -mb-8 p-6 rounded-b-2xl">
+                    <span class="text-xs font-bold text-slate-900 block mb-1 uppercase tracking-wider">🛠️ {% translate "Execution Protocol Step" %}:</span>
+                    <p class="text-xs text-slate-600 leading-relaxed">{{ service.process }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<section id="news-feed" class="py-20 bg-slate-50 border-b border-slate-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="mb-12">
+            <h2 class="text-xs font-bold uppercase tracking-widest text-blue-600">📰 {% translate "INFORMATION & MEDIA DISPATCHES" %}</h2>
+            <p class="text-3xl font-bold text-slate-900 tracking-tight mt-1">{% translate "Latest Central Notices & Community News" %}</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {% for article in latest_articles %}
+            <div class="bg-white border border-slate-200/60 rounded-2xl overflow-hidden shadow-sm flex flex-col justify-between transition-all hover:shadow-md">
+                <div>
+                    {% if article.image_url %}
+                        <img src="{{ article.image_url }}" alt="{{ article.title }}" class="w-full h-48 object-cover">
+                    {% elif article.image %}
+                        <img src="{{ article.image.url }}" alt="{{ article.title }}" class="w-full h-48 object-cover">
+                    {% else %}
+                        <div class="w-full h-48 bg-slate-100 flex items-center justify-center text-slate-400">No Image</div>
+                    {% endif %}
+                    
+                    <div class="p-6 space-y-3">
+                        <div class="flex items-center gap-2">
+                            <span class="text-[10px] font-bold text-slate-500 uppercase tracking-wider">
+                                📅 {{ article.formatted_date }}{{ article.published_date|date:"F d, Y" }}
+                            </span>
+                            {% if article.is_alert %}
+                            <span class="bg-red-100 text-red-700 text-[9px] font-extrabold uppercase px-2 py-0.5 rounded border border-red-200 animate-pulse">⚠️ {% translate "CRITICAL ALERT" %}</span>
+                            {% endif %}
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 leading-snug">{{ article.title }}</h3>
+                        <p class="text-xs text-slate-600 leading-relaxed line-clamp-4">{{ article.content }}</p>
+                    </div>
+                </div>
+            </div>
+            {% empty %}
+            <div class="col-span-3 text-center py-16 bg-white rounded-2xl border-2 border-dashed border-slate-200 text-sm text-slate-500">
+                📭 {% translate "No informational updates have been posted to the network yet. Check back shortly." %}
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<section id="resource-center" class="py-20 bg-white border-b border-slate-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+            <div class="lg:col-span-5 space-y-6">
+                <h2 class="text-xs font-bold uppercase tracking-widest text-red-600">🛡️ {% translate "CRITICAL DEPLOYMENT RESOURCE LOCKERS" %}</h2>
+                <h3 class="text-3xl font-bold text-slate-900 tracking-tight">{% translate "Do Not Pay Unverified Agents: Cross-Check Your Clearance Requirements Sheets" %}</h3>
+                <p class="text-sm text-slate-600 leading-relaxed">
+                    {% translate "Cross-border transactional processes mandate strict checking profiles. Ensure all key elements mapped on the interactive panel are personally verified before completing financial distribution signatures." %}
+                </p>
+                <div class="p-5 bg-rose-50 rounded-2xl border border-rose-100 space-y-3">
+                    <h4 class="font-bold text-sm text-rose-900">⚠️ {% translate "Red Flag Warning Alerts" %}</h4>
+                    <ul class="space-y-2 text-xs text-slate-700 leading-relaxed list-disc list-inside">
+                        <li>{% translate "Demand for direct deposits to personal bank accounts instead of registered corporate agency handles." %}</li>
+                        <li>{% translate "Reluctance to issue official computerized fiscal verification prints matching state registries." %}</li>
+                        <li>{% translate "Execution of tourist visas under the pretext of transitioning to working structures post-arrival." %}</li>
+                    </ul>
+                </div>
+
+                <div class="space-y-3 pt-2">
+                    <h4 class="text-xs font-bold text-slate-900 uppercase tracking-wider">📚 {% translate "Official Manuals & Resource Downloads" %}</h4>
+                    {% for res in resources %}
+                    <a href="{{ res.file_url }}" class="flex items-center justify-between p-3.5 bg-slate-50 border border-slate-200 rounded-xl shadow-sm hover:border-blue-500 transition-colors no-underline group">
+                        <div class="flex items-center gap-3">
+                            <span class="text-xl">📄</span>
+                            <div>
+                                <span class="text-xs font-bold text-slate-800 block group-hover:text-blue-600 transition-colors">{{ res.title }}</span>
+                                <span class="text-[10px] text-slate-400 font-medium">{{ res.category }}</span>
+                            </div>
+                        </div>
+                        <span class="text-[10px] font-bold bg-white text-slate-600 px-2 py-1 rounded border">{{ res.size }} ⬇️</span>
+                    </a>
+                    {% endfor %}
+                </div>
+            </div>
+            
+            <div class="lg:col-span-7 bg-slate-50 p-8 rounded-3xl border border-slate-200/60 shadow-sm">
+                <h4 class="font-bold text-base text-slate-900 mb-6 flex items-center gap-2">📋 {% translate "Pre-Departure Checklist Protocol Verification Sequence" %}</h4>
+                <div class="space-y-3">
+                    <label class="flex items-start p-4 bg-white rounded-xl border border-slate-100 shadow-sm cursor-pointer hover:border-blue-500 transition-colors">
+                        <input type="checkbox" class="mt-1 mr-3 w-4 h-4 text-blue-600 rounded focus:ring-blue-500">
+                        <div>
+                            <span class="font-bold text-sm text-slate-900 block">१. {% translate "Valid Passport Document Verification" %}</span>
+                            <span class="text-xs text-slate-500">{% translate "Must possess a minimum remaining expiration matrix of 6 full operational months." %}</span>
+                        </div>
+                    </label>
+                    <label class="flex items-start p-4 bg-white rounded-xl border border-slate-100 shadow-sm cursor-pointer hover:border-blue-500 transition-colors">
+                        <input type="checkbox" class="mt-1 mr-3 w-4 h-4 text-blue-600 rounded focus:ring-blue-500">
+                        <div>
+                            <span class="font-bold text-sm text-slate-900 block">२. {% translate "Electronic Labor Permit Clearance Certification" %}</span>
+                            <span class="text-xs text-slate-500">{% translate "Directly cross-examined and fetched inside the official FEIMS dashboard architecture." %}</span>
+                        </div>
+                    </label>
+                    <label class="flex items-start p-4 bg-white rounded-xl border border-slate-100 shadow-sm cursor-pointer hover:border-blue-500 transition-colors">
+                        <input type="checkbox" class="mt-1 mr-3 w-4 h-4 text-blue-600 rounded focus:ring-blue-500">
+                        <div>
+                            <span class="font-bold text-sm text-slate-900 block">३. {% translate "Premium Welfare Fund Deposit Invoices" %}</span>
+                            <span class="text-xs text-slate-500">{% translate "Mandatory transactional compliance deposits registered onto the Foreign Employment Board system." %}</span>
+                        </div>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="tools-section" class="py-20 bg-slate-50 border-b border-slate-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16 space-y-2">
+            <h2 class="text-xs font-bold uppercase tracking-widest text-blue-600">🛠️ {% translate "DYNAMIC INTERACTIVE CONTEXT UTILITIES" %}</h2>
+            <p class="text-3xl font-bold text-slate-900 tracking-tight">{% translate "Interactive Calculators and Budget Analyzers" %}</p>
+        </div>
+        
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+            <div class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm">
+                <h3 class="font-bold text-lg text-slate-900 mb-4 flex items-center gap-2">🧮 {% translate "Deployment Cost Structure Estimator" %}</h3>
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 uppercase mb-2">{% translate "Select Destination Target Country" %}</label>
+                        <select id="calc-country" onchange="runCostEstimation()" class="w-full px-3 py-2.5 rounded-lg border border-slate-200 text-sm focus:ring-2 focus:ring-blue-500 bg-white">
+                            {% for country in countries %}
+                            <option value="{{ country.cost }}">{{ country.flag }} {{ country.name }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 uppercase mb-1">{% translate "Medical Test Fee" %}</label>
+                            <input type="number" id="calc-med" value="5500" oninput="runCostEstimation()" class="w-full px-3 py-2 rounded-lg border border-slate-200 text-sm bg-slate-50">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 uppercase mb-1">{% translate "Insurance Premium Cost" %}</label>
+                            <input type="number" id="calc-ins" value="4500" oninput="runCostEstimation()" class="w-full px-3 py-2 rounded-lg border border-slate-200 text-sm bg-slate-50">
+                        </div>
+                    </div>
+                    <div class="p-4 bg-blue-50 rounded-xl border border-blue-100 flex justify-between items-center mt-6">
+                        <span class="font-bold text-sm text-blue-900">{% translate "Estimated Total Overhead Cost" %}:</span>
+                        <span class="text-xl font-extrabold text-blue-950">रु <span id="cost-output-target">0</span></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm">
+                <h3 class="font-bold text-lg text-slate-900 mb-4 flex items-center gap-2">𒒱 {% translate "Foreign Exchange Remittance Converter" %}</h3>
+                <div class="space-y-4">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 uppercase mb-2">{% translate "Foreign Amount" %}</label>
+                            <input type="number" id="conv-input-val" value="1000" oninput="runCurrencyConversion()" class="w-full px-3 py-2.5 rounded-lg border border-slate-200 text-sm bg-slate-50">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 uppercase mb-2">{% translate "Source Currency" %}</label>
+                            <select id="conv-currency-rate" onchange="runCurrencyConversion()" class="w-full px-3 py-2.5 rounded-lg border border-slate-200 text-sm focus:ring-2 focus:ring-blue-500 bg-white">
+                                <option value="35.40">1 Malaysian Ringgit (MYR)</option>
+                                <option value="36.25">1 Qatari Riyal (QAR)</option>
+                                <option value="132.10">1 US Dollar (USD)</option>
+                                <option value="0.88">1 Japanese Yen (JPY)</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="p-4 bg-emerald-50 rounded-xl border border-emerald-100 flex justify-between items-center mt-12">
+                        <span class="font-bold text-sm text-emerald-900">{% translate "Equivalent Value in Nepali Rupees" %}:</span>
+                        <span class="text-xl font-extrabold text-emerald-950">रु <span id="conv-output-target">35,400</span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="contact" class="py-20 bg-white">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12 space-y-2">
+            <h2 class="text-xs font-bold uppercase tracking-widest text-blue-600">✉️ {% translate "CENTRAL GOVERNMENT AND SOCIAL COMPLAINT LOGS" %}</h2>
+            <p class="text-3xl font-bold text-slate-900 tracking-tight">{% translate "File an Official Resource Inquiries Slip" %}</p>
+        </div>
+        
+        <form method="POST" class="space-y-6 bg-slate-50 p-8 border border-slate-200/60 shadow-xl rounded-2xl">
+            {% csrf_token %}
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">{% translate "Full Name" %}</label>
+                    <input type="text" name="name" required class="w-full px-4 py-3 rounded-lg border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all bg-white">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">{% translate "Email Address" %}</label>
+                    <input type="email" name="email" required class="w-full px-4 py-3 rounded-lg border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all bg-white">
+                </div>
+            </div>
+            <div>
+                <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">{% translate "Subject Topic Parameters" %}</label>
+                <input type="text" name="subject" required class="w-full px-4 py-3 rounded-lg border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all bg-white">
+            </div>
+            <div>
+                <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">{% translate "Detailed Case Content Description" %}</label>
+                <textarea name="message" rows="5" required class="w-full px-4 py-3 rounded-lg border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all bg-white"></textarea>
+            </div>
+            <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold text-sm py-4 rounded-lg transition-all shadow-md cursor-pointer">
+                🚀 {% translate "Transmit Form Security Details Packet" %}
+            </button>
+        </form>
+    </div>
+</section>
+
+<script>
+    function runCostEstimation() {
+        const countryBase = parseFloat(document.getElementById('calc-country').value) || 0;
+        const medicalFee = parseFloat(document.getElementById('calc-med').value) || 0;
+        const insuranceFee = parseFloat(document.getElementById('calc-ins').value) || 0;
+        document.getElementById('cost-output-target').innerText = (countryBase + medicalFee + insuranceFee).toLocaleString('en-IN');
+    }
+
+    function runCurrencyConversion() {
+        const inputAmount = parseFloat(document.getElementById('conv-input-val').value) || 0;
+        const conversionRate = parseFloat(document.getElementById('conv-currency-rate').value) || 0;
+        document.getElementById('conv-output-target').innerText = Math.round(inputAmount * conversionRate).toLocaleString('en-IN');
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+        runCostEstimation();
+        runCurrencyConversion();
+    });
+</script>
+{% endblock %}

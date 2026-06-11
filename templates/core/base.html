@@ -1,0 +1,326 @@
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="{{ LANGUAGE_CODE|default:'en' }}" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>{{ info.name }}</title>
+    
+    <link rel="icon" href="data:,">
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body { font-family: 'Inter', sans-serif; transition: background-color 0.2s, color 0.2s; }
+        
+        /* High-Contrast Accessible Engine Layer overrides mapping */
+        .contrast-mode { 
+            background-color: #0b0f19 !important; 
+            color: #ffffff !important; 
+        }
+        .contrast-mode .bg-white,
+        .contrast-mode section,
+        .contrast-mode .bg-slate-50 { 
+            background-color: #111827 !important; 
+            color: #f3f4f6 !important; 
+        }
+        .contrast-mode .bg-white\/5,
+        .contrast-mode .bg-indigo-50\/50,
+        .contrast-mode .bg-slate-50\/50,
+        .contrast-mode form {
+            background-color: #1f2937 !important;
+            border-color: #4b5563 !important;
+        }
+        .contrast-mode h1, .contrast-mode h2, .contrast-mode h3, .contrast-mode h4, .contrast-mode p, .contrast-mode blockquote, .contrast-mode span, .contrast-mode label { 
+            color: #ffffff !important; 
+        }
+        .contrast-mode .text-slate-400, .contrast-mode .text-slate-500, .contrast-mode .text-slate-600 {
+            color: #e5e7eb !important;
+        }
+        .contrast-mode .border, .contrast-mode .border-slate-100, .contrast-mode .border-slate-200 {
+            border-color: #374151 !important;
+        }
+        .contrast-mode input, .contrast-mode select, .contrast-mode textarea {
+            background-color: #111827 !important;
+            color: #ffffff !important;
+            border: 2px solid #ffffff !important;
+        }
+        .contrast-mode nav { 
+            background-color: #111827 !important; 
+            border-bottom: 2px solid #ffffff !important; 
+        }
+        .contrast-mode nav a {
+            color: #ffffff !important;
+        }
+        .contrast-mode nav a:hover {
+            color: #38bdf8 !important;
+            text-decoration: underline;
+        }
+        .contrast-mode .bg-blue-50, .contrast-mode .bg-emerald-50, .contrast-mode .bg-rose-50 {
+            background-color: #111827 !important;
+            border: 2px dashed #ffffff !important;
+        }
+    </style>
+</head>
+<body id="master-body" class="bg-slate-50 text-slate-900 flex flex-col min-h-screen text-base antialiased">
+
+    <div role="alert" class="bg-red-600 text-white font-semibold py-3 px-4 text-center text-sm relative z-50 shadow-md">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-center gap-2">
+            <span class="bg-white/20 px-2.5 py-0.5 rounded text-xs uppercase tracking-wider font-bold shrink-0 animate-pulse">
+                {% translate "EMERGENCY" %}
+            </span>
+            <span class="text-xs sm:text-sm">
+                {% translate "Distress abroad? Speak directly with our active cross-border crisis center immediately at" %} 
+                <a href="tel:+97727520111" class="underline hover:text-red-100 transition-colors font-bold whitespace-nowrap">+977-27-520111</a>
+            </span>
+        </div>
+    </div>
+
+    <header class="bg-slate-900 text-white text-xs py-2 px-4 border-b border-slate-800 relative z-40">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-3">
+            <div class="flex items-center space-x-4 text-center sm:text-left">
+                <span class="flex items-center gap-1">📅 <span id="nepali-date-ticker">{% translate "Loading Date..." %}</span></span>
+                <span class="hidden md:inline-flex items-center gap-1 border-l border-slate-700 pl-4">⏱️ <span id="live-clock-ticker">12:00:00 AM</span></span>
+            </div>
+            <div class="flex items-center justify-center gap-4">
+                <div class="flex items-center bg-slate-800 rounded-lg border border-slate-700 p-0.5">
+                    <button onclick="changeTextSize('down')" class="hover:bg-slate-700 hover:text-blue-400 font-bold w-8 h-8 flex items-center justify-center rounded cursor-pointer transition-colors" title="Decrease font size">A-</button>
+                    <button onclick="changeTextSize('reset')" class="hover:bg-slate-700 hover:text-blue-400 font-bold w-8 h-8 flex items-center justify-center rounded cursor-pointer transition-colors" title="Reset font size">A</button>
+                    <button onclick="changeTextSize('up')" class="hover:bg-slate-700 hover:text-blue-400 font-bold w-8 h-8 flex items-center justify-center rounded cursor-pointer transition-colors" title="Increase font size">A+</button>
+                </div>
+                <span class="text-slate-700 hidden sm:inline">|</span>
+                <button onclick="toggleHighContrast()" class="bg-slate-800 hover:bg-slate-700 px-3 py-1.5 rounded-lg border border-slate-700 cursor-pointer text-xs font-semibold flex items-center gap-1.5 transition-colors shrink-0 min-h-[32px]">
+                    👁️ {% translate "Contrast" %}
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <nav class="bg-white shadow-sm border-b border-slate-100 sticky top-0 z-40 transition-colors">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                
+                <div class="flex-shrink-0 flex items-center space-x-3">
+                    <div class="w-11 h-11 bg-blue-600 rounded-xl flex items-center justify-center text-white font-extrabold text-xl shadow-md shadow-blue-500/20">M</div>
+                    <div class="flex flex-col">
+                        <span class="font-bold text-base tracking-tight text-slate-900 leading-tight">MWRWPC</span>
+                        <span class="text-xs text-slate-500 font-medium">Ilam, Nepal</span>
+                    </div>
+                </div>
+                
+                <div class="hidden xl:flex space-x-6 font-semibold text-sm text-slate-600">
+                    <a href="#home" class="hover:text-blue-600 transition-colors">{% translate "Home" %}</a>
+                    <a href="#about" class="hover:text-blue-600 transition-colors">{% translate "About Us" %}</a>
+                    <a href="#services" class="hover:text-blue-600 transition-colors">{% translate "Services Hub" %}</a>
+                    <a href="#team" class="text-slate-300 hover:text-white transition-colors">{% translate "Our Team" %}</a
+                    <a href="#resource-center" class="hover:text-blue-600 transition-colors">{% translate "Resource Safe-house" %}</a>
+                    <a href="#tools-section" class="hover:text-blue-600 transition-colors">{% translate "Interactive Utilities" %}</a>
+                    <a href="#contact" class="hover:text-blue-600 transition-colors">{% translate "Contact" %}</a>
+                </div>
+
+                <div class="flex items-center space-x-4">
+                    <form action="{% url 'set_language' %}" method="post" id="lang-form" class="inline-flex m-0">
+                        {% csrf_token %}
+                        <input name="next" type="hidden" value="{{ request.path }}">
+                        <select name="language" id="language-selector" onchange="document.getElementById('lang-form').submit();" class="bg-slate-50 border border-slate-200 text-slate-700 text-xs font-bold rounded-xl px-3 py-2.5 focus:ring-2 focus:ring-blue-500 cursor-pointer min-h-[44px] hover:bg-slate-100 transition-colors">
+                            {% get_current_language as CURRENT_LANG %}
+                            {% get_available_languages as AVAILABLE_LANGS %}
+                            {% for lang in AVAILABLE_LANGS %}
+                                <option value="{{ lang.0 }}" {% if lang.0 == CURRENT_LANG %}selected{% endif %}>
+                                    {{ lang.1 }}
+                                </option>
+                            {% endfor %}
+                        </select>
+                    </form>
+                    
+                    <span class="hidden sm:inline w-px h-6 bg-slate-200"></span>
+                    
+                    <a href="#contact" class="hidden sm:inline-flex bg-blue-600 hover:bg-blue-700 text-white px-5 py-2.5 rounded-xl text-xs font-bold shadow-sm hover:shadow transition-all text-center min-h-[44px] items-center tracking-wide uppercase">
+                        {% translate "Get Emergency Support" %}
+                    </a>
+
+                    <button type="button" id="mobile-menu-trigger" class="xl:hidden p-2 rounded-xl bg-slate-50 border border-slate-200 text-slate-700 hover:bg-slate-100 focus:outline-none transition-all cursor-pointer min-w-[44px] min-h-[44px] flex items-center justify-center" aria-label="Toggle navigation drawer">
+                        <svg id="hamburger-icon-bars" class="w-6 h-6 block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                        <svg id="hamburger-icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="mobile-dropdown-drawer" class="hidden xl:hidden border-t border-slate-100 bg-white shadow-xl px-4 py-4 space-y-1 transition-all duration-200">
+            <a href="#home" class="mobile-menu-item-link block px-4 py-3 rounded-xl text-slate-700 hover:bg-slate-50 hover:text-blue-600 font-semibold text-sm transition-all">🏠 {% translate "Home" %}</a>
+            <a href="#about" class="mobile-menu-item-link block px-4 py-3 rounded-xl text-slate-700 hover:bg-slate-50 hover:text-blue-600 font-semibold text-sm transition-all">ℹ️ {% translate "About Us" %}</a>
+            <a href="#services" class="mobile-menu-item-link block px-4 py-3 rounded-xl text-slate-700 hover:bg-slate-50 hover:text-blue-600 font-semibold text-sm transition-all">🛠️ {% translate "Services Hub" %}</a>
+            <a href="#resource-center" class="mobile-menu-item-link block px-4 py-3 rounded-xl text-slate-700 hover:bg-slate-50 hover:text-blue-600 font-semibold text-sm transition-all">🛡️ {% translate "Resource Safe-house" %}</a>
+            <a href="#tools-section" class="mobile-menu-item-link block px-4 py-3 rounded-xl text-slate-700 hover:bg-slate-50 hover:text-blue-600 font-semibold text-sm transition-all">🧮 {% translate "Interactive Utilities" %}</a>
+            <a href="#contact" class="mobile-menu-item-link block px-4 py-3 rounded-xl text-slate-700 hover:bg-slate-50 hover:text-blue-600 font-semibold text-sm transition-all">✉️ {% translate "Contact" %}</a>
+            <div class="pt-3 mt-2 border-t border-slate-100 sm:hidden">
+                <a href="#contact" class="mobile-menu-item-link flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white font-bold p-3.5 rounded-xl text-xs shadow-md transition-all min-h-[44px]">
+                    🚨 {% translate "Get Emergency Support" %}
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex-grow w-full overflow-x-hidden">
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer class="bg-slate-950 text-slate-400 py-16 border-t border-slate-900 mt-auto w-full overflow-x-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10">
+            <div class="space-y-4">
+                <p class="text-white font-bold text-base tracking-tight">{{ info.name }}</p>
+                <p class="text-xs leading-relaxed text-slate-400">
+                    {% translate "An official state-level collaborative social service workspace framework operational entity established inside Ilam, Nepal to enforce total security arrays for returnees or departing laborers." %}
+                </p>
+            </div>
+            <div class="space-y-4">
+                <h4 class="text-white font-semibold text-sm tracking-wide uppercase">{% translate "Quick Links" %}</h4>
+                <ul class="space-y-2.5 text-xs">
+                    <li><a href="#about" class="hover:text-white transition-colors block py-0.5">{% translate "Institutional History Records" %}</a></li>
+                    <li><a href="#services" class="hover:text-white transition-colors block py-0.5">{% translate "Strategic Operational Services Map" %}</a></li>
+                    <li><a href="#resource-center" class="hover:text-white transition-colors block py-0.5">{% translate "Fraud Checkers & Legal Guides" %}</a></li>
+                </ul>
+            </div>
+            <div class="space-y-4">
+                <h4 class="text-white font-semibold text-sm tracking-wide uppercase">{% translate "State Portals Affiliated" %}</h4>
+                <ul class="space-y-2.5 text-xs">
+                    <li><a href="https://dofe.gov.np" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors block py-0.5">{% translate "DoFE (Department of Foreign Employment)" %}</a></li>
+                    <li><a href="https://feb.gov.np/" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors block py-0.5">{% translate "Foreign Employment Board" %}</a></li>
+                    <li><a href="https://mofa.gov.np" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors block py-0.5">{% translate "Ministry of Foreign Affairs" %}</a></li>
+                </ul>
+            </div>
+            <div class="space-y-4">
+                <h4 class="text-white font-semibold text-sm tracking-wide uppercase">{% translate "Administrative Seat" %}</h4>
+                <p class="text-xs text-slate-400 leading-relaxed space-y-1">
+                    <span class="block">📍 {% translate "MWRWPC Center, Main Chowk, Ilam Bureau, Koshi Province, Nepal" %}</span>
+                    <span class="block pt-2">📞 <a href="tel:+97727520111" class="hover:text-white transition-colors">+977-27-520111</a> / <a href="tel:+97727520222" class="hover:text-white transition-colors">+977-27-520222</a></span>
+                    <span class="block">✉️ <a href="mailto:info@migrantcenterilam.org.np" class="hover:text-white transition-colors">info@migrantcenterilam.org.np</a></span>
+                </p>
+            </div>
+        </div>
+        <hr class="border-slate-900 my-10 max-w-7xl mx-auto px-4">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center md:flex md:justify-between items-center text-xs text-slate-500 gap-4">
+            <p>&copy; {{ current_year|default:"2026" }} {{ info.name }}. {% translate "All rights reserved." %}</p>
+        </div>
+    </footer>
+
+    <script>
+        // Sizing Engine Optimization
+        let currentSizingPercentage = 100;
+        const rootHtmlNode = document.documentElement;
+
+        function changeTextSize(action) {
+            if (action === 'up') {
+                currentSizingPercentage = Math.min(115, currentSizingPercentage + 5);
+            } else if (action === 'down') {
+                currentSizingPercentage = Math.max(90, currentSizingPercentage - 5);
+            } else {
+                currentSizingPercentage = 100;
+            }
+            rootHtmlNode.style.fontSize = `${currentSizingPercentage}%`;
+        }
+
+        function toggleHighContrast() {
+            document.getElementById('master-body').classList.toggle('contrast-mode');
+        }
+
+        // Optimized Touch State Drawer Control Engine
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuBtn = document.getElementById('mobile-menu-trigger');
+            const menuDrawer = document.getElementById('mobile-dropdown-drawer');
+            const barsIcon = document.getElementById('hamburger-icon-bars');
+            const closeIcon = document.getElementById('hamburger-icon-close');
+            const itemLinks = document.querySelectorAll('.mobile-menu-item-link');
+
+            function toggleDrawerState() {
+                const isHidden = menuDrawer.classList.toggle('hidden');
+                barsIcon.classList.toggle('hidden', !isHidden);
+                closeIcon.classList.toggle('hidden', isHidden);
+            }
+
+            if (menuBtn && menuDrawer) {
+                menuBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    toggleDrawerState();
+                });
+
+                itemLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        menuDrawer.classList.add('hidden');
+                        barsIcon.classList.remove('hidden');
+                        closeIcon.classList.add('hidden');
+                    });
+                });
+
+                document.addEventListener('click', (e) => {
+                    if (!menuDrawer.classList.contains('hidden') && !menuDrawer.contains(e.target) && !menuBtn.contains(e.target)) {
+                        menuDrawer.classList.add('hidden');
+                        barsIcon.classList.remove('hidden');
+                        closeIcon.classList.add('hidden');
+                    }
+                });
+            }
+        });
+
+        // High Efficiency Dynamic Datetime Synchronization Layer
+        function runLiveClock() {
+            const clockContainer = document.getElementById('live-clock-ticker');
+            const dateContainer = document.getElementById('nepali-date-ticker');
+            if (!clockContainer || !dateContainer) return;
+            
+            const currentTimestamp = new Date();
+            let currentLang = "{{ LANGUAGE_CODE }}"; 
+            if (!currentLang || currentLang === "" || currentLang === "None") {
+                currentLang = document.documentElement.lang || 'en';
+            }
+            currentLang = currentLang.toLowerCase().split('-')[0];
+
+            const devnagariNumerals = ['०', '१', '२', '३', '४', '५', '६', '७', '८', '९'];
+            function toDevnagari(num) {
+                return String(num).split('').map(digit => devnagariNumerals[digit] || digit).join('');
+            }
+
+            if (currentLang === 'ne') {
+                try {
+                    const dateOptions = { calendar: 'nepali', dateStyle: 'long' };
+                    const timeOptions = { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true };
+                    
+                    dateContainer.textContent = currentTimestamp.toLocaleDateString('ne-NP', dateOptions) + ' गते';
+                    clockContainer.textContent = currentTimestamp.toLocaleTimeString('ne-NP', timeOptions);
+                } catch (e) {
+                    let hrs = currentTimestamp.getHours();
+                    const mins = String(currentTimestamp.getMinutes()).padStart(2, '0');
+                    const secs = String(currentTimestamp.getSeconds()).padStart(2, '0');
+                    const ampm = hrs >= 12 ? ' PM' : ' AM';
+                    hrs = hrs % 12 || 12;
+
+                    dateContainer.textContent = "२०८३ जेठ २७ गते"; 
+                    clockContainer.textContent = `${toDevnagari(String(hrs).padStart(2, '0'))}:${toDevnagari(mins)}:${toDevnagari(secs)}${ampm}`;
+                }
+            } else {
+                const engDateOptions = { weekday: 'short', month: 'short', day: 'numeric', year: 'numeric' };
+                dateContainer.textContent = currentTimestamp.toLocaleDateString('en-US', engDateOptions);
+
+                let baseHours = currentTimestamp.getHours();
+                const baseMinutes = String(currentTimestamp.getMinutes()).padStart(2, '0');
+                const baseSeconds = String(currentTimestamp.getSeconds()).padStart(2, '0');
+                const meridiemMarker = baseHours >= 12 ? 'PM' : 'AM';
+                
+                baseHours = baseHours % 12 || 12; 
+                clockContainer.textContent = `${String(baseHours).padStart(2, '0')}:${baseMinutes}:${baseSeconds} ${meridiemMarker}`;
+            }
+        }
+        
+        setInterval(runLiveClock, 1000);
+        runLiveClock(); 
+    </script>
+</body>
+</html>
