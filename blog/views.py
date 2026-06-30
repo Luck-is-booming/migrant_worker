@@ -1,3 +1,1 @@
-from django.shortcuts import render
-
-# Create your views here.
+# Blog views reserved for future list/detail pages.

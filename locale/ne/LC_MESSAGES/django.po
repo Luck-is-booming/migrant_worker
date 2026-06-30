@@ -341,8 +341,6 @@ msgid "File an Official Resource Inquiries Slip"
 msgstr "आधिकारिक सोधपुछ वा उजुरी फारम दर्ता गर्नुहोस्"
 
 #: templates/core/index.html:238
-msgid "Full Name"
-msgstr "पूरा नाम"
 
 #: templates/core/index.html:242
 msgid "Email Address"
@@ -368,3 +366,77 @@ msgstr "परराष्ट्र मन्त्रालय (Ministry of For
 
 msgid "DoFE (Department of Foreign Employment)"
 msgstr "DoFE (वैदेशिक रोजगार विभाग)"
+
+msgid "Membership Application"
+msgstr "सदस्यता आवेदन"
+
+msgid "Become a member of our organization"
+msgstr "हाम्रो संस्थाको सदस्य बन्नुहोस्"
+
+msgid "Select your local level and apply for membership today."
+msgstr "आफ्नो स्थानिय तह छनोट गरी आजै सदस्यताका लागि आवेदन दिनुहोस्।"
+
+msgid "Full Name"
+msgstr "पूरा नाम"
+
+msgid "Local Level"
+msgstr "स्थानिय तह"
+
+msgid "Membership Type"
+msgstr "सदस्यता प्रकार"
+
+msgid "Submit Membership Application"
+msgstr "सदस्यता आवेदन पठाउनुहोस्"
+
+msgid "Our Team"
+msgstr "हाम्रो टोली"
+
+# Municipality Choices
+msgid "Ilam Municipality"
+msgstr "इलाम नगरपालिका"
+
+msgid "Deumai Municipality"
+msgstr "देउमाइ नगरपालिका"
+
+msgid "Suryodaya Municipality"
+msgstr "सुर्योदय नगरपालिका"
+
+msgid "Phakphokthum Rural Municipality"
+msgstr "फाकफोकथुम गाउपालिका"
+
+msgid "Sandakpur Rural Municipality"
+msgstr "सन्दकपुर गाउपालिका"
+
+# Membership Type Choices
+msgid "Life Member"
+msgstr "आजिबन सदस्य"
+
+msgid "General Member"
+msgstr "साधारण सदस्य"
+
+msgid "INFORMATION & MEDIA DISPATCHES"
+msgstr "सूचना तथा मिडिया प्रेषण"
+
+msgid "Latest Central Notices & Community News"
+msgstr "ताजा केन्द्रीय सूचना तथा सामुदायिक समाचार"
+
+msgid "Redirecting to eSewa..."
+msgstr "eSewa मा रिडिरेक्ट हुँदैछ..."
+
+msgid "Redirecting to eSewa for payment, please wait..."
+msgstr "भुक्तानीको लागि eSewa मा रिडिरेक्ट हुँदैछ, कृपया पर्खनुहोस्..."
+
+msgid "Payment verification data not found."
+msgstr "भुक्तानी प्रमाणिकरण डेटा फेला परेन।"
+
+msgid "Your membership fee payment was successful."
+msgstr "तपाईंको सदस्यता शुल्क भुक्तानी सफल भयो।"
+
+msgid "eSewa verification failed."
+msgstr "eSewa प्रमाणीकरण असफल भयो।"
+
+msgid "An error occurred: %(error)s"
+msgstr "त्रुटि देखापर्यो: %(error)s"
+
+msgid "Payment cancelled or failed. Please try again."
+msgstr "भुक्तानी रद्द वा असफल भयो। कृपया पुनः प्रयास गर्नुहोस्।"
