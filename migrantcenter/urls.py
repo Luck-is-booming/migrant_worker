@@ -10,5 +10,6 @@ urlpatterns = [
 # Wrap your admin and app URLs INSIDE i18n_patterns
 urlpatterns += i18n_patterns(
     path('admin/', admin.site.urls),
-    path('', include('core.urls')),                  # Includes app-level routing with language prefixes
+    path('', include('core.urls')), 
+    path("members/", include("members.urls")),                                  # Includes app-level routing with language prefixes
 )

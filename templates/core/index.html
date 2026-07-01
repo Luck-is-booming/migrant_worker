@@ -139,6 +139,71 @@
         </div>
     </div>
 </section>
+<section id="members-preview" class="py-20 bg-white border-b border-slate-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+            <div class="lg:col-span-7 space-y-4">
+                <h2 class="text-xs font-bold uppercase tracking-widest text-blue-600">
+                    👥 {% translate "Official Member Directory" %}
+                </h2>
+
+                <p class="text-3xl font-bold text-slate-900 tracking-tight">
+                    {% translate "View verified members of our organization" %}
+                </p>
+
+                <p class="text-sm text-slate-600 leading-relaxed max-w-2xl">
+                    {% translate "Browse life members and general members registered under the organization. Search by name, local level, membership type, and status." %}
+                </p>
+
+                <div class="flex flex-wrap gap-3 pt-3">
+                    <a href="{% url 'members:member_list' %}"
+                       class="inline-flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white font-bold text-sm px-6 py-3.5 rounded-xl shadow-md transition-all no-underline">
+                        🔎 {% translate "View Member Directory" %}
+                    </a>
+
+                    <a href="#membership"
+                       class="inline-flex items-center justify-center bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold text-sm px-6 py-3.5 rounded-xl border border-slate-200 transition-all no-underline">
+                        📝 {% translate "Apply for Membership" %}
+                    </a>
+                </div>
+            </div>
+
+            <div class="lg:col-span-5">
+                <div class="bg-slate-50 border border-slate-200 rounded-3xl p-8 shadow-sm">
+                    <div class="grid grid-cols-2 gap-5">
+                        <div class="bg-white rounded-2xl p-5 border border-slate-100 shadow-sm">
+                            <p class="text-3xl font-extrabold text-blue-600">300+</p>
+                            <p class="text-xs text-slate-500 mt-1 font-medium">
+                                {% translate "Registered Members" %}
+                            </p>
+                        </div>
+
+                        <div class="bg-white rounded-2xl p-5 border border-slate-100 shadow-sm">
+                            <p class="text-3xl font-extrabold text-emerald-600">2</p>
+                            <p class="text-xs text-slate-500 mt-1 font-medium">
+                                {% translate "Membership Types" %}
+                            </p>
+                        </div>
+
+                        <div class="bg-white rounded-2xl p-5 border border-slate-100 shadow-sm">
+                            <p class="text-3xl font-extrabold text-indigo-600">🔍</p>
+                            <p class="text-xs text-slate-500 mt-1 font-medium">
+                                {% translate "Search & Filter" %}
+                            </p>
+                        </div>
+
+                        <div class="bg-white rounded-2xl p-5 border border-slate-100 shadow-sm">
+                            <p class="text-3xl font-extrabold text-amber-600">✓</p>
+                            <p class="text-xs text-slate-500 mt-1 font-medium">
+                                {% translate "Verified Records" %}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
 <section id="services" class="py-20 bg-white border-b border-slate-100">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

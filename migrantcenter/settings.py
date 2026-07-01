@@ -28,6 +28,7 @@ INSTALLED_APPS = [
     'core.apps.CoreConfig',
     'blog.apps.BlogConfig',
     'payments.apps.PaymentsConfig',
+    'members.apps.MembersConfig',
 ]
 
 MIDDLEWARE = [
