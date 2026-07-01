@@ -17,6 +17,12 @@ class OrganizationInfo(models.Model):
     chairperson_name_en = models.CharField(max_length=255, default="Ram Bahadur Gurung")
     chairperson_message_ne = models.TextField(default="सुरक्षित र मर्यादित वैदेशिक रोजगारी नै हाम्रो मुख्य लक्ष्य हो।")
     chairperson_message_en = models.TextField(default="Safe and dignified foreign employment is our primary mission.")
+    chairperson_photo = models.ImageField(
+    upload_to="chairperson_photos/",
+    blank=True,
+    null=True,
+    verbose_name=_("Chairperson Photo"),
+)
 
     class Meta:
         verbose_name = _("Organization Information")
@@ -172,14 +178,23 @@ class ContactMessage(models.Model):
 class TeamMember(models.Model):
     name = models.CharField(max_length=150, verbose_name="Full Name")
     designation = models.CharField(max_length=100, verbose_name="Official Designation")
+    address = models.CharField(max_length=255, blank=True, verbose_name="Address")
+
     email = models.EmailField(blank=True, null=True, verbose_name="Official Email")
     phone = models.CharField(max_length=20, blank=True, null=True, verbose_name="Extension / Phone")
-    image = models.ImageField(upload_to='team_photos/', blank=True, null=True, verbose_name="Profile Photo")
+
+    image = models.ImageField(
+        upload_to="team_photos/",
+        blank=True,
+        null=True,
+        verbose_name="Profile Photo"
+    )
+
     sort_order = models.PositiveIntegerField(default=0, help_text="Lower numbers display first.")
     is_active = models.BooleanField(default=True, verbose_name="Show on Website")
 
     class Meta:
-        ordering = ['sort_order', 'name']
+        ordering = ["sort_order", "name"]
         verbose_name = "Team Member"
         verbose_name_plural = "Team Members"
 

@@ -11,16 +11,43 @@ from .fallbacks import (
     get_fallback_services,
     get_fallback_team,
 )
-from .models import DestinationCountry, OrganizationInfo, ResourcePublication, ServiceCard, TeamMember
+from .models import (
+    DestinationCountry,
+    OrganizationInfo,
+    ResourcePublication,
+    ServiceCard,
+    TeamMember,
+)
 
-INFO_FIELDS = ('name', 'slogan', 'objective', 'commitment', 'chairperson', 'message')
-TEAM_MEMBER_FIELDS = ('name', 'designation', 'email', 'phone', 'image')
+
+INFO_FIELDS = (
+    "name",
+    "slogan",
+    "objective",
+    "commitment",
+    "chairperson",
+    "message",
+    "chairperson_photo",
+)
+
+TEAM_MEMBER_FIELDS = (
+    "name",
+    "designation",
+    "address",
+    "email",
+    "phone",
+    "image",
+    "sort_order",
+)
 
 
 def _info_context(db_info, lang):
     if db_info:
-        return {field: getattr(db_info, field) for field in INFO_FIELDS}
-    return get_fallback_info(lang)
+        return {field: getattr(db_info, field, None) for field in INFO_FIELDS}
+
+    fallback_info = get_fallback_info(lang)
+    fallback_info["chairperson_photo"] = None
+    return fallback_info
 
 
 def build_homepage_context():
@@ -46,16 +73,18 @@ def build_homepage_context():
     if not team_members:
         team_members = get_fallback_team(lang)
 
-    latest_articles = list(Article.objects.order_by('-is_alert', '-published_date')[:3])
+    latest_articles = list(
+        Article.objects.order_by("-is_alert", "-published_date")[:3]
+    )
     if not latest_articles:
         latest_articles = get_fallback_articles(lang)
 
     return {
-        'info': info,
-        'services': services,
-        'countries': countries,
-        'resources': resources,
-        'team_members': team_members,
-        'latest_articles': latest_articles,
-        'current_year': timezone.now().year,
+        "info": info,
+        "services": services,
+        "countries": countries,
+        "resources": resources,
+        "team_members": team_members,
+        "latest_articles": latest_articles,
+        "current_year": timezone.now().year,
     }
