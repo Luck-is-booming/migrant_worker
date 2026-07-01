@@ -53,6 +53,11 @@ class Member(models.Model):
         default="unknown",
         verbose_name=_("Organization Level"),
     )
+    unit_name = models.CharField(
+    max_length=150,
+    blank=True,
+    verbose_name=_("Committee / Unit Name"),
+)
 
     municipality = models.CharField(
         max_length=100,

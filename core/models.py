@@ -186,7 +186,6 @@ class TeamMember(models.Model):
     def __str__(self):
         return f"{self.name} - {self.designation}"
 
-
 class Membership(models.Model):
     MUNICIPALITY_CHOICES = [
         ('ilam', _('Ilam Municipality')),
@@ -207,12 +206,29 @@ class Membership(models.Model):
     ]
 
     name = models.CharField(max_length=100)
+    name_en = models.CharField(max_length=100, blank=True)
+
     municipality = models.CharField(max_length=50, choices=MUNICIPALITY_CHOICES)
+    ward_no = models.PositiveSmallIntegerField(blank=True, null=True)
+    address = models.CharField(max_length=255, blank=True)
+
+    designation = models.CharField(max_length=150, blank=True)
+    destination_country = models.CharField(max_length=100, blank=True)
+    phone = models.CharField(max_length=20, blank=True)
+
     membership_type = models.CharField(max_length=20, choices=TYPE_CHOICES)
     joined_date = models.DateField(auto_now_add=True)
+
     is_approved = models.BooleanField(default=False)
-    payment_status = models.CharField(max_length=20, choices=PAYMENT_STATUS_CHOICES, default='pending')
+    payment_status = models.CharField(
+        max_length=20,
+        choices=PAYMENT_STATUS_CHOICES,
+        default='pending'
+    )
+
+    # Keep this for admin/internal record, but don't ask normal users
     transaction_id = models.CharField(max_length=100, blank=True, null=True)
+
     amount = models.DecimalField(max_digits=10, decimal_places=2, default=0.00)
 
     class Meta:

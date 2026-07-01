@@ -401,14 +401,19 @@
         </div>
     </div>
 </section>
-
-<!-- Re-engineered Membership Application Section with Direct eSewa Gateway Interfacing -->
+<!-- Membership Application Section with Manual QR Payment -->
 <section id="membership" class="py-20 bg-blue-50 border-b border-blue-100">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-12 space-y-2">
-            <h2 class="text-xs font-bold uppercase tracking-widest text-blue-600">📝 {% translate "Membership Application" %}</h2>
-            <p class="text-3xl font-bold text-slate-900 tracking-tight">{% translate "Become a member of our organization" %}</p>
-            <p class="text-sm text-slate-600">{% translate "Select your local level and apply for membership today." %}</p>
+            <h2 class="text-xs font-bold uppercase tracking-widest text-blue-600">
+                📝 {% translate "Membership Application" %}
+            </h2>
+            <p class="text-3xl font-bold text-slate-900 tracking-tight">
+                {% translate "Become a member of our organization" %}
+            </p>
+            <p class="text-sm text-slate-600">
+                {% translate "Fill the form and continue to QR payment." %}
+            </p>
         </div>
         
         <form method="POST" action="{% url 'index' %}" class="space-y-6 bg-white p-8 border border-slate-200/60 shadow-xl rounded-2xl">
@@ -420,13 +425,63 @@
                         {% translate "Full Name" %}
                     </label>
                     {{ membership_form.name }}
+                    {{ membership_form.name.errors }}
                 </div>
+
                 <div>
                     <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
                         {% translate "Local Level" %}
                     </label>
                     {{ membership_form.municipality }}
+                    {{ membership_form.municipality.errors }}
                 </div>
+            </div>
+            <div>
+                <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
+                    {% translate "Name in English" %}
+                </label>
+                {{ membership_form.name_en }}
+                {{ membership_form.name_en.errors }}
+            </div>
+
+            <div>
+                <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
+                    {% translate "Ward Number" %}
+                </label>
+                {{ membership_form.ward_no }}
+                {{ membership_form.ward_no.errors }}
+            </div>
+
+            <div>
+                <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
+                    {% translate "Address" %}
+                </label>
+                {{ membership_form.address }}
+                {{ membership_form.address.errors }}
+            </div>
+
+            <div>
+                <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
+                    {% translate "Phone Number" %}
+                </label>
+                {{ membership_form.phone }}
+                {{ membership_form.phone.errors }}
+            </div>
+
+            <div>
+                <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
+                    {% translate "Designation / Position" %}
+                </label>
+                {{ membership_form.designation }}
+                {{ membership_form.designation.errors }}
+            </div>
+
+            <div>
+                <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
+                    {% translate "Foreign Employment Country" %}
+                </label>
+                {{ membership_form.destination_country }}
+                {{ membership_form.destination_country.errors }}
             </div>
 
             <div>
@@ -434,11 +489,11 @@
                     {% translate "Membership Type" %}
                 </label>
                 {{ membership_form.membership_type }}
+                {{ membership_form.membership_type.errors }}
             </div>
 
-            <!-- Custom eSewa Verified Button Context with Explicit Action Hook Identification -->
-            <button type="submit" name="membership_submit" class="w-full bg-[#60b82d] hover:bg-[#519f26] text-white font-bold text-sm py-4 rounded-lg transition-all shadow-md shadow-emerald-600/10 cursor-pointer flex items-center justify-center gap-2">
-                 🟢 {% translate "Submit & Pay Membership Fee via eSewa" %}
+            <button type="submit" name="membership_submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold text-sm py-4 rounded-lg transition-all shadow-md shadow-blue-600/10 cursor-pointer flex items-center justify-center gap-2">
+                 📲 {% translate "Submit & Continue to QR Payment" %}
             </button>
         </form>
     </div>

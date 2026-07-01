@@ -1,17 +1,16 @@
 from django.core.paginator import Paginator
-from django.db.models import Q
+from django.db.models import Q, IntegerField
+from django.db.models.functions import Cast
 from django.shortcuts import render
 
 from .models import Member
-
-
 def member_list(request):
     members = Member.objects.filter(is_public=True)
 
     q = request.GET.get("q", "").strip()
     membership_type = request.GET.get("type", "").strip()
     status = request.GET.get("status", "").strip()
-    municipality = request.GET.get("municipality", "").strip()
+    unit_name = request.GET.get("unit", "").strip()
 
     if q:
         members = members.filter(
@@ -20,6 +19,7 @@ def member_list(request):
             | Q(address__icontains=q)
             | Q(designation__icontains=q)
             | Q(membership_number__icontains=q)
+            | Q(unit_name__icontains=q)
         )
 
     if membership_type:
@@ -28,8 +28,16 @@ def member_list(request):
     if status:
         members = members.filter(status=status)
 
-    if municipality:
-        members = members.filter(municipality__icontains=municipality)
+    if unit_name:
+        members = members.filter(unit_name=unit_name)
+
+    members = members.annotate(
+        member_no_int=Cast("membership_number", IntegerField())
+    ).order_by(
+        "unit_name",
+        "member_no_int",
+        "name_ne",
+    )
 
     paginator = Paginator(members, 24)
     page_number = request.GET.get("page")
@@ -40,5 +48,5 @@ def member_list(request):
         "q": q,
         "membership_type": membership_type,
         "status": status,
-        "municipality": municipality,
+        "unit_name": unit_name,
     })

@@ -1,10 +1,9 @@
 from django.urls import path
 from . import views
 
-app_name = 'payments'
+app_name = "payments"
 
 urlpatterns = [
-    path('initiate/<int:membership_id>/', views.initiate_payment, name='initiate_payment'),
-    path('success/', views.esewa_success, name='payment_success'),
-    path('failure/', views.esewa_failure, name='payment_failure'),
+    path("<int:membership_id>/", views.manual_payment_view, name="manual_payment"),
+    path("pending/<int:payment_id>/", views.payment_pending_view, name="payment_pending"),
 ]

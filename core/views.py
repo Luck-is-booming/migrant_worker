@@ -26,19 +26,30 @@ def index_view(request):
     contact_form = ContactMessageForm()
 
     if request.method == "POST":
-        if 'membership_submit' in request.POST:
+        if "membership_submit" in request.POST:
             membership_form = MembershipForm(request.POST)
+
             if membership_form.is_valid():
-                saved_membership = membership_form.save()
-                return redirect('payments:initiate_payment', membership_id=saved_membership.id)
-        elif 'contact_submit' in request.POST:
+                saved_membership = membership_form.save(commit=False)
+                saved_membership.payment_status = "pending"
+                saved_membership.is_approved = False
+                saved_membership.save()
+
+                return redirect(
+                    "payments:manual_payment",
+                    membership_id=saved_membership.id
+                )
+
+        elif "contact_submit" in request.POST:
             contact_form = ContactMessageForm(request.POST)
+
             if contact_form.is_valid():
                 contact_form.save()
                 messages.success(request, _("Your message has been received."))
-                return redirect('index')
+                return redirect("index")
 
     context = build_homepage_context()
-    context['membership_form'] = membership_form
-    context['contact_form'] = contact_form
-    return render(request, 'core/index.html', context)
+    context["membership_form"] = membership_form
+    context["contact_form"] = contact_form
+
+    return render(request, "core/index.html", context)
