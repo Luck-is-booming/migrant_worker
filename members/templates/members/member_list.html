@@ -15,7 +15,7 @@
             </h1>
 
             <p class="text-slate-300 text-lg leading-relaxed">
-                {% translate "Search and view verified district committee and municipality committee members of the organization." %}
+                {% translate "Search and view verified members with separate district and municipality registry numbers." %}
             </p>
 
             <div class="flex flex-wrap gap-3 pt-2">
@@ -52,11 +52,11 @@
 
                 <div>
                     <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-2">
-                        {% translate "Select Committee" %}
+                        {% translate "Select Registry" %}
                     </label>
                     <select name="unit"
                             class="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none bg-white">
-                        <option value="">{% translate "All Committees" %}</option>
+                        <option value="">{% translate "All Registries" %}</option>
 
                         <option value="Ilam District" {% if unit_name == "Ilam District" %}selected{% endif %}>
                             {% translate "District Committee" %}
@@ -137,7 +137,7 @@
                     {% translate "Members" %}
                 </h2>
                 <p class="text-sm text-slate-500 mt-1">
-                    {{ page_obj.paginator.count }} {% translate "member records found" %}
+                    {{ page_obj.paginator.count }} {% translate "unmerged member records found" %}
                 </p>
             </div>
 
@@ -209,20 +209,30 @@
                     <div class="space-y-2 text-sm text-slate-600">
 
                         {% if member.membership_number %}
-                        <p>
-                            <span class="font-bold text-slate-800">{% translate "Member No." %}:</span>
-                            {{ member.membership_number }}
-                        </p>
+                        <div class="rounded-xl bg-slate-50 border border-slate-200 p-3">
+                            <p class="text-[10px] font-extrabold uppercase tracking-widest text-slate-500 mb-1">
+                                {% if member.unit_name == "Ilam District" %}
+                                    {% translate "District Member No." %}
+                                {% elif member.unit_name == "Ilam Municipality" %}
+                                    {% translate "Ilam Municipality Member No." %}
+                                {% else %}
+                                    {% translate "Member No." %}
+                                {% endif %}
+                            </p>
+                            <p class="text-2xl font-extrabold text-slate-900 leading-none">
+                                {{ member.membership_number }}
+                            </p>
+                        </div>
                         {% endif %}
 
                         {% if member.unit_name %}
                         <p>
-                            <span class="font-bold text-slate-800">{% translate "Committee" %}:</span>
+                            <span class="font-bold text-slate-800">{% translate "Registry" %}:</span>
                             {{ member.unit_name }}
                         </p>
                         {% endif %}
 
-                        {% if member.get_level_display %}
+                        {% if member.level %}
                         <p>
                             <span class="font-bold text-slate-800">{% translate "Level" %}:</span>
                             {{ member.get_level_display }}
@@ -233,13 +243,6 @@
                             <span class="font-bold text-slate-800">{% translate "Type" %}:</span>
                             {{ member.get_membership_type_display }}
                         </p>
-
-                        {% if member.ward_no %}
-                        <p>
-                            <span class="font-bold text-slate-800">{% translate "Ward" %}:</span>
-                            {{ member.ward_no }}
-                        </p>
-                        {% endif %}
 
                         {% if member.address %}
                         <p>

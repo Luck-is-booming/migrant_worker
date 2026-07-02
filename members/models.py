@@ -1,4 +1,5 @@
 from django.db import models
+from django.db.models import Max, Q
 from django.utils.translation import gettext_lazy as _
 
 from core.i18n_utils import localized
@@ -31,6 +32,14 @@ class Member(models.Model):
         max_length=50,
         blank=True,
         verbose_name=_("Membership Number"),
+        help_text=_("Isolated inside Level + Unit + Membership Type. Example: District life no. 4 and Ilam Municipality life no. 1 can both exist."),
+    )
+
+    membership_number_int = models.PositiveIntegerField(
+        blank=True,
+        null=True,
+        editable=False,
+        verbose_name=_("Membership Number for Sorting"),
     )
 
     membership_type = models.CharField(
@@ -53,22 +62,18 @@ class Member(models.Model):
         default="unknown",
         verbose_name=_("Organization Level"),
     )
+
     unit_name = models.CharField(
-    max_length=150,
-    blank=True,
-    verbose_name=_("Committee / Unit Name"),
-)
+        max_length=150,
+        blank=True,
+        verbose_name=_("Committee / Unit Name"),
+        help_text=_("Example: Ilam District, Ilam Municipality"),
+    )
 
     municipality = models.CharField(
         max_length=100,
         blank=True,
         verbose_name=_("Municipality / Rural Municipality"),
-    )
-
-    ward_no = models.PositiveSmallIntegerField(
-        blank=True,
-        null=True,
-        verbose_name=_("Ward Number"),
     )
 
     address = models.CharField(
@@ -113,19 +118,85 @@ class Member(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:
-        ordering = ["sort_order", "name_ne"]
+        ordering = [
+            "level",
+            "unit_name",
+            "membership_type",
+            "membership_number_int",
+            "sort_order",
+            "name_ne",
+        ]
         verbose_name = _("Member")
         verbose_name_plural = _("Members")
         indexes = [
+            models.Index(fields=["level"]),
+            models.Index(fields=["unit_name"]),
             models.Index(fields=["membership_type"]),
             models.Index(fields=["status"]),
             models.Index(fields=["municipality"]),
             models.Index(fields=["is_public"]),
         ]
+        constraints = [
+    models.UniqueConstraint(
+        fields=[
+            "level",
+            "unit_name",
+            "membership_type",
+            "membership_number_int",
+        ],
+        condition=models.Q(membership_number_int__isnull=False),
+        name="unique_member_no_per_isolated_member_registry",
+    )
+]
 
     @property
     def name(self):
         return localized(self.name_ne, self.name_en or self.name_ne)
 
+    @staticmethod
+    def _number_to_int(value):
+        if value in (None, ""):
+            return None
+        try:
+            return int(str(value).strip())
+        except (TypeError, ValueError):
+            return None
+
+    def get_next_membership_number(self):
+        highest_no = Member.objects.filter(
+            level=self.level,
+            unit_name=self.unit_name,
+            membership_type=self.membership_type,
+        ).exclude(pk=self.pk).aggregate(
+            max_no=Max("membership_number_int")
+        )["max_no"] or 0
+
+        return highest_no + 1
+
+    def save(self, *args, **kwargs):
+        # If membership_number is manually filled, keep membership_number_int synced
+        if self.membership_number:
+            try:
+                self.membership_number_int = int(str(self.membership_number).strip())
+            except ValueError:
+                self.membership_number_int = None
+
+        # If membership_number is blank, auto-give the next number
+        if not self.membership_number and self.level and self.unit_name and self.membership_type:
+            highest_no = Member.objects.filter(
+                level=self.level,
+                unit_name=self.unit_name,
+                membership_type=self.membership_type,
+            ).exclude(pk=self.pk).aggregate(
+                max_no=Max("membership_number_int")
+            )["max_no"] or 0
+
+            self.membership_number_int = highest_no + 1
+            self.membership_number = str(self.membership_number_int)
+
+        super().save(*args, **kwargs)
+
     def __str__(self):
-        return self.name_en or self.name_ne
+        number = f" #{self.membership_number}" if self.membership_number else ""
+        unit = f" - {self.unit_name}" if self.unit_name else ""
+        return f"{self.name_en or self.name_ne}{number}{unit}"

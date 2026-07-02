@@ -1,9 +1,10 @@
 from django.core.paginator import Paginator
-from django.db.models import Q, IntegerField
-from django.db.models.functions import Cast
+from django.db.models import Case, IntegerField, Q, Value, When
 from django.shortcuts import render
 
 from .models import Member
+
+
 def member_list(request):
     members = Member.objects.filter(is_public=True)
 
@@ -20,6 +21,7 @@ def member_list(request):
             | Q(designation__icontains=q)
             | Q(membership_number__icontains=q)
             | Q(unit_name__icontains=q)
+            | Q(destination_country__icontains=q)
         )
 
     if membership_type:
@@ -32,10 +34,32 @@ def member_list(request):
         members = members.filter(unit_name=unit_name)
 
     members = members.annotate(
-        member_no_int=Cast("membership_number", IntegerField())
+        level_order=Case(
+            When(level="district", then=Value(1)),
+            When(level="municipality", then=Value(2)),
+            When(level="rural_municipality", then=Value(3)),
+            When(level="ward", then=Value(4)),
+            default=Value(9),
+            output_field=IntegerField(),
+        ),
+        type_order=Case(
+            When(membership_type="life", then=Value(1)),
+            When(membership_type="general", then=Value(2)),
+            default=Value(9),
+            output_field=IntegerField(),
+        ),
+        number_missing=Case(
+            When(membership_number_int__isnull=True, then=Value(1)),
+            default=Value(0),
+            output_field=IntegerField(),
+        ),
     ).order_by(
+        "level_order",
         "unit_name",
-        "member_no_int",
+        "type_order",
+        "number_missing",
+        "membership_number_int",
+        "sort_order",
         "name_ne",
     )
 
