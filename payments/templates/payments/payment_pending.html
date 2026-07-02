@@ -1,104 +1,146 @@
+{% extends 'core/base.html' %}
 {% load i18n %}
 
-<!DOCTYPE html>
-<html lang="{{ request.LANGUAGE_CODE }}">
-<head>
-    <meta charset="UTF-8">
-    <title>{% trans "Payment Pending" %}</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-</head>
+{% block title %}{% trans "Payment Under Review" %} | MRN Ilam{% endblock %}
 
-<body class="bg-slate-100 min-h-screen py-10 px-4">
+{% block meta_description %}
+{% trans "Your MRN Ilam membership payment proof has been submitted and is waiting for admin verification." %}
+{% endblock %}
 
-    <div class="max-w-xl mx-auto bg-white rounded-3xl shadow-xl border border-slate-200 overflow-hidden">
-
-        <div class="bg-amber-500 text-white p-6 text-center">
-            <h1 class="text-2xl font-extrabold">
-                ⏳ {% trans "Payment Submitted" %}
-            </h1>
-            <p class="text-sm text-amber-100 mt-1">
-                {% trans "Your payment proof is waiting for admin verification." %}
-            </p>
-        </div>
-
-        <div class="p-8 space-y-6 text-center">
-
-            <div class="w-20 h-20 mx-auto rounded-full bg-amber-100 flex items-center justify-center text-4xl">
+{% block content %}
+<section class="bg-gradient-to-br from-amber-50 via-white to-blue-50 py-16 sm:py-20 border-b border-slate-100">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center space-y-4">
+            <div class="w-20 h-20 mx-auto rounded-full bg-amber-100 border border-amber-200 flex items-center justify-center text-4xl shadow-sm" aria-hidden="true">
                 ⏳
             </div>
 
-            <div>
-                <h2 class="text-xl font-bold text-slate-900">
-                    {% trans "Pending Admin Approval" %}
-                </h2>
+            <span class="inline-flex items-center gap-2 bg-amber-100 text-amber-800 text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full border border-amber-200">
+                {% trans "Verification Pending" %}
+            </span>
 
-                <p class="text-sm text-slate-600 mt-2 leading-relaxed">
-                    {% trans "Your payment screenshot has been submitted successfully. The admin will verify your payment and approve your membership soon." %}
+            <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900">
+                {% trans "Payment proof submitted successfully" %}
+            </h1>
+
+            <p class="text-base text-slate-700 leading-relaxed max-w-2xl mx-auto">
+                {% trans "Thank you. Your payment proof has been received and is now waiting for admin verification. Your membership will be updated after the payment is confirmed." %}
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="py-14 sm:py-16 bg-slate-50">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-white rounded-3xl border border-slate-200 shadow-sm overflow-hidden">
+            <div class="p-6 sm:p-8 border-b border-slate-100">
+                <h2 class="text-xl font-bold text-slate-900">
+                    {% trans "Payment Summary" %}
+                </h2>
+                <p class="text-sm text-slate-600 mt-1">
+                    {% trans "Please keep this information for your reference until verification is complete." %}
                 </p>
             </div>
 
-            <div class="bg-slate-50 border border-slate-200 rounded-2xl p-5 text-left space-y-3">
-
-                <div class="flex justify-between gap-4">
-                    <span class="text-sm font-semibold text-slate-500">
+            <dl class="divide-y divide-slate-100">
+                <div class="px-6 sm:px-8 py-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-6">
+                    <dt class="text-sm font-semibold text-slate-600">
                         {% trans "Applicant" %}
-                    </span>
-                    <span class="text-sm font-bold text-slate-900 text-right">
+                    </dt>
+                    <dd class="text-sm font-bold text-slate-900 sm:text-right">
                         {{ payment.membership.name }}
-                    </span>
+                    </dd>
                 </div>
 
-                <div class="flex justify-between gap-4">
-                    <span class="text-sm font-semibold text-slate-500">
+                <div class="px-6 sm:px-8 py-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-6">
+                    <dt class="text-sm font-semibold text-slate-600">
+                        {% trans "Membership Type" %}
+                    </dt>
+                    <dd class="text-sm font-bold text-slate-900 sm:text-right">
+                        {{ payment.membership.get_membership_type_display }}
+                    </dd>
+                </div>
+
+                <div class="px-6 sm:px-8 py-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-6">
+                    <dt class="text-sm font-semibold text-slate-600">
                         {% trans "Amount" %}
-                    </span>
-                    <span class="text-sm font-bold text-blue-700">
+                    </dt>
+                    <dd class="text-base font-extrabold text-blue-700 sm:text-right">
                         रु {{ payment.amount }}
-                    </span>
+                    </dd>
                 </div>
 
-                <div class="flex justify-between gap-4">
-                    <span class="text-sm font-semibold text-slate-500">
-                        {% trans "Transaction ID" %}
-                    </span>
-                    <span class="text-sm font-bold text-slate-900 text-right">
+                <div class="px-6 sm:px-8 py-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-6">
+                    <dt class="text-sm font-semibold text-slate-600">
+                        {% trans "Transaction / Reference ID" %}
+                    </dt>
+                    <dd class="text-sm font-bold text-slate-900 sm:text-right break-all">
                         {% if payment.transaction_id %}
                             {{ payment.transaction_id }}
                         {% else %}
                             {% trans "Not provided" %}
                         {% endif %}
-                    </span>
+                    </dd>
                 </div>
 
-                <div class="flex justify-between gap-4">
-                    <span class="text-sm font-semibold text-slate-500">
-                        {% trans "Status" %}
-                    </span>
-                    <span class="text-sm font-bold text-amber-600 uppercase">
-                        {{ payment.get_status_display }}
-                    </span>
+                <div class="px-6 sm:px-8 py-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-6">
+                    <dt class="text-sm font-semibold text-slate-600">
+                        {% trans "Current Status" %}
+                    </dt>
+                    <dd class="sm:text-right">
+                        <span class="inline-flex items-center gap-1.5 bg-amber-100 text-amber-800 text-xs font-extrabold uppercase tracking-wide px-3 py-1.5 rounded-full border border-amber-200">
+                            ⏳ {{ payment.get_status_display }}
+                        </span>
+                    </dd>
                 </div>
+            </dl>
+        </div>
 
+        <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm">
+                <p class="text-sm font-bold text-slate-900">
+                    {% trans "1. Admin review" %}
+                </p>
+                <p class="text-sm text-slate-600 mt-1 leading-relaxed">
+                    {% trans "An authorized admin will check the uploaded screenshot and transaction details." %}
+                </p>
             </div>
 
-            <div class="bg-blue-50 border border-blue-100 rounded-2xl p-4 text-sm text-blue-800 leading-relaxed">
-                {% trans "Please do not submit the same payment again unless the admin asks you to resubmit." %}
+            <div class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm">
+                <p class="text-sm font-bold text-slate-900">
+                    {% trans "2. Verification" %}
+                </p>
+                <p class="text-sm text-slate-600 mt-1 leading-relaxed">
+                    {% trans "If the payment is valid, your membership payment status will be marked as completed." %}
+                </p>
             </div>
 
-            <div class="flex flex-col sm:flex-row gap-3 pt-2">
-                <a href="{% url 'index' %}"
-                   class="flex-1 bg-blue-600 hover:bg-blue-700 text-white font-bold text-sm py-3 rounded-xl transition-all no-underline">
-                    🏠 {% trans "Back to Homepage" %}
-                </a>
-
-                <a href="{% url 'payments:manual_payment' payment.membership.id %}"
-                   class="flex-1 bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold text-sm py-3 rounded-xl border border-slate-200 transition-all no-underline">
-                    📲 {% trans "View Payment Page" %}
-                </a>
+            <div class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm">
+                <p class="text-sm font-bold text-slate-900">
+                    {% trans "3. Membership update" %}
+                </p>
+                <p class="text-sm text-slate-600 mt-1 leading-relaxed">
+                    {% trans "Your membership record will be approved or updated after confirmation." %}
+                </p>
             </div>
+        </div>
 
+        <div class="mt-6 bg-blue-50 border border-blue-100 rounded-2xl p-5 text-sm text-blue-900 leading-relaxed">
+            <strong>{% trans "Important:" %}</strong>
+            {% trans "Please do not submit the same payment again unless the admin asks you to resubmit. Duplicate submissions may delay verification." %}
+        </div>
+
+        <div class="mt-8 flex flex-col sm:flex-row gap-3">
+            <a href="{% url 'index' %}"
+               class="flex-1 inline-flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white font-bold text-sm px-6 py-3.5 rounded-xl transition-all no-underline shadow-sm">
+                🏠 {% trans "Back to Homepage" %}
+            </a>
+
+            <a href="{% url 'payments:manual_payment' payment.membership.id %}"
+               class="flex-1 inline-flex items-center justify-center bg-white hover:bg-slate-50 text-slate-800 font-bold text-sm px-6 py-3.5 rounded-xl border border-slate-200 transition-all no-underline shadow-sm">
+                📲 {% trans "View Payment Page" %}
+            </a>
         </div>
     </div>
-
-</body>
-</html>
+</section>
+{% endblock %}

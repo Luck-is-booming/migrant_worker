@@ -3,29 +3,34 @@
 
 {% block content %}
 
-<section class="bg-gradient-to-br from-slate-900 via-blue-950 to-indigo-950 text-white py-20 border-b border-slate-800">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="max-w-3xl space-y-5">
-            <span class="inline-flex items-center gap-1.5 bg-blue-500/10 text-blue-300 text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full border border-blue-500/20">
-                👥 {% translate "Official Member Directory" %}
+<section class="relative overflow-hidden bg-slate-950 text-white border-b border-white/10">
+    <div class="absolute inset-0 bg-gradient-to-br from-slate-950 via-blue-950 to-indigo-950"></div>
+    <div class="absolute -top-32 -right-32 h-96 w-96 rounded-full bg-blue-500/20 blur-3xl"></div>
+    <div class="absolute -bottom-40 -left-32 h-96 w-96 rounded-full bg-indigo-500/20 blur-3xl"></div>
+
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-24">
+        <div class="max-w-4xl">
+            <span class="inline-flex items-center gap-2 rounded-full border border-blue-300/20 bg-blue-400/10 px-4 py-2 text-xs font-extrabold uppercase tracking-[0.22em] text-blue-200 shadow-sm">
+                <span>👥</span>
+                {% translate "Official Member Directory" %}
             </span>
 
-            <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight">
+            <h1 class="mt-6 text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white">
                 {% translate "Organization Members" %}
             </h1>
 
-            <p class="text-slate-300 text-lg leading-relaxed">
-                {% translate "Search and view verified members with separate district and municipality registry numbers." %}
+            <p class="mt-5 max-w-2xl text-base sm:text-lg leading-8 text-slate-300">
+                {% translate "Search verified organization members by name, registry, member number, membership type, status, address, and designation." %}
             </p>
 
-            <div class="flex flex-wrap gap-3 pt-2">
+            <div class="mt-8 flex flex-col sm:flex-row gap-3">
                 <a href="{% url 'index' %}"
-                   class="bg-white/10 hover:bg-white/20 text-white font-bold text-sm px-5 py-3 rounded-xl border border-white/10 no-underline transition-all">
+                   class="inline-flex items-center justify-center rounded-2xl border border-white/10 bg-white/10 px-5 py-3 text-sm font-bold text-white no-underline shadow-sm backdrop-blur transition-all duration-200 hover:-translate-y-0.5 hover:bg-white/15 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-300">
                     ← {% translate "Back to Home" %}
                 </a>
 
                 <a href="{% url 'index' %}#membership"
-                   class="bg-blue-600 hover:bg-blue-700 text-white font-bold text-sm px-5 py-3 rounded-xl no-underline transition-all">
+                   class="inline-flex items-center justify-center rounded-2xl bg-blue-600 px-5 py-3 text-sm font-bold text-white no-underline shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:bg-blue-500 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-300">
                     📝 {% translate "Apply for Membership" %}
                 </a>
             </div>
@@ -33,29 +38,41 @@
     </div>
 </section>
 
-<section class="py-12 bg-slate-50 border-b border-slate-200">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<section class="bg-slate-50 border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-10">
 
-        <form method="GET" class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+        <form method="GET"
+              aria-label="{% translate 'Search members' %}"
+              class="rounded-3xl border border-slate-200 bg-white p-5 sm:p-6 shadow-sm">
 
-                <div class="md:col-span-2">
-                    <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-2">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-4">
+
+                <div class="lg:col-span-5">
+                    <label for="member-search" class="block text-xs font-black uppercase tracking-[0.18em] text-slate-500 mb-2">
                         {% translate "Search Member" %}
                     </label>
-                    <input type="text"
-                           name="q"
-                           value="{{ q }}"
-                           placeholder="{% translate 'Search by name, member no., address, designation...' %}"
-                           class="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none">
+
+                    <div class="relative">
+                        <span class="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-slate-400">
+                            🔎
+                        </span>
+                        <input id="member-search"
+                               type="text"
+                               name="q"
+                               value="{{ q }}"
+                               placeholder="{% translate 'Name, member no., address, designation...' %}"
+                               class="w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3.5 pl-11 text-sm text-slate-900 outline-none transition-all duration-200 placeholder:text-slate-400 hover:bg-white focus:border-blue-500 focus:bg-white focus:ring-4 focus:ring-blue-500/10">
+                    </div>
                 </div>
 
-                <div>
-                    <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-2">
-                        {% translate "Select Registry" %}
+                <div class="lg:col-span-3">
+                    <label for="member-unit" class="block text-xs font-black uppercase tracking-[0.18em] text-slate-500 mb-2">
+                        {% translate "Registry" %}
                     </label>
-                    <select name="unit"
-                            class="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none bg-white">
+
+                    <select id="member-unit"
+                            name="unit"
+                            class="w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3.5 text-sm text-slate-900 outline-none transition-all duration-200 hover:bg-white focus:border-blue-500 focus:bg-white focus:ring-4 focus:ring-blue-500/10">
                         <option value="">{% translate "All Registries" %}</option>
 
                         <option value="Ilam District" {% if unit_name == "Ilam District" %}selected{% endif %}>
@@ -68,12 +85,14 @@
                     </select>
                 </div>
 
-                <div>
-                    <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-2">
-                        {% translate "Membership Type" %}
+                <div class="lg:col-span-2">
+                    <label for="member-type" class="block text-xs font-black uppercase tracking-[0.18em] text-slate-500 mb-2">
+                        {% translate "Type" %}
                     </label>
-                    <select name="type"
-                            class="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none bg-white">
+
+                    <select id="member-type"
+                            name="type"
+                            class="w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3.5 text-sm text-slate-900 outline-none transition-all duration-200 hover:bg-white focus:border-blue-500 focus:bg-white focus:ring-4 focus:ring-blue-500/10">
                         <option value="">{% translate "All Types" %}</option>
 
                         <option value="life" {% if membership_type == "life" %}selected{% endif %}>
@@ -85,16 +104,15 @@
                         </option>
                     </select>
                 </div>
-            </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mt-4">
-
-                <div>
-                    <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 mb-2">
+                <div class="lg:col-span-2">
+                    <label for="member-status" class="block text-xs font-black uppercase tracking-[0.18em] text-slate-500 mb-2">
                         {% translate "Status" %}
                     </label>
-                    <select name="status"
-                            class="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none bg-white">
+
+                    <select id="member-status"
+                            name="status"
+                            class="w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3.5 text-sm text-slate-900 outline-none transition-all duration-200 hover:bg-white focus:border-blue-500 focus:bg-white focus:ring-4 focus:ring-blue-500/10">
                         <option value="">{% translate "All Status" %}</option>
 
                         <option value="active" {% if status == "active" %}selected{% endif %}>
@@ -110,15 +128,43 @@
                         </option>
                     </select>
                 </div>
+            </div>
 
-                <div class="md:col-span-3 flex items-end gap-2">
+            <div class="mt-5 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+                <div class="flex flex-wrap gap-2 text-xs">
+                    {% if q %}
+                    <span class="inline-flex items-center rounded-full border border-blue-100 bg-blue-50 px-3 py-1.5 font-bold text-blue-700">
+                        {% translate "Search" %}: {{ q }}
+                    </span>
+                    {% endif %}
+
+                    {% if unit_name %}
+                    <span class="inline-flex items-center rounded-full border border-indigo-100 bg-indigo-50 px-3 py-1.5 font-bold text-indigo-700">
+                        {% translate "Registry" %}: {{ unit_name }}
+                    </span>
+                    {% endif %}
+
+                    {% if membership_type %}
+                    <span class="inline-flex items-center rounded-full border border-amber-100 bg-amber-50 px-3 py-1.5 font-bold text-amber-700">
+                        {% translate "Type" %}: {{ membership_type|title }}
+                    </span>
+                    {% endif %}
+
+                    {% if status %}
+                    <span class="inline-flex items-center rounded-full border border-emerald-100 bg-emerald-50 px-3 py-1.5 font-bold text-emerald-700">
+                        {% translate "Status" %}: {{ status|title }}
+                    </span>
+                    {% endif %}
+                </div>
+
+                <div class="flex flex-col sm:flex-row gap-2">
                     <button type="submit"
-                            class="bg-blue-600 hover:bg-blue-700 text-white font-bold text-sm px-6 py-3 rounded-xl transition-all">
+                            class="inline-flex items-center justify-center rounded-2xl bg-blue-600 px-6 py-3 text-sm font-black text-white shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:bg-blue-700 hover:shadow-md focus:outline-none focus:ring-4 focus:ring-blue-500/20">
                         🔎 {% translate "Search" %}
                     </button>
 
                     <a href="{% url 'members:member_list' %}"
-                       class="bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-sm px-6 py-3 rounded-xl border border-slate-200 no-underline transition-all">
+                       class="inline-flex items-center justify-center rounded-2xl border border-slate-200 bg-white px-6 py-3 text-sm font-black text-slate-700 no-underline shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:bg-slate-50 hover:shadow-md focus:outline-none focus:ring-4 focus:ring-slate-300/40">
                         {% translate "Reset" %}
                     </a>
                 </div>
@@ -128,197 +174,278 @@
     </div>
 </section>
 
-<section class="py-16 bg-white">
+<section class="bg-white py-12 lg:py-16">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-8">
+        <div class="mb-8 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
             <div>
-                <h2 class="text-2xl font-bold text-slate-900">
+                <p class="text-xs font-black uppercase tracking-[0.22em] text-blue-600">
+                    {% translate "Directory Results" %}
+                </p>
+
+                <h2 class="mt-2 text-2xl sm:text-3xl font-black tracking-tight text-slate-950">
                     {% translate "Members" %}
                 </h2>
-                <p class="text-sm text-slate-500 mt-1">
-                    {{ page_obj.paginator.count }} {% translate "unmerged member records found" %}
+
+                <p class="mt-2 text-sm text-slate-500">
+                    {% if page_obj.paginator.count %}
+                        {% translate "Showing" %}
+                        {{ page_obj.start_index }}–{{ page_obj.end_index }}
+                        {% translate "of" %}
+                        {{ page_obj.paginator.count }}
+                        {% translate "member records" %}
+                    {% else %}
+                        {% translate "No member records found" %}
+                    {% endif %}
                 </p>
             </div>
 
-            <div class="text-xs text-slate-500 bg-slate-50 border border-slate-200 px-4 py-2 rounded-full">
-                {% translate "Page" %} {{ page_obj.number }} {% translate "of" %} {{ page_obj.paginator.num_pages }}
+            {% if page_obj.paginator.num_pages > 1 %}
+            <div class="inline-flex w-fit items-center rounded-full border border-slate-200 bg-slate-50 px-4 py-2 text-xs font-bold text-slate-600">
+                {% translate "Page" %}
+                <span class="mx-1 text-slate-950">{{ page_obj.number }}</span>
+                {% translate "of" %}
+                <span class="ml-1 text-slate-950">{{ page_obj.paginator.num_pages }}</span>
             </div>
+            {% endif %}
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-3">
 
             {% for member in page_obj %}
-            <div class="bg-white border border-slate-200 rounded-2xl shadow-sm hover:shadow-md transition-all p-6 flex flex-col justify-between">
+            <article class="group relative overflow-hidden rounded-3xl border border-slate-200 bg-white p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-xl">
 
-                <div class="space-y-4">
-                    <div class="flex items-start justify-between gap-4">
-                        <div>
-                            <h3 class="text-lg font-bold text-slate-900 leading-snug">
-                                {{ member.name }}
-                            </h3>
+                <div class="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-blue-600 via-indigo-500 to-sky-400 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
 
-                            {% if member.designation %}
-                            <p class="text-xs font-semibold uppercase tracking-wider text-blue-600 mt-1">
-                                {{ member.designation }}
-                            </p>
-                            {% endif %}
-                        </div>
+                <div class="flex items-start justify-between gap-4">
+                    <div class="min-w-0">
+                        <h3 class="text-lg font-black leading-snug text-slate-950">
+                            {% firstof member.name "Unnamed Member" %}
+                        </h3>
 
-                        {% if member.status == "active" %}
-                            <span class="shrink-0 bg-emerald-50 text-emerald-700 text-[10px] font-extrabold uppercase px-2.5 py-1 rounded-full border border-emerald-100">
-                                {% translate "Active" %}
-                            </span>
-                        {% elif member.status == "expired" %}
-                            <span class="shrink-0 bg-rose-50 text-rose-700 text-[10px] font-extrabold uppercase px-2.5 py-1 rounded-full border border-rose-100">
-                                {% translate "Expired" %}
-                            </span>
-                        {% else %}
-                            <span class="shrink-0 bg-slate-50 text-slate-600 text-[10px] font-extrabold uppercase px-2.5 py-1 rounded-full border border-slate-100">
-                                {% translate "Unknown" %}
-                            </span>
+                        {% if member.designation %}
+                        <p class="mt-1 text-xs font-black uppercase tracking-[0.16em] text-blue-600">
+                            {{ member.designation }}
+                        </p>
                         {% endif %}
                     </div>
 
-                    <div class="flex flex-wrap gap-2">
+                    {% if member.status == "active" %}
+                    <span class="shrink-0 rounded-full border border-emerald-100 bg-emerald-50 px-3 py-1 text-[10px] font-black uppercase tracking-wider text-emerald-700">
+                        {% translate "Active" %}
+                    </span>
+                    {% elif member.status == "expired" %}
+                    <span class="shrink-0 rounded-full border border-rose-100 bg-rose-50 px-3 py-1 text-[10px] font-black uppercase tracking-wider text-rose-700">
+                        {% translate "Expired" %}
+                    </span>
+                    {% else %}
+                    <span class="shrink-0 rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-[10px] font-black uppercase tracking-wider text-slate-600">
+                        {% translate "Unknown" %}
+                    </span>
+                    {% endif %}
+                </div>
+
+                <div class="mt-4 flex flex-wrap gap-2">
+                    {% if member.unit_name == "Ilam District" %}
+                    <span class="inline-flex items-center gap-1 rounded-full border border-indigo-100 bg-indigo-50 px-3 py-1.5 text-[10px] font-black uppercase tracking-wider text-indigo-700">
+                        🏢 {% translate "District Committee" %}
+                    </span>
+                    {% elif member.unit_name == "Ilam Municipality" %}
+                    <span class="inline-flex items-center gap-1 rounded-full border border-blue-100 bg-blue-50 px-3 py-1.5 text-[10px] font-black uppercase tracking-wider text-blue-700">
+                        🏘️ {% translate "Ilam Municipality Committee" %}
+                    </span>
+                    {% else %}
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-3 py-1.5 text-[10px] font-black uppercase tracking-wider text-slate-600">
+                        {% translate "Committee" %}
+                    </span>
+                    {% endif %}
+
+                    {% if member.membership_type == "life" %}
+                    <span class="inline-flex items-center gap-1 rounded-full border border-amber-100 bg-amber-50 px-3 py-1.5 text-[10px] font-black uppercase tracking-wider text-amber-700">
+                        ⭐ {% translate "Life Member" %}
+                    </span>
+                    {% else %}
+                    <span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-3 py-1.5 text-[10px] font-black uppercase tracking-wider text-slate-700">
+                        {% translate "General Member" %}
+                    </span>
+                    {% endif %}
+                </div>
+
+                {% if member.membership_number %}
+                <div class="mt-5 rounded-2xl border border-slate-200 bg-gradient-to-br from-slate-50 to-white p-4">
+                    <p class="text-[10px] font-black uppercase tracking-[0.2em] text-slate-500">
                         {% if member.unit_name == "Ilam District" %}
-                            <span class="inline-flex items-center bg-indigo-50 text-indigo-700 text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-1 rounded-full border border-indigo-100">
-                                🏢 {% translate "District Committee" %}
-                            </span>
+                            {% translate "District Member No." %}
                         {% elif member.unit_name == "Ilam Municipality" %}
-                            <span class="inline-flex items-center bg-blue-50 text-blue-700 text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-1 rounded-full border border-blue-100">
-                                🏘️ {% translate "Ilam Municipality Committee" %}
-                            </span>
+                            {% translate "Ilam Municipality Member No." %}
                         {% else %}
-                            <span class="inline-flex items-center bg-slate-50 text-slate-600 text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-1 rounded-full border border-slate-100">
-                                {% translate "Committee" %}
-                            </span>
+                            {% translate "Member No." %}
                         {% endif %}
+                    </p>
 
-                        {% if member.membership_type == "life" %}
-                            <span class="inline-flex items-center bg-amber-50 text-amber-700 text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-1 rounded-full border border-amber-100">
-                                ⭐ {% translate "Life Member" %}
-                            </span>
-                        {% else %}
-                            <span class="inline-flex items-center bg-slate-50 text-slate-700 text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-1 rounded-full border border-slate-100">
-                                {% translate "General Member" %}
-                            </span>
-                        {% endif %}
+                    <p class="mt-2 text-3xl font-black tracking-tight text-slate-950">
+                        {{ member.membership_number }}
+                    </p>
+                </div>
+                {% endif %}
+
+                <dl class="mt-5 space-y-3 text-sm">
+                    {% if member.unit_name %}
+                    <div class="flex gap-3">
+                        <dt class="w-24 shrink-0 font-black text-slate-800">
+                            {% translate "Registry" %}
+                        </dt>
+                        <dd class="min-w-0 text-slate-600">
+                            {{ member.unit_name }}
+                        </dd>
+                    </div>
+                    {% endif %}
+
+                    {% if member.level %}
+                    <div class="flex gap-3">
+                        <dt class="w-24 shrink-0 font-black text-slate-800">
+                            {% translate "Level" %}
+                        </dt>
+                        <dd class="min-w-0 text-slate-600">
+                            {{ member.get_level_display }}
+                        </dd>
+                    </div>
+                    {% endif %}
+
+                    <div class="flex gap-3">
+                        <dt class="w-24 shrink-0 font-black text-slate-800">
+                            {% translate "Type" %}
+                        </dt>
+                        <dd class="min-w-0 text-slate-600">
+                            {{ member.get_membership_type_display }}
+                        </dd>
                     </div>
 
-                    <div class="space-y-2 text-sm text-slate-600">
-
-                        {% if member.membership_number %}
-                        <div class="rounded-xl bg-slate-50 border border-slate-200 p-3">
-                            <p class="text-[10px] font-extrabold uppercase tracking-widest text-slate-500 mb-1">
-                                {% if member.unit_name == "Ilam District" %}
-                                    {% translate "District Member No." %}
-                                {% elif member.unit_name == "Ilam Municipality" %}
-                                    {% translate "Ilam Municipality Member No." %}
-                                {% else %}
-                                    {% translate "Member No." %}
-                                {% endif %}
-                            </p>
-                            <p class="text-2xl font-extrabold text-slate-900 leading-none">
-                                {{ member.membership_number }}
-                            </p>
-                        </div>
-                        {% endif %}
-
-                        {% if member.unit_name %}
-                        <p>
-                            <span class="font-bold text-slate-800">{% translate "Registry" %}:</span>
-                            {{ member.unit_name }}
-                        </p>
-                        {% endif %}
-
-                        {% if member.level %}
-                        <p>
-                            <span class="font-bold text-slate-800">{% translate "Level" %}:</span>
-                            {{ member.get_level_display }}
-                        </p>
-                        {% endif %}
-
-                        <p>
-                            <span class="font-bold text-slate-800">{% translate "Type" %}:</span>
-                            {{ member.get_membership_type_display }}
-                        </p>
-
-                        {% if member.address %}
-                        <p>
-                            <span class="font-bold text-slate-800">{% translate "Address" %}:</span>
+                    {% if member.address %}
+                    <div class="flex gap-3">
+                        <dt class="w-24 shrink-0 font-black text-slate-800">
+                            {% translate "Address" %}
+                        </dt>
+                        <dd class="min-w-0 text-slate-600">
                             {{ member.address }}
-                        </p>
-                        {% endif %}
+                        </dd>
+                    </div>
+                    {% endif %}
 
-                        {% if member.destination_country %}
-                        <p>
-                            <span class="font-bold text-slate-800">{% translate "Country" %}:</span>
+                    {% if member.destination_country %}
+                    <div class="flex gap-3">
+                        <dt class="w-24 shrink-0 font-black text-slate-800">
+                            {% translate "Country" %}
+                        </dt>
+                        <dd class="min-w-0 text-slate-600">
                             {{ member.destination_country }}
-                        </p>
-                        {% endif %}
+                        </dd>
+                    </div>
+                    {% endif %}
 
-                        {% if member.show_phone_publicly and member.phone %}
-                        <p>
-                            <span class="font-bold text-slate-800">{% translate "Phone" %}:</span>
-                            <a href="tel:{{ member.phone }}" class="text-blue-600 hover:text-blue-700 font-medium">
+                    {% if member.show_phone_publicly and member.phone %}
+                    <div class="flex gap-3">
+                        <dt class="w-24 shrink-0 font-black text-slate-800">
+                            {% translate "Phone" %}
+                        </dt>
+                        <dd class="min-w-0">
+                            <a href="tel:{{ member.phone|cut:' ' }}"
+                               class="font-bold text-blue-600 no-underline transition-colors hover:text-blue-800">
                                 {{ member.phone }}
                             </a>
-                        </p>
-                        {% endif %}
+                        </dd>
                     </div>
-                </div>
-            </div>
+                    {% endif %}
+                </dl>
+            </article>
 
             {% empty %}
-            <div class="col-span-full text-center py-16 bg-slate-50 border-2 border-dashed border-slate-200 rounded-2xl">
-                <p class="text-4xl mb-3">📭</p>
-                <h3 class="text-lg font-bold text-slate-900">
-                    {% translate "No members found" %}
-                </h3>
-                <p class="text-sm text-slate-500 mt-1">
-                    {% translate "Try changing your search or filter options." %}
-                </p>
+            <div class="col-span-full">
+                <div class="rounded-3xl border-2 border-dashed border-slate-200 bg-slate-50 px-6 py-16 text-center">
+                    <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-white text-3xl shadow-sm">
+                        📭
+                    </div>
+
+                    <h3 class="mt-5 text-xl font-black text-slate-950">
+                        {% translate "No members found" %}
+                    </h3>
+
+                    <p class="mx-auto mt-2 max-w-md text-sm leading-6 text-slate-500">
+                        {% translate "Try changing your search keyword, registry, membership type, or status filter." %}
+                    </p>
+
+                    <a href="{% url 'members:member_list' %}"
+                       class="mt-6 inline-flex items-center justify-center rounded-2xl bg-blue-600 px-5 py-3 text-sm font-black text-white no-underline shadow-sm transition-all duration-200 hover:bg-blue-700">
+                        {% translate "Reset Filters" %}
+                    </a>
+                </div>
             </div>
             {% endfor %}
 
         </div>
 
         {% if page_obj.paginator.num_pages > 1 %}
-        <div class="mt-12 flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-slate-100 pt-8">
+        <nav class="mt-12 border-t border-slate-100 pt-8" aria-label="{% translate 'Members pagination' %}">
+            <div class="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
 
-            <div class="text-sm text-slate-500">
-                {% translate "Showing page" %} {{ page_obj.number }} {% translate "of" %} {{ page_obj.paginator.num_pages }}
+                <p class="text-center text-sm text-slate-500 lg:text-left">
+                    {% translate "Showing page" %}
+                    <span class="font-black text-slate-950">{{ page_obj.number }}</span>
+                    {% translate "of" %}
+                    <span class="font-black text-slate-950">{{ page_obj.paginator.num_pages }}</span>
+                </p>
+
+                <div class="flex flex-wrap items-center justify-center gap-2">
+
+                    {% if page_obj.has_previous %}
+                    <a href="?page=1&q={{ q|urlencode }}&unit={{ unit_name|urlencode }}&type={{ membership_type|urlencode }}&status={{ status|urlencode }}"
+                       class="rounded-xl border border-slate-200 bg-white px-4 py-2 text-sm font-black text-slate-700 no-underline shadow-sm transition-all duration-200 hover:bg-slate-50 hover:shadow-md">
+                        {% translate "First" %}
+                    </a>
+
+                    <a href="?page={{ page_obj.previous_page_number }}&q={{ q|urlencode }}&unit={{ unit_name|urlencode }}&type={{ membership_type|urlencode }}&status={{ status|urlencode }}"
+                       class="rounded-xl border border-slate-200 bg-white px-4 py-2 text-sm font-black text-slate-700 no-underline shadow-sm transition-all duration-200 hover:bg-slate-50 hover:shadow-md">
+                        ← {% translate "Previous" %}
+                    </a>
+                    {% else %}
+                    <span class="cursor-not-allowed rounded-xl border border-slate-100 bg-slate-50 px-4 py-2 text-sm font-black text-slate-300">
+                        ← {% translate "Previous" %}
+                    </span>
+                    {% endif %}
+
+                    {% for num in page_obj.paginator.page_range %}
+                        {% if num == page_obj.number %}
+                        <span aria-current="page"
+                              class="rounded-xl bg-blue-600 px-4 py-2 text-sm font-black text-white shadow-sm">
+                            {{ num }}
+                        </span>
+                        {% elif num > page_obj.number|add:"-3" and num < page_obj.number|add:"3" %}
+                        <a href="?page={{ num }}&q={{ q|urlencode }}&unit={{ unit_name|urlencode }}&type={{ membership_type|urlencode }}&status={{ status|urlencode }}"
+                           class="rounded-xl border border-slate-200 bg-white px-4 py-2 text-sm font-black text-slate-700 no-underline shadow-sm transition-all duration-200 hover:bg-slate-50 hover:shadow-md">
+                            {{ num }}
+                        </a>
+                        {% endif %}
+                    {% endfor %}
+
+                    {% if page_obj.has_next %}
+                    <a href="?page={{ page_obj.next_page_number }}&q={{ q|urlencode }}&unit={{ unit_name|urlencode }}&type={{ membership_type|urlencode }}&status={{ status|urlencode }}"
+                       class="rounded-xl border border-slate-200 bg-white px-4 py-2 text-sm font-black text-slate-700 no-underline shadow-sm transition-all duration-200 hover:bg-slate-50 hover:shadow-md">
+                        {% translate "Next" %} →
+                    </a>
+
+                    <a href="?page={{ page_obj.paginator.num_pages }}&q={{ q|urlencode }}&unit={{ unit_name|urlencode }}&type={{ membership_type|urlencode }}&status={{ status|urlencode }}"
+                       class="rounded-xl border border-slate-200 bg-white px-4 py-2 text-sm font-black text-slate-700 no-underline shadow-sm transition-all duration-200 hover:bg-slate-50 hover:shadow-md">
+                        {% translate "Last" %}
+                    </a>
+                    {% else %}
+                    <span class="cursor-not-allowed rounded-xl border border-slate-100 bg-slate-50 px-4 py-2 text-sm font-black text-slate-300">
+                        {% translate "Next" %} →
+                    </span>
+                    {% endif %}
+
+                </div>
             </div>
-
-            <div class="flex flex-wrap items-center justify-center gap-2">
-
-                {% if page_obj.has_previous %}
-                <a href="?page=1&q={{ q|urlencode }}&unit={{ unit_name|urlencode }}&type={{ membership_type }}&status={{ status }}"
-                   class="px-4 py-2 text-sm font-bold rounded-lg border border-slate-200 bg-white hover:bg-slate-50 text-slate-700 no-underline">
-                    {% translate "First" %}
-                </a>
-
-                <a href="?page={{ page_obj.previous_page_number }}&q={{ q|urlencode }}&unit={{ unit_name|urlencode }}&type={{ membership_type }}&status={{ status }}"
-                   class="px-4 py-2 text-sm font-bold rounded-lg border border-slate-200 bg-white hover:bg-slate-50 text-slate-700 no-underline">
-                    ← {% translate "Previous" %}
-                </a>
-                {% endif %}
-
-                {% if page_obj.has_next %}
-                <a href="?page={{ page_obj.next_page_number }}&q={{ q|urlencode }}&unit={{ unit_name|urlencode }}&type={{ membership_type }}&status={{ status }}"
-                   class="px-4 py-2 text-sm font-bold rounded-lg border border-slate-200 bg-white hover:bg-slate-50 text-slate-700 no-underline">
-                    {% translate "Next" %} →
-                </a>
-
-                <a href="?page={{ page_obj.paginator.num_pages }}&q={{ q|urlencode }}&unit={{ unit_name|urlencode }}&type={{ membership_type }}&status={{ status }}"
-                   class="px-4 py-2 text-sm font-bold rounded-lg border border-slate-200 bg-white hover:bg-slate-50 text-slate-700 no-underline">
-                    {% translate "Last" %}
-                </a>
-                {% endif %}
-
-            </div>
-        </div>
+        </nav>
         {% endif %}
 
     </div>
