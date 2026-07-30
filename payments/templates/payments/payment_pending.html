@@ -7,25 +7,28 @@
 {% trans "Your MRN Ilam membership payment proof has been submitted and is waiting for admin verification." %}
 {% endblock %}
 
+{% block robots_meta %}<meta name="robots" content="noindex, nofollow">{% endblock %}
+
 {% block content %}
 <section class="bg-gradient-to-br from-amber-50 via-white to-blue-50 py-16 sm:py-20 border-b border-slate-100">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center space-y-4">
-            <div class="w-20 h-20 mx-auto rounded-full bg-amber-100 border border-amber-200 flex items-center justify-center text-4xl shadow-sm" aria-hidden="true">
-                ⏳
-            </div>
-
-            <span class="inline-flex items-center gap-2 bg-amber-100 text-amber-800 text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full border border-amber-200">
-                {% trans "Verification Pending" %}
-            </span>
-
-            <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900">
-                {% trans "Payment proof submitted successfully" %}
-            </h1>
-
-            <p class="text-base text-slate-700 leading-relaxed max-w-2xl mx-auto">
-                {% trans "Thank you. Your payment proof has been received and is now waiting for admin verification. Your membership will be updated after the payment is confirmed." %}
-            </p>
+            {% if payment.status == "approved" %}
+                <div class="w-20 h-20 mx-auto rounded-full bg-emerald-100 border border-emerald-200 flex items-center justify-center text-4xl shadow-sm" aria-hidden="true">✅</div>
+                <span class="inline-flex items-center gap-2 bg-emerald-100 text-emerald-800 text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full border border-emerald-200">{% trans "Payment Approved" %}</span>
+                <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900">{% trans "Your membership is active" %}</h1>
+                <p class="text-base text-slate-700 leading-relaxed max-w-2xl mx-auto">{% trans "Your payment was verified and your record has been added to the official member directory." %}</p>
+            {% elif payment.status == "rejected" %}
+                <div class="w-20 h-20 mx-auto rounded-full bg-red-100 border border-red-200 flex items-center justify-center text-4xl shadow-sm" aria-hidden="true">❌</div>
+                <span class="inline-flex items-center gap-2 bg-red-100 text-red-800 text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full border border-red-200">{% trans "Payment Rejected" %}</span>
+                <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900">{% trans "Payment needs attention" %}</h1>
+                <p class="text-base text-slate-700 leading-relaxed max-w-2xl mx-auto">{% trans "The payment proof could not be approved. Review any administrator note and submit a corrected proof." %}</p>
+            {% else %}
+                <div class="w-20 h-20 mx-auto rounded-full bg-amber-100 border border-amber-200 flex items-center justify-center text-4xl shadow-sm" aria-hidden="true">⏳</div>
+                <span class="inline-flex items-center gap-2 bg-amber-100 text-amber-800 text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full border border-amber-200">{% trans "Verification Pending" %}</span>
+                <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900">{% trans "Payment proof submitted successfully" %}</h1>
+                <p class="text-base text-slate-700 leading-relaxed max-w-2xl mx-auto">{% trans "Thank you. Your payment proof has been received and is now waiting for admin verification. Your membership will be updated after the payment is confirmed." %}</p>
+            {% endif %}
         </div>
     </div>
 </section>
@@ -88,8 +91,11 @@
                         {% trans "Current Status" %}
                     </dt>
                     <dd class="sm:text-right">
-                        <span class="inline-flex items-center gap-1.5 bg-amber-100 text-amber-800 text-xs font-extrabold uppercase tracking-wide px-3 py-1.5 rounded-full border border-amber-200">
-                            ⏳ {{ payment.get_status_display }}
+                        <span class="inline-flex items-center gap-1.5 text-xs font-extrabold uppercase tracking-wide px-3 py-1.5 rounded-full border
+                            {% if payment.status == 'approved' %}bg-emerald-100 text-emerald-800 border-emerald-200
+                            {% elif payment.status == 'rejected' %}bg-red-100 text-red-800 border-red-200
+                            {% else %}bg-amber-100 text-amber-800 border-amber-200{% endif %}">
+                            {{ payment.get_status_display }}
                         </span>
                     </dd>
                 </div>
@@ -125,6 +131,12 @@
             </div>
         </div>
 
+        {% if payment.admin_note %}
+        <div class="mt-6 bg-slate-100 border border-slate-200 rounded-2xl p-5 text-sm text-slate-800 leading-relaxed">
+            <strong>{% trans "Administrator note:" %}</strong> {{ payment.admin_note }}
+        </div>
+        {% endif %}
+
         <div class="mt-6 bg-blue-50 border border-blue-100 rounded-2xl p-5 text-sm text-blue-900 leading-relaxed">
             <strong>{% trans "Important:" %}</strong>
             {% trans "Please do not submit the same payment again unless the admin asks you to resubmit. Duplicate submissions may delay verification." %}
@@ -136,7 +148,7 @@
                 🏠 {% trans "Back to Homepage" %}
             </a>
 
-            <a href="{% url 'payments:manual_payment' payment.membership.id %}"
+            <a href="{% url 'payments:manual_payment' membership_token %}"
                class="flex-1 inline-flex items-center justify-center bg-white hover:bg-slate-50 text-slate-800 font-bold text-sm px-6 py-3.5 rounded-xl border border-slate-200 transition-all no-underline shadow-sm">
                 📲 {% trans "View Payment Page" %}
             </a>

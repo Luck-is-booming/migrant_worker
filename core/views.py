@@ -1,23 +1,14 @@
 from django.contrib import messages
-from django.contrib.auth.models import User
-from django.http import HttpResponse
 from django.shortcuts import redirect, render
+from django.urls import reverse
 from django.utils.translation import gettext as _
 from django.views.decorators.http import require_http_methods
 
+from payments.tokens import make_membership_token
+
 from .forms import ContactMessageForm, MembershipForm
 from .homepage import build_homepage_context
-
-
-def create_admin_view(request):
-    username = "admin"
-    password = "admin"
-    email = "kheshahang44668800@gmail.com"
-
-    if not User.objects.filter(username=username).exists():
-        User.objects.create_superuser(username, email, password)
-        return HttpResponse(f"Admin '{username}' created successfully!")
-    return HttpResponse("Admin already exists.")
+from .notifications import notify_contact_message, notify_membership_application
 
 
 @require_http_methods(["GET", "POST"])
@@ -35,16 +26,22 @@ def index_view(request):
                 saved_membership.is_approved = False
                 saved_membership.save()
 
-                return redirect(
+                token = make_membership_token(saved_membership.id)
+                payment_path = reverse(
                     "payments:manual_payment",
-                    membership_id=saved_membership.id
+                    kwargs={"token": token},
                 )
+                payment_url = request.build_absolute_uri(payment_path)
+                notify_membership_application(saved_membership, payment_url)
+
+                return redirect("payments:manual_payment", token=token)
 
         elif "contact_submit" in request.POST:
             contact_form = ContactMessageForm(request.POST)
 
             if contact_form.is_valid():
-                contact_form.save()
+                contact = contact_form.save()
+                notify_contact_message(contact)
                 messages.success(request, _("Your message has been received."))
                 return redirect("index")
 

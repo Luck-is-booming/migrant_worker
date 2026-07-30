@@ -74,14 +74,11 @@
                             name="unit"
                             class="w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3.5 text-sm text-slate-900 outline-none transition-all duration-200 hover:bg-white focus:border-blue-500 focus:bg-white focus:ring-4 focus:ring-blue-500/10">
                         <option value="">{% translate "All Registries" %}</option>
-
-                        <option value="Ilam District" {% if unit_name == "Ilam District" %}selected{% endif %}>
-                            {% translate "District Committee" %}
-                        </option>
-
-                        <option value="Ilam Municipality" {% if unit_name == "Ilam Municipality" %}selected{% endif %}>
-                            {% translate "Ilam Municipality Committee" %}
-                        </option>
+                        {% for unit in unit_options %}
+                            <option value="{{ unit }}" {% if unit_name == unit %}selected{% endif %}>
+                                {{ unit }}
+                            </option>
+                        {% endfor %}
                     </select>
                 </div>
 

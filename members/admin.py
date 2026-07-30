@@ -6,6 +6,7 @@ from .models import Member
 @admin.register(Member)
 class MemberAdmin(admin.ModelAdmin):
     list_display = (
+        "source_membership",
         "level",
         "unit_name",
         "membership_type",
@@ -47,7 +48,10 @@ class MemberAdmin(admin.ModelAdmin):
         "sort_order",
         "name_ne",
     )
+    readonly_fields = ("source_membership",)
+
     fields = (
+        "source_membership",
         "name_ne",
         "name_en",
         "membership_number",

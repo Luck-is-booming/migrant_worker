@@ -1,4 +1,5 @@
 import os
+import sys
 from pathlib import Path
 
 import dj_database_url
@@ -33,6 +34,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "django.contrib.sitemaps",
+    "anymail",
 
     "cloudinary_storage",
     "cloudinary",
@@ -77,12 +79,14 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "migrantcenter.wsgi.application"
 
-
 # Database
-if os.getenv("DATABASE_URL"):
+DATABASE_URL = os.getenv("DATABASE_URL")
+USE_SQLITE = os.getenv("USE_SQLITE", "False") == "True"
+
+if DATABASE_URL and not USE_SQLITE:
     DATABASES = {
         "default": dj_database_url.config(
-            default=os.getenv("DATABASE_URL"),
+            default=DATABASE_URL,
             conn_max_age=600,
             ssl_require=True,
         )
@@ -94,7 +98,6 @@ else:
             "NAME": BASE_DIR / "db.sqlite3",
         }
     }
-
 
 # Password validation
 AUTH_PASSWORD_VALIDATORS = [
@@ -180,9 +183,33 @@ else:
 
 
 # Email
-EMAIL_BACKEND = "anymail.backends.resend.EmailBackend"
-RESEND_API_KEY = os.getenv("RESEND_API_KEY")
-DEFAULT_FROM_EMAIL = "MWRWPC Portal <onboarding@resend.dev>"
+# In production, set RESEND_API_KEY and use a sender on a verified Resend domain.
+# Without an API key, Django prints emails to the local console instead of failing.
+RESEND_API_KEY = os.getenv("RESEND_API_KEY", "").strip()
+
+ANYMAIL = {
+    "RESEND_API_KEY": RESEND_API_KEY,
+}
+
+EMAIL_BACKEND = (
+    "anymail.backends.resend.EmailBackend"
+    if RESEND_API_KEY
+    else "django.core.mail.backends.console.EmailBackend"
+)
+
+DEFAULT_FROM_EMAIL = os.getenv(
+    "DEFAULT_FROM_EMAIL",
+    "MRN Ilam <onboarding@resend.dev>",
+)
+SERVER_EMAIL = DEFAULT_FROM_EMAIL
+ADMIN_NOTIFICATION_EMAIL = os.getenv(
+    "ADMIN_NOTIFICATION_EMAIL",
+    "info@mrnilam.org.np",
+)
+SITE_URL = os.getenv("SITE_URL", "https://mrnilam.org.np").rstrip("/")
+EMAIL_NOTIFICATIONS_ENABLED = (
+    os.getenv("EMAIL_NOTIFICATIONS_ENABLED", "True").lower() == "true"
+)
 
 
 # Render / HTTPS proxy support
@@ -190,3 +217,26 @@ SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
 
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+# Test environment
+# Tests must never connect to Neon, Cloudinary, or Resend.
+IS_TESTING = "test" in sys.argv
+
+if IS_TESTING:
+    DATABASES = {
+        "default": {
+            "ENGINE": "django.db.backends.sqlite3",
+            "NAME": ":memory:",
+        }
+    }
+
+    STORAGES = {
+        "default": {
+            "BACKEND": "django.core.files.storage.memory.InMemoryStorage",
+        },
+        "staticfiles": {
+            "BACKEND": "django.contrib.staticfiles.storage.StaticFilesStorage",
+        },
+    }
+
+    EMAIL_BACKEND = "django.core.mail.backends.locmem.EmailBackend"
+    EMAIL_NOTIFICATIONS_ENABLED = False

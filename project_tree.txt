@@ -1,0 +1,121 @@
+.
+├── blog
+│   ├── admin.py
+│   ├── apps.py
+│   ├── __init__.py
+│   ├── migrations
+│   │   ├── 0001_initial.py
+│   │   ├── 0002_alter_article_options_article_featured_image_file.py
+│   │   ├── 0003_article_homepage_index.py
+│   │   ├── 0004_rename_blog_articl_is_aler_idx_blog_articl_is_aler_5de6f5_idx.py
+│   │   └── __init__.py
+│   ├── models.py
+│   ├── tests.py
+│   └── views.py
+├── Common
+├── core
+│   ├── admin.py
+│   ├── apps.py
+│   ├── fallbacks.py
+│   ├── forms.py
+│   ├── homepage.py
+│   ├── i18n_utils.py
+│   ├── __init__.py
+│   ├── migrations
+│   │   ├── 0001_initial.py
+│   │   ├── 0002_destinationcountry_resourcepublication_servicecard_and_more.py
+│   │   ├── 0003_teammember.py
+│   │   ├── 0004_membership.py
+│   │   ├── 0005_membership_is_approved.py
+│   │   ├── 0006_alter_membership_membership_type_and_more.py
+│   │   ├── 0007_membership_amount_membership_payment_status_and_more.py
+│   │   ├── 0008_destinationcountry_estimated_cost.py
+│   │   ├── 0009_model_ordering.py
+│   │   ├── 0010_membership_address_membership_designation_and_more.py
+│   │   ├── 0011_organizationinfo_chairperson_photo_and_more.py
+│   │   └── __init__.py
+│   ├── models.py
+│   ├── sitemaps.py
+│   ├── static
+│   │   └── core
+│   │       └── images
+│   │           └── logo.jpeg
+│   ├── tests.py
+│   ├── urls.py
+│   └── views.py
+├── data
+│   └── Mrn District Level exaucative commetee.xlsm
+├── db.sqlite3
+├── Deploying...
+├── .env
+├── Exited
+├── .gitignore
+├── Life Time Member of MRN District.xlsm
+├── locale
+│   └── ne
+│       └── LC_MESSAGES
+│           ├── django.mo
+│           ├── django.po
+│           └── django.po.bak
+├── manage.py
+├── members
+│   ├── admin.py
+│   ├── apps.py
+│   ├── __init__.py
+│   ├── management
+│   │   └── commands
+│   │       ├── fill_english_names.py
+│   │       └── import_members.py
+│   ├── migrations
+│   │   ├── 0001_initial.py
+│   │   ├── 0002_member_unit_name.py
+│   │   ├── 0003_alter_member_options_remove_member_ward_no_and_more.py
+│   │   ├── 0004_remove_member_unique_member_no_per_isolated_member_registry_and_more.py
+│   │   └── __init__.py
+│   ├── models.py
+│   ├── name_utils.py
+│   ├── templates
+│   │   └── members
+│   │       └── member_list.html
+│   ├── tests.py
+│   ├── urls.py
+│   └── views.py
+├── migrantcenter
+│   ├── asgi.py
+│   ├── __init__.py
+│   ├── settings.py
+│   ├── urls.py
+│   └── wsgi.py
+├── MRN Ilam nagar level all Member List.xlsm
+├── payments
+│   ├── admin.py
+│   ├── apps.py
+│   ├── forms.py
+│   ├── __init__.py
+│   ├── migrations
+│   │   ├── 0001_initial.py
+│   │   └── __init__.py
+│   ├── models.py
+│   ├── templates
+│   │   └── payments
+│   │       ├── manual_payment.html
+│   │       ├── manual_payment_optimized.html
+│   │       └── payment_pending.html
+│   ├── tests.py
+│   ├── urls.py
+│   ├── utils.py
+│   └── views.py
+├── project_tree.txt
+├── README.md
+├── requirements.txt
+├── reset_import_members_unmerged.py
+├── Running
+├── static
+│   └── images
+│       └── payment_qr.png
+└── templates
+    └── core
+        ├── base.html
+        └── index.html
+
+27 directories, 92 files

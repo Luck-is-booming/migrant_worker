@@ -9,7 +9,7 @@
     <meta name="description" content="{% block meta_description %}MRN Ilam is a trusted community portal for safe foreign employment support, verified member records, public notices, resources, and membership services in Ilam, Nepal.{% endblock %}">
     <meta name="keywords" content="MRN Ilam, MR Nilam, Migrant Resource Network Ilam, foreign employment support Ilam, safe migration Nepal, migrant worker support Nepal, Ilam member directory">
     <meta name="author" content="MRN Ilam">
-    <meta name="robots" content="index, follow, max-image-preview:large">
+    {% block robots_meta %}<meta name="robots" content="index, follow, max-image-preview:large">{% endblock %}
     <link rel="canonical" href="https://mrnilam.org.np{{ request.path }}">
 
     <meta property="og:title" content="{% block og_title %}MRN Ilam | Safe Foreign Employment Support{% endblock %}">

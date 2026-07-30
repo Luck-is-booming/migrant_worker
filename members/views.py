@@ -63,6 +63,14 @@ def member_list(request):
         "name_ne",
     )
 
+    unit_options = list(
+        Member.objects.filter(is_public=True)
+        .exclude(unit_name="")
+        .order_by("unit_name")
+        .values_list("unit_name", flat=True)
+        .distinct()
+    )
+
     paginator = Paginator(members, 24)
     page_number = request.GET.get("page")
     page_obj = paginator.get_page(page_number)
@@ -73,4 +81,5 @@ def member_list(request):
         "membership_type": membership_type,
         "status": status,
         "unit_name": unit_name,
+        "unit_options": unit_options,
     })

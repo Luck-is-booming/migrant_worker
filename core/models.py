@@ -218,10 +218,12 @@ class Membership(models.Model):
     PAYMENT_STATUS_CHOICES = [
         ('pending', _('Pending')),
         ('completed', _('Completed')),
+        ('rejected', _('Rejected')),
     ]
 
     name = models.CharField(max_length=100)
     name_en = models.CharField(max_length=100, blank=True)
+    email = models.EmailField(blank=True, verbose_name=_("Email address"))
 
     municipality = models.CharField(max_length=50, choices=MUNICIPALITY_CHOICES)
     ward_no = models.PositiveSmallIntegerField(blank=True, null=True)

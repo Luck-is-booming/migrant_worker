@@ -10,6 +10,7 @@ class MembershipForm(forms.ModelForm):
         fields = [
             "name",
             "name_en",
+            "email",
             "municipality",
             "ward_no",
             "address",
@@ -27,6 +28,11 @@ class MembershipForm(forms.ModelForm):
             "name_en": forms.TextInput(attrs={
                 "class": "w-full px-3 py-2.5 rounded-lg border border-slate-200 text-sm",
                 "placeholder": "Name in English, optional",
+            }),
+            "email": forms.EmailInput(attrs={
+                "class": "w-full px-3 py-2.5 rounded-lg border border-slate-200 text-sm",
+                "placeholder": "Email address for status updates, optional",
+                "autocomplete": "email",
             }),
             "municipality": forms.Select(attrs={
                 "class": "w-full px-3 py-2.5 rounded-lg border border-slate-200 text-sm bg-white",

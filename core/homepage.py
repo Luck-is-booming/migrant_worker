@@ -2,6 +2,7 @@ from django.utils import timezone
 from django.utils.translation import get_language
 
 from blog.models import Article
+from members.models import Member
 
 from .fallbacks import (
     get_fallback_articles,
@@ -86,5 +87,6 @@ def build_homepage_context():
         "resources": resources,
         "team_members": team_members,
         "latest_articles": latest_articles,
+        "member_count": Member.objects.filter(is_public=True).count(),
         "current_year": timezone.now().year,
     }

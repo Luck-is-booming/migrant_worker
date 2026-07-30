@@ -234,7 +234,7 @@
                 <div class="bg-slate-50 border border-slate-200 rounded-3xl p-8 shadow-sm">
                     <div class="grid grid-cols-2 gap-5">
                         <div class="bg-white rounded-2xl p-5 border border-slate-100 shadow-sm">
-                            <p class="text-3xl font-extrabold text-blue-700">268+</p>
+                            <p class="text-3xl font-extrabold text-blue-700">{{ member_count }}</p>
                             <p class="text-xs text-slate-600 mt-1 font-semibold">{% translate "Member Records" %}</p>
                         </div>
 
@@ -509,6 +509,13 @@
                 <label for="{{ membership_form.name_en.id_for_label }}" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">{% translate "Name in English" %}</label>
                 {{ membership_form.name_en }}
                 {{ membership_form.name_en.errors }}
+            </div>
+
+            <div>
+                <label for="{{ membership_form.email.id_for_label }}" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">{% translate "Email address" %}</label>
+                {{ membership_form.email }}
+                {{ membership_form.email.errors }}
+                <p class="mt-2 text-xs text-slate-500">{% translate "Optional. Used only for application and payment status updates." %}</p>
             </div>
 
             <div>

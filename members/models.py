@@ -1,11 +1,20 @@
 from django.db import models
-from django.db.models import Max, Q
+from django.db.models import Max
 from django.utils.translation import gettext_lazy as _
 
 from core.i18n_utils import localized
 
 
 class Member(models.Model):
+    source_membership = models.OneToOneField(
+        "core.Membership",
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        related_name="member_record",
+        verbose_name=_("Source membership application"),
+    )
+
     MEMBERSHIP_TYPE_CHOICES = [
         ("life", _("Life Member")),
         ("general", _("General Member")),
