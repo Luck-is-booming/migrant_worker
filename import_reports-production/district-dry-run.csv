@@ -1,0 +1,17 @@
+﻿row_number,status,name,membership_number,category,unit,warnings,error,person_id,membership_id
+4,warning,जिज्ञासा तामाङ गोले,1,life,Ilam District,Unrecognized date format: 2081-03-04T00:00:00,,259,258
+5,warning,टिकाराम वराइली,2,life,Ilam District,Unrecognized date format: 2081-03-04T00:00:00,,260,259
+6,warning,शन्तोस लुइटेल,3,life,Ilam District,Unrecognized date format: 2081-03-04T00:00:00,,261,260
+7,warning,नविन सुन्दर सेर्मा,4,life,Ilam District,Unrecognized date format: 2081-03-04T00:00:00,,262,261
+8,warning,इन्द्र कुमार तामाङ्,5,life,Ilam District,Unrecognized date format: 2081-03-04T00:00:00,,263,262
+9,warning,भावना नेपाल,6,life,Ilam District,Unrecognized date format: 2081-03-04T00:00:00,,264,263
+10,warning,दोर्ण राज योङहाङ,7,life,Ilam District,Unrecognized date format: 2081-03-04T00:00:00,,265,264
+11,warning,टङ्क प्रसाद पराजुली,8,life,Ilam District,Unrecognized date format: 2081-06-11T00:00:00,,266,265
+12,warning,हिमा देवि विश्वकर्मा,9,life,Ilam District,Unrecognized date format: 2081-06-11T00:00:00,,267,266
+13,warning,संगीता बराइली,10,life,Ilam District,Unrecognized date format: 2081-06-11T00:00:00,,268,267
+14,warning,बुदी मान राई,11,life,Ilam District,Unrecognized date format: 2082-10-29T00:00:00,,269,268
+15,warning,रेवती राई,12,life,Ilam District,Unrecognized date format: 2082-09-04T00:00:00 | Phone number is blank; identity was not auto-merged by name alone.,,270,269
+16,warning,गेशव खतीवडा,13,life,Ilam District,Unrecognized date format: 2081-06-10T00:00:00,,271,270
+17,warning,रन्जना लिम्बु,14,life,Ilam District,Unrecognized date format: 2081-06-11T00:00:00,,272,271
+18,warning,ज्योती खड्का,15,life,Ilam District,Unrecognized date format: 2081-06-11T00:00:00,,273,272
+19,warning,लक्ष्मी राई,16,life,Ilam District,Unrecognized date format: 2082-05-18T00:00:00,,274,273

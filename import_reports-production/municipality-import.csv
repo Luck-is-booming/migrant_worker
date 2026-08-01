@@ -1,0 +1,254 @@
+﻿row_number,status,name,membership_number,category,unit,warnings,error,person_id,membership_id
+4,imported,नविन सुनदर सेर्मा रकम,1,life,Ilam Municipality,,,530,1181
+5,imported,टिका माया कटुवाल,7,life,Ilam Municipality,,,1176,1182
+6,imported,तोयानाथ गुरुङ्,17,life,Ilam Municipality,,,1177,1183
+7,imported,धन वहादुर कट्टुवाल,18,life,Ilam Municipality,,,1178,1184
+8,imported,विपेन राइ,19,life,Ilam Municipality,,,1179,1185
+9,imported,दिल श्वरी कटुवाल,20,life,Ilam Municipality,,,1180,1186
+10,imported,गोमा देवी कटुवाल,21,life,Ilam Municipality,,,1181,1187
+11,imported,तेज कुमारी सुवेदी,22,life,Ilam Municipality,,,1182,1188
+12,imported,पुष्पा घिमिरे,23,life,Ilam Municipality,,,1183,1189
+13,imported,विनिता भट्टराइ,24,life,Ilam Municipality,,,1184,1190
+14,imported,झल कुमारी मगर,25,life,Ilam Municipality,,,1185,1191
+15,warning,प्रमीला पाण्डे,26,life,Ilam Municipality,Phone number is blank; identity was not auto-merged by name alone.,,1186,1192
+16,imported,कल्पना राइ,1,general,Ilam Municipality,,,1187,1193
+17,imported,भुमीकला कटुवाल,2,general,Ilam Municipality,,,1188,1194
+18,imported,नारमाया गुरुङ्,3,general,Ilam Municipality,,,1189,1195
+19,imported,याम वहादुर सुवेदि,4,general,Ilam Municipality,,,1190,1196
+20,imported,लक्ष्मी माया मुखीया,5,general,Ilam Municipality,,,1191,1197
+21,imported,पहलमान जवेगु,6,general,Ilam Municipality,,,1192,1198
+22,imported,हेम वहादुर थापा,7,general,Ilam Municipality,,,1193,1199
+23,imported,तेज वहादुर गुरुङ्,8,general,Ilam Municipality,,,1194,1200
+24,imported,दिर्घ वहादुर मगर,9,general,Ilam Municipality,,,1195,1201
+25,imported,याम वहादुर गुरुङ,10,general,Ilam Municipality,,,1196,1202
+26,imported,छत्र वहादुर गुरुङ,11,general,Ilam Municipality,,,1197,1203
+27,imported,हेम वहादुर शंखर,12,general,Ilam Municipality,,,1198,1204
+28,imported,दुर्गा देवी धिमाल,13,general,Ilam Municipality,,,1199,1205
+29,imported,खमादेवी कार्की,14,general,Ilam Municipality,,,1200,1206
+30,imported,टिकाराम गुरुङ,15,general,Ilam Municipality,,,1201,1207
+31,imported,शविता खड्का,16,general,Ilam Municipality,,,1202,1208
+32,imported,सीता गुरुङ,17,general,Ilam Municipality,,,1203,1209
+33,imported,युवराज गुरुङ,18,general,Ilam Municipality,,,1204,1210
+34,imported,डम्वर वहादुर राइ,19,general,Ilam Municipality,,,1205,1211
+35,imported,राम कुमारी गुरुङ,20,general,Ilam Municipality,,,1206,1212
+36,imported,गणेश वहादुर राइ,21,general,Ilam Municipality,,,1207,1213
+37,imported,सुनिता अधिकारी,22,general,Ilam Municipality,,,1208,1214
+38,imported,कविता वस्नेत,23,general,Ilam Municipality,,,1209,1215
+39,imported,तारादेवी दास,24,general,Ilam Municipality,,,1210,1216
+40,imported,लिला सुवेदि,25,general,Ilam Municipality,,,1211,1217
+41,imported,पवित्रा कुमारी दाहाल,26,general,Ilam Municipality,,,1212,1218
+42,imported,सुस्मा ढकाल,27,general,Ilam Municipality,,,1213,1219
+43,imported,मुनामाया कटुवाल,28,general,Ilam Municipality,,,1214,1220
+44,imported,चन्दुकला कटुवाल,29,general,Ilam Municipality,,,1215,1221
+45,imported,शोम कुमारी राइ,30,general,Ilam Municipality,,,1216,1222
+46,imported,विष्नु कटुवाल,31,general,Ilam Municipality,,,1217,1223
+47,imported,धन कुमारी राइ,32,general,Ilam Municipality,,,1218,1224
+48,warning,खीनामाया धिमाल,33,general,Ilam Municipality,Phone number is blank; identity was not auto-merged by name alone.,,1219,1225
+49,warning,देश कुमार राइ,34,general,Ilam Municipality,Phone number is blank; identity was not auto-merged by name alone.,,1220,1226
+50,warning,कृष्ण माया गुरुङ,35,general,Ilam Municipality,Phone number is blank; identity was not auto-merged by name alone.,,1221,1227
+51,warning,लक्ष्मी रेग्मी,197,general,Ilam Municipality,Unrecognized date format: 2082-05-19T00:00:00,,1222,1228
+52,warning,मोहन पोख्रेल,198,general,Ilam Municipality,Unrecognized date format: 2082-05-19T00:00:00,,1223,1229
+53,imported,सीसम कार्की,4,life,Ilam Municipality,,,1224,1230
+54,imported,विष्णु माया थापा,35,life,Ilam Municipality,,,1225,1231
+55,imported,जगत वहादुर थापा,36,life,Ilam Municipality,,,1226,1232
+56,imported,अन्नपुर्ण खतीवडा थापा,37,life,Ilam Municipality,,,1227,1233
+57,imported,हिमा देवी कठेत,38,life,Ilam Municipality,,,1228,1234
+58,imported,पवित्रा देवी विश्वकर्मा,39,life,Ilam Municipality,,,1229,1235
+59,imported,दउ वहादुर कठेत,54,life,Ilam Municipality,,,1230,1236
+60,imported,नर ब मुखीया,36,general,Ilam Municipality,,,1231,1237
+61,imported,संचुमाया राइ,37,general,Ilam Municipality,,,1232,1238
+62,imported,तारामान राइ,38,general,Ilam Municipality,,,1233,1239
+63,imported,धन ब मुखीया,39,general,Ilam Municipality,,,1234,1240
+64,imported,शेर ब सुनुवार,40,general,Ilam Municipality,,,1235,1241
+65,warning,संतविर सुनुवार,41,general,Ilam Municipality,Phone number is blank; identity was not auto-merged by name alone.,,1236,1242
+66,imported,विर ब मुखीया,42,general,Ilam Municipality,,,1237,1243
+67,imported,राम कुमार मुखीया,43,general,Ilam Municipality,,,1238,1244
+68,imported,सुर्य ब राइ,44,general,Ilam Municipality,,,1239,1245
+69,warning,गंगा रीमाल,45,general,Ilam Municipality,Phone number is blank; identity was not auto-merged by name alone.,,1240,1246
+70,imported,संझना राइ,46,general,Ilam Municipality,,,1241,1247
+71,imported,प्रेम ब सुनुवार,47,general,Ilam Municipality,,,1242,1248
+72,imported,चन्द्र कला भण्डारी,48,general,Ilam Municipality,,,1243,1249
+73,imported,फुल माया राइ,49,general,Ilam Municipality,,,1244,1250
+74,warning,नमना राइ,50,general,Ilam Municipality,Phone number is blank; identity was not auto-merged by name alone.,,1245,1251
+75,warning,उमा गुरुङ्,51,general,Ilam Municipality,Phone number is blank; identity was not auto-merged by name alone.,,1246,1252
+76,imported,समिक्षा राइ,52,general,Ilam Municipality,,,1247,1253
+77,imported,निलम राइ,53,general,Ilam Municipality,,,1248,1254
+78,warning,मन कुमारी राइ,54,general,Ilam Municipality,Phone number is blank; identity was not auto-merged by name alone.,,1249,1255
+79,warning,श्रीमाया गुरुङ्,55,general,Ilam Municipality,Phone number is blank; identity was not auto-merged by name alone.,,1250,1256
+80,warning,देवी कुमारी गुरुङ्,56,general,Ilam Municipality,Phone number is blank; identity was not auto-merged by name alone.,,1251,1257
+81,warning,पदम प्रसाद सापकोटा,57,general,Ilam Municipality,Phone number is blank; identity was not auto-merged by name alone.,,1252,1258
+82,warning,जित ब थापा,58,general,Ilam Municipality,Phone number is blank; identity was not auto-merged by name alone.,,1253,1259
+83,imported,तिल विक्रम सुनुवार,59,general,Ilam Municipality,,,1254,1260
+84,warning,मन ब मुखीया,60,general,Ilam Municipality,Phone number is blank; identity was not auto-merged by name alone.,,1255,1261
+85,warning,भिम ब सुनुवार,61,general,Ilam Municipality,Phone number is blank; identity was not auto-merged by name alone.,,1256,1262
+86,imported,प्रमीला भुजेल,62,general,Ilam Municipality,,,1257,1263
+87,warning,सरीता देवी राइ,63,general,Ilam Municipality,Phone number is blank; identity was not auto-merged by name alone.,,1258,1264
+88,imported,पुर्ण गुरुङ्,64,general,Ilam Municipality,,,1259,1265
+89,warning,मन कुमार राइ,65,general,Ilam Municipality,Phone number is blank; identity was not auto-merged by name alone.,,1260,1266
+90,warning,कीरण राइ,66,general,Ilam Municipality,Phone number is blank; identity was not auto-merged by name alone.,,1261,1267
+91,imported,भिम ब सुनुवार,67,general,Ilam Municipality,,,1262,1268
+92,imported,मुना थापा,68,general,Ilam Municipality,,,1263,1269
+93,imported,डिक ब मुखीया,69,general,Ilam Municipality,,,1264,1270
+94,warning,खड्ग ब गुरुङ्,70,general,Ilam Municipality,Phone number is blank; identity was not auto-merged by name alone.,,1265,1271
+95,imported,गीता थापा,71,general,Ilam Municipality,,,1266,1272
+96,imported,मन माया गुरुङ्,72,general,Ilam Municipality,,,1267,1273
+97,imported,सोम वहादुर गुरुङ्,73,general,Ilam Municipality,,,1268,1274
+98,warning,हुरी कुमार गुरुङ,74,general,Ilam Municipality,Phone number is blank; identity was not auto-merged by name alone.,,1269,1275
+99,imported,रत्न देवी सुनुवार,75,general,Ilam Municipality,,,1270,1276
+100,imported,याम ब थापा,76,general,Ilam Municipality,,,1271,1277
+101,warning,मदन कुमार राइ,77,general,Ilam Municipality,Phone number is blank; identity was not auto-merged by name alone.,,1272,1278
+102,warning,गंगा माया राइ,78,general,Ilam Municipality,Phone number is blank; identity was not auto-merged by name alone.,,1273,1279
+103,imported,मन्दिरा कटुवाल,79,general,Ilam Municipality,,,1274,1280
+104,imported,सुजन सुनुवार,80,general,Ilam Municipality,,,1275,1281
+105,imported,लक्ष्मी थापा,81,general,Ilam Municipality,,,1276,1282
+106,imported,तेज ब राइ,82,general,Ilam Municipality,,,1277,1283
+107,warning,बुदीविर गुरुङ्,83,general,Ilam Municipality,The phone number matches another person but the names do not match strongly; records were kept separate for manual review.,,1278,1284
+108,imported,अम्विका थापा,84,general,Ilam Municipality,,,1279,1285
+109,imported,कविता माया क्षेत्री,85,general,Ilam Municipality,,,1280,1286
+110,imported,टीका वानिया,86,general,Ilam Municipality,,,1281,1287
+111,imported,कमला राइ,87,general,Ilam Municipality,,,1282,1288
+112,imported,लाल मान राइ,88,general,Ilam Municipality,,,1283,1289
+113,imported,भक्त माया राइ,89,general,Ilam Municipality,,,1284,1290
+114,imported,सरोज राइ,90,general,Ilam Municipality,,,1285,1291
+115,imported,प्रमोद राइ,91,general,Ilam Municipality,,,1286,1292
+116,imported,देव कठेत,92,general,Ilam Municipality,,,1287,1293
+117,warning,सीता कुमारी राइ,93,general,Ilam Municipality,The phone number matches another person but the names do not match strongly; records were kept separate for manual review.,,1288,1294
+118,imported,विक्रमजित राइ,94,general,Ilam Municipality,,,1289,1295
+119,imported,एलिसा गौचन,95,general,Ilam Municipality,,,1290,1296
+120,imported,सन्तोस कुमार थापा,96,general,Ilam Municipality,,,1291,1297
+121,imported,दील कुमारी राइ,97,general,Ilam Municipality,,,1292,1298
+122,imported,मीना कुमारी घीमीरे,98,general,Ilam Municipality,,,1293,1299
+123,imported,नेत्र ब गुरुङ्,99,general,Ilam Municipality,,,1294,1300
+124,imported,पार्वती राइ,100,general,Ilam Municipality,,,1295,1301
+125,imported,प्रवीना राइ,101,general,Ilam Municipality,,,1296,1302
+126,imported,हर्क बहादुर राइ,43,life,Ilam Municipality,,,1297,1303
+127,warning,पवित्रा वस्नेत,53,life,Ilam Municipality,Unrecognized date format: 2082-05-19T00:00:00,,1298,1304
+128,imported,ज्योति खड्का,194,general,Ilam Municipality,,,541,1305
+129,warning,टिकामाया कार्कि,195,general,Ilam Municipality,Unrecognized date format: 2082-05-19T00:00:00,,1299,1306
+130,warning,भिम कुमार खड्का,196,general,Ilam Municipality,Unrecognized date format: 2082-05-19T00:00:00,,1300,1307
+131,warning,सन्देश राइ,102,general,Ilam Municipality,Phone number is blank; identity was not auto-merged by name alone.,,1301,1308
+132,warning,तिलक श्रेष्ठ,103,general,Ilam Municipality,Phone number is blank; identity was not auto-merged by name alone.,,1302,1309
+133,warning,रमेश तामाङ्,104,general,Ilam Municipality,Phone number is blank; identity was not auto-merged by name alone.,,1303,1310
+134,warning,बषिका राइ,105,general,Ilam Municipality,Phone number is blank; identity was not auto-merged by name alone.,,1304,1311
+135,warning,विवेक योगी,106,general,Ilam Municipality,Phone number is blank; identity was not auto-merged by name alone.,,1305,1312
+136,warning,गणेश ब गुरुङ्,107,general,Ilam Municipality,Phone number is blank; identity was not auto-merged by name alone.,,1306,1313
+137,warning,पूर्ण ब योगी,108,general,Ilam Municipality,Phone number is blank; identity was not auto-merged by name alone.,,1307,1314
+138,warning,विक्रम योगी,109,general,Ilam Municipality,Phone number is blank; identity was not auto-merged by name alone.,,1308,1315
+139,imported,टिका खत्री चौहान,41,life,Ilam Municipality,,,1309,1316
+140,imported,सुर्य कुमारी विष्ट,42,life,Ilam Municipality,,,1310,1317
+141,imported,तुलसादेवी भट्टराइ,110,general,Ilam Municipality,,,1311,1318
+142,imported,थिर कुमारी अर्याल,111,general,Ilam Municipality,,,1312,1319
+143,warning,अप्सरा भट्टराइ,112,general,Ilam Municipality,Phone number is blank; identity was not auto-merged by name alone.,,1313,1320
+144,warning,मिरा बुडाथोकी,113,general,Ilam Municipality,Phone number is blank; identity was not auto-merged by name alone.,,1314,1321
+145,warning,हिमा बस्नेत,114,general,Ilam Municipality,Phone number is blank; identity was not auto-merged by name alone.,,1315,1322
+146,imported,यमुना भट्टराइ,115,general,Ilam Municipality,,,1316,1323
+147,warning,किसोर कुमार कार्की,116,general,Ilam Municipality,Phone number is blank; identity was not auto-merged by name alone.,,1317,1324
+148,imported,रचना रेग्मी,3,life,Ilam Municipality,,,1318,1325
+149,imported,नरेन्द्र कुमार वासतोला,5,life,Ilam Municipality,,,1319,1326
+150,imported,सरीता तामाङ्,27,life,Ilam Municipality,,,1320,1327
+151,imported,सोमनाथ न्योपाने,28,life,Ilam Municipality,,,1321,1328
+152,warning,निर्मला अधिकारी,29,life,Ilam Municipality,Phone number is blank; identity was not auto-merged by name alone.,,1322,1329
+153,imported,सोनिया तामाङ्,30,life,Ilam Municipality,,,1323,1330
+154,warning,कोपिला पोर्तेल,31,life,Ilam Municipality,Phone number is blank; identity was not auto-merged by name alone.,,1324,1331
+155,warning,वेद कुमारी रेग्मी,32,life,Ilam Municipality,Phone number is blank; identity was not auto-merged by name alone.,,1325,1332
+156,warning,विष्णु कुमारी आचार्य,33,life,Ilam Municipality,Phone number is blank; identity was not auto-merged by name alone.,,1326,1333
+157,warning,राम कुमार ढकाल,34,life,Ilam Municipality,Phone number is blank; identity was not auto-merged by name alone.,,1327,1334
+158,imported,दिपा तामाङ्,117,general,Ilam Municipality,,,1328,1335
+159,warning,इन्दुमाया तामाङ्,118,general,Ilam Municipality,Phone number is blank; identity was not auto-merged by name alone.,,1329,1336
+160,warning,शान्ता लाप्चा,119,general,Ilam Municipality,Phone number is blank; identity was not auto-merged by name alone.,,1330,1337
+161,warning,कुमारी राइ,120,general,Ilam Municipality,Phone number is blank; identity was not auto-merged by name alone.,,1331,1338
+162,warning,सोभा राइ,121,general,Ilam Municipality,Phone number is blank; identity was not auto-merged by name alone.,,1332,1339
+163,warning,भुपाल राइ,122,general,Ilam Municipality,Phone number is blank; identity was not auto-merged by name alone.,,1333,1340
+164,warning,मनिसा विश्वकर्मा,123,general,Ilam Municipality,Phone number is blank; identity was not auto-merged by name alone.,,1334,1341
+165,warning,वाल कुमार राइ,124,general,Ilam Municipality,Phone number is blank; identity was not auto-merged by name alone.,,1335,1342
+166,warning,कल्पना नेपाल,125,general,Ilam Municipality,Phone number is blank; identity was not auto-merged by name alone.,,1336,1343
+167,warning,सन्तकुमार विश्वकर्मा,126,general,Ilam Municipality,Phone number is blank; identity was not auto-merged by name alone.,,1337,1344
+168,warning,सोम माया योन्जन,127,general,Ilam Municipality,Phone number is blank; identity was not auto-merged by name alone.,,1338,1345
+169,warning,शान्ती माया राइ,128,general,Ilam Municipality,Phone number is blank; identity was not auto-merged by name alone.,,1339,1346
+170,warning,शबिना राइ,129,general,Ilam Municipality,Phone number is blank; identity was not auto-merged by name alone.,,1340,1347
+171,warning,बिमला देवी तामाङ्,130,general,Ilam Municipality,Phone number is blank; identity was not auto-merged by name alone.,,1341,1348
+172,warning,मंगली माया योन्जन,131,general,Ilam Municipality,Phone number is blank; identity was not auto-merged by name alone.,,1342,1349
+173,warning,कुल माया थापा,132,general,Ilam Municipality,Phone number is blank; identity was not auto-merged by name alone.,,1343,1350
+174,warning,अन्जना राइ,133,general,Ilam Municipality,Phone number is blank; identity was not auto-merged by name alone.,,1344,1351
+175,warning,मन्जु सोराली,134,general,Ilam Municipality,Phone number is blank; identity was not auto-merged by name alone.,,1345,1352
+176,warning,कुमारी पिठाकोटे,135,general,Ilam Municipality,Phone number is blank; identity was not auto-merged by name alone.,,1346,1353
+177,warning,चन्द्र मणी अधिकारी,136,general,Ilam Municipality,Phone number is blank; identity was not auto-merged by name alone.,,1347,1354
+178,warning,जै वहादुर तामाङ्,137,general,Ilam Municipality,Phone number is blank; identity was not auto-merged by name alone.,,1348,1355
+179,warning,फुल माया मगर,138,general,Ilam Municipality,Phone number is blank; identity was not auto-merged by name alone.,,1349,1356
+180,warning,प्रेम कुमारी योन्जन,139,general,Ilam Municipality,Phone number is blank; identity was not auto-merged by name alone.,,1350,1357
+181,warning,इन्दिरा तामाङ्,140,general,Ilam Municipality,Phone number is blank; identity was not auto-merged by name alone.,,1351,1358
+182,warning,सुत माया तामाङ्,141,general,Ilam Municipality,Phone number is blank; identity was not auto-merged by name alone.,,1352,1359
+183,warning,सरस्वती राउत,142,general,Ilam Municipality,Phone number is blank; identity was not auto-merged by name alone.,,1353,1360
+184,warning,चीर माया तामाङ्,143,general,Ilam Municipality,Phone number is blank; identity was not auto-merged by name alone.,,1354,1361
+185,warning,रण वहादुर तामाङ्,144,general,Ilam Municipality,Phone number is blank; identity was not auto-merged by name alone.,,1355,1362
+186,warning,दिपक राइ,145,general,Ilam Municipality,Phone number is blank; identity was not auto-merged by name alone.,,1356,1363
+187,warning,मुनामाया तामाङ्,146,general,Ilam Municipality,Phone number is blank; identity was not auto-merged by name alone.,,1357,1364
+188,warning,छेसाङ् तामाङ्,147,general,Ilam Municipality,Phone number is blank; identity was not auto-merged by name alone.,,1358,1365
+189,warning,टिका लुइटेल,148,general,Ilam Municipality,Phone number is blank; identity was not auto-merged by name alone.,,1359,1366
+190,warning,चन्द्र मणी पाठक,149,general,Ilam Municipality,Phone number is blank; identity was not auto-merged by name alone.,,1360,1367
+191,warning,विष्णु कुमारी सुवेदी,150,general,Ilam Municipality,Phone number is blank; identity was not auto-merged by name alone.,,1361,1368
+192,warning,सुजता अधिकारी,151,general,Ilam Municipality,Phone number is blank; identity was not auto-merged by name alone.,,1362,1369
+193,warning,प्रतीभा पोख्रेल,152,general,Ilam Municipality,Phone number is blank; identity was not auto-merged by name alone.,,1363,1370
+194,warning,दिपेश बास्कोटा,153,general,Ilam Municipality,Phone number is blank; identity was not auto-merged by name alone.,,1364,1371
+195,imported,प्रकाश राय,2,life,Ilam Municipality,,,1365,1372
+196,imported,कृष्ण कुमारी लिम्बु,6,life,Ilam Municipality,,,1366,1373
+197,warning,दिनेश विष्ट,40,life,Ilam Municipality,Phone number is blank; identity was not auto-merged by name alone.,,1367,1374
+198,warning,ठगेन्द्र कटुवाल,44,life,Ilam Municipality,Unrecognized date format: 2082-05-16T00:00:00,,1368,1375
+199,warning,दुर्गा देवी थापा (बोहोरा),45,life,Ilam Municipality,Unrecognized date format: 2082-05-16T00:00:00,,1369,1376
+200,warning,मीना कार्की (बोहोरा),46,life,Ilam Municipality,Unrecognized date format: 2082-05-16T00:00:00,,1370,1377
+201,warning,टिका ढकाल,47,life,Ilam Municipality,Unrecognized date format: 2082-05-16T00:00:00 | Phone number is blank; identity was not auto-merged by name alone.,,1371,1378
+202,warning,सोम वहादुर लिम्बु,48,life,Ilam Municipality,Unrecognized date format: 2082-05-16T00:00:00,,1372,1379
+203,warning,कल्पना धिताल,49,life,Ilam Municipality,Unrecognized date format: 2082-05-16T00:00:00,,1373,1380
+204,warning,चक्र वहादुर राइ,50,life,Ilam Municipality,Unrecognized date format: 2082-05-16T00:00:00 | Phone number is blank; identity was not auto-merged by name alone.,,1374,1381
+205,warning,कृष्ण बहादुर वस्नेत,51,life,Ilam Municipality,Unrecognized date format: 2082-05-16T00:00:00,,1375,1382
+206,warning,भवानी कुमार मिश्र,52,life,Ilam Municipality,Unrecognized date format: 2082-05-16T00:00:00,,1376,1383
+207,warning,सावित्रा लिम्वु,154,general,Ilam Municipality,Phone number is blank; identity was not auto-merged by name alone.,,1377,1384
+208,warning,डिल्ली कुमार रसाइली,155,general,Ilam Municipality,Phone number is blank; identity was not auto-merged by name alone.,,1378,1385
+209,warning,धन वहादुर लिम्वु,156,general,Ilam Municipality,Phone number is blank; identity was not auto-merged by name alone.,,1379,1386
+210,warning,लेखराज कटुवाल,157,general,Ilam Municipality,Phone number is blank; identity was not auto-merged by name alone.,,1380,1387
+211,warning,देवी माया न्योपाने,158,general,Ilam Municipality,Phone number is blank; identity was not auto-merged by name alone.,,1381,1388
+212,warning,मुना अर्याल,159,general,Ilam Municipality,Phone number is blank; identity was not auto-merged by name alone.,,1382,1389
+213,warning,सागर रसाइली,184,general,Ilam Municipality,Unrecognized date format: 2082-05-19T00:00:00,,1383,1390
+214,warning,भुमिका दवी खड्का,185,general,Ilam Municipality,Unrecognized date format: 2082-05-19T00:00:00,,1384,1391
+215,warning,पवित्रा खड्का,186,general,Ilam Municipality,Unrecognized date format: 2082-05-16T00:00:00,,1385,1392
+216,warning,टिका बहादुर एत्तेन,187,general,Ilam Municipality,Unrecognized date format: 2082-05-16T00:00:00,,1386,1393
+217,warning,पृर्थराज दर्जी,188,general,Ilam Municipality,Unrecognized date format: 2082-05-16T00:00:00,,1387,1394
+218,warning,यसोदा दुलाल,189,general,Ilam Municipality,Unrecognized date format: 2082-05-16T00:00:00,,1388,1395
+219,warning,हरीमाया थापा,190,general,Ilam Municipality,Unrecognized date format: 2082-05-16T00:00:00,,1389,1396
+220,warning,तोयानाथ रीजाल,191,general,Ilam Municipality,Unrecognized date format: 2082-05-16T00:00:00,,1390,1397
+221,warning,शान्तीमाया फुर्केली,192,general,Ilam Municipality,Unrecognized date format: 2082-05-16T00:00:00,,1391,1398
+222,warning,मुनादेवी लिम्बु,193,general,Ilam Municipality,Unrecognized date format: 2082-05-16T00:00:00,,1392,1399
+223,imported,रोसु वानिया,8,life,Ilam Municipality,,,1393,1400
+224,warning,सिंह विर नेपालि,9,life,Ilam Municipality,Phone number is blank; identity was not auto-merged by name alone.,,1394,1401
+225,imported,चित्र कला कामी,10,life,Ilam Municipality,,,1395,1402
+226,imported,रुपा भट्टराइ,11,life,Ilam Municipality,,,1396,1403
+227,warning,एलिना लिम्बु,12,life,Ilam Municipality,Phone number is blank; identity was not auto-merged by name alone.,,1397,1404
+228,imported,लक्ष्मी विश्वकर्मा,13,life,Ilam Municipality,,,1398,1405
+229,warning,सर्मिला पोडेल,14,life,Ilam Municipality,Phone number is blank; identity was not auto-merged by name alone.,,1399,1406
+230,warning,फुल माया मंग्राती,15,life,Ilam Municipality,Phone number is blank; identity was not auto-merged by name alone.,,1400,1407
+231,warning,गीता मंग्राती सार्की,16,life,Ilam Municipality,Phone number is blank; identity was not auto-merged by name alone.,,1401,1408
+232,warning,विशाल वास्तोला,160,general,Ilam Municipality,Phone number is blank; identity was not auto-merged by name alone.,,1402,1409
+233,warning,सीता नेपालि,161,general,Ilam Municipality,Phone number is blank; identity was not auto-merged by name alone.,,1403,1410
+234,warning,श्याम वहादुर अधिकारी,162,general,Ilam Municipality,Phone number is blank; identity was not auto-merged by name alone.,,1404,1411
+235,warning,सरोज बोहोरा,163,general,Ilam Municipality,Phone number is blank; identity was not auto-merged by name alone.,,1405,1412
+236,warning,क्यामुना लिम्बु,164,general,Ilam Municipality,Phone number is blank; identity was not auto-merged by name alone.,,1406,1413
+237,warning,रोदिना नेम्वाङ,165,general,Ilam Municipality,Phone number is blank; identity was not auto-merged by name alone.,,1407,1414
+238,warning,धन वहादुर तामाङ,166,general,Ilam Municipality,Phone number is blank; identity was not auto-merged by name alone.,,1408,1415
+239,warning,बिना न्योपाने,167,general,Ilam Municipality,Phone number is blank; identity was not auto-merged by name alone.,,1409,1416
+240,warning,रजत बानिया,168,general,Ilam Municipality,Phone number is blank; identity was not auto-merged by name alone.,,1410,1417
+241,warning,होमनाथ पोढेल,169,general,Ilam Municipality,Phone number is blank; identity was not auto-merged by name alone.,,1411,1418
+242,warning,मनिका सुन्दास,170,general,Ilam Municipality,Phone number is blank; identity was not auto-merged by name alone.,,1412,1419
+243,warning,उर्मिला तामाङ,171,general,Ilam Municipality,Phone number is blank; identity was not auto-merged by name alone.,,1413,1420
+244,warning,रन्जना न्योपाने,172,general,Ilam Municipality,Phone number is blank; identity was not auto-merged by name alone.,,1414,1421
+245,warning,याम वहादुर तामाङ,173,general,Ilam Municipality,Phone number is blank; identity was not auto-merged by name alone.,,1415,1422
+246,warning,उत्तम कुमार विष्ट,174,general,Ilam Municipality,Phone number is blank; identity was not auto-merged by name alone.,,1416,1423
+247,warning,जसमान तामाङ,175,general,Ilam Municipality,Phone number is blank; identity was not auto-merged by name alone.,,1417,1424
+248,warning,थिर वहादुर वोहोरा,176,general,Ilam Municipality,Phone number is blank; identity was not auto-merged by name alone.,,1418,1425
+249,warning,यसोदा चोहान,177,general,Ilam Municipality,Phone number is blank; identity was not auto-merged by name alone.,,1419,1426
+250,warning,बिर वहादुर चोहान,178,general,Ilam Municipality,Phone number is blank; identity was not auto-merged by name alone.,,1420,1427
+251,warning,विकास चेम्जोङ्,179,general,Ilam Municipality,Phone number is blank; identity was not auto-merged by name alone.,,1421,1428
+252,warning,सुदिप थामी,180,general,Ilam Municipality,Phone number is blank; identity was not auto-merged by name alone.,,1422,1429
+253,warning,पदम क्षीतीज शंकर,181,general,Ilam Municipality,Phone number is blank; identity was not auto-merged by name alone.,,1423,1430
+254,warning,अन्जु दर्जी हिङमाङ,182,general,Ilam Municipality,Phone number is blank; identity was not auto-merged by name alone.,,1424,1431
+255,warning,लोक वहादुर श्रेष्ठ,183,general,Ilam Municipality,Phone number is blank; identity was not auto-merged by name alone.,,1425,1432
+257,skipped,आजिवन सदस्य - 54,,,,Row contains a label or summary but no member fields; it was recorded as non-data and not imported.,,,
