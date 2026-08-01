@@ -49,10 +49,6 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "django.contrib.sitemaps",
     "anymail",
-<<<<<<< HEAD
-
-=======
->>>>>>> 1d670fd (refactor)
     "cloudinary_storage",
     "cloudinary",
     "core.apps.CoreConfig",
@@ -95,17 +91,6 @@ TEMPLATES = [
 ]
 WSGI_APPLICATION = "migrantcenter.wsgi.application"
 
-<<<<<<< HEAD
-# Database
-DATABASE_URL = os.getenv("DATABASE_URL")
-USE_SQLITE = os.getenv("USE_SQLITE", "False") == "True"
-
-if DATABASE_URL and not USE_SQLITE:
-    DATABASES = {
-        "default": dj_database_url.config(
-            default=DATABASE_URL,
-            conn_max_age=600,
-=======
 if IS_TESTING:
     DATABASES = {"default": {"ENGINE": "django.db.backends.sqlite3", "NAME": ":memory:"}}
 elif DATABASE_URL and not USE_SQLITE:
@@ -114,7 +99,6 @@ elif DATABASE_URL and not USE_SQLITE:
             default=DATABASE_URL,
             conn_max_age=60,
             conn_health_checks=True,
->>>>>>> 1d670fd (refactor)
             ssl_require=True,
         )
     }
@@ -126,10 +110,6 @@ else:
         }
     }
 
-<<<<<<< HEAD
-# Password validation
-=======
->>>>>>> 1d670fd (refactor)
 AUTH_PASSWORD_VALIDATORS = [
     {"NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator"},
     {"NAME": "django.contrib.auth.password_validation.MinimumLengthValidator"},
@@ -181,36 +161,6 @@ COUNSELING_RATE_LIMIT_PER_HOUR = int(os.getenv("COUNSELING_RATE_LIMIT_PER_HOUR",
 PRIVACY_RETENTION_PERIOD = os.getenv("PRIVACY_RETENTION_PERIOD", "[PRIVACY RETENTION PERIOD]")
 MEMBERSHIP_PAYMENT_PURPOSE = os.getenv("MEMBERSHIP_PAYMENT_PURPOSE", "[PAYMENT PURPOSE]")
 
-<<<<<<< HEAD
-# Email
-# In production, set RESEND_API_KEY and use a sender on a verified Resend domain.
-# Without an API key, Django prints emails to the local console instead of failing.
-RESEND_API_KEY = os.getenv("RESEND_API_KEY", "").strip()
-
-ANYMAIL = {
-    "RESEND_API_KEY": RESEND_API_KEY,
-}
-
-EMAIL_BACKEND = (
-    "anymail.backends.resend.EmailBackend"
-    if RESEND_API_KEY
-    else "django.core.mail.backends.console.EmailBackend"
-)
-
-DEFAULT_FROM_EMAIL = os.getenv(
-    "DEFAULT_FROM_EMAIL",
-    "MRN Ilam <onboarding@resend.dev>",
-)
-SERVER_EMAIL = DEFAULT_FROM_EMAIL
-ADMIN_NOTIFICATION_EMAIL = os.getenv(
-    "ADMIN_NOTIFICATION_EMAIL",
-    "info@mrnilam.org.np",
-)
-SITE_URL = os.getenv("SITE_URL", "https://mrnilam.org.np").rstrip("/")
-EMAIL_NOTIFICATIONS_ENABLED = (
-    os.getenv("EMAIL_NOTIFICATIONS_ENABLED", "True").lower() == "true"
-)
-=======
 RESEND_API_KEY = os.getenv("RESEND_API_KEY", "").strip()
 ANYMAIL = {"RESEND_API_KEY": RESEND_API_KEY}
 if IS_TESTING:
@@ -224,7 +174,6 @@ SERVER_EMAIL = DEFAULT_FROM_EMAIL
 ADMIN_NOTIFICATION_EMAIL = os.getenv("ADMIN_NOTIFICATION_EMAIL", "").strip()
 EMAIL_NOTIFICATIONS_ENABLED = os.getenv("EMAIL_NOTIFICATIONS_ENABLED", "True").casefold() == "true" and not IS_TESTING
 SITE_URL = os.getenv("SITE_URL", "https://mrnilam.org.np").rstrip("/")
->>>>>>> 1d670fd (refactor)
 
 CACHES = {
     "default": {
@@ -263,29 +212,3 @@ LOGGING = {
 }
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
-<<<<<<< HEAD
-# Test environment
-# Tests must never connect to Neon, Cloudinary, or Resend.
-IS_TESTING = "test" in sys.argv
-
-if IS_TESTING:
-    DATABASES = {
-        "default": {
-            "ENGINE": "django.db.backends.sqlite3",
-            "NAME": ":memory:",
-        }
-    }
-
-    STORAGES = {
-        "default": {
-            "BACKEND": "django.core.files.storage.memory.InMemoryStorage",
-        },
-        "staticfiles": {
-            "BACKEND": "django.contrib.staticfiles.storage.StaticFilesStorage",
-        },
-    }
-
-    EMAIL_BACKEND = "django.core.mail.backends.locmem.EmailBackend"
-    EMAIL_NOTIFICATIONS_ENABLED = False
-=======
->>>>>>> 1d670fd (refactor)

@@ -1,5 +1,5 @@
 from django.core.paginator import Paginator
-from django.db.models import Count, Prefetch, Q
+from django.db.models import Count, F, OuterRef, Prefetch, Q, Subquery
 from django.shortcuts import get_object_or_404, render
 
 from .models import MembershipCategory, MembershipRecord, OrganizationUnit, Person
@@ -35,6 +35,19 @@ def member_list(request):
             | Q(designation__icontains=q)
         )
 
+    sorting_membership = (
+        matching_memberships
+        .filter(person_id=OuterRef("pk"))
+        .order_by(
+            "organization_unit__display_order",
+            "organization_unit__name_en",
+            "category__display_order",
+            F("membership_number_int").asc(nulls_last=True),
+            "membership_number_normalized",
+            "pk",
+        )
+    )
+
     person_ids = matching_memberships.values_list("person_id", flat=True)
     people = (
         Person.objects.filter(
@@ -42,7 +55,27 @@ def member_list(request):
             is_public=True,
             merged_into__isnull=True,
         )
-        .annotate(public_membership_count=Count("memberships", filter=Q(memberships__is_public=True)))
+        .annotate(
+            public_membership_count=Count(
+                "memberships",
+                filter=Q(memberships__is_public=True),
+            ),
+            sort_unit_order=Subquery(
+                sorting_membership.values("organization_unit__display_order")[:1]
+            ),
+            sort_unit_name=Subquery(
+                sorting_membership.values("organization_unit__name_en")[:1]
+            ),
+            sort_category_order=Subquery(
+                sorting_membership.values("category__display_order")[:1]
+            ),
+            sort_membership_number=Subquery(
+                sorting_membership.values("membership_number_int")[:1]
+            ),
+            sort_membership_text=Subquery(
+                sorting_membership.values("membership_number_normalized")[:1]
+            ),
+        )
         .prefetch_related(
             Prefetch(
                 "memberships",
@@ -56,32 +89,19 @@ def member_list(request):
                 to_attr="public_memberships",
             )
         )
-        .order_by("name_ne", "name_en", "pk")
+        .order_by(
+            "sort_unit_order",
+            "sort_unit_name",
+            "sort_category_order",
+            F("sort_membership_number").asc(nulls_last=True),
+            "sort_membership_text",
+            "name_ne",
+            "name_en",
+            "pk",
+        )
         .distinct()
     )
 
-<<<<<<< HEAD
-    unit_options = list(
-        Member.objects.filter(is_public=True)
-        .exclude(unit_name="")
-        .order_by("unit_name")
-        .values_list("unit_name", flat=True)
-        .distinct()
-    )
-
-    paginator = Paginator(members, 24)
-    page_number = request.GET.get("page")
-    page_obj = paginator.get_page(page_number)
-
-    return render(request, "members/member_list.html", {
-        "page_obj": page_obj,
-        "q": q,
-        "membership_type": membership_type,
-        "status": status,
-        "unit_name": unit_name,
-        "unit_options": unit_options,
-    })
-=======
     paginator = Paginator(people, 20)
     page_obj = paginator.get_page(request.GET.get("page"))
     query_without_page = request.GET.copy()
@@ -128,4 +148,3 @@ def member_detail(request, public_id):
         public_id=public_id,
     )
     return render(request, "members/member_detail.html", {"person": person})
->>>>>>> 1d670fd (refactor)

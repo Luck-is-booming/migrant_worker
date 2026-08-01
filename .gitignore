@@ -21,8 +21,6 @@ htmlcov/
 .DS_Store
 .idea/
 .vscode/
-<<<<<<< HEAD
-=======
 
 # Private operational exports
 backups/
@@ -31,4 +29,7 @@ import_reports/
 
 # Local temporary artifacts
 *.zip
->>>>>>> 1d670fd (refactor)
+
+data/private/
+audit_reports/*.json
+audit_reports/*.csv

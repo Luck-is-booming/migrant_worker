@@ -1,11 +1,8 @@
-Django==6.0.5
+Django==6.0.7
 dj-database-url==3.1.2
 psycopg2-binary==2.9.12
 gunicorn==26.0.0
 whitenoise==6.12.0
-<<<<<<< HEAD
-wrapt==2.2.1
-=======
 python-dotenv==1.2.2
 Pillow==12.2.0
 cloudinary==1.44.2
@@ -13,6 +10,5 @@ django-cloudinary-storage==0.3.0
 django-anymail==15.0
 resend==2.30.1
 nepali-datetime==1.0.8.5
->>>>>>> 1d670fd (refactor)
 openpyxl==3.1.5
 python-docx==1.2.0

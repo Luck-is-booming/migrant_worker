@@ -45,34 +45,11 @@ class ContactMessageAdmin(admin.ModelAdmin):
 
 
 @admin.register(Membership)
-<<<<<<< HEAD
-class MembershipAdmin(admin.ModelAdmin):
-    list_display = (
-        "name",
-        "email",
-        "phone",
-        "municipality",
-        "membership_type",
-        "is_approved",
-        "payment_status",
-        "amount",
-    )
-    list_filter = ("municipality", "is_approved", "payment_status", "membership_type")
-    search_fields = ("name", "name_en", "email", "phone", "transaction_id")
-    readonly_fields = (
-        "joined_date",
-        "transaction_id",
-        "amount",
-        "payment_status",
-        "is_approved",
-    )
-=======
 class MembershipApplicationAdmin(admin.ModelAdmin):
     list_display = ("name", "municipality", "membership_type", "payment_status", "is_approved", "joined_date")
     list_filter = ("municipality", "membership_type", "payment_status", "is_approved")
     search_fields = ("name", "name_en", "phone", "email", "transaction_id")
     readonly_fields = ("joined_date",)
->>>>>>> 1d670fd (refactor)
 
 
 @admin.register(ServiceCard)

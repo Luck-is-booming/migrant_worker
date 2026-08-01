@@ -359,24 +359,14 @@ class Membership(models.Model):
     ]
     TYPE_CHOICES = [("life", _("Life Member")), ("general", _("General Member"))]
     PAYMENT_STATUS_CHOICES = [
-<<<<<<< HEAD
-        ('pending', _('Pending')),
-        ('completed', _('Completed')),
-        ('rejected', _('Rejected')),
-=======
         ("pending", _("Pending")),
         ("completed", _("Completed")),
         ("rejected", _("Rejected")),
->>>>>>> 1d670fd (refactor)
     ]
 
     name = models.CharField(max_length=100)
     name_en = models.CharField(max_length=100, blank=True)
     email = models.EmailField(blank=True, verbose_name=_("Email address"))
-<<<<<<< HEAD
-
-=======
->>>>>>> 1d670fd (refactor)
     municipality = models.CharField(max_length=50, choices=MUNICIPALITY_CHOICES)
     ward_no = models.PositiveSmallIntegerField(blank=True, null=True)
     address = models.CharField(max_length=255, blank=True)

@@ -12,7 +12,7 @@ class Migration(migrations.Migration):
     operations = [
         migrations.AlterModelOptions(
             name='member',
-            options={'ordering': ['level', 'unit_name', 'membership_type', 'membership_number_int', 'sort_order', 'name_ne'], 'verbose_name': 'Member', 'verbose_name_plural': 'Members'},
+            options={'ordering': ['level', 'unit_name', 'membership_type', 'membership_number_int', 'sort_order', 'name_ne'], 'verbose_name': 'Legacy member record', 'verbose_name_plural': 'Legacy member records'},
         ),
         migrations.RemoveField(
             model_name='member',

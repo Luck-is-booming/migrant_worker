@@ -1,19 +1,19 @@
 import csv
-import uuid
 import hashlib
 import json
 import logging
 import math
 import re
+import uuid
+from decimal import Decimal
 from dataclasses import dataclass, field
 from datetime import date, datetime
 from pathlib import Path
-from django.core.serializers.json import DjangoJSONEncoder
 
+from django.core.serializers.json import DjangoJSONEncoder
 from django.db import transaction
 from django.utils import timezone
 from openpyxl import load_workbook
-from decimal import Decimal
 
 from .models import (
     ImportBatch,
@@ -259,27 +259,24 @@ def detect_header(sheet):
         )
     return best[1], best[2]
 
-def serialize_for_json(value):
-    """Convert audit snapshot values into JSON-safe values."""
-    if value is None or isinstance(value, (str, int, float, bool)):
-        return value
-
-    if isinstance(value, (date, datetime)):
-        return value.isoformat()
-
-    if isinstance(value, (uuid.UUID, Decimal)):
-        return str(value)
-
-    if hasattr(value, "pk"):
-        return value.pk
-
-    return str(value)
 
 def snapshot(instance, fields):
     if not instance:
         return {}
     return {field: getattr(instance, field) for field in fields}
 
+
+def serialize_for_json(value):
+    """Convert audit snapshot values into stable JSON-safe primitives."""
+    if value is None or isinstance(value, (str, int, float, bool)):
+        return value
+    if isinstance(value, (date, datetime)):
+        return value.isoformat()
+    if isinstance(value, (uuid.UUID, Decimal)):
+        return str(value)
+    if hasattr(value, "pk"):
+        return value.pk
+    return str(value)
 
 
 def source_identity_key(*, source_name, sheet, row_number, membership_number, name, phone):
@@ -329,15 +326,7 @@ def export_membership_backup(path):
             )
         ),
     }
-    path.write_text(
-    json.dumps(
-        payload,
-        ensure_ascii=False,
-        indent=2,
-        cls=DjangoJSONEncoder,
-    ),
-    encoding="utf-8",
-)
+    path.write_text(json.dumps(payload, ensure_ascii=False, indent=2, cls=DjangoJSONEncoder), encoding="utf-8")
     return path
 
 

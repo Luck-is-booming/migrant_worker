@@ -2,12 +2,9 @@ import hashlib
 
 from django.conf import settings
 from django.contrib import messages
-<<<<<<< HEAD
-=======
 from django.core.cache import cache
 from django.http import HttpResponse, JsonResponse
 from django.db import connection
->>>>>>> 1d670fd (refactor)
 from django.shortcuts import redirect, render
 from django.urls import reverse
 from django.utils.translation import gettext as _
@@ -16,13 +13,7 @@ from django.views.decorators.http import require_GET, require_http_methods
 from blog.models import Article
 from payments.tokens import make_membership_token
 
-from payments.tokens import make_membership_token
-
 from .forms import ContactMessageForm, MembershipForm
-<<<<<<< HEAD
-from .homepage import build_homepage_context
-from .notifications import notify_contact_message, notify_membership_application
-=======
 from .homepage import build_site_context
 from .models import EmergencyResource, FrequentlyAskedQuestion, OfficialResource, ResourceCategory
 from .notifications import notify_contact_message, notify_membership_application
@@ -94,14 +85,12 @@ def faq(request):
     context = build_site_context()
     context["faqs"] = FrequentlyAskedQuestion.objects.filter(is_active=True)
     return render(request, "core/faq.html", context)
->>>>>>> 1d670fd (refactor)
 
 
 @require_http_methods(["GET", "POST"])
 def contact(request):
     if request.method == "POST" and not _allow_contact_submission(request):
-        messages.error(request, _("Too many submissions were received. Please try again later."))
-        return redirect("contact")
+        return render(request, "errors/429.html", status=429)
 
     form = ContactMessageForm(request.POST or None)
     if request.method == "POST" and form.is_valid():
@@ -114,18 +103,6 @@ def contact(request):
     context["form"] = form
     return render(request, "core/contact.html", context)
 
-<<<<<<< HEAD
-                token = make_membership_token(saved_membership.id)
-                payment_path = reverse(
-                    "payments:manual_payment",
-                    kwargs={"token": token},
-                )
-                payment_url = request.build_absolute_uri(payment_path)
-                notify_membership_application(saved_membership, payment_url)
-
-                return redirect("payments:manual_payment", token=token)
-=======
->>>>>>> 1d670fd (refactor)
 
 @require_http_methods(["GET", "POST"])
 def membership_apply(request):
@@ -140,22 +117,11 @@ def membership_apply(request):
         notify_membership_application(membership, request.build_absolute_uri(path))
         return redirect("payments:manual_payment", token=token)
 
-<<<<<<< HEAD
-            if contact_form.is_valid():
-                contact = contact_form.save()
-                notify_contact_message(contact)
-                messages.success(request, _("Your message has been received."))
-                return redirect("index")
-=======
     context = build_site_context()
     context["form"] = form
     return render(request, "core/membership_apply.html", context)
->>>>>>> 1d670fd (refactor)
 
 
-<<<<<<< HEAD
-    return render(request, "core/index.html", context)
-=======
 @require_GET
 def robots_txt(request):
     body = "\n".join(
@@ -186,4 +152,3 @@ def health(request):
     except Exception:
         return JsonResponse({"status": "unavailable"}, status=503)
     return JsonResponse({"status": "ok"})
->>>>>>> 1d670fd (refactor)

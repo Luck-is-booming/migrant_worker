@@ -4,12 +4,8 @@ import uuid
 from django.conf import settings
 from django.core.exceptions import ValidationError
 from django.db import models
-<<<<<<< HEAD
-from django.db.models import Max
-=======
 from django.db.models import Max, Q
 from django.utils.text import slugify
->>>>>>> 1d670fd (refactor)
 from django.utils.translation import gettext_lazy as _
 
 from core.i18n_utils import localized
@@ -39,8 +35,6 @@ def normalize_person_name(value):
 
 
 class Member(models.Model):
-<<<<<<< HEAD
-=======
     """Legacy member row retained for compatibility and audit preservation.
 
     New public functionality uses Person and MembershipRecord. This table is
@@ -48,7 +42,6 @@ class Member(models.Model):
     never discarded during the normalization migration.
     """
 
->>>>>>> 1d670fd (refactor)
     source_membership = models.OneToOneField(
         "core.Membership",
         on_delete=models.SET_NULL,

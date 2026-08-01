@@ -2,11 +2,7 @@ from django.utils import timezone
 from django.utils.translation import get_language
 
 from blog.models import Article
-<<<<<<< HEAD
-from members.models import Member
-=======
 from members.models import Person
->>>>>>> 1d670fd (refactor)
 
 from .fallbacks import get_fallback_info, get_fallback_services, get_fallback_team
 from .models import (
@@ -73,9 +69,6 @@ def build_site_context():
         "services": services,
         "team_members": team,
         "latest_articles": latest_articles,
-<<<<<<< HEAD
-        "member_count": Member.objects.filter(is_public=True).count(),
-=======
         "featured_resources": OfficialResource.objects.filter(is_active=True).select_related("category")[:6],
         "emergency_resources": EmergencyResource.objects.filter(is_active=True)[:4],
         "faqs": FrequentlyAskedQuestion.objects.filter(is_active=True)[:8],
@@ -84,7 +77,6 @@ def build_site_context():
             merged_into__isnull=True,
             memberships__is_public=True,
         ).distinct().count(),
->>>>>>> 1d670fd (refactor)
         "current_year": timezone.now().year,
     }
 

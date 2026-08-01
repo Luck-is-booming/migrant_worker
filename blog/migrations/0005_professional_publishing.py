@@ -24,16 +24,7 @@ class Migration(migrations.Migration):
     dependencies = [("blog", "0004_rename_blog_articl_is_aler_idx_blog_articl_is_aler_5de6f5_idx")]
 
     operations = [
-        migrations.AddField(
-    model_name="article",
-    name="slug",
-    field=models.SlugField(
-        blank=True,
-        max_length=280,
-        null=True,
-        db_index=False,
-    ),
-),
+        migrations.AddField(model_name="article", name="slug", field=models.SlugField(blank=True, db_index=False, max_length=280, null=True)),
         migrations.AddField(model_name="article", name="summary_ne", field=models.TextField(blank=True, max_length=600, verbose_name="Summary (Nepali)")),
         migrations.AddField(model_name="article", name="summary_en", field=models.TextField(blank=True, max_length=600, verbose_name="Summary (English)")),
         migrations.AddField(model_name="article", name="article_type", field=models.CharField(choices=[("article", "Article"), ("notice", "Notice"), ("alert", "Safety alert"), ("event", "Event"), ("counseling_update", "Counseling update")], db_index=True, default="article", max_length=30)),
@@ -50,6 +41,6 @@ class Migration(migrations.Migration):
         migrations.AlterField(model_name="article", name="published_date", field=models.DateTimeField(db_index=True, default=django.utils.timezone.now, verbose_name="Published Date")),
         migrations.AlterModelOptions(name="article", options={"ordering": ["-is_featured", "-published_date"], "verbose_name": "Article", "verbose_name_plural": "Articles"}),
         migrations.RemoveIndex(model_name="article", name="blog_articl_is_aler_5de6f5_idx"),
-        migrations.AddIndex(model_name="article", index=models.Index(fields=["status", "-published_date"], name="blog_articl_status_30f6ef_idx")),
-        migrations.AddIndex(model_name="article", index=models.Index(fields=["article_type", "status"], name="blog_articl_article_f0dcbb_idx")),
+        migrations.AddIndex(model_name="article", index=models.Index(fields=["status", "-published_date"], name="blog_articl_status_5e4672_idx")),
+        migrations.AddIndex(model_name="article", index=models.Index(fields=["article_type", "status"], name="blog_articl_article_bc14eb_idx")),
     ]

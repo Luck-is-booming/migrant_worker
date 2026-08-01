@@ -39,8 +39,7 @@ def _rate_limited(request):
 @require_http_methods(["GET", "POST"])
 def request_counseling(request):
     if request.method == "POST" and _rate_limited(request):
-        messages.error(request, _("Too many submissions were received. Please try again later or call the office."))
-        return redirect("counseling:request")
+        return render(request, "errors/429.html", status=429)
 
     form = CounselingRequestForm(request.POST or None, request.FILES or None)
     if request.method == "POST" and form.is_valid():

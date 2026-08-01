@@ -111,7 +111,7 @@ class Migration(migrations.Migration):
             ],
             options={"ordering": ["-attempted_at"]},
         ),
-        migrations.AddIndex(model_name="counselingrequest", index=models.Index(fields=["status", "-created_at"], name="counseling__status_8a4ba4_idx")),
-        migrations.AddIndex(model_name="counselingrequest", index=models.Index(fields=["assigned_to", "status"], name="counseling__assigned_85ea5d_idx")),
+        migrations.AddIndex(model_name="counselingrequest", index=models.Index(fields=["status", "-created_at"], name="counseling__status_c0a6bb_idx")),
+        migrations.AddIndex(model_name="counselingrequest", index=models.Index(fields=["assigned_to", "status"], name="counseling__assigne_fd782a_idx")),
         migrations.RunPython(seed_categories, unseed_categories),
     ]

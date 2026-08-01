@@ -17,25 +17,42 @@ ALLOWED_CONTENT_TYPES = {
 MAX_ATTACHMENT_SIZE = 5 * 1024 * 1024
 
 
-def normalize_nepal_phone(value):
+def normalize_international_phone(value):
+    """Normalize phone numbers to a compact international form.
+
+    Nepal local numbers remain the default. International callers must include
+    a leading + and country code.
+    """
     text = str(value or "").translate(NEPALI_DIGITS).strip()
+    if not text:
+        raise ValidationError(_("Enter a phone number."))
+
+    has_plus = text.startswith("+")
     digits = re.sub(r"\D", "", text)
+
+    if has_plus:
+        if not (8 <= len(digits) <= 15):
+            raise ValidationError(
+                _("Enter a valid international phone number including the country code.")
+            )
+        return f"+{digits}"
+
     if digits.startswith("977"):
         digits = digits[3:]
     if digits.startswith("0"):
         digits = digits[1:]
-
-    # Nepal mobile numbers are ten local digits beginning 97 or 98. Landline
-    # lengths vary, so accept 7–10 digits after removing country/trunk prefixes.
     if not (7 <= len(digits) <= 10):
         raise ValidationError(
-            _("Enter a valid Nepal phone number, such as 98XXXXXXXX or +977 98XXXXXXXX.")
+            _("Enter a Nepal number or include + and the country code for an international number.")
         )
     if len(digits) == 10 and not digits.startswith(("97", "98")):
-        raise ValidationError(
-            _("Ten-digit Nepal mobile numbers normally begin with 97 or 98.")
-        )
+        raise ValidationError(_("Ten-digit Nepal mobile numbers normally begin with 97 or 98."))
     return f"+977{digits}"
+
+
+# Backward-compatible import name used by existing forms.
+def normalize_nepal_phone(value):
+    return normalize_international_phone(value)
 
 
 def validate_private_attachment(upload):

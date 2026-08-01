@@ -13,29 +13,21 @@ sitemaps = {
     "members": MemberSitemap,
 }
 
-
-# URLs without language prefixes
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("i18n/", include("django.conf.urls.i18n")),
     path("robots.txt", core_views.robots_txt, name="robots_txt"),
     path("health/", core_views.health, name="health"),
-    path(
-        "sitemap.xml",
-        sitemap,
-        {"sitemaps": sitemaps},
-        name="django.contrib.sitemaps.views.sitemap",
-    ),
+    path("sitemap.xml", sitemap, {"sitemaps": sitemaps}, name="django.contrib.sitemaps.views.sitemap"),
 ]
 
-
-# Public URLs with /ne/ and /en/ prefixes
 urlpatterns += i18n_patterns(
     path("", include("core.urls")),
     path("members/", include("members.urls")),
     path("news/", include("blog.urls")),
 )
 
-
+handler400 = "migrantcenter.error_views.bad_request"
+handler403 = "migrantcenter.error_views.permission_denied"
 handler404 = "migrantcenter.error_views.page_not_found"
 handler500 = "migrantcenter.error_views.server_error"

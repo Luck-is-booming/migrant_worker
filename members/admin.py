@@ -18,22 +18,12 @@ from .models import (
 from .services import merge_people
 
 
-<<<<<<< HEAD
-@admin.register(Member)
-class MemberAdmin(admin.ModelAdmin):
-    list_display = (
-        "source_membership",
-        "level",
-        "unit_name",
-        "membership_type",
-=======
 class MembershipInline(admin.TabularInline):
     model = MembershipRecord
     extra = 0
     fields = (
         "category",
         "organization_unit",
->>>>>>> 1d670fd (refactor)
         "membership_number",
         "status",
         "designation",
@@ -106,16 +96,6 @@ class MembershipRecordAdmin(admin.ModelAdmin):
         "created_at",
         "updated_at",
     )
-<<<<<<< HEAD
-    readonly_fields = ("source_membership",)
-
-    fields = (
-        "source_membership",
-        "name_ne",
-        "name_en",
-        "membership_number",
-        "membership_type",
-=======
 
     @admin.display(description="Status")
     def status_badge(self, obj):
@@ -167,7 +147,6 @@ class ImportBatchAdmin(admin.ModelAdmin):
         "source_file_name",
         "source_checksum",
         "source_sheet",
->>>>>>> 1d670fd (refactor)
         "status",
         "is_dry_run",
         "options",

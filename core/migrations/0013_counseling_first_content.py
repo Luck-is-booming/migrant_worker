@@ -29,6 +29,8 @@ class Migration(migrations.Migration):
         migrations.AddField(model_name="destinationcountry", name="last_reviewed", field=models.DateField(blank=True, null=True)),
         migrations.AddField(model_name="destinationcountry", name="is_active", field=models.BooleanField(default=True)),
         migrations.AlterField(model_name="destinationcountry", name="estimated_cost", field=models.PositiveIntegerField(default=0, help_text="Informational estimate only. Set to zero when unverified.")),
+        migrations.AlterField(model_name="servicecard", name="process_ne", field=models.TextField(blank=True, verbose_name="Process Steps (Nepali)")),
+        migrations.AlterField(model_name="servicecard", name="process_en", field=models.TextField(blank=True, verbose_name="Process Steps (English)")),
         migrations.AlterField(model_name="destinationcountry", name="min_wage_ne", field=models.CharField(blank=True, max_length=100)),
         migrations.AlterField(model_name="destinationcountry", name="min_wage_en", field=models.CharField(blank=True, max_length=100)),
         migrations.AlterField(model_name="destinationcountry", name="laws_summary_ne", field=models.TextField(blank=True)),
@@ -38,15 +40,7 @@ class Migration(migrations.Migration):
         migrations.AlterField(model_name="resourcepublication", name="file_size", field=models.CharField(blank=True, max_length=50)),
         migrations.AlterField(model_name="resourcepublication", name="download_url", field=models.CharField(blank=True, max_length=500)),
         migrations.AlterModelOptions(name="resourcepublication", options={"ordering": ["-id"], "verbose_name": "Legacy resource publication"}),
-        migrations.AddField(
-    model_name="contactmessage",
-    name="phone",
-    field=models.CharField(
-        default="",
-        max_length=24,
-    ),
-    preserve_default=False,
-),
+        migrations.AddField(model_name="contactmessage", name="phone", field=models.CharField(default="", max_length=24), preserve_default=False),
         migrations.AddField(model_name="contactmessage", name="preferred_language", field=models.CharField(choices=[("ne", "Nepali"), ("en", "English"), ("either", "Either")], default="ne", max_length=10)),
         migrations.AddField(model_name="contactmessage", name="consent_to_contact", field=models.BooleanField(default=False)),
         migrations.AddField(model_name="contactmessage", name="status", field=models.CharField(choices=[("new", "New"), ("reviewed", "Reviewed"), ("closed", "Closed"), ("spam", "Spam")], default="new", max_length=20)),
@@ -113,5 +107,5 @@ class Migration(migrations.Migration):
             ],
             options={"ordering": ["category__display_order", "display_order", "title_en"]},
         ),
-        migrations.AddIndex(model_name="officialresource", index=models.Index(fields=["is_active", "category", "display_order"], name="core_offici_is_acti_fcd077_idx")),
+        migrations.AddIndex(model_name="officialresource", index=models.Index(fields=["is_active", "category", "display_order"], name="core_offici_is_acti_46af23_idx")),
     ]

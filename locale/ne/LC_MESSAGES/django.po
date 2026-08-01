@@ -2014,3 +2014,23 @@ msgstr "पहिचान हटाइएको"
 # Added during final production review
 msgid "Non-data row"
 msgstr "गैर-डेटा पङ्क्ति"
+
+
+# Added for international phone validation
+msgid "Enter a phone number."
+msgstr "फोन नम्बर प्रविष्ट गर्नुहोस्।"
+
+
+# Added for international phone validation
+msgid "Enter a valid international phone number including the country code."
+msgstr "देशको कोडसहित मान्य अन्तर्राष्ट्रिय फोन नम्बर प्रविष्ट गर्नुहोस्।"
+
+
+# Added for international phone validation
+msgid "Enter a Nepal number or include + and the country code for an international number."
+msgstr "नेपालको फोन नम्बर प्रविष्ट गर्नुहोस् वा अन्तर्राष्ट्रिय नम्बरका लागि + र देशको कोड समावेश गर्नुहोस्।"
+
+
+# Added for international phone validation
+msgid "Ten-digit Nepal mobile numbers normally begin with 97 or 98."
+msgstr "दश अङ्कको नेपाली मोबाइल नम्बर सामान्यतया ९७ वा ९८ बाट सुरु हुन्छ।"
