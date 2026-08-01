@@ -1,144 +1,114 @@
-BOOK_ICON = (
-    '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">'
-    '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" '
-    'd="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 '
-    '7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 '
-    '18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>'
-)
-LEGAL_ICON = (
-    '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">'
-    '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" '
-    'd="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"></path></svg>'
-)
+"""Conservative public fallback content.
+
+Fallbacks explain the service without inventing staff, contacts, achievements,
+partnerships, statistics, dates, or authority claims. Authorized staff should
+replace them with reviewed database content.
+"""
 
 FALLBACK_INFO = {
-    'ne': {
-        'name': 'आप्रवासी कामदार हकहित संरक्षण केन्द्र, इलाम',
-        'slogan': 'सुरक्षित वैदेशिक रोजगार, समृद्ध परिवार र समृद्ध राष्ट्रको आधार।',
-        'objective': 'वैदेशिक रोजगारीलाई सुरक्षित, भरपर्दो, मर्यादित र उपलब्धिमूलक बनाउने।',
-        'commitment': 'वैदेशिक रोजगारीबाट फर्किएका श्रमिकको सीप, पूँजी, प्रविधि र अनुभवको राष्ट्र निर्माणमा उच्चतम सार्थक उपयोग गर्ने।',
-        'chairperson': 'राम बहादुर गुरुङ',
-        'message': 'वैदेशिक रोजगारीमा जाने प्रत्येक नेपाली नागरिकको अधिकार र सुरक्षा सुनिश्चित गर्नु हाम्रो परम कर्तव्य हो। इलाम जिल्ला र आसपासका क्षेत्रमा सचेतना फैलाउन हामी निरन्तर प्रतिबद्ध छौं।',
+    "ne": {
+        "name": "आप्रवासी कामदार हकहित संरक्षण केन्द्र, इलाम",
+        "slogan": "वैदेशिक रोजगारसम्बन्धी बुझ्न सजिलो सूचना, सचेतना र परामर्श।",
+        "objective": (
+            "व्यक्ति र परिवारलाई वैदेशिक रोजगारका प्रक्रिया, सम्भावित जोखिम, "
+            "कागजात र आधिकारिक स्रोतबारे सामान्य जानकारी र परामर्श उपलब्ध गराउनु।"
+        ),
+        "commitment": (
+            "सुरक्षित निर्णय, ठगी तथा शोषणको जोखिम न्यूनीकरण, अधिकारसम्बन्धी "
+            "सचेतना र आवश्यकताअनुसार सम्बन्धित आधिकारिक निकायमा मार्गदर्शन।"
+        ),
+        "chairperson": "",
+        "message": "",
     },
-    'en': {
-        'name': 'Migrant Workers Rights and Welfare Protection Center, Ilam',
-        'slogan': 'Safe Foreign Employment: The Foundation of a Prosperous Family and a Prosperous Nation.',
-        'objective': 'To make foreign employment safe, reliable, dignified, and productive.',
-        'commitment': 'To achieve the highest meaningful utilization of the skills, capital, technology, and experience of returnee migrant workers in nation-building.',
-        'chairperson': 'Ram Bahadur Gurung',
-        'message': 'Ensuring the safety, dignity, and legal rights of every migrant worker is our utmost duty. We continuously strive to build a transparent ecosystem from the grass-roots level upward.',
+    "en": {
+        "name": "MRN Ilam",
+        "slogan": "Clear foreign-employment information, awareness, and counseling.",
+        "objective": (
+            "To help individuals and families understand foreign-employment "
+            "processes, risks, documents, questions, and appropriate official sources."
+        ),
+        "commitment": (
+            "To support informed decisions, risk prevention, rights awareness, "
+            "and appropriate referral to relevant authorities or qualified professionals."
+        ),
+        "chairperson": "",
+        "message": "",
     },
 }
 
 FALLBACK_SERVICES = {
-    'ne': [
+    "ne": [
         {
-            'title': 'पूर्व-प्रस्थान परामर्श',
-            'desc': 'श्रम सम्झौता, भिसा, बीमा र गन्तव्य देशको कानुनबारे विस्तृत जानकारी र अभिमुखीकरण परामर्श।',
-            'process': 'केन्द्रको कार्यालयमा सक्कल राहदानी र श्रम इजाजत पत्र सहित सम्पर्क राख्ने।',
-            'icon': BOOK_ICON,
+            "title": "प्रक्रिया बुझ्ने परामर्श",
+            "desc": "वैदेशिक रोजगारको चरण, कागजात, लागतसम्बन्धी प्रश्न र आधिकारिक जाँचका उपाय बुझ्न सहयोग।",
+            "process": "निजी परामर्श अनुरोधमार्फत आफ्नो प्रश्न वा चिन्ता पठाउनुहोस्।",
+            "icon": "guidance",
         },
         {
-            'title': 'कानुनी सहायता र उद्धार',
-            'desc': 'अलपत्र परेका, ठगीमा परेका वा बन्धक बनाइएका श्रमिकहरूको कानुनी उपचार र द्रुत सरकारी उद्धार समन्वय।',
-            'process': 'केन्द्रको आकस्मिक हेल्पलाईन नम्बर वा प्रमाण सहित अनलाइन फारम भर्ने।',
-            'icon': LEGAL_ICON,
+            "title": "जोखिम र ठगी सचेतना",
+            "desc": "शंकास्पद प्रस्ताव, अस्पष्ट शुल्क, फरक करार र दबाबपूर्ण भुक्तानीका संकेत चिन्न सहयोग।",
+            "process": "अन्तिम निर्णयअघि लिखित प्रमाण र आधिकारिक स्रोत जाँच गर्नुहोस्।",
+            "icon": "shield",
+        },
+        {
+            "title": "उपयुक्त निकायमा मार्गदर्शन",
+            "desc": "आवश्यकताअनुसार सरकारी, दूतावास, श्रम, कल्याण, कानुनी वा आपतकालीन निकाय खोज्न सहयोग।",
+            "process": "यो सेवा आपतकालीन प्रतिक्रिया वा कानुनी प्रतिनिधित्व होइन।",
+            "icon": "rights",
         },
     ],
-    'en': [
+    "en": [
         {
-            'title': 'Pre-Departure Counselling',
-            'desc': 'Comprehensive verification checks regarding employment contracts, medical benefits, insurance limits, and legal documentation.',
-            'process': 'Visit our main physical helpdesk in Ilam with your valid passport draft copy.',
-            'icon': BOOK_ICON,
+            "title": "Process counseling",
+            "desc": "Help understanding stages, documents, cost questions, and practical official verification steps.",
+            "process": "Send the question or concern through the private counseling request.",
+            "icon": "guidance",
         },
         {
-            'title': 'Legal Aid & Emergency Rescue',
-            'desc': 'Active cross-border coordination with local embassies, safe houses, and ministries to track down wage theft and coordinate rescue operations.',
-            'process': 'Submit official contractual deployment complaints directly via our secure portals.',
-            'icon': LEGAL_ICON,
+            "title": "Risk and fraud awareness",
+            "desc": "Help recognizing suspicious offers, unclear fees, inconsistent contracts, and pressure to pay.",
+            "process": "Verify written evidence and official sources before making a final decision.",
+            "icon": "shield",
+        },
+        {
+            "title": "Appropriate referral",
+            "desc": "Help finding relevant government, embassy, labor, welfare, legal, medical, or emergency channels.",
+            "process": "This service is not emergency response or legal representation.",
+            "icon": "rights",
         },
     ],
 }
 
-FALLBACK_COUNTRIES = {
-    'ne': [
-        {'name': 'मलेसिया', 'cost': 35000, 'flag': '🇲🇾'},
-        {'name': 'कतार', 'cost': 25000, 'flag': '🇶🇦'},
-    ],
-    'en': [
-        {'name': 'Malaysia', 'cost': 35000, 'flag': '🇲🇾'},
-        {'name': 'Qatar', 'cost': 25000, 'flag': '🇶🇦'},
-    ],
-}
-
-FALLBACK_RESOURCES = {
-    'ne': [
-        {'title': 'सुरक्षित वैदेशिक रोजगार हातेपुस्तिका २०२६', 'category': 'निर्देशिका र पुस्तिकाहरू', 'file_url': '#', 'size': '2.4 MB'},
-        {'title': 'म्यानपावर एजेन्सी ठगी नियन्त्रण निर्देशिका', 'category': 'कानुनी दस्तावेज', 'file_url': '#', 'size': '1.1 MB'},
-    ],
-    'en': [
-        {'title': 'Safe Foreign Employment Handbook 2026', 'category': 'Guides & Manuals', 'file_url': '#', 'size': '2.4 MB'},
-        {'title': 'Manpower Agency Fraud Prevention Guide', 'category': 'Legal Resources', 'file_url': '#', 'size': '1.1 MB'},
-    ],
-}
-
-FALLBACK_TEAM = {
-    'ne': [
-        {'name': 'सीता राजबंशी', 'designation': 'वरिष्ठ कानुनी अधिकारी', 'email': 'sita.legal@mrcilam.org', 'phone': '+९७७-२७-५२०१११', 'image': None},
-        {'name': 'रमेश श्रेष्ठ', 'designation': 'मनोसामाजिक परामर्शदाता', 'email': 'ramesh.counselor@mrcilam.org', 'phone': '+९७७-२७-५२०२२२', 'image': None},
-    ],
-    'en': [
-        {'name': 'Sita Rajbanshi', 'designation': 'Senior Legal Protection Officer', 'email': 'sita.legal@mrcilam.org', 'phone': '+977-27-520111', 'image': None},
-        {'name': 'Ramesh Shrestha', 'designation': 'Lead Psychosocial Counselor', 'email': 'ramesh.counselor@mrcilam.org', 'phone': '+977-27-520222', 'image': None},
-    ],
-}
-
-FALLBACK_ARTICLES = {
-    'ne': [
-        {
-            'title': 'मलेसिया जाने कामदारहरूको लागि नयाँ स्वास्थ्य मापदण्ड',
-            'content': 'मलेसिया सरकारले आगामी महिनादेखि लागू हुने गरी स्वास्थ्य परीक्षण मापदण्डमा परिमार्जन गरेको छ।',
-            'image_url': 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=500&auto=format&fit=crop',
-            'formatted_date': '२०८३ जेठ २७ गते',
-            'is_alert': True,
-        }
-    ],
-    'en': [
-        {
-            'title': 'New Medical Examination Standards for Malaysia Bound Workers',
-            'content': 'The government of Malaysia has announced updated diagnostic compliance criteria effective next month.',
-            'image_url': 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=500&auto=format&fit=crop',
-            'formatted_date': 'June 10, 2026',
-            'is_alert': True,
-        }
-    ],
-}
+# These remain empty until authorized staff add verified records in Django admin.
+FALLBACK_COUNTRIES = {"ne": [], "en": []}
+FALLBACK_RESOURCES = {"ne": [], "en": []}
+FALLBACK_TEAM = {"ne": [], "en": []}
+FALLBACK_ARTICLES = {"ne": [], "en": []}
 
 
 def _lang_key(lang):
-    return 'ne' if lang == 'ne' else 'en'
+    return "ne" if lang == "ne" else "en"
 
 
 def get_fallback_info(lang):
-    return FALLBACK_INFO[_lang_key(lang)]
+    return FALLBACK_INFO[_lang_key(lang)].copy()
 
 
 def get_fallback_services(lang):
-    return FALLBACK_SERVICES[_lang_key(lang)]
+    return list(FALLBACK_SERVICES[_lang_key(lang)])
 
 
 def get_fallback_countries(lang):
-    return FALLBACK_COUNTRIES[_lang_key(lang)]
+    return list(FALLBACK_COUNTRIES[_lang_key(lang)])
 
 
 def get_fallback_resources(lang):
-    return FALLBACK_RESOURCES[_lang_key(lang)]
+    return list(FALLBACK_RESOURCES[_lang_key(lang)])
 
 
 def get_fallback_team(lang):
-    return FALLBACK_TEAM[_lang_key(lang)]
+    return list(FALLBACK_TEAM[_lang_key(lang)])
 
 
 def get_fallback_articles(lang):
-    return FALLBACK_ARTICLES[_lang_key(lang)]
+    return list(FALLBACK_ARTICLES[_lang_key(lang)])

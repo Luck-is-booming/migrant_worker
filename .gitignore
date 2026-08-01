@@ -21,3 +21,14 @@ htmlcov/
 .DS_Store
 .idea/
 .vscode/
+<<<<<<< HEAD
+=======
+
+# Private operational exports
+backups/
+import_reports/
+*.log
+
+# Local temporary artifacts
+*.zip
+>>>>>>> 1d670fd (refactor)

@@ -1,0 +1,32 @@
+services:
+  - type: web
+    name: mrn-ilam
+    runtime: python
+    plan: free
+    buildCommand: bash build.sh
+    startCommand: gunicorn migrantcenter.wsgi:application --bind 0.0.0.0:$PORT --workers 1 --threads 2 --timeout 90
+    healthCheckPath: /health/
+    autoDeploy: true
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.13.5
+      - key: DEBUG
+        value: "False"
+      - key: USE_SQLITE
+        value: "False"
+      - key: SECRET_KEY
+        sync: false
+      - key: DATABASE_URL
+        sync: false
+      - key: ALLOWED_HOSTS
+        value: mrnilam.org.np,www.mrnilam.org.np,.onrender.com
+      - key: CSRF_TRUSTED_ORIGINS
+        value: https://mrnilam.org.np,https://www.mrnilam.org.np
+      - key: CLOUDINARY_URL
+        sync: false
+      - key: ADMIN_USERNAME
+        sync: false
+      - key: ADMIN_EMAIL
+        sync: false
+      - key: ADMIN_PASSWORD
+        sync: false

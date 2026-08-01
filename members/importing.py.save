@@ -1,0 +1,839 @@
+import csv
+import hashlib
+import json
+import logging
+import math
+import re
+from dataclasses import dataclass, field
+from datetime import date, datetime
+from pathlib import Path
+
+from django.db import transaction
+from django.utils import timezone
+from openpyxl import load_workbook
+
+from .models import (
+    ImportBatch,
+    ImportRowRecord,
+    MembershipRecord,
+    OrganizationUnit,
+    Person,
+    PotentialDuplicate,
+    normalize_membership_number,
+)
+from .name_utils import romanize_nepali_name
+from .services import (
+    get_or_create_category,
+    get_or_create_unit,
+    names_are_strong_match,
+    normalize_phone,
+    resolve_person_identity,
+)
+
+
+logger = logging.getLogger(__name__)
+
+
+NEPALI_DIGITS = str.maketrans("०१२३४५६७८९", "0123456789")
+HEADER_ALIASES = {
+    "serial": {"sn", "s.n", "sno", "serial", "क्रमसंख्या", "क्रस", "सिनं"},
+    "name": {"नामथर", "नाम", "fullname", "name", "membername"},
+    "address": {"ठेगाना", "address", "location", "पालिका", "स्थायीठेगाना"},
+    "designation": {"पद", "designation", "position", "जिम्मेवारी"},
+    "membership_number": {
+        "सदस्यतानं",
+        "सदस्यतानं-",
+        "सदस्यतानम्बर",
+        "membershipno",
+        "membershipnumber",
+        "memberno",
+    },
+    "joined_date": {"मिति", "date", "joineddate", "सदस्यतामिति"},
+    "category": {"प्रकार", "type", "category", "सदस्यताप्रकार"},
+    "country": {"गएकोदेश", "देश", "country", "destinationcountry"},
+    "phone": {"सम्पर्कनम्वर", "सम्पर्कनम्बर", "फोन", "मोबाइल", "phone", "contactnumber"},
+    "fee": {"शुल्क", "fee", "amount"},
+    "status": {"कैफियत", "status", "स्थिति", "remarks", "remark"},
+}
+
+
+class ImportValidationError(Exception):
+    pass
+
+
+class DryRunRollback(Exception):
+    pass
+
+
+class ImportRowsFailed(Exception):
+    pass
+
+
+@dataclass
+class RowOutcome:
+    row_number: int
+    status: str
+    original: dict
+    normalized: dict
+    warnings: list[str] = field(default_factory=list)
+    error: str = ""
+    person_id: int | None = None
+    membership_id: int | None = None
+    created_person: bool = False
+    created_membership: bool = False
+    before_person: dict = field(default_factory=dict)
+    before_membership: dict = field(default_factory=dict)
+
+
+@dataclass
+class ImportSummary:
+    source_file: str
+    sheet: str
+    total_workbook_rows: int = 0
+    header_rows: int = 0
+    blank_rows: int = 0
+    non_data_rows: int = 0
+    valid_data_rows: int = 0
+    imported_people: int = 0
+    imported_memberships: int = 0
+    updated_people: int = 0
+    updated_memberships: int = 0
+    unchanged_records: int = 0
+    multiple_membership_people: int = 0
+    potential_duplicates: int = 0
+    warning_rows: int = 0
+    failed_rows: int = 0
+    people_before: int = 0
+    people_after: int = 0
+    memberships_before: int = 0
+    memberships_after: int = 0
+    records_deleted: int = 0
+    available_sheets: list[str] = field(default_factory=list)
+
+    def as_dict(self):
+        return self.__dict__.copy()
+
+
+def normalize_header(value):
+    text = str(value or "").translate(NEPALI_DIGITS).casefold().strip()
+    return re.sub(r"[^\w\u0900-\u097f]+", "", text)
+
+
+def clean_text(value):
+    if value is None:
+        return ""
+    if isinstance(value, float) and math.isnan(value):
+        return ""
+    if isinstance(value, datetime):
+        return value.isoformat()
+    text = str(value).replace("\xa0", " ").strip()
+    if text.casefold() in {"nan", "none", "null"}:
+        return ""
+    return " ".join(text.split())
+
+
+def cell_to_text(cell):
+    value = cell.value
+    if value is None:
+        return ""
+    if isinstance(value, bool):
+        return "Yes" if value else "No"
+    if isinstance(value, (datetime, date)):
+        return value.isoformat()
+    if isinstance(value, int):
+        number_format = str(cell.number_format or "")
+        zero_pattern = re.fullmatch(r"0+", number_format)
+        if zero_pattern:
+            return str(value).zfill(len(number_format))
+        return str(value)
+    if isinstance(value, float):
+        if math.isnan(value):
+            return ""
+        if value.is_integer():
+            number_format = str(cell.number_format or "")
+            zero_pattern = re.fullmatch(r"0+", number_format)
+            raw = str(int(value))
+            return raw.zfill(len(number_format)) if zero_pattern else raw
+    return clean_text(value)
+
+
+def file_checksum(path):
+    digest = hashlib.sha256()
+    with open(path, "rb") as source:
+        for chunk in iter(lambda: source.read(1024 * 1024), b""):
+            digest.update(chunk)
+    return digest.hexdigest()
+
+
+def normalize_category(value):
+    text = normalize_header(value)
+    if any(token in text for token in ("आजिवन", "आजीवन", "life", "lifetime")):
+        return "life"
+    if any(token in text for token in ("साधारण", "general", "regular")):
+        return "general"
+    return "other" if text else "general"
+
+
+def normalize_status(value):
+    text = normalize_header(value)
+    if any(token in text for token in ("active", "सक्रिय", "चालु")):
+        return "active"
+    if any(token in text for token in ("expire", "expired", "निष्क्रिय", "समाप्त")):
+        return "expired"
+    if any(token in text for token in ("archive", "archived")):
+        return "archived"
+    return "unknown"
+
+
+def normalize_date(value, warnings):
+    if not value:
+        return None
+    if isinstance(value, datetime):
+        value = value.date()
+    if isinstance(value, date):
+        if value.year >= 2070:
+            try:
+                import nepali_datetime
+
+                return nepali_datetime.date(value.year, value.month, value.day).to_datetime_date()
+            except Exception:
+                warnings.append(
+                    f"Date {value.isoformat()} appears to be Bikram Sambat and could not be converted."
+                )
+                return None
+        return value
+
+    text = clean_text(value).translate(NEPALI_DIGITS)
+    match = re.fullmatch(r"(\d{4})[-/.](\d{1,2})[-/.](\d{1,2})", text)
+    if not match:
+        warnings.append(f"Unrecognized date format: {text}")
+        return None
+    year, month, day = map(int, match.groups())
+    try:
+        if year >= 2070:
+            import nepali_datetime
+
+            return nepali_datetime.date(year, month, day).to_datetime_date()
+        return date(year, month, day)
+    except Exception:
+        warnings.append(f"Invalid date: {text}")
+        return None
+
+
+def infer_unit(workbook, fallback_level="unknown", fallback_name=""):
+    sample = []
+    for sheet in workbook.worksheets[:1]:
+        for row in sheet.iter_rows(min_row=1, max_row=min(sheet.max_row, 3), values_only=True):
+            sample.extend(clean_text(value) for value in row if value)
+    title = " ".join(sample)
+    normalized = normalize_header(title)
+    if "जिल्ला" in normalized or "district" in normalized:
+        return "district", fallback_name or "Ilam District"
+    if "नगर" in normalized or "municipality" in normalized:
+        return "municipality", fallback_name or "Ilam Municipality"
+    return fallback_level, fallback_name or "Unknown Unit"
+
+
+def detect_header(sheet):
+    best = None
+    for row_number in range(1, min(sheet.max_row, 20) + 1):
+        mapping = {}
+        row = sheet[row_number]
+        for column_index, cell in enumerate(row):
+            normalized = normalize_header(cell.value)
+            if not normalized:
+                continue
+            for canonical, aliases in HEADER_ALIASES.items():
+                if normalized in aliases:
+                    mapping[canonical] = column_index
+                    break
+        score = len(mapping)
+        if "name" in mapping and score >= 3 and (best is None or score > best[0]):
+            best = (score, row_number, mapping)
+    if best is None:
+        raise ImportValidationError(
+            "Could not find a member header row. Expected at least name and two recognized columns."
+        )
+    return best[1], best[2]
+
+
+def snapshot(instance, fields):
+    if not instance:
+        return {}
+    return {field: getattr(instance, field) for field in fields}
+
+
+def serialize_for_json(value):
+    if isinstance(value, (date, datetime)):
+        return value.isoformat()
+    if hasattr(value, "pk"):
+        return value.pk
+    return value
+
+
+def source_identity_key(*, source_name, sheet, row_number, membership_number, name, phone):
+    if normalize_membership_number(membership_number):
+        return ""
+    raw = "|".join(
+        [source_name.casefold(), sheet.casefold(), str(row_number), clean_text(name), normalize_phone(phone)]
+    )
+    return hashlib.sha256(raw.encode("utf-8")).hexdigest()[:40]
+
+
+def export_membership_backup(path):
+    path = Path(path)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    payload = {
+        "created_at": timezone.now().isoformat(),
+        "people": list(
+            Person.objects.order_by("pk").values(
+                "id",
+                "public_id",
+                "name_ne",
+                "name_en",
+                "phone",
+                "email",
+                "location",
+                "is_public",
+                "needs_identity_review",
+            )
+        ),
+        "memberships": list(
+            MembershipRecord.objects.order_by("pk").values(
+                "id",
+                "public_id",
+                "person_id",
+                "category_id",
+                "organization_unit_id",
+                "membership_number",
+                "membership_number_normalized",
+                "status",
+                "joined_date",
+                "designation",
+                "destination_country",
+                "address_display",
+                "is_public",
+                "legacy_member_id",
+                "source_application_id",
+            )
+        ),
+    }
+    path.write_text(json.dumps(payload, ensure_ascii=False, indent=2, default=serialize_for_json))
+    return path
+
+
+class WorkbookMemberImporter:
+    PERSON_FIELDS = ["name_ne", "name_en", "phone", "location", "is_public", "needs_identity_review"]
+    MEMBERSHIP_FIELDS = [
+        "category_id",
+        "organization_unit_id",
+        "membership_number",
+        "status",
+        "joined_date",
+        "designation",
+        "destination_country",
+        "address_display",
+        "is_public",
+        "source_identity_key",
+    ]
+
+    def __init__(
+        self,
+        path,
+        *,
+        sheet_name=None,
+        level=None,
+        unit_name=None,
+        update_existing=False,
+        dry_run=False,
+        report_path=None,
+        created_by=None,
+    ):
+        self.path = Path(path)
+        self.sheet_name = sheet_name
+        self.level = level
+        self.unit_name = unit_name
+        self.update_existing = update_existing
+        self.dry_run = dry_run
+        self.report_path = Path(report_path) if report_path else None
+        self.created_by = created_by
+        self.outcomes = []
+        self.batch = None
+
+    def validate_file(self):
+        if not self.path.exists():
+            raise ImportValidationError(f"Workbook not found: {self.path}")
+        if self.path.suffix.casefold() not in {".xlsx", ".xlsm"}:
+            raise ImportValidationError("Only .xlsx and .xlsm workbooks are supported.")
+
+    def _workbook(self):
+        return load_workbook(self.path, read_only=False, data_only=True, keep_vba=self.path.suffix.casefold() == ".xlsm")
+
+    def _select_sheet(self, workbook):
+        if self.sheet_name:
+            if self.sheet_name not in workbook.sheetnames:
+                raise ImportValidationError(
+                    f"Sheet '{self.sheet_name}' does not exist. Available: {', '.join(workbook.sheetnames)}"
+                )
+            return workbook[self.sheet_name]
+        return workbook[workbook.sheetnames[0]]
+
+    def run(self):
+        self.validate_file()
+        workbook = self._workbook()
+        sheet = self._select_sheet(workbook)
+        header_row, columns = detect_header(sheet)
+        inferred_level, inferred_unit = infer_unit(workbook, self.level or "unknown", self.unit_name or "")
+        level = self.level or inferred_level
+        unit_name = self.unit_name or inferred_unit
+        checksum = file_checksum(self.path)
+
+        logger.info(
+            "Member import started file=%s sheet=%s checksum=%s dry_run=%s",
+            self.path.name,
+            sheet.title,
+            checksum[:12],
+            self.dry_run,
+        )
+
+        summary = ImportSummary(
+            source_file=self.path.name,
+            sheet=sheet.title,
+            total_workbook_rows=sheet.max_row,
+            header_rows=header_row,
+            people_before=Person.objects.count(),
+            memberships_before=MembershipRecord.objects.count(),
+            available_sheets=workbook.sheetnames,
+        )
+
+        options = {
+            "sheet": sheet.title,
+            "level": level,
+            "unit_name": unit_name,
+            "update_existing": self.update_existing,
+            "dry_run": self.dry_run,
+        }
+
+        try:
+            with transaction.atomic():
+                self.batch = ImportBatch.objects.create(
+                    source_file_name=self.path.name,
+                    source_checksum=checksum,
+                    source_sheet=sheet.title,
+                    status="pending",
+                    is_dry_run=self.dry_run,
+                    options=options,
+                    created_by=self.created_by,
+                )
+                unit = get_or_create_unit(level, unit_name)
+                self._process_rows(sheet, header_row, columns, unit, summary)
+                self._finalize_summary(summary)
+                if summary.failed_rows:
+                    raise ImportRowsFailed
+                self.batch.summary = summary.as_dict()
+                self.batch.status = "dry_run" if self.dry_run else "completed"
+                self.batch.completed_at = timezone.now()
+                self.batch.save(update_fields=["summary", "status", "completed_at"])
+                if self.dry_run:
+                    raise DryRunRollback
+        except DryRunRollback:
+            # All simulated data changes roll back; the audit batch and row results persist.
+            self.batch = ImportBatch.objects.create(
+                source_file_name=self.path.name,
+                source_checksum=checksum,
+                source_sheet=sheet.title,
+                status="dry_run",
+                is_dry_run=True,
+                options=options,
+                summary=summary.as_dict(),
+                completed_at=timezone.now(),
+                created_by=self.created_by,
+            )
+            self._save_audit_rows(self.batch, include_links=False)
+        except ImportRowsFailed:
+            # Failed row validation rolls back the entire import, then preserves its audit.
+            summary.people_after = summary.people_before
+            summary.memberships_after = summary.memberships_before
+            self.batch = ImportBatch.objects.create(
+                source_file_name=self.path.name,
+                source_checksum=checksum,
+                source_sheet=sheet.title,
+                status="failed",
+                is_dry_run=False,
+                options=options,
+                summary=summary.as_dict(),
+                completed_at=timezone.now(),
+                created_by=self.created_by,
+            )
+            self._save_audit_rows(self.batch, include_links=False)
+        except Exception:
+            # Unexpected failures are re-raised; the database transaction is fully rolled back.
+            raise
+
+        if self.report_path:
+            self.write_report(self.report_path)
+        logger.info(
+            "Member import finished file=%s status=%s valid_rows=%s memberships=%s failed_rows=%s deleted=%s",
+            self.path.name,
+            self.batch.status,
+            summary.valid_data_rows,
+            summary.imported_memberships,
+            summary.failed_rows,
+            summary.records_deleted,
+        )
+        return self.batch, summary, self.outcomes
+
+    def _save_audit_rows(self, batch, *, include_links):
+        for outcome in self.outcomes:
+            ImportRowRecord.objects.create(
+                batch=batch,
+                row_number=outcome.row_number,
+                row_checksum=hashlib.sha256(
+                    json.dumps(
+                        outcome.original, ensure_ascii=False, sort_keys=True
+                    ).encode("utf-8")
+                ).hexdigest(),
+                status=outcome.status,
+                original_data=outcome.original,
+                normalized_data=outcome.normalized,
+                warnings=outcome.warnings,
+                error_message=outcome.error,
+                person_id=outcome.person_id if include_links else None,
+                membership_id=outcome.membership_id if include_links else None,
+                created_person=outcome.created_person,
+                created_membership=outcome.created_membership,
+                before_person=outcome.before_person,
+                before_membership=outcome.before_membership,
+            )
+
+    def _process_rows(self, sheet, header_row, columns, unit, summary):
+        blank_streak = 0
+        for row_number in range(header_row + 1, sheet.max_row + 1):
+            cells = sheet[row_number]
+            original = {
+                key: cell_to_text(cells[index]) if index < len(cells) else ""
+                for key, index in columns.items()
+            }
+            name = clean_text(original.get("name"))
+            if not name:
+                summary.blank_rows += 1
+                blank_streak += 1
+                if blank_streak >= 30:
+                    break
+                continue
+            blank_streak = 0
+
+            supporting_values = [
+                original.get("serial"),
+                original.get("address"),
+                original.get("designation"),
+                original.get("membership_number"),
+                original.get("joined_date"),
+                original.get("category"),
+                original.get("country"),
+                original.get("phone"),
+                original.get("status"),
+            ]
+            if not any(clean_text(value) for value in supporting_values):
+                summary.non_data_rows += 1
+                outcome = RowOutcome(
+                    row_number=row_number,
+                    status="skipped",
+                    original=original,
+                    normalized={"name_ne": name},
+                    warnings=[
+                        "Row contains a label or summary but no member fields; "
+                        "it was recorded as non-data and not imported."
+                    ],
+                )
+            else:
+                summary.valid_data_rows += 1
+                outcome = self._process_one(row_number, original, unit)
+                self._count_outcome(summary, outcome)
+
+            self.outcomes.append(outcome)
+            if not self.dry_run:
+                ImportRowRecord.objects.create(
+                    batch=self.batch,
+                    row_number=row_number,
+                    row_checksum=hashlib.sha256(
+                        json.dumps(original, ensure_ascii=False, sort_keys=True).encode("utf-8")
+                    ).hexdigest(),
+                    status=outcome.status,
+                    original_data=outcome.original,
+                    normalized_data=outcome.normalized,
+                    warnings=outcome.warnings,
+                    error_message=outcome.error,
+                    person_id=outcome.person_id,
+                    membership_id=outcome.membership_id,
+                    created_person=outcome.created_person,
+                    created_membership=outcome.created_membership,
+                    before_person=outcome.before_person,
+                    before_membership=outcome.before_membership,
+                )
+
+    def _process_one(self, row_number, original, unit):
+        warnings = []
+        try:
+            category_code = normalize_category(original.get("category"))
+            if category_code == "other":
+                warnings.append(
+                    f"Unrecognized membership category '{original.get('category')}'. Imported as Other."
+                )
+            category = get_or_create_category(category_code)
+            membership_number = clean_text(original.get("membership_number"))
+            phone = normalize_phone(original.get("phone"))
+            joined_date = normalize_date(original.get("joined_date"), warnings)
+            normalized = {
+                "serial": clean_text(original.get("serial")),
+                "name_ne": clean_text(original.get("name")),
+                "name_en": romanize_nepali_name(original.get("name")),
+                "address": clean_text(original.get("address")),
+                "designation": clean_text(original.get("designation")),
+                "membership_number": membership_number,
+                "category": category.code,
+                "country": clean_text(original.get("country")),
+                "phone": phone,
+                "status": normalize_status(original.get("status")),
+                "joined_date": joined_date.isoformat() if joined_date else "",
+                "unit": unit.name_en,
+                "level": unit.level,
+            }
+            if not phone:
+                warnings.append("Phone number is blank; identity was not auto-merged by name alone.")
+            if not membership_number:
+                warnings.append("Membership number is blank; source row identity is used for reruns.")
+
+            source_key = source_identity_key(
+                source_name=self.path.name,
+                sheet=self.batch.source_sheet,
+                row_number=row_number,
+                membership_number=membership_number,
+                name=normalized["name_ne"],
+                phone=phone,
+            )
+            existing = MembershipRecord.objects.select_related("person").filter(
+                category=category,
+                organization_unit=unit,
+                membership_number_normalized=normalize_membership_number(membership_number),
+            ).first() if membership_number else MembershipRecord.objects.select_related("person").filter(
+                organization_unit=unit,
+                source_identity_key=source_key,
+            ).first()
+
+            if existing:
+                same_phone = bool(phone and existing.person.phone and phone == existing.person.phone)
+                strong_name = names_are_strong_match(
+                    normalized["name_ne"], existing.person.name_ne
+                )
+                if not strong_name and not same_phone:
+                    warnings.append(
+                        "The membership number is already used by a different-looking "
+                        "person in the same category and organization unit. The row was "
+                        "not overwritten and requires manual review."
+                    )
+                    return RowOutcome(
+                        row_number=row_number,
+                        status="failed",
+                        original=original,
+                        normalized=normalized,
+                        warnings=warnings,
+                        error=(
+                            "Membership identifier conflict: existing person "
+                            f"'{existing.person.name_ne}', incoming person "
+                            f"'{normalized['name_ne']}'."
+                        ),
+                        person_id=existing.person_id,
+                        membership_id=existing.pk,
+                    )
+                return self._handle_existing(
+                    row_number, existing, normalized, source_key, warnings, original, joined_date
+                )
+
+            resolution = resolve_person_identity(
+                name_ne=normalized["name_ne"],
+                name_en=normalized["name_en"],
+                phone=phone,
+                location=normalized["address"],
+            )
+            warnings.extend(resolution.warnings)
+            membership = MembershipRecord.objects.create(
+                person=resolution.person,
+                category=category,
+                organization_unit=unit,
+                membership_number=membership_number,
+                source_identity_key=source_key,
+                status=normalized["status"],
+                joined_date=joined_date,
+                designation=normalized["designation"],
+                destination_country=normalized["country"],
+                address_display=normalized["address"],
+                is_public=True,
+                created_by_import=self.batch,
+            )
+            status = "warning" if warnings else "imported"
+            return RowOutcome(
+                row_number=row_number,
+                status=status,
+                original=original,
+                normalized=normalized,
+                warnings=warnings,
+                person_id=resolution.person.pk,
+                membership_id=membership.pk,
+                created_person=resolution.created,
+                created_membership=True,
+            )
+        except Exception as exc:
+            return RowOutcome(
+                row_number=row_number,
+                status="failed",
+                original=original,
+                normalized={},
+                warnings=warnings,
+                error=str(exc),
+            )
+
+    def _handle_existing(self, row_number, membership, normalized, source_key, warnings, original, joined_date):
+        person = membership.person
+        before_person = snapshot(person, self.PERSON_FIELDS)
+        before_membership = snapshot(membership, self.MEMBERSHIP_FIELDS)
+
+        desired_person = {
+            "name_ne": normalized["name_ne"],
+            "name_en": person.name_en or normalized["name_en"],
+            "phone": person.phone or normalized["phone"],
+            "location": person.location or normalized["address"],
+        }
+        desired_membership = {
+            "membership_number": normalized["membership_number"],
+            "status": normalized["status"],
+            "joined_date": joined_date,
+            "designation": normalized["designation"],
+            "destination_country": normalized["country"],
+            "address_display": normalized["address"],
+            "source_identity_key": source_key,
+        }
+
+        changed_person = any(getattr(person, key) != value for key, value in desired_person.items())
+        changed_membership = any(getattr(membership, key) != value for key, value in desired_membership.items())
+
+        if not self.update_existing:
+            if changed_person or changed_membership:
+                warnings.append("Matching membership already exists; use --update-existing to apply changed values.")
+                status = "warning"
+            else:
+                status = "unchanged"
+        else:
+            for key, value in desired_person.items():
+                setattr(person, key, value)
+            for key, value in desired_membership.items():
+                setattr(membership, key, value)
+            if changed_person:
+                person.save()
+            if changed_membership:
+                membership.save()
+            status = "updated" if changed_person or changed_membership else "unchanged"
+
+        return RowOutcome(
+            row_number=row_number,
+            status=status,
+            original=original,
+            normalized=normalized,
+            warnings=warnings,
+            person_id=person.pk,
+            membership_id=membership.pk,
+            before_person={key: serialize_for_json(value) for key, value in before_person.items()},
+            before_membership={key: serialize_for_json(value) for key, value in before_membership.items()},
+        )
+
+    def _count_outcome(self, summary, outcome):
+        if outcome.created_person:
+            summary.imported_people += 1
+        if outcome.created_membership:
+            summary.imported_memberships += 1
+        if outcome.status == "updated":
+            summary.updated_memberships += 1
+            if outcome.before_person:
+                summary.updated_people += 1
+        elif outcome.status == "unchanged":
+            summary.unchanged_records += 1
+        elif outcome.status == "failed":
+            summary.failed_rows += 1
+        if outcome.warnings:
+            summary.warning_rows += 1
+
+    def _finalize_summary(self, summary):
+        summary.people_after = Person.objects.count()
+        summary.memberships_after = MembershipRecord.objects.count()
+        summary.potential_duplicates = PotentialDuplicate.objects.filter(status="pending").count()
+        summary.multiple_membership_people = Person.objects.filter(
+            memberships__isnull=False
+        ).annotate(total=models.Count("memberships")).filter(total__gt=1).count()
+
+    def write_report(self, path):
+        path = Path(path)
+        path.parent.mkdir(parents=True, exist_ok=True)
+        fieldnames = [
+            "row_number",
+            "status",
+            "name",
+            "membership_number",
+            "category",
+            "unit",
+            "warnings",
+            "error",
+            "person_id",
+            "membership_id",
+        ]
+        with path.open("w", encoding="utf-8-sig", newline="") as destination:
+            writer = csv.DictWriter(destination, fieldnames=fieldnames)
+            writer.writeheader()
+            for outcome in self.outcomes:
+                writer.writerow(
+                    {
+                        "row_number": outcome.row_number,
+                        "status": outcome.status,
+                        "name": outcome.normalized.get("name_ne", outcome.original.get("name", "")),
+                        "membership_number": outcome.normalized.get("membership_number", ""),
+                        "category": outcome.normalized.get("category", ""),
+                        "unit": outcome.normalized.get("unit", ""),
+                        "warnings": " | ".join(outcome.warnings),
+                        "error": outcome.error,
+                        "person_id": outcome.person_id or "",
+                        "membership_id": outcome.membership_id or "",
+                    }
+                )
+
+
+def rollback_import_batch(batch):
+    if batch.status not in {"completed", "failed"}:
+        raise ImportValidationError("Only completed or failed imports can be rolled back.")
+
+    with transaction.atomic():
+        for row in batch.rows.select_related("person", "membership").order_by("-row_number"):
+            membership = row.membership
+            person = row.person
+            if row.created_membership and membership and membership.created_by_import_id == batch.pk:
+                membership.delete()
+            elif membership and row.before_membership:
+                for field, value in row.before_membership.items():
+                    if field == "joined_date" and value:
+                        value = date.fromisoformat(value)
+                    setattr(membership, field, value)
+                membership.save()
+
+            if row.created_person and person and not person.memberships.exists():
+                person.delete()
+            elif person and row.before_person:
+                for field, value in row.before_person.items():
+                    setattr(person, field, value)
+                person.save()
+
+        batch.status = "rolled_back"
+        batch.completed_at = timezone.now()
+        batch.save(update_fields=["status", "completed_at"])
+    return batch
+
+
+# Imported late to keep the module importable for workbook-only unit tests.
+from django.db import models  # noqa: E402

@@ -1,307 +1,110 @@
-import re
 from pathlib import Path
 
-import openpyxl
-from django.core.management.base import BaseCommand
+from django.conf import settings
+from django.core.management.base import BaseCommand, CommandError
+from django.utils import timezone
+from openpyxl import load_workbook
 
-from members.models import Member
-from members.name_utils import romanize_nepali_name
-
-def clean_value(value):
-    if value is None:
-        return ""
-    return str(value).strip()
-
-
-def clean_phone(value):
-    if value is None:
-        return ""
-
-    if isinstance(value, float):
-        value = int(value)
-
-    return str(value).strip()
-
-
-def get_import_member_number(membership_number, sn, name):
-    """
-    Used for update_or_create lookup.
-
-    Main idea:
-    - If Excel has real member number, use it.
-    - If member number is blank, use SN as fallback.
-    - This prevents many blank member numbers from becoming one duplicate record.
-    """
-    membership_number = clean_value(membership_number)
-    sn = clean_value(sn)
-    name = clean_value(name)
-
-    if membership_number:
-        return membership_number
-
-    if sn:
-        return f"SN-{sn}"
-
-    return f"NAME-{name}"
-
-
-def get_membership_type(value):
-    value = clean_value(value)
-
-    if "आजिवन" in value:
-        return "life"
-
-    if "साधारण" in value:
-        return "general"
-
-    return "general"
-
-
-def get_status(value, default="active"):
-    value = clean_value(value).lower()
-
-    if value == "active":
-        return "active"
-
-    if value in ["expire", "expired"]:
-        return "expired"
-
-    return default
-
-
-def extract_ward_no(address):
-    address = clean_value(address)
-
-    match = re.search(r"(\d+)", address)
-    if match:
-        return int(match.group(1))
-
-    return None
-
-
-def is_valid_member_row(sn, name):
-    name = clean_value(name)
-
-    if not name:
-        return False
-
-    if name.startswith("आजिवन सदस्य"):
-        return False
-
-    if clean_value(sn).lower().startswith("total"):
-        return False
-
-    return True
+from members.importing import (
+    ImportValidationError,
+    WorkbookMemberImporter,
+    export_membership_backup,
+)
 
 
 class Command(BaseCommand):
-    help = "Import MRN members from Excel files"
+    help = "Safely import member memberships from an XLSX/XLSM workbook."
 
     def add_arguments(self, parser):
+        parser.add_argument("workbook", help="Path to the .xlsx or .xlsm workbook.")
+        parser.add_argument("--sheet", help="Sheet name. Defaults to the first sheet.")
         parser.add_argument(
-            "--district",
-            type=str,
-            help="Path to district lifetime member Excel file",
+            "--level",
+            choices=["district", "municipality", "rural_municipality", "ward", "unknown", "other"],
+            help="Organization level. Inferred from the workbook title when omitted.",
         )
-        parser.add_argument(
-            "--nagar",
-            type=str,
-            help="Path to Ilam nagar member Excel file",
-        )
+        parser.add_argument("--unit-name", help="Organization unit/registry name.")
+        parser.add_argument("--dry-run", action="store_true", help="Validate and simulate without changing people or memberships.")
+        parser.add_argument("--update-existing", action="store_true", help="Apply changed workbook values to matching memberships.")
+        parser.add_argument("--report", help="CSV report path. Recommended for every production import.")
+        parser.add_argument("--backup", help="JSON backup path. Generated automatically for real imports when omitted.")
+        parser.add_argument("--list-sheets", action="store_true", help="List sheet names and exit.")
 
     def handle(self, *args, **options):
-        total_created = 0
-        total_updated = 0
+        path = Path(options["workbook"]).expanduser()
+        if not path.is_absolute():
+            path = Path(settings.BASE_DIR) / path
 
-        district_path = options.get("district")
-        nagar_path = options.get("nagar")
+        if not path.exists():
+            raise CommandError(f"Workbook not found: {path}")
 
-        if district_path:
-            created, updated = self.import_district_file(district_path)
-            total_created += created
-            total_updated += updated
+        if options["list_sheets"]:
+            workbook = load_workbook(path, read_only=True, data_only=True)
+            self.stdout.write("Available sheets:")
+            for sheet in workbook.sheetnames:
+                self.stdout.write(f"- {sheet}")
+            return
 
-        if nagar_path:
-            created, updated = self.import_nagar_file(nagar_path)
-            total_created += created
-            total_updated += updated
+        timestamp = timezone.now().strftime("%Y%m%d-%H%M%S")
+        report_path = options["report"]
+        if not report_path:
+            report_path = Path(settings.BASE_DIR) / "import_reports" / f"{path.stem}-{timestamp}.csv"
 
-        self.stdout.write(
-            self.style.SUCCESS(
-                f"Import complete. Created: {total_created}, Updated: {total_updated}"
+        if not options["dry_run"]:
+            backup_path = options["backup"] or (
+                Path(settings.BASE_DIR) / "backups" / f"members-before-{path.stem}-{timestamp}.json"
             )
+            backup = export_membership_backup(backup_path)
+            self.stdout.write(self.style.WARNING(f"Created pre-import backup: {backup}"))
+
+        importer = WorkbookMemberImporter(
+            path,
+            sheet_name=options["sheet"],
+            level=options["level"],
+            unit_name=options["unit_name"],
+            update_existing=options["update_existing"],
+            dry_run=options["dry_run"],
+            report_path=report_path,
         )
 
-    def import_district_file(self, file_path):
-        file_path = Path(file_path)
+        try:
+            batch, summary, outcomes = importer.run()
+        except ImportValidationError as exc:
+            raise CommandError(str(exc)) from exc
 
-        if not file_path.exists():
-            self.stdout.write(self.style.ERROR(f"File not found: {file_path}"))
-            return 0, 0
+        style = self.style.WARNING if options["dry_run"] else self.style.SUCCESS
+        self.stdout.write(style("DRY RUN — no membership changes were committed." if options["dry_run"] else "Import completed."))
+        self.stdout.write(f"Import batch: {batch.public_id}")
+        self.stdout.write(f"Report: {report_path}")
+        self.stdout.write("")
+        self.stdout.write("Reconciliation")
+        labels = [
+            ("Total workbook rows", summary.total_workbook_rows),
+            ("Header rows", summary.header_rows),
+            ("Blank rows", summary.blank_rows),
+            ("Non-data/summary rows", summary.non_data_rows),
+            ("Valid data rows", summary.valid_data_rows),
+            ("Imported people", summary.imported_people),
+            ("Imported memberships", summary.imported_memberships),
+            ("Updated people", summary.updated_people),
+            ("Updated memberships", summary.updated_memberships),
+            ("Unchanged records", summary.unchanged_records),
+            ("Multiple-membership people", summary.multiple_membership_people),
+            ("Potential duplicates", summary.potential_duplicates),
+            ("Warning rows", summary.warning_rows),
+            ("Failed rows", summary.failed_rows),
+            ("Database people before", summary.people_before),
+            ("Database people after", summary.people_after),
+            ("Database memberships before", summary.memberships_before),
+            ("Database memberships after", summary.memberships_after),
+            ("Records deleted", summary.records_deleted),
+        ]
+        for label, value in labels:
+            self.stdout.write(f"{label}: {value}")
 
-        workbook = openpyxl.load_workbook(file_path, data_only=True)
-        sheet = workbook.active
-
-        created_count = 0
-        updated_count = 0
-        blank_rows = 0
-
-        # District file:
-        # SN = col 0
-        # Name = col 1
-        # Address = col 2
-        # Designation = col 3
-        # Membership number = col 4
-        # Membership type = col 6
-        # Destination country = col 7
-        # Phone = col 8
-        for row in sheet.iter_rows(min_row=4, max_col=9, values_only=True):
-            sn = row[0]
-            name = row[1]
-
-            if not clean_value(name):
-                blank_rows += 1
-                if blank_rows >= 20:
-                    break
-                continue
-
-            blank_rows = 0
-
-            address = row[2]
-            designation = row[3]
-            membership_number = row[4]
-            membership_type = row[6]
-            destination_country = row[7]
-            phone = row[8]
-
-            if not is_valid_member_row(sn, name):
-                continue
-
-            import_member_number = get_import_member_number(
-                membership_number=membership_number,
-                sn=sn,
-                name=name,
-            )
-
-            obj, created = Member.objects.update_or_create(
-                level="district",
-                unit_name="Ilam District",
-                membership_number=import_member_number,
-                defaults={
-                    "name_ne": clean_value(name),
-                    "name_en": romanize_nepali_name(name),
-                    "address": clean_value(address),
-                    "designation": clean_value(designation),
-                    "membership_type": get_membership_type(membership_type),
-                    "status": "active",
-                    "municipality": "",
-                    "ward_no": extract_ward_no(address),
-                    "destination_country": clean_value(destination_country),
-                    "phone": clean_phone(phone),
-                    "show_phone_publicly": False,
-                    "is_public": True,
-                },
-            )
-
-            if created:
-                created_count += 1
-            else:
-                updated_count += 1
-
-        self.stdout.write(
-            self.style.SUCCESS(
-                f"District file imported. Created: {created_count}, Updated: {updated_count}"
-            )
-        )
-
-        return created_count, updated_count
-
-    def import_nagar_file(self, file_path):
-        file_path = Path(file_path)
-
-        if not file_path.exists():
-            self.stdout.write(self.style.ERROR(f"File not found: {file_path}"))
-            return 0, 0
-
-        workbook = openpyxl.load_workbook(file_path, data_only=True)
-        sheet = workbook.active
-
-        created_count = 0
-        updated_count = 0
-        blank_rows = 0
-
-        # Nagar / municipality file:
-        # SN = col 0
-        # Name = col 1
-        # Address = col 2
-        # Designation = col 4
-        # Membership number = col 5
-        # Membership type = col 6
-        # Destination country = col 7
-        # Phone = col 8
-        # Status = col 10
-        for row in sheet.iter_rows(min_row=4, max_col=11, values_only=True):
-            sn = row[0]
-            name = row[1]
-
-            if not clean_value(name):
-                blank_rows += 1
-                if blank_rows >= 20:
-                    break
-                continue
-
-            blank_rows = 0
-
-            address = row[2]
-            designation = row[4]
-            membership_number = row[5]
-            membership_type = row[6]
-            destination_country = row[7]
-            phone = row[8]
-            status = row[10]
-
-            if not is_valid_member_row(sn, name):
-                continue
-
-            import_member_number = get_import_member_number(
-                membership_number=membership_number,
-                sn=sn,
-                name=name,
-            )
-
-            obj, created = Member.objects.update_or_create(
-                level="municipality",
-                unit_name="Ilam Municipality",
-                membership_number=import_member_number,
-                defaults={
-                    "name_ne": clean_value(name),
-                    "name_en": romanize_nepali_name(name),
-                    "address": clean_value(address),
-                    "designation": clean_value(designation),
-                    "membership_type": get_membership_type(membership_type),
-                    "status": get_status(status, default="active"),
-                    "municipality": "Ilam Municipality",
-                    "ward_no": extract_ward_no(address),
-                    "destination_country": clean_value(destination_country),
-                    "phone": clean_phone(phone),
-                    "show_phone_publicly": False,
-                    "is_public": True,
-                },
-            )
-
-            if created:
-                created_count += 1
-            else:
-                updated_count += 1
-
-            total_processed = created_count + updated_count
-            if total_processed % 50 == 0:
-                self.stdout.write(f"Processed {total_processed} municipality members...")
-
-        self.stdout.write(
-            self.style.SUCCESS(
-                f"Nagar file imported. Created: {created_count}, Updated: {updated_count}"
-            )
-        )
-
-        return created_count, updated_count
+        failed = [outcome for outcome in outcomes if outcome.status == "failed"]
+        if failed:
+            self.stdout.write(self.style.ERROR("Failed rows:"))
+            for outcome in failed:
+                self.stdout.write(f"- Row {outcome.row_number}: {outcome.error}")
+            raise CommandError(f"Import completed with {len(failed)} failed row(s). Review the CSV report.")

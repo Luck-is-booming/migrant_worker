@@ -3,21 +3,23 @@ from django.contrib import admin
 from django.contrib.sitemaps.views import sitemap
 from django.urls import include, path
 
-from core.sitemaps import StaticViewSitemap
+from core import views as core_views
+from core.sitemaps import ArticleSitemap, MemberSitemap, StaticViewSitemap
 
 
 sitemaps = {
     "static": StaticViewSitemap,
+    "articles": ArticleSitemap,
+    "members": MemberSitemap,
 }
 
 
-# URLs that should NOT receive /en/ or /ne/ prefixes
+# URLs without language prefixes
 urlpatterns = [
-    path(
-        "i18n/",
-        include("django.conf.urls.i18n"),
-    ),
-
+    path("admin/", admin.site.urls),
+    path("i18n/", include("django.conf.urls.i18n")),
+    path("robots.txt", core_views.robots_txt, name="robots_txt"),
+    path("health/", core_views.health, name="health"),
     path(
         "sitemap.xml",
         sitemap,
@@ -27,9 +29,13 @@ urlpatterns = [
 ]
 
 
-# URLs that receive /en/ or /ne/ prefixes
+# Public URLs with /ne/ and /en/ prefixes
 urlpatterns += i18n_patterns(
-    path("admin/", admin.site.urls),
     path("", include("core.urls")),
     path("members/", include("members.urls")),
+    path("news/", include("blog.urls")),
 )
+
+
+handler404 = "migrantcenter.error_views.page_not_found"
+handler500 = "migrantcenter.error_views.server_error"

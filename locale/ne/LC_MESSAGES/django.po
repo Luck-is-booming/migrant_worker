@@ -1320,7 +1320,697 @@ msgstr "सन्देश"
 msgid "Send message"
 msgstr "सन्देश पठाउनुहोस्"
 
-#, fuzzy
-#~| msgid "Membership type"
-#~ msgid "Membership Payment"
-#~ msgstr "सदस्यता प्रकार"
+
+# Added during counseling-first production refactor
+msgid "About Us"
+msgstr "हाम्रो बारेमा"
+
+
+# Added during counseling-first production refactor
+msgid "Counseling"
+msgstr "परामर्श"
+
+
+# Added during counseling-first production refactor
+msgid "Guidance"
+msgstr "मार्गदर्शन"
+
+
+# Added during counseling-first production refactor
+msgid "Safety"
+msgstr "सुरक्षा"
+
+
+# Added during counseling-first production refactor
+msgid "News"
+msgstr "समाचार"
+
+
+# Added during counseling-first production refactor
+msgid "Menu"
+msgstr "मेनु"
+
+
+# Added during counseling-first production refactor
+msgid "Language"
+msgstr "भाषा"
+
+
+# Added during counseling-first production refactor
+msgid "Request Counseling"
+msgstr "परामर्श अनुरोध गर्नुहोस्"
+
+
+# Added during counseling-first production refactor
+msgid "Request counseling"
+msgstr "परामर्श अनुरोध गर्नुहोस्"
+
+
+# Added during counseling-first production refactor
+msgid "Ask for Guidance"
+msgstr "मार्गदर्शन माग्नुहोस्"
+
+
+# Added during counseling-first production refactor
+msgid "View Safety Guidance"
+msgstr "सुरक्षा मार्गदर्शन हेर्नुहोस्"
+
+
+# Added during counseling-first production refactor
+msgid "Find Official Resources"
+msgstr "आधिकारिक स्रोतहरू खोज्नुहोस्"
+
+
+# Added during counseling-first production refactor
+msgid "Contact the Organization"
+msgstr "संस्थालाई सम्पर्क गर्नुहोस्"
+
+
+# Added during counseling-first production refactor
+msgid "Foreign-employment counseling and awareness"
+msgstr "वैदेशिक रोजगार परामर्श तथा सचेतना"
+
+
+# Added during counseling-first production refactor
+msgid "Foreign-employment information and counseling you can understand and trust."
+msgstr "बुझ्न र भरोसा गर्न सकिने वैदेशिक रोजगार सूचना तथा परामर्श।"
+
+
+# Added during counseling-first production refactor
+msgid "We help individuals and families understand processes, recognize risks, prepare questions, and find appropriate official resources. We do not issue visas or operate as a recruitment agency."
+msgstr "हामी व्यक्ति तथा परिवारलाई प्रक्रिया बुझ्न, जोखिम चिन्न, आवश्यक प्रश्न तयार गर्न र उपयुक्त आधिकारिक स्रोत खोज्न सहयोग गर्छौं। हामी भिसा जारी गर्दैनौं र भर्ती एजेन्सीका रूपमा काम गर्दैनौं।"
+
+
+# Added during counseling-first production refactor
+msgid "Public member directory"
+msgstr "सार्वजनिक सदस्य निर्देशिका"
+
+
+# Added during counseling-first production refactor
+msgid "Search Members"
+msgstr "सदस्य खोज्नुहोस्"
+
+
+# Added during counseling-first production refactor
+msgid "Search people and their memberships"
+msgstr "व्यक्ति तथा तिनका सदस्यता खोज्नुहोस्"
+
+
+# Added during counseling-first production refactor
+msgid "Name or membership number"
+msgstr "नाम वा सदस्यता नम्बर"
+
+
+# Added during counseling-first production refactor
+msgid "All categories"
+msgstr "सबै श्रेणी"
+
+
+# Added during counseling-first production refactor
+msgid "All statuses"
+msgstr "सबै अवस्था"
+
+
+# Added during counseling-first production refactor
+msgid "All units"
+msgstr "सबै एकाइ"
+
+
+# Added during counseling-first production refactor
+msgid "Filter"
+msgstr "छान्नुहोस्"
+
+
+# Added during counseling-first production refactor
+msgid "Reset filters"
+msgstr "फिल्टर हटाउनुहोस्"
+
+
+# Added during counseling-first production refactor
+msgid "No public member matched these filters."
+msgstr "यी फिल्टरसँग मिल्ने सार्वजनिक सदस्य भेटिएन।"
+
+
+# Added during counseling-first production refactor
+msgid "Membership category"
+msgstr "सदस्यता श्रेणी"
+
+
+# Added during counseling-first production refactor
+msgid "Membership number"
+msgstr "सदस्यता नम्बर"
+
+
+# Added during counseling-first production refactor
+msgid "Organization unit"
+msgstr "संगठनात्मक एकाइ"
+
+
+# Added during counseling-first production refactor
+msgid "Designation"
+msgstr "पद"
+
+
+# Added during counseling-first production refactor
+msgid "General locality"
+msgstr "सामान्य ठेगाना"
+
+
+# Added during counseling-first production refactor
+msgid "Back to member directory"
+msgstr "सदस्य निर्देशिकामा फर्कनुहोस्"
+
+
+# Added during counseling-first production refactor
+msgid "Memberships"
+msgstr "सदस्यताहरू"
+
+
+# Added during counseling-first production refactor
+msgid "Member record"
+msgstr "सदस्य अभिलेख"
+
+
+# Added during counseling-first production refactor
+msgid "Private counseling request"
+msgstr "गोप्य परामर्श अनुरोध"
+
+
+# Added during counseling-first production refactor
+msgid "Tell us what you need help understanding"
+msgstr "तपाईंलाई के बुझ्न सहयोग चाहिएको हो बताउनुहोस्"
+
+
+# Added during counseling-first production refactor
+msgid "Request form"
+msgstr "अनुरोध फाराम"
+
+
+# Added during counseling-first production refactor
+msgid "What happens next"
+msgstr "अब के हुन्छ"
+
+
+# Added during counseling-first production refactor
+msgid "Submit private request"
+msgstr "गोप्य अनुरोध पठाउनुहोस्"
+
+
+# Added during counseling-first production refactor
+msgid "Your request is stored privately and is not published."
+msgstr "तपाईंको अनुरोध गोप्य रूपमा सुरक्षित गरिन्छ र सार्वजनिक गरिँदैन।"
+
+
+# Added during counseling-first production refactor
+msgid "Authorized staff review the category and concern."
+msgstr "अधिकृत कर्मचारीले विषय र चिन्ताको समीक्षा गर्छन्।"
+
+
+# Added during counseling-first production refactor
+msgid "Staff may contact you or refer you to an appropriate official or qualified professional."
+msgstr "कर्मचारीले तपाईंलाई सम्पर्क गर्न वा उपयुक्त अधिकारी वा योग्य पेशेवरकहाँ पठाउन सक्छन्।"
+
+
+# Added during counseling-first production refactor
+msgid "Please do not submit passwords, OTPs, bank PINs, or complete passport and citizenship details through this form."
+msgstr "कृपया यस फाराममा पासवर्ड, ओटीपी, बैंक पिन वा राहदानी/नागरिकताको पूरा विवरण नपठाउनुहोस्।"
+
+
+# Added during counseling-first production refactor
+msgid "Please correct the following information."
+msgstr "कृपया तलको जानकारी सच्याउनुहोस्।"
+
+
+# Added during counseling-first production refactor
+msgid "Your counseling request was saved."
+msgstr "तपाईंको परामर्श अनुरोध सुरक्षित भयो।"
+
+
+# Added during counseling-first production refactor
+msgid "Authorized staff can now review it. The organization cannot promise an exact response time or outcome."
+msgstr "अब अधिकृत कर्मचारीले यसको समीक्षा गर्न सक्छन्। संस्थाले निश्चित प्रतिक्रिया समय वा नतिजाको वाचा गर्दैन।"
+
+
+# Added during counseling-first production refactor
+msgid "Private reference"
+msgstr "गोप्य सन्दर्भ नम्बर"
+
+
+# Added during counseling-first production refactor
+msgid "Return home"
+msgstr "गृहपृष्ठमा फर्कनुहोस्"
+
+
+# Added during counseling-first production refactor
+msgid "Safety and Fraud Awareness"
+msgstr "सुरक्षा तथा ठगी सचेतना"
+
+
+# Added during counseling-first production refactor
+msgid "Risk prevention"
+msgstr "जोखिम रोकथाम"
+
+
+# Added during counseling-first production refactor
+msgid "Recognize pressure, inconsistency, and unsafe requests"
+msgstr "दबाब, असंगति र असुरक्षित अनुरोध चिन्नुहोस्"
+
+
+# Added during counseling-first production refactor
+msgid "Pressure to pay immediately"
+msgstr "तुरुन्तै पैसा तिर्न दबाब"
+
+
+# Added during counseling-first production refactor
+msgid "No written documents"
+msgstr "लिखित कागजात नहुनु"
+
+
+# Added during counseling-first production refactor
+msgid "Different promises"
+msgstr "फरक-फरक वाचा"
+
+
+# Added during counseling-first production refactor
+msgid "Personal-account payment"
+msgstr "व्यक्तिगत खातामा भुक्तानी"
+
+
+# Added during counseling-first production refactor
+msgid "OTP or password requests"
+msgstr "ओटीपी वा पासवर्ड माग्नु"
+
+
+# Added during counseling-first production refactor
+msgid "Document confiscation"
+msgstr "कागजात नियन्त्रणमा लिनु"
+
+
+# Added during counseling-first production refactor
+msgid "Unclear employer"
+msgstr "अस्पष्ट रोजगारदाता"
+
+
+# Added during counseling-first production refactor
+msgid "Social-media-only offer"
+msgstr "सामाजिक सञ्जालमै सीमित प्रस्ताव"
+
+
+# Added during counseling-first production refactor
+msgid "Guaranteed and unusually easy"
+msgstr "गारन्टी र अस्वाभाविक रूपमा सजिलो दाबी"
+
+
+# Added during counseling-first production refactor
+msgid "If you suspect fraud"
+msgstr "ठगीको शंका भएमा"
+
+
+# Added during counseling-first production refactor
+msgid "Immediate danger"
+msgstr "तत्काल खतरा"
+
+
+# Added during counseling-first production refactor
+msgid "Published safety alerts"
+msgstr "प्रकाशित सुरक्षा सूचना"
+
+
+# Added during counseling-first production refactor
+msgid "Official Resources"
+msgstr "आधिकारिक स्रोतहरू"
+
+
+# Added during counseling-first production refactor
+msgid "Official resources"
+msgstr "आधिकारिक स्रोतहरू"
+
+
+# Added during counseling-first production refactor
+msgid "Resource category"
+msgstr "स्रोत श्रेणी"
+
+
+# Added during counseling-first production refactor
+msgid "Official source"
+msgstr "आधिकारिक स्रोत"
+
+
+# Added during counseling-first production refactor
+msgid "Last reviewed"
+msgstr "अन्तिम समीक्षा"
+
+
+# Added during counseling-first production refactor
+msgid "Open official channel"
+msgstr "आधिकारिक माध्यम खोल्नुहोस्"
+
+
+# Added during counseling-first production refactor
+msgid "Open official resources"
+msgstr "आधिकारिक स्रोतहरू खोल्नुहोस्"
+
+
+# Added during counseling-first production refactor
+msgid "No verified resources are published in this category."
+msgstr "यस श्रेणीमा प्रमाणित स्रोत प्रकाशित गरिएको छैन।"
+
+
+# Added during counseling-first production refactor
+msgid "Urgent and emergency channels"
+msgstr "अत्यावश्यक तथा आपतकालीन माध्यम"
+
+
+# Added during counseling-first production refactor
+msgid "News and Notices"
+msgstr "समाचार तथा सूचनाहरू"
+
+
+# Added during counseling-first production refactor
+msgid "All news and notices"
+msgstr "सबै समाचार तथा सूचना"
+
+
+# Added during counseling-first production refactor
+msgid "All types"
+msgstr "सबै प्रकार"
+
+
+# Added during counseling-first production refactor
+msgid "Content type"
+msgstr "सामग्री प्रकार"
+
+
+# Added during counseling-first production refactor
+msgid "No published content is available."
+msgstr "प्रकाशित सामग्री उपलब्ध छैन।"
+
+
+# Added during counseling-first production refactor
+msgid "View all news and notices"
+msgstr "सबै समाचार तथा सूचना हेर्नुहोस्"
+
+
+# Added during counseling-first production refactor
+msgid "Membership fee verification"
+msgstr "सदस्यता शुल्क प्रमाणीकरण"
+
+
+# Added during counseling-first production refactor
+msgid "Submit membership payment proof"
+msgstr "सदस्यता भुक्तानी प्रमाण पठाउनुहोस्"
+
+
+# Added during counseling-first production refactor
+msgid "Application summary"
+msgstr "आवेदन सारांश"
+
+
+# Added during counseling-first production refactor
+msgid "Payment purpose"
+msgstr "भुक्तानीको उद्देश्य"
+
+
+# Added during counseling-first production refactor
+msgid "Before paying"
+msgstr "भुक्तानी गर्नुअघि"
+
+
+# Added during counseling-first production refactor
+msgid "Pay and submit evidence"
+msgstr "भुक्तानी गरी प्रमाण पठाउनुहोस्"
+
+
+# Added during counseling-first production refactor
+msgid "Pay the exact membership amount shown above."
+msgstr "माथि देखाइएको ठ्याक्कै सदस्यता रकम तिर्नुहोस्।"
+
+
+# Added during counseling-first production refactor
+msgid "Keep the successful receipt or screenshot."
+msgstr "सफल भुक्तानीको रसिद वा स्क्रिनसट सुरक्षित राख्नुहोस्।"
+
+
+# Added during counseling-first production refactor
+msgid "Upload the image below for private staff review."
+msgstr "गोप्य कर्मचारी समीक्षाका लागि तल तस्बिर अपलोड गर्नुहोस्।"
+
+
+# Added during counseling-first production refactor
+msgid "Submit payment proof"
+msgstr "भुक्तानी प्रमाण पठाउनुहोस्"
+
+
+# Added during counseling-first production refactor
+msgid "Approved"
+msgstr "स्वीकृत"
+
+
+# Added during counseling-first production refactor
+msgid "Rejected"
+msgstr "अस्वीकृत"
+
+
+# Added during counseling-first production refactor
+msgid "Needs review"
+msgstr "थप समीक्षा आवश्यक"
+
+
+# Added during counseling-first production refactor
+msgid "Payment proof received"
+msgstr "भुक्तानी प्रमाण प्राप्त भयो"
+
+
+# Added during counseling-first production refactor
+msgid "Membership payment verified"
+msgstr "सदस्यता भुक्तानी प्रमाणित भयो"
+
+
+# Added during counseling-first production refactor
+msgid "Private reference summary"
+msgstr "गोप्य सन्दर्भ सारांश"
+
+
+# Added during counseling-first production refactor
+msgid "Do not share this status link publicly. It contains private application context."
+msgstr "यो अवस्था लिंक सार्वजनिक रूपमा साझा नगर्नुहोस्। यसमा निजी आवेदन सन्दर्भ हुन्छ।"
+
+
+# Added during counseling-first production refactor
+msgid "About MRN Ilam"
+msgstr "MRN इलामको बारेमा"
+
+
+# Added during counseling-first production refactor
+msgid "Mission and objectives"
+msgstr "ध्येय तथा उद्देश्य"
+
+
+# Added during counseling-first production refactor
+msgid "Leadership"
+msgstr "नेतृत्व"
+
+
+# Added during counseling-first production refactor
+msgid "Registration number"
+msgstr "दर्ता नम्बर"
+
+
+# Added during counseling-first production refactor
+msgid "Established date"
+msgstr "स्थापना मिति"
+
+
+# Added during counseling-first production refactor
+msgid "Office address"
+msgstr "कार्यालय ठेगाना"
+
+
+# Added during counseling-first production refactor
+msgid "Service hours"
+msgstr "सेवा समय"
+
+
+# Added during counseling-first production refactor
+msgid "Service boundary"
+msgstr "सेवाको सीमा"
+
+
+# Added during counseling-first production refactor
+msgid "Frequently Asked Questions"
+msgstr "बारम्बार सोधिने प्रश्नहरू"
+
+
+# Added during counseling-first production refactor
+msgid "Frequently asked questions"
+msgstr "बारम्बार सोधिने प्रश्नहरू"
+
+
+# Added during counseling-first production refactor
+msgid "Foreign Employment Guidance"
+msgstr "वैदेशिक रोजगार मार्गदर्शन"
+
+
+# Added during counseling-first production refactor
+msgid "Questions and checks for every stage"
+msgstr "हरेक चरणका प्रश्न र जाँच"
+
+
+# Added during counseling-first production refactor
+msgid "Before considering foreign employment"
+msgstr "वैदेशिक रोजगार सोच्नुअघि"
+
+
+# Added during counseling-first production refactor
+msgid "Choosing a legitimate pathway"
+msgstr "वैध बाटो छनोट"
+
+
+# Added during counseling-first production refactor
+msgid "Verifying recruiters and employers"
+msgstr "भर्ती पक्ष र रोजगारदाता प्रमाणीकरण"
+
+
+# Added during counseling-first production refactor
+msgid "Reviewing offers and contracts"
+msgstr "प्रस्ताव र करार समीक्षा"
+
+
+# Added during counseling-first production refactor
+msgid "Understanding costs"
+msgstr "लागत बुझ्ने"
+
+
+# Added during counseling-first production refactor
+msgid "Labor approval and documentation awareness"
+msgstr "श्रम स्वीकृति तथा कागजात सचेतना"
+
+
+# Added during counseling-first production refactor
+msgid "Insurance and welfare awareness"
+msgstr "बीमा तथा कल्याण सचेतना"
+
+
+# Added during counseling-first production refactor
+msgid "Pre-departure preparation"
+msgstr "प्रस्थानपूर्व तयारी"
+
+
+# Added during counseling-first production refactor
+msgid "Working abroad"
+msgstr "विदेशमा काम गर्दा"
+
+
+# Added during counseling-first production refactor
+msgid "Handling disputes or danger"
+msgstr "विवाद वा खतरा सामना गर्दा"
+
+
+# Added during counseling-first production refactor
+msgid "Returning home"
+msgstr "घर फर्कँदा"
+
+
+# Added during counseling-first production refactor
+msgid "Reintegration"
+msgstr "पुनःएकीकरण"
+
+
+# Added during counseling-first production refactor
+msgid "General contact form"
+msgstr "सामान्य सम्पर्क फाराम"
+
+
+# Added during counseling-first production refactor
+msgid "Contact and guidance"
+msgstr "सम्पर्क तथा मार्गदर्शन"
+
+
+# Added during counseling-first production refactor
+msgid "Email"
+msgstr "इमेल"
+
+
+# Added during counseling-first production refactor
+msgid "Organization"
+msgstr "संस्था"
+
+
+# Added during counseling-first production refactor
+msgid "Get guidance"
+msgstr "मार्गदर्शन लिनुहोस्"
+
+
+# Added during counseling-first production refactor
+msgid "Information and counseling do not replace official government, legal, medical, or financial advice."
+msgstr "सूचना तथा परामर्शले सरकारी, कानुनी, चिकित्सकीय वा वित्तीय सल्लाहको स्थान लिँदैन।"
+
+
+# Added during counseling-first production refactor
+msgid "Page not found"
+msgstr "पृष्ठ भेटिएन"
+
+
+# Added during counseling-first production refactor
+msgid "Something went wrong"
+msgstr "केही समस्या भयो"
+
+
+# Added during counseling-first production refactor
+msgid "Service unavailable"
+msgstr "सेवा उपलब्ध छैन"
+
+
+# Added during counseling-first production refactor
+msgid "Category"
+msgstr "श्रेणी"
+
+
+# Added during final production review
+msgid "Leadership information must be entered and approved by authorized staff."
+msgstr "नेतृत्वसम्बन्धी जानकारी अधिकारप्राप्त कर्मचारीले प्रविष्ट गरी स्वीकृत गर्नुपर्छ।"
+
+
+# Added during final production review
+msgid "Verified registration, address, and service-hour information is awaiting an authorized update."
+msgstr "प्रमाणित दर्ता, ठेगाना र सेवा समयसम्बन्धी जानकारी अधिकारप्राप्त अद्यावधिकको प्रतीक्षामा छ।"
+
+
+# Added during final production review
+msgid "An approved chairperson message has not yet been published."
+msgstr "स्वीकृत अध्यक्षको सन्देश हालसम्म प्रकाशित गरिएको छैन।"
+
+
+# Added during final production review
+msgid "Private requester information"
+msgstr "निवेदकको निजी जानकारी"
+
+
+# Added during final production review
+msgid "Active retention"
+msgstr "सक्रिय अभिलेख अवधि"
+
+
+# Added during final production review
+msgid "Retention review due"
+msgstr "अभिलेख अवधि समीक्षा आवश्यक"
+
+
+# Added during final production review
+msgid "Retained under policy"
+msgstr "नीतिअनुसार सुरक्षित राखिएको"
+
+
+# Added during final production review
+msgid "Legal hold"
+msgstr "कानुनी कारणले सुरक्षित"
+
+
+# Added during final production review
+msgid "Anonymized"
+msgstr "पहिचान हटाइएको"
+
+
+# Added during final production review
+msgid "Non-data row"
+msgstr "गैर-डेटा पङ्क्ति"

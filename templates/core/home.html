@@ -1,0 +1,129 @@
+{% extends "core/base.html" %}
+{% load i18n %}
+{% block title %}{% translate "Foreign-employment counseling and awareness" %} — MRN Ilam{% endblock %}
+{% block content %}
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <p class="eyebrow">{% translate "MRN Ilam" %}</p>
+      <h1>{% translate "Foreign-employment information and counseling you can understand and trust." %}</h1>
+      <p class="lead">{% translate "We help individuals and families understand processes, recognize risks, prepare questions, and find appropriate official resources. We do not issue visas or operate as a recruitment agency." %}</p>
+      <div class="action-row">
+        <a class="button button--primary" href="{% url 'counseling:request' %}">{% translate "Request Counseling" %}</a>
+        <a class="button button--secondary" href="{% url 'safety' %}">{% translate "View Safety Guidance" %}</a>
+      </div>
+    </div>
+    <aside class="hero-panel" aria-labelledby="before-paying-title">
+      <p class="eyebrow">{% translate "Before paying anyone" %}</p>
+      <h2 id="before-paying-title">{% translate "Pause and verify the pathway." %}</h2>
+      <ul class="check-list">
+        <li>{% translate "Ask for written documents and an official receipt." %}</li>
+        <li>{% translate "Verify the recruiter and employer through official sources." %}</li>
+        <li>{% translate "Compare the salary, job, and costs across every document." %}</li>
+        <li>{% translate "Never share OTPs, passwords, or bank PINs." %}</li>
+      </ul>
+      <a href="{% url 'guidance' %}">{% translate "See the full guidance journey" %}</a>
+    </aside>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <p class="eyebrow">{% translate "What we provide" %}</p>
+    <h2>{% translate "Guidance—not promises or recruitment." %}</h2>
+    <div class="grid grid--3">
+      {% for service in services %}
+        <article class="card">
+          <span class="icon-box" aria-hidden="true">{{ forloop.counter }}</span>
+          <h3>{{ service.title }}</h3>
+          <p>{{ service.desc }}</p>
+        </article>
+      {% empty %}
+        <article class="card"><h3>{% translate "Process counseling" %}</h3><p>{% translate "Understand the steps, documents, questions, and official channels involved in foreign employment." %}</p></article>
+        <article class="card"><h3>{% translate "Risk awareness" %}</h3><p>{% translate "Recognize suspicious offers, unclear fees, document differences, and pressure tactics." %}</p></article>
+        <article class="card"><h3>{% translate "Referral to authorities" %}</h3><p>{% translate "Find appropriate government, embassy, labor, welfare, emergency, legal, or medical channels." %}</p></article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section--soft">
+  <div class="container grid grid--2">
+    <div>
+      <p class="eyebrow">{% translate "How counseling works" %}</p>
+      <h2>{% translate "A simple route to clearer next steps." %}</h2>
+      <ol class="steps">
+        <li><strong>{% translate "Tell us the concern" %}</strong><br>{% translate "Choose a category and describe what you need to understand." %}</li>
+        <li><strong>{% translate "Staff review" %}</strong><br>{% translate "Authorized staff review the private request and identify the appropriate response or referral." %}</li>
+        <li><strong>{% translate "Contact and guidance" %}</strong><br>{% translate "The team contacts you using your preferred method when practical." %}</li>
+      </ol>
+    </div>
+    <div class="card card--shadow">
+      <p class="eyebrow">{% translate "Service boundary" %}</p>
+      <h3>{% translate "What counseling does not mean" %}</h3>
+      <ul class="check-list">
+        <li>{% translate "No guaranteed visa, job, work permit, or approval." %}</li>
+        <li>{% translate "No direct job placement or employer recruitment." %}</li>
+        <li>{% translate "No replacement for qualified legal, medical, or financial advice." %}</li>
+        <li>{% translate "No request for passwords, OTPs, bank PINs, or complete identity documents." %}</li>
+      </ul>
+      <a class="button button--primary" href="{% url 'counseling:request' %}">{% translate "Ask for Guidance" %}</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="grid grid--2">
+      <div>
+        <p class="eyebrow">{% translate "Organization and members" %}</p>
+        <h2>{% translate "Community-based credibility with privacy by default." %}</h2>
+        <p class="lead">{% translate "The directory shows verified public membership relationships while keeping private phone numbers, email addresses, payment details, and internal notes off the public website." %}</p>
+        <p><span class="metric">{{ member_count }}</span><br>{% translate "public people currently represented in the normalized member directory" %}</p>
+        <a class="button button--secondary" href="{% url 'members:member_list' %}">{% translate "Search Members" %}</a>
+      </div>
+      <div>
+        <p class="eyebrow">{% translate "Urgent situations" %}</p>
+        <div class="notice notice--danger">
+          <p>{% translate "For immediate danger, trafficking, violence, detention, or medical emergency, contact the relevant emergency service, police, embassy/consulate, labor authority, or qualified professional. This website is not an emergency-response service." %}</p>
+        </div>
+        {% for resource in emergency_resources %}
+          <div class="card"><h3>{{ resource.title }}</h3><p>{{ resource.guidance }}</p>{% if resource.phone %}<p><strong>{{ resource.phone }}</strong></p>{% endif %}</div>
+        {% empty %}
+          <p class="muted">{% translate "Verified emergency contacts must be added by authorized staff in the admin area." %}</p>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% if latest_articles %}
+<section class="section section--soft">
+  <div class="container">
+    <p class="eyebrow">{% translate "Latest information" %}</p>
+    <h2>{% translate "News, notices, and safety updates" %}</h2>
+    <div class="grid grid--3">
+      {% for article in latest_articles %}
+        <article class="card article-card">
+          {% if article.image_url %}<img src="{{ article.image_url }}" alt="" loading="lazy" width="640" height="360">{% endif %}
+          <div class="badges"><span class="badge">{{ article.get_article_type_display }}</span>{% if article.alert_severity %}<span class="badge badge--warning">{{ article.get_alert_severity_display }}</span>{% endif %}</div>
+          <h3><a href="{{ article.get_absolute_url }}">{{ article.title }}</a></h3>
+          <p>{{ article.summary }}</p>
+          <p class="small muted">{{ article.formatted_date }}</p>
+        </article>
+      {% endfor %}
+    </div>
+    <div class="action-row"><a class="button button--quiet" href="{% url 'blog:list' %}">{% translate "View all news and notices" %}</a></div>
+  </div>
+</section>
+{% endif %}
+
+<section class="section">
+  <div class="container">
+    <div class="notice">
+      <p><strong>{% translate "Need help understanding your situation?" %}</strong> {% translate "Submit a private counseling request. Payment is not required for counseling." %}</p>
+    </div>
+    <div class="action-row"><a class="button button--primary" href="{% url 'counseling:request' %}">{% translate "Request Counseling" %}</a><a class="button button--secondary" href="{% url 'resources' %}">{% translate "Find Official Resources" %}</a></div>
+  </div>
+</section>
+{% endblock %}

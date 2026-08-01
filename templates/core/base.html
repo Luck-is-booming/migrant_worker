@@ -1,7 +1,8 @@
-{% load static i18n %}
-<!DOCTYPE html>
-<html lang="{{ LANGUAGE_CODE|default:'en' }}" class="scroll-smooth">
+{% load static i18n i18n_urls %}
+<!doctype html>
+<html lang="{{ LANGUAGE_CODE|default:'ne' }}">
 <head>
+<<<<<<< HEAD
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
 
@@ -157,321 +158,116 @@
     </style>
 
     {% block extra_head %}{% endblock %}
+=======
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}MRN Ilam — {% translate "Foreign-employment counseling and awareness" %}{% endblock %}</title>
+  <meta name="description" content="{% block meta_description %}{% translate 'Foreign-employment information, awareness, counseling, safety guidance, official resources, and member records for Ilam.' %}{% endblock %}">
+  <meta name="robots" content="{% block robots %}index,follow,max-image-preview:large{% endblock %}">
+  <link rel="canonical" href="{{ request.scheme }}://{{ request.get_host }}{{ request.path }}">
+  {% get_available_languages as SEO_LANGUAGES %}
+  {% for code, name in SEO_LANGUAGES %}{% translated_url code as alternate_path %}<link rel="alternate" hreflang="{{ code }}" href="{{ request.scheme }}://{{ request.get_host }}{{ alternate_path }}">{% endfor %}
+  <link rel="alternate" hreflang="x-default" href="{{ request.scheme }}://{{ request.get_host }}{% translated_url 'ne' %}">
+  <meta property="og:type" content="{% block og_type %}website{% endblock %}">
+  <meta property="og:title" content="{% block og_title %}MRN Ilam{% endblock %}">
+  <meta property="og:description" content="{% block og_description %}{% translate 'Understand foreign-employment processes, recognize risks, and find appropriate official resources.' %}{% endblock %}">
+  <meta property="og:url" content="{{ request.scheme }}://{{ request.get_host }}{{ request.path }}">
+  <meta property="og:image" content="{{ request.scheme }}://{{ request.get_host }}{% static 'core/images/favicon-512x512.png' %}">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" type="image/png" sizes="48x48" href="{% static 'core/images/favicon-48x48.png' %}">
+  <link rel="icon" type="image/png" sizes="96x96" href="{% static 'core/images/favicon-96x96.png' %}">
+  <link rel="icon" href="{% static 'core/images/favicon.ico' %}">
+  <link rel="apple-touch-icon" sizes="180x180" href="{% static 'core/images/apple-touch-icon.png' %}">
+  <link rel="stylesheet" href="{% static 'core/css/site.css' %}">
+  {% block extra_head %}{% endblock %}
+>>>>>>> 1d670fd (refactor)
 </head>
+<body>
+  <a class="skip-link" href="#main-content">{% translate "Skip to main content" %}</a>
 
-<body id="master-body" class="bg-slate-50 text-slate-900 flex flex-col min-h-screen text-base antialiased">
-    <a href="#main-content" class="skip-link">{% translate "Skip to main content" %}</a>
-
-    <div role="alert" class="bg-red-700 text-white font-semibold py-3 px-4 text-center text-sm relative z-50 shadow-md">
-        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-center gap-2">
-            <span class="bg-white/20 px-2.5 py-0.5 rounded text-xs uppercase tracking-wider font-extrabold shrink-0">
-                {% translate "Emergency Support" %}
-            </span>
-            <span class="text-xs sm:text-sm leading-relaxed">
-                {% translate "If you are in urgent need of help abroad, contact us immediately at" %}
-                <a href="tel:+97727520111" class="underline hover:text-red-100 transition-colors font-extrabold whitespace-nowrap">+977-27-520111</a>
-            </span>
-        </div>
+  <div class="top-notice">
+    <div class="container">
+      <p>
+        {% if LANGUAGE_CODE == 'ne' %}{{ site_info.disclaimer_ne }}{% else %}{{ site_info.disclaimer_en }}{% endif %}
+      </p>
     </div>
+  </div>
 
-    <header class="bg-slate-900 text-white text-xs py-2 px-4 border-b border-slate-800 relative z-40">
-        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-3">
-            <div class="flex items-center space-x-4 text-center sm:text-left text-slate-200">
-                <span class="flex items-center gap-1">📅 <span id="nepali-date-ticker">{% translate "Loading date" %}</span></span>
-                <span class="hidden md:inline-flex items-center gap-1 border-l border-slate-700 pl-4">⏱️ <span id="live-clock-ticker">12:00:00 AM</span></span>
-            </div>
+  <header class="site-header">
+    <div class="container header-row">
+      <a class="brand" href="{% url 'index' %}" aria-label="{% translate 'MRN Ilam homepage' %}">
+        <img src="{% static 'core/images/logo.jpeg' %}" alt="" width="48" height="48">
+        <span class="brand-text">
+          <strong>MRN Ilam</strong>
+          <span>{% translate "Foreign-employment counseling and awareness" %}</span>
+        </span>
+      </a>
 
-            <div class="flex items-center justify-center gap-4">
-                <div class="flex items-center bg-slate-800 rounded-lg border border-slate-700 p-0.5" aria-label="{% translate 'Text size controls' %}">
-                    <button type="button" onclick="changeTextSize('down')" class="hover:bg-slate-700 hover:text-blue-300 font-bold w-8 h-8 flex items-center justify-center rounded cursor-pointer transition-colors" aria-label="{% translate 'Decrease text size' %}" title="{% translate 'Decrease text size' %}">A-</button>
-                    <button type="button" onclick="changeTextSize('reset')" class="hover:bg-slate-700 hover:text-blue-300 font-bold w-8 h-8 flex items-center justify-center rounded cursor-pointer transition-colors" aria-label="{% translate 'Reset text size' %}" title="{% translate 'Reset text size' %}">A</button>
-                    <button type="button" onclick="changeTextSize('up')" class="hover:bg-slate-700 hover:text-blue-300 font-bold w-8 h-8 flex items-center justify-center rounded cursor-pointer transition-colors" aria-label="{% translate 'Increase text size' %}" title="{% translate 'Increase text size' %}">A+</button>
-                </div>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-navigation" data-nav-toggle>
+        {% translate "Menu" %}
+      </button>
 
-                <span class="text-slate-600 hidden sm:inline">|</span>
+      <nav class="site-nav" id="site-navigation" aria-label="{% translate 'Main navigation' %}" data-site-nav>
+        <a href="{% url 'index' %}">{% translate "Home" %}</a>
+        <a href="{% url 'about' %}">{% translate "About Us" %}</a>
+        <a href="{% url 'counseling:request' %}">{% translate "Counseling" %}</a>
+        <a href="{% url 'guidance' %}">{% translate "Guidance" %}</a>
+        <a href="{% url 'safety' %}">{% translate "Safety" %}</a>
+        <a href="{% url 'resources' %}">{% translate "Resources" %}</a>
+        <a href="{% url 'blog:list' %}">{% translate "News" %}</a>
+        <a href="{% url 'members:member_list' %}">{% translate "Members" %}</a>
+        <a href="{% url 'contact' %}">{% translate "Contact" %}</a>
+        <form class="language-form" action="{% url 'set_language' %}" method="post">
+          {% csrf_token %}
+          <input type="hidden" name="next" value="{{ request.get_full_path }}">
+          <label class="skip-link" for="language-select">{% translate "Language" %}</label>
+          <select id="language-select" name="language" data-language-select>
+            {% get_current_language as CURRENT_LANGUAGE %}
+            {% get_available_languages as AVAILABLE_LANGUAGES %}
+            {% for code, name in AVAILABLE_LANGUAGES %}
+              <option value="{{ code }}" {% if code == CURRENT_LANGUAGE %}selected{% endif %}>{{ name }}</option>
+            {% endfor %}
+          </select>
+        </form>
+      </nav>
+    </div>
+  </header>
 
-                <button type="button" onclick="toggleHighContrast()" class="bg-slate-800 hover:bg-slate-700 px-3 py-1.5 rounded-lg border border-slate-700 cursor-pointer text-xs font-semibold flex items-center gap-1.5 transition-colors shrink-0 min-h-[32px]" aria-label="{% translate 'Toggle high contrast mode' %}">
-                    👁️ {% translate "Contrast" %}
-                </button>
-            </div>
-        </div>
-    </header>
+  {% if messages %}
+    <div class="container messages" aria-live="polite">
+      {% for message in messages %}<div class="message {{ message.tags }}">{{ message }}</div>{% endfor %}
+    </div>
+  {% endif %}
 
-    <nav class="bg-white shadow-sm border-b border-slate-200 sticky top-0 z-40 transition-colors" aria-label="{% translate 'Main navigation' %}">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-20 items-center">
+  <main id="main-content" tabindex="-1">
+    {% block content %}{% endblock %}
+  </main>
 
-                <a href="{% url 'index' %}" class="flex-shrink-0 flex items-center gap-3 no-underline group" aria-label="{% translate 'Go to homepage' %}">
-                    <div class="w-12 h-12 rounded-2xl bg-white border border-slate-200 shadow-sm flex items-center justify-center overflow-hidden p-1 group-hover:border-blue-500 transition-colors">
-                        <img
-                            src="{% static 'core/images/logo.jpeg' %}"
-                            alt="MRN Ilam Logo"
-                            width="48"
-                            height="48"
-                            class="w-full h-full object-contain"
-                        >
-                    </div>
-
-                    <div class="flex flex-col leading-tight">
-                        <span class="font-extrabold text-base tracking-tight text-slate-950">
-                            MRN Ilam
-                        </span>
-                        <span class="text-[11px] text-slate-700 font-semibold uppercase tracking-wide">
-                            Migrant Resource Network
-                        </span>
-                    </div>
-                </a>
-
-                <div class="hidden xl:flex items-center space-x-6 font-semibold text-sm text-slate-700">
-                    <a href="{% url 'index' %}#home" class="hover:text-blue-700 transition-colors">{% translate "Home" %}</a>
-                    <a href="{% url 'index' %}#about" class="hover:text-blue-700 transition-colors">{% translate "About" %}</a>
-                    <a href="{% url 'index' %}#services" class="hover:text-blue-700 transition-colors">{% translate "Services" %}</a>
-                    <a href="{% url 'index' %}#team" class="hover:text-blue-700 transition-colors">{% translate "Team" %}</a>
-                    <a href="{% url 'members:member_list' %}" class="hover:text-blue-700 transition-colors">{% translate "Members" %}</a>
-                    <a href="{% url 'index' %}#resource-center" class="hover:text-blue-700 transition-colors">{% translate "Resources" %}</a>
-                    <a href="{% url 'index' %}#contact" class="hover:text-blue-700 transition-colors">{% translate "Contact" %}</a>
-                </div>
-
-                <div class="flex items-center space-x-4">
-                    <form action="{% url 'set_language' %}" method="post" id="lang-form" class="inline-flex m-0">
-                        {% csrf_token %}
-                        <input name="next" type="hidden" value="{{ request.path }}">
-                        <label for="language-selector" class="sr-only">{% translate "Choose language" %}</label>
-                        <select name="language" id="language-selector" onchange="document.getElementById('lang-form').submit();" class="bg-slate-50 border border-slate-300 text-slate-800 text-xs font-bold rounded-xl px-3 py-2.5 focus:ring-2 focus:ring-blue-500 cursor-pointer min-h-[44px] hover:bg-slate-100 transition-colors">
-                            {% get_current_language as CURRENT_LANG %}
-                            {% get_available_languages as AVAILABLE_LANGS %}
-                            {% for lang in AVAILABLE_LANGS %}
-                                <option value="{{ lang.0 }}" {% if lang.0 == CURRENT_LANG %}selected{% endif %}>
-                                    {{ lang.1 }}
-                                </option>
-                            {% endfor %}
-                        </select>
-                    </form>
-
-                    <span class="hidden sm:inline w-px h-6 bg-slate-300"></span>
-
-                    <a href="{% url 'index' %}#contact" class="hidden sm:inline-flex bg-blue-700 hover:bg-blue-800 text-white px-5 py-2.5 rounded-xl text-xs font-extrabold shadow-sm hover:shadow transition-all text-center min-h-[44px] items-center tracking-wide uppercase no-underline">
-                        {% translate "Get Support" %}
-                    </a>
-
-                    <button type="button" id="mobile-menu-trigger" class="xl:hidden p-2 rounded-xl bg-slate-50 border border-slate-300 text-slate-800 hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all cursor-pointer min-w-[44px] min-h-[44px] flex items-center justify-center" aria-label="{% translate 'Open navigation menu' %}" aria-expanded="false" aria-controls="mobile-dropdown-drawer">
-                        <svg id="hamburger-icon-bars" class="w-6 h-6 block" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                        </svg>
-                        <svg id="hamburger-icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                        </svg>
-                    </button>
-                </div>
-            </div>
-        </div>
-
-        <div id="mobile-dropdown-drawer" class="hidden xl:hidden border-t border-slate-200 bg-white shadow-xl px-4 py-4 space-y-1 transition-all duration-200">
-            <a href="{% url 'index' %}#home" class="mobile-menu-item-link block px-4 py-3 rounded-xl text-slate-800 hover:bg-slate-50 hover:text-blue-700 font-semibold text-sm transition-all no-underline">🏠 {% translate "Home" %}</a>
-            <a href="{% url 'index' %}#about" class="mobile-menu-item-link block px-4 py-3 rounded-xl text-slate-800 hover:bg-slate-50 hover:text-blue-700 font-semibold text-sm transition-all no-underline">ℹ️ {% translate "About" %}</a>
-            <a href="{% url 'index' %}#services" class="mobile-menu-item-link block px-4 py-3 rounded-xl text-slate-800 hover:bg-slate-50 hover:text-blue-700 font-semibold text-sm transition-all no-underline">🛠️ {% translate "Services" %}</a>
-            <a href="{% url 'index' %}#team" class="mobile-menu-item-link block px-4 py-3 rounded-xl text-slate-800 hover:bg-slate-50 hover:text-blue-700 font-semibold text-sm transition-all no-underline">👥 {% translate "Team" %}</a>
-            <a href="{% url 'members:member_list' %}" class="mobile-menu-item-link block px-4 py-3 rounded-xl text-slate-800 hover:bg-slate-50 hover:text-blue-700 font-semibold text-sm transition-all no-underline">📋 {% translate "Members" %}</a>
-            <a href="{% url 'index' %}#resource-center" class="mobile-menu-item-link block px-4 py-3 rounded-xl text-slate-800 hover:bg-slate-50 hover:text-blue-700 font-semibold text-sm transition-all no-underline">🛡️ {% translate "Resources" %}</a>
-            <a href="{% url 'index' %}#contact" class="mobile-menu-item-link block px-4 py-3 rounded-xl text-slate-800 hover:bg-slate-50 hover:text-blue-700 font-semibold text-sm transition-all no-underline">✉️ {% translate "Contact" %}</a>
-
-            <div class="pt-3 mt-2 border-t border-slate-200 sm:hidden">
-                <a href="{% url 'index' %}#contact" class="mobile-menu-item-link flex items-center justify-center bg-blue-700 hover:bg-blue-800 text-white font-bold p-3.5 rounded-xl text-xs shadow-md transition-all min-h-[44px] no-underline">
-                    🚨 {% translate "Get Support" %}
-                </a>
-            </div>
-        </div>
-    </nav>
-
-    <main id="main-content" class="flex-grow w-full overflow-x-hidden" tabindex="-1">
-        {% block content %}{% endblock %}
-    </main>
-
-    <footer class="bg-slate-950 text-slate-300 py-16 border-t border-slate-900 mt-auto w-full overflow-x-hidden">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10">
-
-            <div class="space-y-4">
-                <div class="flex items-center gap-3">
-                    <div class="w-13 h-13 rounded-2xl bg-white p-1.5 border border-slate-800 flex items-center justify-center overflow-hidden">
-                        <img
-                            src="{% static 'core/images/logo.jpeg' %}"
-                            alt="MRN Ilam Logo"
-                            width="52"
-                            height="52"
-                            class="w-full h-full object-contain"
-                        >
-                    </div>
-                    <div>
-                        <p class="text-white font-extrabold text-base tracking-tight">
-                            MRN Ilam
-                        </p>
-                        <p class="text-xs text-slate-300 font-semibold">
-                            Safe Foreign Employment Support Portal
-                        </p>
-                    </div>
-                </div>
-
-                <p class="text-xs leading-relaxed text-slate-300">
-                    {% translate "MRN Ilam supports safe, informed, and dignified foreign employment by providing public resources, verified member records, notices, and community support services in Ilam, Nepal." %}
-                </p>
-            </div>
-
-            <div class="space-y-4">
-                <p class="text-white font-semibold text-sm tracking-wide uppercase">{% translate "Quick Links" %}</p>
-                <ul class="space-y-2.5 text-xs">
-                    <li><a href="{% url 'index' %}#about" class="hover:text-white transition-colors block py-0.5 text-slate-300 no-underline">{% translate "About the Organization" %}</a></li>
-                    <li><a href="{% url 'index' %}#services" class="hover:text-white transition-colors block py-0.5 text-slate-300 no-underline">{% translate "Support Services" %}</a></li>
-                    <li><a href="{% url 'members:member_list' %}" class="hover:text-white transition-colors block py-0.5 text-slate-300 no-underline">{% translate "Member Directory" %}</a></li>
-                    <li><a href="{% url 'index' %}#resource-center" class="hover:text-white transition-colors block py-0.5 text-slate-300 no-underline">{% translate "Resources and Guides" %}</a></li>
-                </ul>
-            </div>
-
-            <div class="space-y-4">
-                <p class="text-white font-semibold text-sm tracking-wide uppercase">{% translate "Official Portals" %}</p>
-                <ul class="space-y-2.5 text-xs">
-                    <li><a href="https://dofe.gov.np" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors block py-0.5 text-slate-300 no-underline">{% translate "Department of Foreign Employment" %}</a></li>
-                    <li><a href="https://feb.gov.np/" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors block py-0.5 text-slate-300 no-underline">{% translate "Foreign Employment Board" %}</a></li>
-                    <li><a href="https://mofa.gov.np" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors block py-0.5 text-slate-300 no-underline">{% translate "Ministry of Foreign Affairs" %}</a></li>
-                </ul>
-            </div>
-
-            <div class="space-y-4">
-                <p class="text-white font-semibold text-sm tracking-wide uppercase">{% translate "Contact" %}</p>
-                <p class="text-xs text-slate-300 leading-relaxed space-y-1">
-                    <span class="block">📍 {% translate "Ilam, Koshi Province, Nepal" %}</span>
-                    <span class="block pt-2">📞 <a href="tel:+97727520111" class="hover:text-white transition-colors text-slate-300 no-underline">+977-27-520111</a> / <a href="tel:+97727520222" class="hover:text-white transition-colors text-slate-300 no-underline">+977-27-520222</a></span>
-                    <span class="block">✉️ <a href="mailto:info@mrnilam.org.np" class="hover:text-white transition-colors text-slate-300 no-underline">info@mrnilam.org.np</a></span>
-                </p>
-            </div>
-        </div>
-
-        <hr class="border-slate-800 my-10 max-w-7xl mx-auto">
-
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center md:flex md:justify-between items-center text-xs text-slate-300 gap-4">
-            <p>&copy; {{ current_year|default:"2026" }} MRN Ilam. {% translate "All rights reserved." %}</p>
-            <p class="mt-2 md:mt-0">
-                {% translate "Built for safe migration awareness, transparency, and public service." %}
-            </p>
-        </div>
-    </footer>
-
-    <script>
-        let currentSizingPercentage = 100;
-        const rootHtmlNode = document.documentElement;
-
-        function changeTextSize(action) {
-            if (action === 'up') {
-                currentSizingPercentage = Math.min(115, currentSizingPercentage + 5);
-            } else if (action === 'down') {
-                currentSizingPercentage = Math.max(90, currentSizingPercentage - 5);
-            } else {
-                currentSizingPercentage = 100;
-            }
-            rootHtmlNode.style.fontSize = `${currentSizingPercentage}%`;
-        }
-
-        function toggleHighContrast() {
-            document.getElementById('master-body').classList.toggle('contrast-mode');
-        }
-
-        document.addEventListener('DOMContentLoaded', () => {
-            const menuBtn = document.getElementById('mobile-menu-trigger');
-            const menuDrawer = document.getElementById('mobile-dropdown-drawer');
-            const barsIcon = document.getElementById('hamburger-icon-bars');
-            const closeIcon = document.getElementById('hamburger-icon-close');
-            const itemLinks = document.querySelectorAll('.mobile-menu-item-link');
-
-            function closeDrawer() {
-                menuDrawer.classList.add('hidden');
-                barsIcon.classList.remove('hidden');
-                closeIcon.classList.add('hidden');
-                menuBtn.setAttribute('aria-expanded', 'false');
-                menuBtn.setAttribute('aria-label', "{% translate 'Open navigation menu' %}");
-            }
-
-            function toggleDrawerState() {
-                const isNowHidden = menuDrawer.classList.toggle('hidden');
-                barsIcon.classList.toggle('hidden', !isNowHidden);
-                closeIcon.classList.toggle('hidden', isNowHidden);
-                menuBtn.setAttribute('aria-expanded', String(!isNowHidden));
-                menuBtn.setAttribute('aria-label', isNowHidden ? "{% translate 'Open navigation menu' %}" : "{% translate 'Close navigation menu' %}");
-            }
-
-            if (menuBtn && menuDrawer) {
-                menuBtn.addEventListener('click', (e) => {
-                    e.stopPropagation();
-                    toggleDrawerState();
-                });
-
-                itemLinks.forEach(link => {
-                    link.addEventListener('click', closeDrawer);
-                });
-
-                document.addEventListener('click', (e) => {
-                    if (!menuDrawer.classList.contains('hidden') && !menuDrawer.contains(e.target) && !menuBtn.contains(e.target)) {
-                        closeDrawer();
-                    }
-                });
-
-                document.addEventListener('keydown', (e) => {
-                    if (e.key === 'Escape' && !menuDrawer.classList.contains('hidden')) {
-                        closeDrawer();
-                        menuBtn.focus();
-                    }
-                });
-            }
-        });
-
-        function runLiveClock() {
-            const clockContainer = document.getElementById('live-clock-ticker');
-            const dateContainer = document.getElementById('nepali-date-ticker');
-            if (!clockContainer || !dateContainer) return;
-
-            const currentTimestamp = new Date();
-            let currentLang = "{{ LANGUAGE_CODE }}";
-            if (!currentLang || currentLang === "" || currentLang === "None") {
-                currentLang = document.documentElement.lang || 'en';
-            }
-            currentLang = currentLang.toLowerCase().split('-')[0];
-
-            const devnagariNumerals = ['०', '१', '२', '३', '४', '५', '६', '७', '८', '९'];
-            function toDevnagari(num) {
-                return String(num).split('').map(digit => devnagariNumerals[digit] || digit).join('');
-            }
-
-            if (currentLang === 'ne') {
-                try {
-                    const dateOptions = { calendar: 'nepali', dateStyle: 'long' };
-                    const timeOptions = { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true };
-
-                    dateContainer.textContent = currentTimestamp.toLocaleDateString('ne-NP', dateOptions) + ' गते';
-                    clockContainer.textContent = currentTimestamp.toLocaleTimeString('ne-NP', timeOptions);
-                } catch (e) {
-                    let hrs = currentTimestamp.getHours();
-                    const mins = String(currentTimestamp.getMinutes()).padStart(2, '0');
-                    const secs = String(currentTimestamp.getSeconds()).padStart(2, '0');
-                    const ampm = hrs >= 12 ? ' PM' : ' AM';
-                    hrs = hrs % 12 || 12;
-
-                    dateContainer.textContent = "२०८३ जेठ २७ गते";
-                    clockContainer.textContent = `${toDevnagari(String(hrs).padStart(2, '0'))}:${toDevnagari(mins)}:${toDevnagari(secs)}${ampm}`;
-                }
-            } else {
-                const engDateOptions = { weekday: 'short', month: 'short', day: 'numeric', year: 'numeric' };
-                dateContainer.textContent = currentTimestamp.toLocaleDateString('en-US', engDateOptions);
-
-                let baseHours = currentTimestamp.getHours();
-                const baseMinutes = String(currentTimestamp.getMinutes()).padStart(2, '0');
-                const baseSeconds = String(currentTimestamp.getSeconds()).padStart(2, '0');
-                const meridiemMarker = baseHours >= 12 ? 'PM' : 'AM';
-
-                baseHours = baseHours % 12 || 12;
-                clockContainer.textContent = `${String(baseHours).padStart(2, '0')}:${baseMinutes}:${baseSeconds} ${meridiemMarker}`;
-            }
-        }
-
-        setInterval(runLiveClock, 1000);
-        runLiveClock();
-    </script>
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <section>
+        <h2>MRN Ilam</h2>
+        <p>{% translate "A public-interest platform for foreign-employment counseling, awareness, risk prevention, and member transparency." %}</p>
+        <p class="small">{% if LANGUAGE_CODE == 'ne' %}{{ site_info.disclaimer_ne }}{% else %}{{ site_info.disclaimer_en }}{% endif %}</p>
+      </section>
+      <section>
+        <h2>{% translate "Get guidance" %}</h2>
+        <p><a href="{% url 'counseling:request' %}">{% translate "Request counseling" %}</a></p>
+        <p><a href="{% url 'safety' %}">{% translate "Fraud and safety awareness" %}</a></p>
+        <p><a href="{% url 'resources' %}">{% translate "Official resources" %}</a></p>
+      </section>
+      <section>
+        <h2>{% translate "Organization" %}</h2>
+        {% if site_info.phone %}<p>{% translate "Phone" %}: <a href="tel:{{ site_info.phone }}">{{ site_info.phone }}</a></p>{% endif %}
+        {% if site_info.email %}<p>{% translate "Email" %}: <a href="mailto:{{ site_info.email }}">{{ site_info.email }}</a></p>{% endif %}
+        <p>{% if LANGUAGE_CODE == 'ne' %}{{ site_info.address_ne }}{% else %}{{ site_info.address_en }}{% endif %}</p>
+      </section>
+    </div>
+    <div class="container footer-bottom">
+      <p>&copy; {{ current_year }} MRN Ilam. {% translate "Information and counseling do not replace official government, legal, medical, or financial advice." %}</p>
+    </div>
+  </footer>
+  <script src="{% static 'core/js/site.js' %}" defer></script>
+  {% block extra_scripts %}{% endblock %}
 </body>
 </html>

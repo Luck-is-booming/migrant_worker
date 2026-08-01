@@ -1,0 +1,38 @@
+{
+  "files": [
+    {
+      "file": "Life Time Member of MRN District.xlsm",
+      "sheet": "Sheet1",
+      "total_rows": 21,
+      "header_title_rows": 3,
+      "blank_rows": 2,
+      "non_data_rows": 0,
+      "valid_rows": 16
+    },
+    {
+      "file": "MRN Ilam nagar level all Member List.xlsm",
+      "sheet": "Sheet1",
+      "total_rows": 257,
+      "header_title_rows": 3,
+      "blank_rows": 1,
+      "non_data_rows": 1,
+      "valid_rows": 252
+    }
+  ],
+  "total_workbook_rows": 278,
+  "header_title_rows": 6,
+  "blank_rows": 3,
+  "non_data_rows": 1,
+  "valid_membership_rows": 268,
+  "category_counts": {
+    "life": 70,
+    "general": 198
+  },
+  "blank_phone_rows": 114,
+  "blank_membership_number_rows": 0,
+  "strong_multiple_membership_people": 2,
+  "potential_duplicate_phone_groups": 2,
+  "expected_people_after_clean_import_into_empty_normalized_registry": 266,
+  "expected_memberships_after_clean_import_into_empty_normalized_registry": 268,
+  "records_deleted": 0
+}

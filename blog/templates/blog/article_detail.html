@@ -1,0 +1,7 @@
+{% extends "core/base.html" %}{% load i18n %}
+{% block title %}{{ article.meta_title|default:article.title }} — MRN Ilam{% endblock %}
+{% block meta_description %}{{ article.meta_description|default:article.summary }}{% endblock %}
+{% block og_type %}article{% endblock %}
+{% block og_title %}{{ article.title }}{% endblock %}
+{% block og_description %}{{ article.summary }}{% endblock %}
+{% block content %}<article><header class="section section--soft"><div class="container article-body"><p><a href="{% url 'blog:list' %}">← {% translate "All news and notices" %}</a></p><div class="badges"><span class="badge">{{ article.get_article_type_display }}</span>{% if article.alert_severity %}<span class="badge badge--warning">{{ article.get_alert_severity_display }}</span>{% endif %}</div><h1>{{ article.title }}</h1><p class="lead">{{ article.summary }}</p><p class="small muted">{{ article.formatted_date }}{% if article.author_name %} · {{ article.author_name }}{% endif %}</p></div></header><div class="section"><div class="container article-body">{% if article.image_url %}<img src="{{ article.image_url }}" alt="" width="960" height="540">{% endif %}<div>{{ article.content|linebreaks }}</div>{% if article.article_type == 'alert' %}<div class="notice notice--warning"><p>{% translate "This alert provides general awareness. Verify your individual situation through the relevant official authority or qualified professional." %}</p></div>{% endif %}</div></div></article>{% endblock %}
