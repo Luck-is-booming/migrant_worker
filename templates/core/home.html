@@ -80,7 +80,17 @@
         <h2>{% translate "Community-based credibility with privacy by default." %}</h2>
         <p class="lead">{% translate "The directory shows verified public membership relationships while keeping private phone numbers, email addresses, payment details, and internal notes off the public website." %}</p>
         <p><span class="metric">{{ member_count }}</span><br>{% translate "public people currently represented in the normalized member directory" %}</p>
-        <a class="button button--secondary" href="{% url 'members:member_list' %}">{% translate "Search Members" %}</a>
+        <div class="action-row">
+  <a class="button button--secondary"
+     href="{% url 'members:member_list' %}">
+    {% translate "Search Members" %}
+  </a>
+
+  <a class="button button--primary"
+     href="{% url 'membership_apply' %}">
+    {% translate "Apply for Membership" %}
+  </a>
+</div>
       </div>
       <div>
         <p class="eyebrow">{% translate "Urgent situations" %}</p>

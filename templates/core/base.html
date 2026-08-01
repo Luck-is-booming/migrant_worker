@@ -58,6 +58,7 @@
         <a href="{% url 'resources' %}">{% translate "Resources" %}</a>
         <a href="{% url 'blog:list' %}">{% translate "News" %}</a>
         <a href="{% url 'members:member_list' %}">{% translate "Members" %}</a>
+        <a href="{% url 'membership_apply' %}">{% translate "Apply for Membership" %}</a>
         <a href="{% url 'contact' %}">{% translate "Contact" %}</a>
         <form class="language-form" action="{% url 'set_language' %}" method="post">
           {% csrf_token %}
@@ -101,6 +102,11 @@
       <section>
         <h2>{% translate "Organization" %}</h2>
         {% if site_info.phone %}<p>{% translate "Phone" %}: <a href="tel:{{ site_info.phone }}">{{ site_info.phone }}</a></p>{% endif %}
+        <p>
+  <a href="{% url 'membership_apply' %}">
+    {% translate "Apply for Membership" %}
+  </a>
+</p>
         {% if site_info.email %}<p>{% translate "Email" %}: <a href="mailto:{{ site_info.email }}">{{ site_info.email }}</a></p>{% endif %}
         <p>{% if LANGUAGE_CODE == 'ne' %}{{ site_info.address_ne }}{% else %}{{ site_info.address_en }}{% endif %}</p>
       </section>
