@@ -2,53 +2,77 @@
 
 ## Verification completed in the delivery environment
 
-- 124 Python source/migration files parsed and compiled successfully with Python 3.13.
-- Both shell scripts passed `bash -n`.
-- The Nepali catalogue contains 596 translated messages, no empty/fuzzy entries, and compiled to `django.mo` with Babel.
-- Public Python/template translation-string extraction found complete Nepali catalogue coverage.
+- 129 Python source and migration files parsed successfully with Python 3.13.
+- `build.sh` passed `bash -n` shell syntax validation.
+- The Nepali catalogue contains 943 active messages with no duplicate, empty, fuzzy, or placeholder-format errors and was compiled to `django.mo` with Babel.
+- Public template and Python translation-string extraction found no missing active Nepali message.
+- 32 Django templates passed a static block-tag balance check.
+- All nine literal template static-file references resolve to included assets.
+- Static discovery found no duplicate logical paths.
+- JavaScript passed `node --check`; CSS braces are balanced.
 - No Git conflict markers were found.
-- No `.env`, SQLite database, uploaded media, payment QR, backups, import reports or virtual environment is included.
-- Source Excel workbooks and the committee DOCX were opened and structurally inspected.
-- 39 application migration files and their local dependency ordering were statically inspected.
-- The personal/static payment QR from the uploaded project was removed.
+- The project contains one `manage.py` and no nested project copy.
+- No `.env`, SQLite database, uploaded media, payment QR, backups, import reports, or virtual environment is included.
+- The approved existing organization seal is the source for the navigation logo, footer logo, favicons, Apple touch icon, manifest icons, Open Graph image, and maintenance branding.
+- The PostgreSQL membership-number migration includes the non-atomic migration fix required to avoid pending-trigger index creation failures.
+- The shared form-field partial now loads Django i18n directly, addressing the three reported `translate` template errors.
+- The task-focused admin dashboard, role-aware model visibility, hidden legacy registrations, superuser-only audit tools, chairperson photo preview, and public chairperson-photo rendering were verified statically.
 
-## Automated Django tests added or updated
+## Representative responsive browser checks
 
-The source contains 50 test methods. They require the installed Django dependencies to execute.
+A representative page using the production CSS, JavaScript, official seal, Nepali navigation, long Nepali copy, cards, member records, and footer was checked in headless Chromium at:
 
-Tests cover:
+- 320, 360, 375, 390, and 430 pixels;
+- 768, 1024, 1120, and 1121 pixels;
+- 1366 and 1440 pixels.
 
-- repeated imports, dry-runs, conflicting numbers and multiple memberships;
-- numeric public directory ordering, mixed active/archived visibility, language-isolated resources and private-field protection;
-- permanent number stability, archive/restore with public-visibility preservation, non-reuse and duplicate prevention;
+The representative checks found:
+
+- no horizontal document overflow;
+- no header identity/action overlap;
+- automatic mobile-menu use through 1120 pixels;
+- desktop navigation from 1121 pixels without nav overflow;
+- mobile drawer contained within the viewport after its transition;
+- body scrolling locked while the drawer is open;
+- the mobile language switch displayed inside the drawer;
+- Escape reliably closed the drawer.
+
+These representative checks supplement but do not replace testing the rendered Django application with production data and real devices.
+
+## Automated Django tests present
+
+The source contains 50 test methods. They cover:
+
+- repeated imports, dry-runs, conflicting numbers, and multiple memberships;
+- numeric public directory ordering, mixed active/archived visibility, language-isolated resources, and private-field protection;
+- permanent number stability, archive/restore, non-reuse, and duplicate prevention;
 - optional PostgreSQL simultaneous allocation;
-- payment approval, idempotency, audit, rejection reason, unique transaction reference, invalid image and authenticated private-media metadata;
-- counseling validation, anti-spam, international phone normalization and renamed/invalid PDF rejection;
+- payment approval, idempotency, audit, rejection reason, unique transaction reference, invalid images, and authenticated private-media metadata;
+- counseling validation, anti-spam, international phone normalization, and invalid attachment rejection;
 - draft/expired content visibility and localized article SEO metadata;
-- root redirect, privacy/program/membership routes, payment readiness, content seed idempotency and committee import idempotency.
+- root redirect, privacy/program/membership routes, payment readiness, seed idempotency, and committee import idempotency.
 
 ## Environment limitation
 
-The delivery sandbox could not install the pinned third-party dependencies because its package index exposed no packages. Therefore `python manage.py test`, `migrate`, `makemigrations --check`, `collectstatic` and real Cloudinary/Resend/Neon operations were **not** executed in that sandbox. Static checks are not a substitute for the recipient’s runtime verification.
+The delivery environment could not install the pinned third-party dependencies because its package index exposed no packages. Therefore `python manage.py check`, `migrate`, `makemigrations --check`, `compilemessages`, `test`, and `collectstatic` were not run through Django here. Static verification is not a substitute for runtime verification in the project virtual environment.
 
-Run this before deployment:
+Run before deployment:
 
 ```bash
-pip install -r requirements.txt
 python manage.py check
 python manage.py migrate
 python manage.py makemigrations --check --dry-run
-python manage.py test
+python manage.py compilemessages
+python manage.py test -v 2
+rm -rf staticfiles
 python manage.py collectstatic --noinput
 ```
 
 ## External verification still required
 
-- Official organization identity and contact facts
-- Official General/Life fees
-- Official QR and payment recipient
-- Cloudinary create/read permissions and protected evidence access
-- Resend verified sender and delivery
-- Neon backup/restore procedure
-- Human review of English leadership spellings and all public Nepali content
-- Physical-device responsive/accessibility checks
+- real rendered English and Nepali pages with current production data;
+- one controlled counseling and contact submission;
+- one complete membership/payment review including repeat approval;
+- Cloudinary create/read/delete permission for private files;
+- Resend verified sender and delivery when notifications are enabled;
+- physical-device checks on representative Android, iPhone, tablet, and laptop screens.

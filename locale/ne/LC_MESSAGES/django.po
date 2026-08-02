@@ -1,162 +1,144 @@
+
 msgid ""
 msgstr ""
-"Project-Id-Version:  migrantcenter\n"
+"Project-Id-Version: MRN Ilam final-client-ready\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-02 14:07+0545\n"
+"POT-Creation-Date: 2026-08-01 21:09+0545\n"
 "PO-Revision-Date: 2026-08-02 12:00+0545\n"
-"Last-Translator: Khesha Hang\n"
-"Language-Team: Nepali\n"
+"Last-Translator: MRN Ilam Website Team\n"
 "Language: ne\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
+"Language-Team: Nepali\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.18.0\n"
 
-#: blog/models.py:27 blog/models.py:81
+#: blog/models.py:22 blog/models.py:65
 msgid "Article"
 msgstr "लेख"
 
-#: blog/models.py:28
+#: blog/models.py:23
 msgid "Notice"
 msgstr "सूचना"
 
 # Added during counseling-first production refactor
 # | msgid "Safety"
-#: blog/models.py:29
+#: blog/models.py:24
 msgid "Safety alert"
 msgstr "सुरक्षा चेतावनी"
 
-#: blog/models.py:30
+#: blog/models.py:25
 msgid "Event"
 msgstr "कार्यक्रम"
 
 # Added during counseling-first production refactor
 # | msgid "Counseling"
-#: blog/models.py:31
+#: blog/models.py:26
 msgid "Counseling update"
 msgstr "परामर्श अद्यावधिक"
 
-#: blog/models.py:34
+#: blog/models.py:29
 msgid "Draft"
 msgstr "मस्यौदा"
 
-#: blog/models.py:35
+#: blog/models.py:30
 msgid "Published"
 msgstr "प्रकाशित"
 
-#: blog/models.py:36 members/models.py:75 members/models.py:458
+#: blog/models.py:31 members/models.py:360
 msgid "Archived"
 msgstr "अभिलेखीकृत"
 
-#: blog/models.py:39
+#: blog/models.py:34
 msgid "Not an alert"
 msgstr "चेतावनी होइन"
 
-#: blog/models.py:40
+#: blog/models.py:35
 msgid "Information"
 msgstr "जानकारी"
 
-#: blog/models.py:41
+#: blog/models.py:36
 msgid "Important"
 msgstr "महत्वपूर्ण"
 
-#: blog/models.py:42
+#: blog/models.py:37
 msgid "Urgent"
 msgstr "अत्यावश्यक"
 
-#: blog/models.py:45 core/models.py:223
+#: blog/models.py:40 core/models.py:108
 msgid "Title (Nepali)"
 msgstr "शीर्षक (नेपाली)"
 
 # | msgid "Name in English"
-#: blog/models.py:46 core/models.py:224
+#: blog/models.py:41 core/models.py:109
 msgid "Title (English)"
 msgstr "शीर्षक (अंग्रेजी)"
 
 # | msgid "Our Commitment"
-#: blog/models.py:48
+#: blog/models.py:43
 msgid "Summary (Nepali)"
 msgstr "सारांश (नेपाली)"
 
 # | msgid "Name in English"
-#: blog/models.py:49
+#: blog/models.py:44
 msgid "Summary (English)"
 msgstr "सारांश (अंग्रेजी)"
 
-#: blog/models.py:50
+#: blog/models.py:45
 msgid "Content (Nepali)"
 msgstr "सामग्री (नेपाली)"
 
 # | msgid "Name in English"
-#: blog/models.py:51
+#: blog/models.py:46
 msgid "Content (English)"
 msgstr "सामग्री (अंग्रेजी)"
 
-#: blog/models.py:54
+#: blog/models.py:49
 msgid "Featured Image URL"
 msgstr "मुख्य तस्बिरको URL"
 
-#: blog/models.py:55
+#: blog/models.py:50
 msgid "Upload Photo from Device"
 msgstr "उपकरणबाट तस्बिर अपलोड गर्नुहोस्"
 
-#: blog/models.py:56
-msgid "Image description (Nepali)"
-msgstr "तस्बिर विवरण (नेपाली)"
-
-#: blog/models.py:57
-msgid "Image description (English)"
-msgstr "तस्बिर विवरण (अंग्रेजी)"
-
-#: blog/models.py:58
+#: blog/models.py:51
 msgid "Published Date"
 msgstr "प्रकाशन मिति"
 
-#: blog/models.py:60
-msgid "Expiry date"
-msgstr "म्याद सकिने मिति"
-
-#: blog/models.py:61
-msgid ""
-"Optional. After this time the item is automatically hidden from public pages."
-msgstr "वैकल्पिक। यस समयपछि सामग्री सार्वजनिक पृष्ठबाट स्वतः लुक्छ।"
-
-#: blog/models.py:65
+#: blog/models.py:54
 msgid "Both"
 msgstr "दुवै"
 
-#: blog/models.py:65 core/models.py:347 core/models.py:432
-#: counseling/models.py:52 migrantcenter/settings.py:135
+#: blog/models.py:54 core/models.py:232 counseling/models.py:51 migrantcenter/settings.py:124
 msgid "Nepali"
 msgstr "नेपाली"
 
 # | msgid "Name in English"
-#: blog/models.py:65 core/models.py:347 core/models.py:432
-#: counseling/models.py:52 migrantcenter/settings.py:135
+#: blog/models.py:54 core/models.py:232 counseling/models.py:51 migrantcenter/settings.py:124
 msgid "English"
 msgstr "अंग्रेजी"
 
-#: blog/models.py:67
+#: blog/models.py:56
 msgid "Is Critical Emergency Alert?"
 msgstr "के यो गम्भीर आपतकालीन चेतावनी हो?"
 
-#: blog/models.py:82
+#: blog/models.py:66
 msgid "Articles"
 msgstr "लेखहरू"
 
 # Added during counseling-first production refactor
-#: blog/templates/blog/article_detail.html:8
+#: blog/templates/blog/article_detail.html:7
 msgid "All news and notices"
 msgstr "सबै समाचार तथा सूचना"
 
-#: blog/templates/blog/article_detail.html:8
+#: blog/templates/blog/article_detail.html:7
 msgid ""
-"This alert provides general awareness. Verify your individual situation "
-"through the relevant official authority or qualified professional."
+"This alert provides general awareness. Verify your individual situation through the relevant "
+"official authority or qualified professional."
 msgstr ""
-"यो चेतावनी सामान्य सचेतनाका लागि हो। आफ्नो अवस्थाबारे सम्बन्धित आधिकारिक निकाय वा "
-"योग्य पेशेवरसँग पुष्टि गर्नुहोस्।"
+"यो चेतावनी सामान्य सचेतनाका लागि हो। आफ्नो अवस्थाबारे सम्बन्धित आधिकारिक निकाय वा योग्य पेशेवरसँग"
+" पुष्टि गर्नुहोस्।"
 
 # Added during counseling-first production refactor
 #: blog/templates/blog/article_list.html:2
@@ -199,115 +181,81 @@ msgstr "प्रकाशित सामग्री उपलब्ध छै
 msgid "News result pages"
 msgstr "समाचार नतिजाका पृष्ठहरू"
 
-#: blog/templates/blog/article_list.html:3
-#: members/templates/members/member_list.html:9
+#: blog/templates/blog/article_list.html:3 members/templates/members/member_list.html:9
 msgid "Previous"
 msgstr "अघिल्लो"
 
-#: blog/templates/blog/article_list.html:3
-#: members/templates/members/member_list.html:9
+#: blog/templates/blog/article_list.html:3 members/templates/members/member_list.html:9
 msgid "of"
 msgstr "मध्ये"
 
-#: blog/templates/blog/article_list.html:3
-#: members/templates/members/member_list.html:9
+#: blog/templates/blog/article_list.html:3 members/templates/members/member_list.html:9
 msgid "Next"
 msgstr "अर्को"
 
-#: core/forms.py:21
-msgid ""
-"I have read the privacy information and consent to the use of my details for "
-"this membership application."
-msgstr ""
-"मैले गोपनीयता जानकारी पढेको छु र यस सदस्यता आवेदनका लागि मेरा विवरण प्रयोग गर्न सहमति "
-"दिन्छु।"
-
-#: core/forms.py:40 core/forms.py:106 counseling/forms.py:36
+#: core/forms.py:32 core/forms.py:73 counseling/forms.py:36
 msgid "Full name"
 msgstr "पूरा नाम"
 
 # | msgid "Name in English"
-#: core/forms.py:41
+#: core/forms.py:33
 msgid "Name in English (optional)"
 msgstr "अंग्रेजीमा नाम (वैकल्पिक)"
 
 # | msgid "Email address"
-#: core/forms.py:42 core/forms.py:108 counseling/forms.py:38
+#: core/forms.py:34 core/forms.py:75 counseling/forms.py:38
 msgid "Email address (optional)"
 msgstr "इमेल ठेगाना (वैकल्पिक)"
 
-#: core/forms.py:43 members/models.py:80
+#: core/forms.py:35 members/models.py:65
 msgid "Municipality"
 msgstr "नगरपालिका"
 
-#: core/forms.py:44
+#: core/forms.py:36
 msgid "Ward number"
 msgstr "वडा नम्बर"
 
 # Added during counseling-first production refactor
 # | msgid "General locality"
-#: core/forms.py:45
+#: core/forms.py:37
 msgid "General address/locality"
 msgstr "सामान्य ठेगाना वा स्थान"
 
 # Added during counseling-first production refactor
 # | msgid "Organization unit"
-#: core/forms.py:46
+#: core/forms.py:38
 msgid "Organization designation (optional)"
 msgstr "संस्थागत पद (वैकल्पिक)"
 
 # | msgid "Foreign employment country"
-#: core/forms.py:47
+#: core/forms.py:39
 msgid "Foreign-employment country (optional)"
 msgstr "वैदेशिक रोजगारीको देश (वैकल्पिक)"
 
-#: core/forms.py:48 core/forms.py:107 counseling/forms.py:37
+#: core/forms.py:40 core/forms.py:74 counseling/forms.py:37
 msgid "Phone number"
 msgstr "फोन नम्बर"
 
 # Added during counseling-first production refactor
-#: core/forms.py:49 members/models.py:259
-#: payments/templates/payments/manual_payment.html:20
-#: payments/templates/payments/payment_pending.html:35
+#: core/forms.py:41 members/models.py:258 payments/templates/payments/manual_payment.html:20
+#: payments/templates/payments/payment_pending.html:33
 msgid "Membership category"
 msgstr "सदस्यता श्रेणी"
 
-#: core/forms.py:50
-msgid "Privacy consent"
-msgstr "गोपनीयता सहमति"
-
-#: core/forms.py:70 core/forms.py:136 counseling/forms.py:77
-msgid "Unable to submit this form."
-msgstr "यो फाराम पठाउन सकिएन।"
-
-#: core/forms.py:78 core/forms.py:144
-msgid "This form expired. Reload and try again."
-msgstr "यो फारामको समय सकिएको छ। पृष्ठ पुनःलोड गरी फेरि प्रयास गर्नुहोस्।"
-
-# Added during counseling-first production refactor
-# | msgid "Please correct the following information."
-#: core/forms.py:80 core/forms.py:146 counseling/forms.py:87
-msgid "Please review the form before submitting."
-msgstr "पठाउनुअघि फाराम ध्यानपूर्वक जाँच गर्नुहोस्।"
-
-#: core/forms.py:86
-msgid "Privacy consent is required to submit a membership application."
-msgstr "सदस्यता आवेदन पठाउन गोपनीयता सहमति आवश्यक छ।"
-
 # | msgid "Choose language"
-#: core/forms.py:109 counseling/forms.py:39
+#: core/forms.py:76 counseling/forms.py:39
 msgid "Preferred language"
 msgstr "रुचाइएको भाषा"
 
-#: core/forms.py:110
+#: core/forms.py:77
 msgid "Subject"
 msgstr "विषय"
 
-#: core/forms.py:111
+#: core/forms.py:78
 msgid "Message"
 msgstr "सन्देश"
 
-#: core/forms.py:112
+#: core/forms.py:79
 msgid "I consent to being contacted about this message."
 msgstr "यस सन्देशबारे मलाई सम्पर्क गर्न म सहमति दिन्छु।"
 
@@ -315,338 +263,221 @@ msgstr "यस सन्देशबारे मलाई सम्पर्क
 # | msgid ""
 # | "Please do not submit passwords, OTPs, bank PINs, or complete passport and "
 # | "citizenship details through this form."
-#: core/forms.py:120
-msgid ""
-"Do not submit passwords, OTPs, bank PINs, or complete identity-document "
-"details."
+#: core/forms.py:87
+msgid "Do not submit passwords, OTPs, bank PINs, or complete identity-document details."
 msgstr "पासवर्ड, OTP, बैंक PIN वा परिचयपत्रको पूरा विवरण नपठाउनुहोस्।"
 
-#: core/forms.py:152
+#: core/forms.py:103 counseling/forms.py:77
+msgid "Unable to submit this form."
+msgstr "यो फाराम पठाउन सकिएन।"
+
+#: core/forms.py:111
+msgid "This form expired. Reload and try again."
+msgstr "यो फारामको समय सकिएको छ। पृष्ठ पुनःलोड गरी फेरि प्रयास गर्नुहोस्।"
+
+# Added during counseling-first production refactor
+# | msgid "Please correct the following information."
+#: core/forms.py:113 counseling/forms.py:87
+msgid "Please review the form before submitting."
+msgstr "पठाउनुअघि फाराम ध्यानपूर्वक जाँच गर्नुहोस्।"
+
+#: core/forms.py:119
 msgid "Consent is required so the team can contact you."
 msgstr "टोलीले तपाईंलाई सम्पर्क गर्न सहमति आवश्यक छ।"
 
-#: core/models.py:11 core/models.py:449 members/models.py:86
-#: members/models.py:205
+#: core/models.py:9 members/models.py:71 members/models.py:204
 msgid "Name (Nepali)"
 msgstr "नाम (नेपाली)"
 
 # | msgid "Name in English"
-#: core/models.py:12 core/models.py:450 members/models.py:87
-#: members/models.py:206
+#: core/models.py:10 members/models.py:72 members/models.py:205
 msgid "Name (English)"
 msgstr "नाम (अंग्रेजी)"
 
-#: core/models.py:13
+#: core/models.py:11
 msgid "Slogan (Nepali)"
 msgstr "नारा (नेपाली)"
 
 # | msgid "Name in English"
-#: core/models.py:14
+#: core/models.py:12
 msgid "Slogan (English)"
 msgstr "नारा (अंग्रेजी)"
 
-#: core/models.py:15
+#: core/models.py:13
 msgid "Objective (Nepali)"
 msgstr "उद्देश्य (नेपाली)"
 
-#: core/models.py:16
+#: core/models.py:14
 msgid "Objective (English)"
 msgstr "उद्देश्य (अंग्रेजी)"
 
 # | msgid "Our Commitment"
-#: core/models.py:17
+#: core/models.py:15
 msgid "Commitment (Nepali)"
 msgstr "संकल्प (नेपाली)"
 
 # | msgid "Name in English"
-#: core/models.py:18
+#: core/models.py:16
 msgid "Commitment (English)"
 msgstr "संकल्प (अंग्रेजी)"
 
 # | msgid "Chairperson photo"
-#: core/models.py:27
+#: core/models.py:25
 msgid "Chairperson Photo"
 msgstr "अध्यक्षको तस्बिर"
 
-#: core/models.py:55 core/models.py:56
+#: core/models.py:49 core/models.py:50
 msgid "Organization Information"
 msgstr "संस्थाको जानकारी"
 
-#: core/models.py:113
-msgid "General Membership fee"
-msgstr "साधारण सदस्यता शुल्क"
-
-#: core/models.py:116
-msgid "Life Membership fee"
-msgstr "आजीवन सदस्यता शुल्क"
-
-#: core/models.py:119
-msgid "Official payment recipient name"
-msgstr "आधिकारिक भुक्तानी प्राप्तकर्ताको नाम"
-
-#: core/models.py:125
-msgid "Official payment QR image"
-msgstr "आधिकारिक भुक्तानी QR तस्बिर"
-
-#: core/models.py:127
-msgid ""
-"Upload only the QR confirmed by the organization. Verify the recipient name "
-"by scanning it before publishing."
-msgstr ""
-"संस्थाले पुष्टि गरेको QR मात्र अपलोड गर्नुहोस्। प्रकाशित गर्नुअघि स्क्यान गरी प्राप्तकर्ताको "
-"नाम पुष्टि गर्नुहोस्।"
-
-#: core/models.py:131
-msgid "Payment account details (Nepali)"
-msgstr "भुक्तानी खाता विवरण (नेपाली)"
-
-#: core/models.py:132
-msgid "Payment account details (English)"
-msgstr "भुक्तानी खाता विवरण (अंग्रेजी)"
-
-#: core/models.py:133
-msgid "Payment instructions (Nepali)"
-msgstr "भुक्तानी निर्देशन (नेपाली)"
-
-#: core/models.py:134
-msgid "Payment instructions (English)"
-msgstr "भुक्तानी निर्देशन (अंग्रेजी)"
-
-#: core/models.py:138
-msgid ""
-"Enable only after the QR, recipient name, and official fees have been "
-"verified."
-msgstr "QR, प्राप्तकर्ताको नाम र आधिकारिक शुल्क पुष्टि भएपछि मात्र सक्रिय गर्नुहोस्।"
-
-#: core/models.py:144 core/models.py:145 core/models.py:204
-msgid "Membership payment settings"
-msgstr "सदस्यता भुक्तानी सेटिङ"
-
-#: core/models.py:174
-msgid "Enter the verified General Membership fee."
-msgstr "प्रमाणित साधारण सदस्यता शुल्क लेख्नुहोस्।"
-
-#: core/models.py:176
-msgid "Enter the verified Life Membership fee."
-msgstr "प्रमाणित आजीवन सदस्यता शुल्क लेख्नुहोस्।"
-
-#: core/models.py:178
-msgid "Enter the verified payment recipient name."
-msgstr "प्रमाणित भुक्तानी प्राप्तकर्ताको नाम लेख्नुहोस्।"
-
-#: core/models.py:180
-msgid "Upload the verified official payment QR image."
-msgstr "प्रमाणित आधिकारिक भुक्तानी QR तस्बिर अपलोड गर्नुहोस्।"
-
 # Added during counseling-first production refactor
-#: core/models.py:209 templates/core/base.html:50
+#: core/models.py:94 templates/core/base.html:56
 msgid "Guidance"
 msgstr "मार्गदर्शन"
 
 # Added during counseling-first production refactor
-#: core/models.py:210 templates/core/privacy.html:4
+#: core/models.py:95 templates/core/base.html:57
 msgid "Safety"
 msgstr "सुरक्षा"
 
 # Added during counseling-first production refactor
 # | msgid "Document confiscation"
-#: core/models.py:211
+#: core/models.py:96
 msgid "Documents"
 msgstr "कागजात"
 
-#: core/models.py:212
+#: core/models.py:97
 msgid "Rights"
 msgstr "अधिकार"
 
-#: core/models.py:213
+#: core/models.py:98
 msgid "Family"
 msgstr "परिवार"
 
 # Added during counseling-first production refactor
 # | msgid "Return home"
-#: core/models.py:214
+#: core/models.py:99
 msgid "Return"
 msgstr "फिर्ती"
 
-#: core/models.py:219
+#: core/models.py:104
 msgid "Legacy field. Raw SVG is no longer rendered publicly."
 msgstr "पुरानो क्षेत्र। कच्चा SVG अब सार्वजनिक रूपमा देखाइँदैन।"
 
-#: core/models.py:220
+#: core/models.py:105
 msgid "Legacy raw SVG"
 msgstr "पुरानो कच्चा SVG"
 
-#: core/models.py:225
+#: core/models.py:110
 msgid "Description (Nepali)"
 msgstr "विवरण (नेपाली)"
 
 # | msgid "Name in English"
-#: core/models.py:226
+#: core/models.py:111
 msgid "Description (English)"
 msgstr "विवरण (अंग्रेजी)"
 
-#: core/models.py:227
+#: core/models.py:112
 msgid "Process Steps (Nepali)"
 msgstr "प्रक्रियाका चरण (नेपाली)"
 
-#: core/models.py:228
+#: core/models.py:113
 msgid "Process Steps (English)"
 msgstr "प्रक्रियाका चरण (अंग्रेजी)"
 
-#: core/models.py:267
+#: core/models.py:152
 msgid "Informational estimate only. Set to zero when unverified."
 msgstr "यो केवल जानकारीमूलक अनुमान हो। पुष्टि नभए शून्य राख्नुहोस्।"
 
-#: core/models.py:305
+#: core/models.py:190
 msgid "Legacy resource publication"
 msgstr "पुरानो स्रोत प्रकाशन"
 
 # | msgid "Choose language"
-#: core/models.py:347
+#: core/models.py:232
 msgid "Both languages"
 msgstr "दुवै भाषा"
 
 # Added during counseling-first production refactor
 # | msgid "News"
-#: core/models.py:427 counseling/models.py:43
+#: core/models.py:312 counseling/models.py:42
 msgid "New"
 msgstr "नयाँ"
 
 # Added during counseling-first production refactor
 # | msgid "Last reviewed"
-#: core/models.py:427 counseling/models.py:44
+#: core/models.py:312 counseling/models.py:43
 msgid "Reviewed"
 msgstr "समीक्षा गरिएको"
 
-#: core/models.py:427 counseling/models.py:49
+#: core/models.py:312 counseling/models.py:48
 msgid "Closed"
 msgstr "बन्द"
 
-#: core/models.py:427 counseling/models.py:50
+#: core/models.py:312 counseling/models.py:49
 msgid "Spam"
 msgstr "स्प्याम"
 
-#: core/models.py:432 counseling/models.py:52
-msgid "Either"
-msgstr "जुनसुकै"
-
-#: core/models.py:452
-msgid "Designation (Nepali)"
-msgstr "पद (नेपाली)"
-
-#: core/models.py:455
-msgid "Designation (English)"
-msgstr "पद (अङ्ग्रेजी)"
-
-#: core/models.py:458
-msgid "Address (Nepali)"
-msgstr "ठेगाना (नेपाली)"
-
-#: core/models.py:461
-msgid "Address (English)"
-msgstr "ठेगाना (अङ्ग्रेजी)"
-
-#: core/models.py:463
-msgid "Official Email"
-msgstr "आधिकारिक इमेल"
-
-#: core/models.py:465
-msgid "Extension / Phone"
-msgstr "एक्सटेन्सन / फोन"
-
-#: core/models.py:468
-msgid "Profile Photo"
-msgstr "प्रोफाइल तस्बिर"
-
-#: core/models.py:471 members/models.py:151
-msgid "Lower numbers display first."
-msgstr "सानो नम्बर पहिले देखिन्छ।"
-
-#: core/models.py:473 members/models.py:148
-msgid "Show on Website"
-msgstr "वेबसाइटमा देखाउनुहोस्"
-
-#: core/models.py:477
-msgid "Team Member"
-msgstr "समिति सदस्य"
-
-#: core/models.py:478
-msgid "Team Members"
-msgstr "समिति सदस्यहरू"
-
-#: core/models.py:504
+#: core/models.py:354
 msgid "Ilam Municipality"
 msgstr "इलाम नगरपालिका"
 
-#: core/models.py:505
+#: core/models.py:355
 msgid "Deumai Municipality"
 msgstr "देउमाई नगरपालिका"
 
-#: core/models.py:506
+#: core/models.py:356
 msgid "Suryodaya Municipality"
 msgstr "सूर्योदय नगरपालिका"
 
-#: core/models.py:507
+#: core/models.py:357
 msgid "Phakphokthum Rural Municipality"
 msgstr "फाकफोकथुम गाउँपालिका"
 
-#: core/models.py:508
+#: core/models.py:358
 msgid "Sandakpur Rural Municipality"
 msgstr "सन्दकपुर गाउँपालिका"
 
 # | msgid "Verified Members"
-#: core/models.py:510 members/models.py:66
-#: templates/core/membership_apply.html:21
+#: core/models.py:360 members/models.py:55
 msgid "Life Member"
 msgstr "आजीवन सदस्य"
 
 # | msgid "Verified Members"
-#: core/models.py:510 members/models.py:67
-#: templates/core/membership_apply.html:20
+#: core/models.py:360 members/models.py:56
 msgid "General Member"
 msgstr "साधारण सदस्य"
 
-#: core/models.py:512 members/models.py:72 members/models.py:416
-#: members/models.py:455 payments/models.py:54
-#: payments/templates/payments/payment_pending.html:23
+#: core/models.py:362 members/models.py:320 payments/templates/payments/payment_pending.html:21
 msgid "Pending"
 msgstr "प्रतीक्षारत"
 
-#: core/models.py:513 members/models.py:418
+#: core/models.py:363 members/models.py:322
 msgid "Completed"
 msgstr "सम्पन्न"
 
 # Added during counseling-first production refactor
-#: core/models.py:514 members/models.py:76 members/models.py:459
-#: payments/models.py:57 payments/templates/payments/payment_pending.html:13
+#: core/models.py:364 payments/templates/payments/payment_pending.html:13
 msgid "Rejected"
 msgstr "अस्वीकृत"
 
-#: core/models.py:520
+#: core/models.py:369
 msgid "Email address"
 msgstr "इमेल ठेगाना"
 
 # | msgid "Membership Application"
-#: core/models.py:539
+#: core/models.py:385
 msgid "Membership application"
 msgstr "सदस्यता आवेदन"
 
 # | msgid "Membership Application"
-#: core/models.py:540
+#: core/models.py:386
 msgid "Membership applications"
 msgstr "सदस्यता आवेदनहरू"
 
-#: core/views.py:113
+#: core/views.py:99
 msgid "Your message was saved. Our team will review it."
 msgstr "तपाईंको सन्देश सुरक्षित भयो। हाम्रो टोलीले यसको समीक्षा गर्नेछ।"
-
-#: core/views.py:137
-msgid ""
-"Online membership payment is temporarily unavailable. Please contact the "
-"organization before submitting an application."
-msgstr ""
-"अनलाइन सदस्यता भुक्तानी अस्थायी रूपमा उपलब्ध छैन। आवेदन पठाउनुअघि संस्थालाई सम्पर्क "
-"गर्नुहोस्।"
 
 #: counseling/forms.py:40
 msgid "Municipality or location"
@@ -681,27 +512,19 @@ msgid "Example: weekdays after 5 PM"
 msgstr "उदाहरण: कार्यदिवसमा बेलुका ५ बजेपछि"
 
 #: counseling/forms.py:56
-msgid ""
-"Use a complete phone number. International formats such as +977, +91, +971, "
-"+974, +966, and +60 are accepted."
-msgstr ""
-"पूर्ण फोन नम्बर प्रयोग गर्नुहोस्। +977, +91, +971, +974, +966 र +60 जस्ता "
-"अन्तर्राष्ट्रिय ढाँचा स्वीकार हुन्छन्।"
+msgid "Accepted formats include 98XXXXXXXX and +977 98XXXXXXXX."
+msgstr "पूर्ण फोन नम्बर लेख्नुहोस्। +977, +91 जस्ता देश कोडसहितका अन्तर्राष्ट्रिय ढाँचा स्वीकार हुन्छन्।"
 
 # Added during counseling-first production refactor
 # | msgid ""
 # | "Please do not submit passwords, OTPs, bank PINs, or complete passport and "
 # | "citizenship details through this form."
 #: counseling/forms.py:57
-msgid ""
-"Do not include passwords, OTPs, bank PINs, or complete passport/citizenship "
-"details."
+msgid "Do not include passwords, OTPs, bank PINs, or complete passport/citizenship details."
 msgstr "पासवर्ड, OTP, बैंक PIN वा राहदानी/नागरिकताको पूरा विवरण नलेख्नुहोस्।"
 
 #: counseling/forms.py:58
-msgid ""
-"PDF or image only, maximum 5 MB. Upload only when it is necessary to explain "
-"the concern."
+msgid "PDF or image only, maximum 5 MB. Upload only when it is necessary to explain the concern."
 msgstr "PDF वा तस्बिर मात्र, बढीमा ५ MB। समस्या बुझाउन आवश्यक भए मात्र अपलोड गर्नुहोस्।"
 
 #: counseling/forms.py:85
@@ -714,108 +537,111 @@ msgstr "परामर्श टोलीले तपाईंलाई सम
 
 # Added during counseling-first production refactor
 # | msgid "Counseling"
-#: counseling/models.py:30
+#: counseling/models.py:29
 msgid "Counseling category"
 msgstr "परामर्शको श्रेणी"
 
 # Added during counseling-first production refactor
 # | msgid "All categories"
-#: counseling/models.py:31
+#: counseling/models.py:30
 msgid "Counseling categories"
 msgstr "परामर्शका श्रेणीहरू"
 
 # Added during counseling-first production refactor
 # | msgid "Content type"
-#: counseling/models.py:45
+#: counseling/models.py:44
 msgid "Contact attempted"
 msgstr "सम्पर्क प्रयास गरिएको"
 
 # Added during counseling-first production refactor
 # | msgid "Counseling"
-#: counseling/models.py:46
+#: counseling/models.py:45
 msgid "In counseling"
 msgstr "परामर्शमा"
 
-#: counseling/models.py:47
+#: counseling/models.py:46
 msgid "Referred"
 msgstr "सम्बन्धित निकायमा पठाइएको"
 
-#: counseling/models.py:48
+#: counseling/models.py:47
 msgid "Resolved"
 msgstr "समाधान गरिएको"
 
-#: counseling/models.py:54
+#: counseling/models.py:51
+msgid "Either"
+msgstr "जुनसुकै"
+
+#: counseling/models.py:53
 msgid "Phone call"
 msgstr "फोन कल"
 
-#: counseling/models.py:55
+#: counseling/models.py:54
 msgid "SMS"
 msgstr "एसएमएस"
 
 # Added during counseling-first production refactor
-#: counseling/models.py:56 templates/core/base.html:95
+#: counseling/models.py:55 templates/core/base.html:110
 msgid "Email"
 msgstr "इमेल"
 
-#: counseling/models.py:57
+#: counseling/models.py:56
 msgid "WhatsApp"
 msgstr "व्हाट्सएप"
 
 # Added during final production review
-#: counseling/models.py:85
+#: counseling/models.py:83
 msgid "Active retention"
 msgstr "सक्रिय अभिलेख अवधि"
 
 # Added during final production review
-#: counseling/models.py:86
+#: counseling/models.py:84
 msgid "Retention review due"
 msgstr "अभिलेख अवधि समीक्षा आवश्यक"
 
 # Added during final production review
-#: counseling/models.py:87
+#: counseling/models.py:85
 msgid "Retained under policy"
 msgstr "नीतिअनुसार सुरक्षित राखिएको"
 
 # Added during final production review
-#: counseling/models.py:88
+#: counseling/models.py:86
 msgid "Legal hold"
 msgstr "कानुनी कारणले सुरक्षित"
 
 # Added during final production review
-#: counseling/models.py:89
+#: counseling/models.py:87
 msgid "Anonymized"
 msgstr "पहिचान हटाइएको"
 
-#: counseling/models.py:105
+#: counseling/models.py:103
 msgid "Staff-only short summary. Do not copy sensitive details into email."
 msgstr "कर्मचारीका लागि मात्र छोटो सारांश। संवेदनशील विवरण इमेलमा नप्रतिलिपि गर्नुहोस्।"
 
-#: counseling/models.py:142
+#: counseling/models.py:140
 msgid "Connected"
 msgstr "सम्पर्क भयो"
 
-#: counseling/models.py:143
+#: counseling/models.py:141
 msgid "No answer"
 msgstr "जवाफ आएन"
 
 # | msgid "Ward number"
-#: counseling/models.py:144
+#: counseling/models.py:142
 msgid "Wrong number"
 msgstr "गलत नम्बर"
 
 # | msgid "Message"
-#: counseling/models.py:145
+#: counseling/models.py:143
 msgid "Message sent"
 msgstr "सन्देश पठाइयो"
 
-#: counseling/models.py:146 members/models.py:271
+#: counseling/models.py:144 members/models.py:270
 msgid "Other"
 msgstr "अन्य"
 
 # Added during counseling-first production refactor
 #: counseling/templates/counseling/request.html:2 templates/core/contact.html:5
 #: templates/core/home.html:12 templates/core/home.html:136
-#: templates/core/membership_information.html:11
 msgid "Request Counseling"
 msgstr "परामर्श अनुरोध गर्नुहोस्"
 
@@ -831,13 +657,12 @@ msgstr "तपाईंलाई के बुझ्न सहयोग चा�
 
 #: counseling/templates/counseling/request.html:5
 msgid ""
-"The team provides general information, awareness, counseling, and "
-"appropriate referrals. It does not issue visas, guarantee jobs, or replace "
-"professional legal, medical, or financial advice."
+"The team provides general information, awareness, counseling, and appropriate referrals. It does "
+"not issue visas, guarantee jobs, or replace professional legal, medical, or financial advice."
 msgstr ""
-"टोलीले सामान्य जानकारी, सचेतना, परामर्श र उपयुक्त निकायमा सहजीकरण प्रदान गर्छ। यसले "
-"भिसा जारी गर्दैन, रोजगारीको ग्यारेन्टी गर्दैन वा पेशेवर कानुनी, चिकित्सकीय वा वित्तीय "
-"सल्लाहको स्थान लिँदैन।"
+"टोलीले सामान्य जानकारी, सचेतना, परामर्श र उपयुक्त निकायमा सहजीकरण प्रदान गर्छ। यसले भिसा जारी "
+"गर्दैन, रोजगारीको ग्यारेन्टी गर्दैन वा पेशेवर कानुनी, चिकित्सकीय वा वित्तीय सल्लाहको स्थान "
+"लिँदैन।"
 
 # Added during counseling-first production refactor
 #: counseling/templates/counseling/request.html:6
@@ -847,25 +672,14 @@ msgstr "अनुरोध फाराम"
 # Added during counseling-first production refactor
 #: counseling/templates/counseling/request.html:6 templates/core/contact.html:6
 msgid ""
-"Please do not submit passwords, OTPs, bank PINs, or complete passport and "
-"citizenship details through this form."
-msgstr ""
-"कृपया यस फाराममा पासवर्ड, ओटीपी, बैंक पिन वा राहदानी/नागरिकताको पूरा विवरण "
-"नपठाउनुहोस्।"
+"Please do not submit passwords, OTPs, bank PINs, or complete passport and citizenship details "
+"through this form."
+msgstr "कृपया यस फाराममा पासवर्ड, ओटीपी, बैंक पिन वा राहदानी/नागरिकताको पूरा विवरण नपठाउनुहोस्।"
 
 # Added during counseling-first production refactor
 #: counseling/templates/counseling/request.html:6
 msgid "Please correct the following information."
 msgstr "कृपया तलको जानकारी सच्याउनुहोस्।"
-
-#: counseling/templates/counseling/request.html:6 templates/core/contact.html:6
-#, python-format
-msgid ""
-"Read how we use and protect your information in the <a "
-"href=\"%(privacy_url)s\">privacy policy</a>."
-msgstr ""
-"हामीले तपाईंको जानकारी कसरी प्रयोग र सुरक्षित गर्छौं भन्ने कुरा <a "
-"href=\"%(privacy_url)s\">गोपनीयता नीतिमा</a> पढ्नुहोस्।"
 
 # Added during counseling-first production refactor
 #: counseling/templates/counseling/request.html:6
@@ -889,21 +703,17 @@ msgstr "अधिकृत कर्मचारीले विषय र च�
 
 # Added during counseling-first production refactor
 #: counseling/templates/counseling/request.html:6
-msgid ""
-"Staff may contact you or refer you to an appropriate official or qualified "
-"professional."
-msgstr ""
-"कर्मचारीले तपाईंलाई सम्पर्क गर्न वा उपयुक्त अधिकारी वा योग्य पेशेवरकहाँ पठाउन सक्छन्।"
+msgid "Staff may contact you or refer you to an appropriate official or qualified professional."
+msgstr "कर्मचारीले तपाईंलाई सम्पर्क गर्न वा उपयुक्त अधिकारी वा योग्य पेशेवरकहाँ पठाउन सक्छन्।"
 
 #: counseling/templates/counseling/request.html:6
 msgid ""
-"This form is not monitored as an emergency service. For immediate danger, "
-"contact local emergency, police, medical, embassy/consular, labor, or other "
-"appropriate authorities."
+"This form is not monitored as an emergency service. For immediate danger, contact local "
+"emergency, police, medical, embassy/consular, labor, or other appropriate authorities."
 msgstr ""
-"यो फाराम आपतकालीन सेवाका रूपमा निरन्तर निगरानीमा हुँदैन। तत्काल जोखिममा स्थानीय "
-"आपतकालीन सेवा, प्रहरी, स्वास्थ्य सेवा, दूतावास/वाणिज्य दूतावास, श्रम निकाय वा उपयुक्त "
-"अधिकारीलाई सम्पर्क गर्नुहोस्।"
+"यो फाराम आपतकालीन सेवाका रूपमा निरन्तर निगरानीमा हुँदैन। तत्काल जोखिममा स्थानीय आपतकालीन सेवा, "
+"प्रहरी, स्वास्थ्य सेवा, दूतावास/वाणिज्य दूतावास, श्रम निकाय वा उपयुक्त अधिकारीलाई सम्पर्क "
+"गर्नुहोस्।"
 
 # Added during counseling-first production refactor
 # | msgid "Request form"
@@ -911,8 +721,7 @@ msgstr ""
 msgid "Request Submitted"
 msgstr "अनुरोध पठाइयो"
 
-#: counseling/templates/counseling/success.html:4
-#: payments/templates/payments/payment_pending.html:37
+#: counseling/templates/counseling/success.html:4 payments/templates/payments/payment_pending.html:35
 msgid "Submitted"
 msgstr "पठाइएको"
 
@@ -924,11 +733,11 @@ msgstr "तपाईंको परामर्श अनुरोध सुर
 # Added during counseling-first production refactor
 #: counseling/templates/counseling/success.html:4
 msgid ""
-"Authorized staff can now review it. The organization cannot promise an exact "
-"response time or outcome."
+"Authorized staff can now review it. The organization cannot promise an exact response time or "
+"outcome."
 msgstr ""
-"अब अधिकृत कर्मचारीले यसको समीक्षा गर्न सक्छन्। संस्थाले निश्चित प्रतिक्रिया समय वा "
-"नतिजाको वाचा गर्दैन।"
+"अब अधिकृत कर्मचारीले यसको समीक्षा गर्न सक्छन्। संस्थाले निश्चित प्रतिक्रिया समय वा नतिजाको वाचा "
+"गर्दैन।"
 
 # Added during counseling-first production refactor
 #: counseling/templates/counseling/success.html:4
@@ -936,11 +745,8 @@ msgid "Private reference"
 msgstr "गोप्य सन्दर्भ नम्बर"
 
 #: counseling/templates/counseling/success.html:4
-msgid ""
-"Keep this reference for your own records. It cannot be used to view private "
-"details online."
-msgstr ""
-"यो सन्दर्भ नम्बर आफ्नो अभिलेखका लागि राख्नुहोस्। यसबाट अनलाइन निजी विवरण हेर्न मिल्दैन।"
+msgid "Keep this reference for your own records. It cannot be used to view private details online."
+msgstr "यो सन्दर्भ नम्बर आफ्नो अभिलेखका लागि राख्नुहोस्। यसबाट अनलाइन निजी विवरण हेर्न मिल्दैन।"
 
 # Added during counseling-first production refactor
 #: counseling/templates/counseling/success.html:4 templates/errors/404.html:1
@@ -955,319 +761,294 @@ msgid "View official resources"
 msgstr "आधिकारिक स्रोतहरू हेर्नुहोस्"
 
 # Added for international phone validation
-#: counseling/validators.py:30
+#: counseling/validators.py:28
 msgid "Enter a phone number."
 msgstr "फोन नम्बर लेख्नुहोस्।"
 
 # Added for international phone validation
-#: counseling/validators.py:38
+#: counseling/validators.py:36
 msgid "Enter a valid international phone number including the country code."
 msgstr "देश कोडसहित वैध अन्तर्राष्ट्रिय फोन नम्बर लेख्नुहोस्।"
 
-#: counseling/validators.py:52
-msgid "Enter a valid phone number, preferably with + and the country code."
-msgstr "सम्भव भए + र देश कोडसहित वैध फोन नम्बर लेख्नुहोस्।"
+# Added for international phone validation
+#: counseling/validators.py:46
+msgid "Enter a Nepal number or include + and the country code for an international number."
+msgstr ""
+"नेपालको फोन नम्बर प्रविष्ट गर्नुहोस् वा अन्तर्राष्ट्रिय नम्बरका लागि + र देशको कोड समावेश "
+"गर्नुहोस्।"
 
-#: counseling/validators.py:70
+# Added for international phone validation
+#: counseling/validators.py:49
+msgid "Ten-digit Nepal mobile numbers normally begin with 97 or 98."
+msgstr "दश अङ्कको नेपाली मोबाइल नम्बर सामान्यतया ९७ वा ९८ बाट सुरु हुन्छ।"
+
+#: counseling/validators.py:62
 msgid "The attachment must be 5 MB or smaller."
 msgstr "फाइल ५ MB वा सोभन्दा सानो हुनुपर्छ।"
 
-#: counseling/validators.py:73
+#: counseling/validators.py:65
 msgid "Upload only PDF, JPG, PNG, or WebP files."
 msgstr "PDF, JPG, PNG वा WebP फाइल मात्र अपलोड गर्नुहोस्।"
 
-#: counseling/validators.py:76
+#: counseling/validators.py:68
 msgid "The uploaded file type is not allowed."
 msgstr "अपलोड गरिएको फाइल प्रकार अनुमति छैन।"
 
-#: counseling/validators.py:84
-#, fuzzy
-#| msgid "The uploaded image is invalid or corrupted."
-msgid "The uploaded PDF is invalid or corrupted."
-msgstr "अपलोड गरिएको तस्बिर अमान्य वा बिग्रिएको छ।"
-
-#: counseling/validators.py:91
+#: counseling/validators.py:76
 msgid "The uploaded image is invalid or corrupted."
 msgstr "अपलोड गरिएको तस्बिर अमान्य वा बिग्रिएको छ।"
 
 # | msgid "Membership Application"
-#: members/models.py:62
+#: members/models.py:51
 msgid "Source membership application"
 msgstr "स्रोत सदस्यता आवेदन"
 
-#: members/models.py:70 members/models.py:453
+#: members/models.py:59 members/models.py:357
 msgid "Active"
 msgstr "सक्रिय"
 
-#: members/models.py:71 members/models.py:454
-msgid "Inactive"
-msgstr "निष्क्रिय"
-
-#: members/models.py:73 members/models.py:456
+#: members/models.py:60 members/models.py:358
 msgid "Expired"
 msgstr "म्याद सकिएको"
 
-#: members/models.py:74 members/models.py:457
-msgid "Suspended"
-msgstr "निलम्बित"
-
-#: members/models.py:79
-msgid "District"
-msgstr "जिल्ला"
-
-#: members/models.py:81
-msgid "Rural Municipality"
-msgstr "गाउँपालिका"
-
-#: members/models.py:82
-msgid "Ward"
-msgstr "वडा"
-
-#: members/models.py:83
+#: members/models.py:61 members/models.py:68 members/models.py:359
 msgid "Unknown"
 msgstr "पुष्टि नभएको"
 
+#: members/models.py:64
+msgid "District"
+msgstr "जिल्ला"
+
+#: members/models.py:66
+msgid "Rural Municipality"
+msgstr "गाउँपालिका"
+
+#: members/models.py:67
+msgid "Ward"
+msgstr "वडा"
+
 # | msgid "Membership type"
-#: members/models.py:91
+#: members/models.py:76
 msgid "Membership Number"
 msgstr "सदस्यता नम्बर"
 
-#: members/models.py:93
+#: members/models.py:78
 msgid ""
-"Isolated inside Level + Unit + Membership Type. Example: District life no. 4 "
-"and Ilam Municipality life no. 1 can both exist."
+"Isolated inside Level + Unit + Membership Type. Example: District life no. 4 and Ilam "
+"Municipality life no. 1 can both exist."
 msgstr ""
-"नम्बर तह, एकाइ र सदस्यता प्रकारभित्र छुट्टै हुन्छ। उदाहरण: जिल्ला आजीवन नं. ४ र इलाम "
-"नगरपालिका आजीवन नं. १ दुवै हुन सक्छन्।"
+"नम्बर तह, एकाइ र सदस्यता प्रकारभित्र छुट्टै हुन्छ। उदाहरण: जिल्ला आजीवन नं. ४ र इलाम नगरपालिका "
+"आजीवन नं. १ दुवै हुन सक्छन्।"
 
-#: members/models.py:101
+#: members/models.py:86
 msgid "Membership Number for Sorting"
 msgstr "क्रम मिलाउन सदस्यता नम्बर"
 
-#: members/models.py:107
+#: members/models.py:92
 msgid "Membership Type"
 msgstr "सदस्यताको प्रकार"
 
-#: members/models.py:113 members/templates/members/member_list.html:6
-#: payments/templates/payments/payment_pending.html:38
+#: members/models.py:98 members/templates/members/member_list.html:6
+#: payments/templates/payments/payment_pending.html:36
 msgid "Status"
 msgstr "स्थिति"
 
 # | msgid "About the Organization"
-#: members/models.py:119
+#: members/models.py:104
 msgid "Organization Level"
 msgstr "संगठनात्मक तह"
 
-#: members/models.py:124
+#: members/models.py:109
 msgid "Committee / Unit Name"
 msgstr "समिति वा एकाइको नाम"
 
-#: members/models.py:125
+#: members/models.py:110
 msgid "Example: Ilam District, Ilam Municipality"
 msgstr "उदाहरण: इलाम जिल्ला, इलाम नगरपालिका"
 
-#: members/models.py:130
+#: members/models.py:115
 msgid "Municipality / Rural Municipality"
 msgstr "नगरपालिका वा गाउँपालिका"
 
-#: members/models.py:132
+#: members/models.py:117
 msgid "Address"
 msgstr "ठेगाना"
 
 # | msgid "Designation / position"
-#: members/models.py:136
+#: members/models.py:121
 msgid "Designation / Position"
 msgstr "पद वा जिम्मेवारी"
 
 # | msgid "Foreign employment country"
-#: members/models.py:141
+#: members/models.py:126
 msgid "Foreign Employment Country"
 msgstr "वैदेशिक रोजगारीको देश"
 
 # | msgid "Phone number"
-#: members/models.py:143
+#: members/models.py:128
 msgid "Phone Number"
 msgstr "फोन नम्बर"
 
-#: members/models.py:146
+#: members/models.py:131
 msgid "Show Phone Publicly"
 msgstr "फोन सार्वजनिक रूपमा देखाउनुहोस्"
 
+#: members/models.py:133
+msgid "Show on Website"
+msgstr "वेबसाइटमा देखाउनुहोस्"
+
+#: members/models.py:136
+msgid "Lower numbers display first."
+msgstr "सानो नम्बर पहिले देखिन्छ।"
+
 # | msgid "Member Records"
-#: members/models.py:164
+#: members/models.py:149
 msgid "Legacy member record"
 msgstr "पुरानो सदस्य अभिलेख"
 
 # | msgid "Member Records"
-#: members/models.py:165
+#: members/models.py:150
 msgid "Legacy member records"
 msgstr "पुराना सदस्य अभिलेखहरू"
 
 # | msgid "Phone number"
-#: members/models.py:211
+#: members/models.py:210
 msgid "Private phone number"
 msgstr "निजी फोन नम्बर"
 
 # Added during counseling-first production refactor
 # | msgid "Public member directory"
-#: members/models.py:212
+#: members/models.py:211
 msgid "Never shown in the public member directory."
 msgstr "सार्वजनिक सदस्य निर्देशिकामा कहिल्यै देखाइँदैन।"
 
 # | msgid "Email address"
-#: members/models.py:214
+#: members/models.py:213
 msgid "Private email address"
 msgstr "निजी इमेल ठेगाना"
 
-#: members/models.py:231
+#: members/models.py:230
 msgid "Person"
 msgstr "व्यक्ति"
 
-#: members/models.py:232
+#: members/models.py:231
 msgid "People"
 msgstr "व्यक्तिहरू"
 
 # Added during counseling-first production refactor
 # | msgid "Membership category"
-#: members/models.py:260
+#: members/models.py:259
 msgid "Membership categories"
 msgstr "सदस्यता श्रेणीहरू"
 
 # Added during counseling-first production refactor
-#: members/models.py:291 members/templates/members/member_list.html:6
-#: payments/templates/payments/payment_pending.html:41
+#: members/models.py:290 members/templates/members/member_list.html:6
 msgid "Organization unit"
 msgstr "संगठनात्मक एकाइ"
 
 # Added during counseling-first production refactor
 # | msgid "Organization unit"
-#: members/models.py:292
+#: members/models.py:291
 msgid "Organization units"
 msgstr "संगठनात्मक एकाइहरू"
 
-#: members/models.py:336
-msgid "Membership number sequence"
-msgstr "सदस्यता नम्बर क्रम"
-
-#: members/models.py:337
-msgid "Membership number sequences"
-msgstr "सदस्यता नम्बर क्रमहरू"
-
-#: members/models.py:388
-msgid "Issued membership number"
-msgstr "जारी गरिएको सदस्यता नम्बर"
-
-#: members/models.py:389
-msgid "Issued membership numbers"
-msgstr "जारी गरिएका सदस्यता नम्बरहरू"
-
-#: members/models.py:417
+#: members/models.py:321
 msgid "Dry run"
 msgstr "पूर्व परीक्षण"
 
-#: members/models.py:419 members/models.py:693
+#: members/models.py:323 members/models.py:465
 msgid "Failed"
 msgstr "असफल"
 
-#: members/models.py:420
+#: members/models.py:324
 msgid "Rolled back"
 msgstr "पूर्व अवस्थामा फर्काइएको"
 
-#: members/models.py:443
+#: members/models.py:347
 msgid "Member import batch"
 msgstr "सदस्य आयात समूह"
 
 # | msgid "Membership type"
-#: members/models.py:444
+#: members/models.py:348
 msgid "Member import batches"
 msgstr "सदस्य आयात समूहहरू"
 
-#: members/models.py:491 members/models.py:500 members/models.py:505
+#: members/models.py:391
 msgid "General locality only; do not enter a private street address."
 msgstr "सामान्य स्थान मात्र लेख्नुहोस्; निजी सडक ठेगाना नलेख्नुहोस्।"
 
-#: members/models.py:550 templates/core/base.html:55
-#: templates/core/disclaimer.html:4 templates/core/membership_apply.html:8
-#: templates/core/membership_information.html:5
+#: members/models.py:426 templates/core/membership_apply.html:4
 msgid "Membership"
 msgstr "सदस्यता"
 
 # Added during counseling-first production refactor
-#: members/models.py:551 members/templates/members/member_detail.html:4
+#: members/models.py:427 members/templates/members/member_detail.html:4
 msgid "Memberships"
 msgstr "सदस्यताहरू"
 
 # Added during counseling-first production refactor
 # | msgid "Membership category"
-#: members/models.py:610
+#: members/models.py:443
 msgid "Membership category is required."
 msgstr "सदस्यता श्रेणी आवश्यक छ।"
 
 # Added during counseling-first production refactor
 # | msgid "Organization unit"
-#: members/models.py:612
+#: members/models.py:445
 msgid "Organization unit is required."
 msgstr "संगठनात्मक एकाइ आवश्यक छ।"
 
-#: members/models.py:622
-msgid ""
-"A membership number is permanent after issuance. Archive the membership "
-"instead of replacing its number."
-msgstr ""
-"सदस्यता नम्बर जारी भएपछि स्थायी हुन्छ। नम्बर बदल्नुको सट्टा सदस्यता अभिलेखीकरण गर्नुहोस्।"
-
 # | msgid "Important"
-#: members/models.py:688
+#: members/models.py:460
 msgid "Imported"
 msgstr "आयात गरिएको"
 
-#: members/models.py:689
+#: members/models.py:461
 msgid "Updated"
 msgstr "अद्यावधिक गरिएको"
 
-#: members/models.py:690
+#: members/models.py:462
 msgid "Unchanged"
 msgstr "परिवर्तन नभएको"
 
-#: members/models.py:691
+#: members/models.py:463
 msgid "Potential duplicate"
 msgstr "सम्भावित दोहोरिएको व्यक्ति"
 
-#: members/models.py:692
+#: members/models.py:464
 msgid "Imported with warnings"
 msgstr "चेतावनीसहित आयात गरिएको"
 
 # Added during final production review
-#: members/models.py:694
+#: members/models.py:466
 msgid "Non-data row"
 msgstr "गैर-डेटा पङ्क्ति"
 
 # Added during counseling-first production refactor
 # | msgid "Needs review"
-#: members/models.py:740
+#: members/models.py:512
 msgid "Pending review"
 msgstr "समीक्षा बाँकी"
 
-#: members/models.py:741
+#: members/models.py:513
 msgid "Confirmed same person"
 msgstr "एउटै व्यक्ति पुष्टि"
 
-#: members/models.py:742
+#: members/models.py:514
 msgid "Confirmed different people"
 msgstr "फरक व्यक्ति पुष्टि"
 
-#: members/models.py:743
+#: members/models.py:515
 msgid "Dismissed"
 msgstr "हटाइएको"
 
 #: members/templates/admin/members/potentialduplicate/confirm_merge.html:4
 msgid ""
-"Review every field and membership below. Person B will be retained as an "
-"archived merged record; memberships will move to Person A only when no "
-"membership conflict exists."
+"Review every field and membership below. Person B will be retained as an archived merged record; "
+"memberships will move to Person A only when no membership conflict exists."
 msgstr ""
-"तलका सबै विवरण र सदस्यता समीक्षा गर्नुहोस्। व्यक्ति B अभिलेखीकृत मिलाइएको रेकर्डका रूपमा "
-"रहनेछ; सदस्यता द्वन्द्व नभए मात्र सदस्यता व्यक्ति A मा सारिनेछ।"
+"तलका सबै विवरण र सदस्यता समीक्षा गर्नुहोस्। व्यक्ति B अभिलेखीकृत मिलाइएको रेकर्डका रूपमा रहनेछ; "
+"सदस्यता द्वन्द्व नभए मात्र सदस्यता व्यक्ति A मा सारिनेछ।"
 
 # Added during counseling-first production refactor
 #: members/templates/members/member_detail.html:2
@@ -1291,15 +1072,14 @@ msgstr "सार्वजनिक व्यक्ति अभिलेख"
 
 #: members/templates/members/member_detail.html:4
 msgid ""
-"This page lists public organization memberships only. It does not display "
-"private contact, payment, identity-document, or internal information."
+"This page lists public organization memberships only. It does not display private contact, "
+"payment, identity-document, or internal information."
 msgstr ""
 "यस पृष्ठमा सार्वजनिक संस्थागत सदस्यता मात्र देखाइन्छ। निजी सम्पर्क, भुक्तानी, परिचयपत्र वा "
 "आन्तरिक जानकारी देखाइँदैन।"
 
 # Added during counseling-first production refactor
 #: members/templates/members/member_detail.html:4
-#: payments/templates/payments/payment_pending.html:40
 msgid "Membership number"
 msgstr "सदस्यता नम्बर"
 
@@ -1329,9 +1109,7 @@ msgid "Member Directory"
 msgstr "सदस्य निर्देशिका"
 
 #: members/templates/members/member_list.html:3
-msgid ""
-"Search public MRN Ilam membership records by name, number, category, and "
-"organization unit."
+msgid "Search public MRN Ilam membership records by name, number, category, and organization unit."
 msgstr "नाम, नम्बर, श्रेणी र संगठनात्मक एकाइबाट सार्वजनिक MRN इलाम सदस्यता खोज्नुहोस्।"
 
 # Added during counseling-first production refactor
@@ -1346,11 +1124,11 @@ msgstr "व्यक्ति तथा तिनका सदस्यता �
 
 #: members/templates/members/member_list.html:5
 msgid ""
-"One person may hold more than one valid membership. Private phone numbers, "
-"email addresses, payment information, and internal notes are not displayed."
+"One person may hold more than one valid membership. Private phone numbers, email addresses, "
+"payment information, and internal notes are not displayed."
 msgstr ""
-"एउटै व्यक्तिसँग एकभन्दा बढी वैध सदस्यता हुन सक्छ। निजी फोन, इमेल, भुक्तानी जानकारी र "
-"आन्तरिक टिप्पणी देखाइँदैन।"
+"एउटै व्यक्तिसँग एकभन्दा बढी वैध सदस्यता हुन सक्छ। निजी फोन, इमेल, भुक्तानी जानकारी र आन्तरिक "
+"टिप्पणी देखाइँदैन।"
 
 # Added during counseling-first production refactor
 #: members/templates/members/member_list.html:6
@@ -1417,71 +1195,13 @@ msgstr "हिज्जे जाँच्नुहोस्, फिल्टर
 msgid "Member result pages"
 msgstr "सदस्य नतिजाका पृष्ठहरू"
 
-#: payments/forms.py:29
-msgid ""
-"This transaction reference has already been submitted. Contact the "
-"organization if you believe this is a mistake."
-msgstr ""
-"यो कारोबार सन्दर्भ नम्बर पहिले नै पेश गरिएको छ। यो त्रुटि हो जस्तो लागेमा संस्थासँग सम्पर्क "
-"गर्नुहोस्।"
-
-#: payments/forms.py:36
-msgid "The screenshot must be 5 MB or smaller."
-msgstr "स्क्रिनसट ५ एमबी वा सोभन्दा सानो हुनुपर्छ।"
-
-#: payments/forms.py:39
-msgid "Upload a JPG, PNG, or WebP image."
-msgstr "JPG, PNG वा WebP तस्बिर अपलोड गर्नुहोस्।"
-
-#: payments/forms.py:46
-msgid "The uploaded screenshot is not a valid image."
-msgstr "अपलोड गरिएको स्क्रिनसट मान्य तस्बिर होइन।"
-
-# Added during counseling-first production refactor
-#: payments/models.py:55 payments/templates/payments/payment_pending.html:19
-msgid "Needs review"
-msgstr "थप समीक्षा आवश्यक"
-
-# Added during counseling-first production refactor
-#: payments/models.py:56 payments/templates/payments/payment_pending.html:9
-msgid "Approved"
-msgstr "स्वीकृत"
-
-#: payments/models.py:68
-msgid "Transaction / Reference ID"
-msgstr "कारोबार / सन्दर्भ नम्बर"
-
-#: payments/models.py:76
-msgid "Payment Screenshot"
-msgstr "भुक्तानीको स्क्रिनसट"
-
-#: payments/models.py:92
-msgid "Internal staff note. This is not shown to the applicant."
-msgstr "आन्तरिक कर्मचारी टिप्पणी। यो आवेदकलाई देखाइँदैन।"
-
-# Final client-ready payment review translations
-#: payments/models.py:97
-msgid "Applicant-facing rejection reason"
-msgstr "आवेदकलाई देखाइने अस्वीकार कारण"
-
-#: payments/models.py:98
-msgid ""
-"Required before rejection. Write a clear reason safe to show to the "
-"applicant."
-msgstr "अस्वीकार गर्नुअघि आवेदकलाई देखाउन मिल्ने स्पष्ट कारण लेख्नुहोस्।"
-
-#: payments/models.py:286
-msgid "Enter an applicant-facing rejection reason before rejecting payment."
-msgstr "भुक्तानी अस्वीकार गर्नुअघि आवेदकलाई देखाइने स्पष्ट कारण लेख्नुहोस्।"
-
 # Added during counseling-first production refactor
 #: payments/templates/payments/manual_payment.html:2
 msgid "Membership fee verification"
 msgstr "सदस्यता शुल्क प्रमाणीकरण"
 
 #: payments/templates/payments/manual_payment.html:3
-msgid ""
-"Submit private proof of a membership-fee payment for staff verification."
+msgid "Submit private proof of a membership-fee payment for staff verification."
 msgstr "कर्मचारीको प्रमाणीकरणका लागि सदस्यता शुल्कको निजी भुक्तानी प्रमाण पठाउनुहोस्।"
 
 # | msgid "Membership Application"
@@ -1496,12 +1216,11 @@ msgstr "सदस्यता भुक्तानी प्रमाण पठ
 
 #: payments/templates/payments/manual_payment.html:10
 msgid ""
-"This payment is only for the selected membership application. It does not "
-"guarantee counseling outcomes, overseas employment, recruitment, a visa, or "
-"government approval."
+"This payment is only for the selected membership application. It does not guarantee counseling "
+"outcomes, overseas employment, recruitment, a visa, or government approval."
 msgstr ""
-"यो भुक्तानी चयन गरिएको सदस्यता आवेदनका लागि मात्र हो। यसले परामर्शको नतिजा, वैदेशिक "
-"रोजगारी, भर्ती, भिसा वा सरकारी स्वीकृतिको ग्यारेन्टी गर्दैन।"
+"यो भुक्तानी चयन गरिएको सदस्यता आवेदनका लागि मात्र हो। यसले परामर्शको नतिजा, वैदेशिक रोजगारी, "
+"भर्ती, भिसा वा सरकारी स्वीकृतिको ग्यारेन्टी गर्दैन।"
 
 # Added during counseling-first production refactor
 #: payments/templates/payments/manual_payment.html:17
@@ -1509,7 +1228,7 @@ msgid "Application summary"
 msgstr "आवेदन सारांश"
 
 #: payments/templates/payments/manual_payment.html:19
-#: payments/templates/payments/payment_pending.html:34
+#: payments/templates/payments/payment_pending.html:32
 msgid "Applicant"
 msgstr "आवेदक"
 
@@ -1519,102 +1238,59 @@ msgid "Payment purpose"
 msgstr "भुक्तानीको उद्देश्य"
 
 #: payments/templates/payments/manual_payment.html:22
-#: payments/templates/payments/payment_pending.html:36
+#: payments/templates/payments/payment_pending.html:34
 msgid "Amount"
 msgstr "रकम"
 
-#: payments/templates/payments/manual_payment.html:22
-#: payments/templates/payments/payment_pending.html:36
-#: templates/core/membership_apply.html:20
-#: templates/core/membership_apply.html:21
-#: templates/core/membership_information.html:7
-#: templates/core/membership_information.html:8
-msgid "NPR"
-msgstr "रु."
-
-#: payments/templates/payments/manual_payment.html:23
-msgid "Official recipient"
-msgstr "आधिकारिक प्राप्तकर्ता"
-
 # Added during counseling-first production refactor
-#: payments/templates/payments/manual_payment.html:27
+#: payments/templates/payments/manual_payment.html:26
 msgid "Before paying"
 msgstr "भुक्तानी गर्नुअघि"
 
-#: payments/templates/payments/manual_payment.html:28
+#: payments/templates/payments/manual_payment.html:27
 msgid ""
-"Scan the QR and confirm that the recipient name exactly matches the official "
-"recipient shown on this page. Stop and contact the organization if anything "
-"differs."
+"Confirm that this is the organization’s current approved QR code and that the amount and purpose "
+"are correct. A reference number alone is not accepted as proof."
 msgstr ""
-"QR स्क्यान गरी प्राप्तकर्ताको नाम यस पृष्ठमा देखाइएको आधिकारिक प्राप्तकर्तासँग ठ्याक्कै "
-"मिलेको पुष्टि गर्नुहोस्। फरक भए रोकिएर संस्थालाई सम्पर्क गर्नुहोस्।"
-
-#: payments/templates/payments/manual_payment.html:30
-msgid "Read how payment evidence is handled"
-msgstr "भुक्तानी प्रमाण कसरी व्यवस्थापन हुन्छ पढ्नुहोस्"
+"यो संस्थाको हाल स्वीकृत QR हो र रकम तथा उद्देश्य सही छन् भन्ने पुष्टि गर्नुहोस्। सन्दर्भ नम्बर "
+"मात्र प्रमाणका रूपमा स्वीकार हुँदैन।"
 
 # Added during counseling-first production refactor
-#: payments/templates/payments/manual_payment.html:35
+#: payments/templates/payments/manual_payment.html:32
 msgid "Pay and submit evidence"
 msgstr "भुक्तानी गरी प्रमाण पठाउनुहोस्"
 
-#: payments/templates/payments/manual_payment.html:37
-msgid "Official membership-payment QR code"
-msgstr "आधिकारिक सदस्यता भुक्तानी QR कोड"
-
-#: payments/templates/payments/manual_payment.html:38
-msgid "Verify recipient"
-msgstr "प्राप्तकर्ता पुष्टि गर्नुहोस्"
+#: payments/templates/payments/manual_payment.html:33
+msgid "Approved QR code for the membership fee shown on this page"
+msgstr "यस पृष्ठमा देखाइएको सदस्यता शुल्कको स्वीकृत QR कोड"
 
 # Added during counseling-first production refactor
-#: payments/templates/payments/manual_payment.html:43
+#: payments/templates/payments/manual_payment.html:35
 msgid "Pay the exact membership amount shown above."
 msgstr "माथि देखाइएको ठ्याक्कै सदस्यता रकम तिर्नुहोस्।"
 
 # Added during counseling-first production refactor
-#: payments/templates/payments/manual_payment.html:44
+#: payments/templates/payments/manual_payment.html:36
 msgid "Keep the successful receipt or screenshot."
 msgstr "सफल रसिद वा स्क्रिनसट सुरक्षित राख्नुहोस्।"
 
 # Added during counseling-first production refactor
-#: payments/templates/payments/manual_payment.html:45
+#: payments/templates/payments/manual_payment.html:37
 msgid "Upload the image below for private staff review."
 msgstr "निजी कर्मचारी समीक्षाका लागि तस्बिर तल अपलोड गर्नुहोस्।"
 
-#: payments/templates/payments/manual_payment.html:53
+#: payments/templates/payments/manual_payment.html:45
 msgid ""
-"Uploads are private and available only to authorized payment reviewers. Do "
-"not upload citizenship, passport, bank PIN, password, or OTP information."
+"Uploads are private and available only to authorized payment reviewers. Do not upload "
+"citizenship, passport, bank PIN, password, or OTP information."
 msgstr ""
-"अपलोड निजी हुन्छ र अधिकृत भुक्तानी समीक्षकले मात्र हेर्न सक्छन्। नागरिकता, राहदानी, बैंक "
-"PIN, पासवर्ड वा OTP अपलोड नगर्नुहोस्।"
+"अपलोड निजी हुन्छ र अधिकृत भुक्तानी समीक्षकले मात्र हेर्न सक्छन्। नागरिकता, राहदानी, बैंक PIN, "
+"पासवर्ड वा OTP अपलोड नगर्नुहोस्।"
 
 # Added during counseling-first production refactor
-#: payments/templates/payments/manual_payment.html:54
+#: payments/templates/payments/manual_payment.html:46
 msgid "Submit payment proof"
 msgstr "भुक्तानी प्रमाण पठाउनुहोस्"
-
-#: payments/templates/payments/manual_payment.html:59
-msgid "Online membership payment is temporarily unavailable"
-msgstr "अनलाइन सदस्यता भुक्तानी अस्थायी रूपमा उपलब्ध छैन"
-
-#: payments/templates/payments/manual_payment.html:60
-msgid ""
-"The organization has not yet published a verified QR code and recipient. Do "
-"not send money using an unverified QR. Contact the organization for current "
-"instructions."
-msgstr ""
-"संस्थाले पुष्टि भएको QR कोड र प्राप्तकर्ता अझै प्रकाशित गरेको छैन। पुष्टि नभएको QR प्रयोग "
-"गरी रकम नपठाउनुहोस्। हालको निर्देशनका लागि संस्थालाई सम्पर्क गर्नुहोस्।"
-
-# Added during counseling-first production refactor
-# | msgid "Contact the Organization"
-#: payments/templates/payments/manual_payment.html:61
-#: payments/templates/payments/payment_pending.html:45
-#: templates/core/contact.html:5 templates/core/membership_information.html:10
-msgid "Contact the organization"
-msgstr "संस्थालाई सम्पर्क गर्नुहोस्"
 
 # Added during counseling-first production refactor
 # | msgid "Membership payment verified"
@@ -1629,14 +1305,17 @@ msgid "Private membership payment verification status."
 msgstr "निजी सदस्यता भुक्तानी प्रमाणीकरण स्थिति।"
 
 # Added during counseling-first production refactor
+#: payments/templates/payments/payment_pending.html:9
+msgid "Approved"
+msgstr "स्वीकृत"
+
+# Added during counseling-first production refactor
 #: payments/templates/payments/payment_pending.html:10
 msgid "Membership payment verified"
 msgstr "सदस्यता भुक्तानी प्रमाणित भयो"
 
 #: payments/templates/payments/payment_pending.html:11
-msgid ""
-"Authorized staff verified the payment and activated the related membership "
-"record."
+msgid "Authorized staff verified the payment and activated the related membership record."
 msgstr "अधिकृत कर्मचारीले भुक्तानी प्रमाणित गरी सम्बन्धित सदस्यता सक्रिय गरेका छन्।"
 
 #: payments/templates/payments/payment_pending.html:14
@@ -1645,71 +1324,65 @@ msgstr "प्रमाण स्वीकृत हुन सकेन"
 
 #: payments/templates/payments/payment_pending.html:15
 msgid ""
-"Contact the organization through an official channel before making another "
-"payment. A new proof may be submitted only after the rejected record allows "
-"it."
+"Contact the organization through an official channel before making another payment. A new proof "
+"may be submitted only after the rejected record allows it."
 msgstr ""
-"अर्को भुक्तानी गर्नुअघि आधिकारिक माध्यमबाट संस्थालाई सम्पर्क गर्नुहोस्। अस्वीकृत रेकर्डले "
-"अनुमति दिएपछि मात्र नयाँ प्रमाण पठाउनुहोस्।"
+"अर्को भुक्तानी गर्नुअघि आधिकारिक माध्यमबाट संस्थालाई सम्पर्क गर्नुहोस्। अस्वीकृत रेकर्डले अनुमति "
+"दिएपछि मात्र नयाँ प्रमाण पठाउनुहोस्।"
 
-#: payments/templates/payments/payment_pending.html:16
-msgid "Reason"
-msgstr "कारण"
-
+# Added during counseling-first production refactor
 #: payments/templates/payments/payment_pending.html:17
-msgid "Submit corrected payment proof"
-msgstr "सुधारिएको भुक्तानी प्रमाण पेश गर्नुहोस्"
+msgid "Needs review"
+msgstr "थप समीक्षा आवश्यक"
 
-#: payments/templates/payments/payment_pending.html:20
+#: payments/templates/payments/payment_pending.html:18
 msgid "Staff need to check additional details"
 msgstr "कर्मचारीले थप विवरण जाँच्न आवश्यक छ"
 
-#: payments/templates/payments/payment_pending.html:21
+#: payments/templates/payments/payment_pending.html:19
 msgid ""
-"Keep this private status link. Authorized staff may contact the applicant "
-"using the contact details supplied with the application."
+"Keep this private status link. Authorized staff may contact the applicant using the contact "
+"details supplied with the application."
 msgstr ""
-"यो निजी स्थिति लिंक सुरक्षित राख्नुहोस्। अधिकृत कर्मचारीले आवेदनमा दिइएको सम्पर्क विवरण "
-"प्रयोग गरेर निवेदकलाई सम्पर्क गर्न सक्छन्।"
+"यो निजी स्थिति लिंक सुरक्षित राख्नुहोस्। अधिकृत कर्मचारीले आवेदनमा दिइएको सम्पर्क विवरण प्रयोग "
+"गरेर निवेदकलाई सम्पर्क गर्न सक्छन्।"
 
 # Added during counseling-first production refactor
-#: payments/templates/payments/payment_pending.html:24
+#: payments/templates/payments/payment_pending.html:22
 msgid "Payment proof received"
 msgstr "भुक्तानी प्रमाण प्राप्त भयो"
 
-#: payments/templates/payments/payment_pending.html:25
+#: payments/templates/payments/payment_pending.html:23
 msgid ""
-"The evidence is waiting for authorized staff verification. Submission does "
-"not by itself confirm payment or activate membership."
+"The evidence is waiting for authorized staff verification. Submission does not by itself confirm "
+"payment or activate membership."
 msgstr ""
-"प्रमाण अधिकृत कर्मचारीको प्रमाणीकरणको प्रतीक्षामा छ। प्रमाण पठाउँदैमा भुक्तानी पुष्टि वा "
-"सदस्यता सक्रिय हुँदैन।"
+"प्रमाण अधिकृत कर्मचारीको प्रमाणीकरणको प्रतीक्षामा छ। प्रमाण पठाउँदैमा भुक्तानी पुष्टि वा सदस्यता "
+"सक्रिय हुँदैन।"
 
 # Added during counseling-first production refactor
-#: payments/templates/payments/payment_pending.html:32
+#: payments/templates/payments/payment_pending.html:30
 msgid "Private reference summary"
 msgstr "गोप्य सन्दर्भ सारांश"
 
 # Added during counseling-first production refactor
-#: payments/templates/payments/payment_pending.html:44
-msgid ""
-"Do not share this status link publicly. It contains private application "
-"context."
+#: payments/templates/payments/payment_pending.html:38
+msgid "Do not share this status link publicly. It contains private application context."
 msgstr "यो अवस्था लिंक सार्वजनिक रूपमा साझा नगर्नुहोस्। यसमा निजी आवेदन सन्दर्भ हुन्छ।"
 
-#: payments/views.py:119
-msgid "Payment proof was received for membership verification."
-msgstr "सदस्यता प्रमाणीकरणका लागि भुक्तानी प्रमाण प्राप्त भयो।"
+# Added during counseling-first production refactor
+# | msgid "Contact the Organization"
+#: payments/templates/payments/payment_pending.html:39 templates/core/contact.html:5
+msgid "Contact the organization"
+msgstr "संस्थालाई सम्पर्क गर्नुहोस्"
 
 # Added during counseling-first production refactor
-#: templates/core/about.html:2 templates/core/base.html:48
+#: templates/core/about.html:2 templates/core/base.html:54
 msgid "About Us"
 msgstr "हाम्रो बारेमा"
 
 #: templates/core/about.html:3
-msgid ""
-"Mission, objectives, leadership, service area, and non-agency position of "
-"MRN Ilam."
+msgid "Mission, objectives, leadership, service area, and non-agency position of MRN Ilam."
 msgstr "MRN इलामको उद्देश्य, नेतृत्व, सेवा क्षेत्र र गैर-एजेन्सी भूमिकाबारे जानकारी।"
 
 # Added during counseling-first production refactor
@@ -1734,8 +1407,7 @@ msgstr "नेतृत्व"
 
 # Added during final production review
 #: templates/core/about.html:33
-msgid ""
-"Leadership information must be entered and approved by authorized staff."
+msgid "Leadership information must be entered and approved by authorized staff."
 msgstr "नेतृत्वसम्बन्धी जानकारी अधिकारप्राप्त कर्मचारीले प्रविष्ट गरी स्वीकृत गर्नुपर्छ।"
 
 # Added during final production review
@@ -1749,50 +1421,38 @@ msgstr "पारदर्शिता जानकारी"
 msgid "Registration number"
 msgstr "दर्ता नम्बर"
 
-#: templates/core/about.html:46
-msgid "Registration authority"
-msgstr "दर्ता गर्ने निकाय"
-
 # Added during counseling-first production refactor
-#: templates/core/about.html:47
+#: templates/core/about.html:46
 msgid "Established date"
 msgstr "स्थापना मिति"
 
 # Added during counseling-first production refactor
-#: templates/core/about.html:48
+#: templates/core/about.html:47
 msgid "Office address"
 msgstr "कार्यालय ठेगाना"
 
-#: templates/core/about.html:49
-msgid "Service area"
-msgstr "सेवा क्षेत्र"
-
 # Added during counseling-first production refactor
-#: templates/core/about.html:50
+#: templates/core/about.html:48
 msgid "Service hours"
 msgstr "सेवा समय"
 
 # Added during final production review
-#: templates/core/about.html:53
-msgid ""
-"Verified registration, address, and service-hour information is awaiting an "
-"authorized update."
-msgstr ""
-"प्रमाणित दर्ता, ठेगाना र सेवा समयसम्बन्धी जानकारी अधिकारप्राप्त अद्यावधिकको प्रतीक्षामा "
-"छ।"
+#: templates/core/about.html:51
+msgid "Verified registration, address, and service-hour information is awaiting an authorized update."
+msgstr "प्रमाणित दर्ता, ठेगाना र सेवा समयसम्बन्धी जानकारी अधिकारप्राप्त अद्यावधिकको प्रतीक्षामा छ।"
 
 # | msgid "Chairperson"
-#: templates/core/about.html:57
+#: templates/core/about.html:55
 msgid "Chairperson's message"
 msgstr "अध्यक्षको सन्देश"
 
 # Added during final production review
-#: templates/core/about.html:62
+#: templates/core/about.html:60
 msgid "An approved chairperson message has not yet been published."
 msgstr "स्वीकृत अध्यक्षको सन्देश हालसम्म प्रकाशित गरिएको छैन।"
 
 # Added during counseling-first production refactor
-#: templates/core/base.html:7 templates/core/home.html:3
+#: templates/core/base.html:7 templates/core/base.html:44 templates/core/home.html:3
 msgid "Foreign-employment counseling and awareness"
 msgstr "वैदेशिक रोजगार परामर्श तथा सचेतना"
 
@@ -1802,18 +1462,15 @@ msgstr "वैदेशिक रोजगार परामर्श तथा
 # | "trust."
 #: templates/core/base.html:8
 msgid ""
-"Foreign-employment information, awareness, counseling, safety guidance, "
-"official resources, and member records for Ilam."
+"Foreign-employment information, awareness, counseling, safety guidance, official resources, and "
+"member records for Ilam."
 msgstr ""
-"इलामका लागि वैदेशिक रोजगार सूचना, सचेतना, परामर्श, सुरक्षा मार्गदर्शन, आधिकारिक स्रोत "
-"र सदस्य अभिलेख।"
+"इलामका लागि वैदेशिक रोजगार सूचना, सचेतना, परामर्श, सुरक्षा मार्गदर्शन, आधिकारिक स्रोत र सदस्य "
+"अभिलेख।"
 
 #: templates/core/base.html:16
-msgid ""
-"Understand foreign-employment processes, recognize risks, and find "
-"appropriate official resources."
-msgstr ""
-"वैदेशिक रोजगार प्रक्रिया बुझ्नुहोस्, जोखिम चिन्नुहोस् र उपयुक्त आधिकारिक स्रोत भेट्नुहोस्।"
+msgid "Understand foreign-employment processes, recognize risks, and find appropriate official resources."
+msgstr "वैदेशिक रोजगार प्रक्रिया बुझ्नुहोस्, जोखिम चिन्नुहोस् र उपयुक्त आधिकारिक स्रोत भेट्नुहोस्।"
 
 # Nepali translations for optimized base.html
 # Copy these msgid/msgstr pairs into locale/ne/LC_MESSAGES/django.po after running
@@ -1823,120 +1480,95 @@ msgid "Skip to main content"
 msgstr "मुख्य सामग्रीमा जानुहोस्"
 
 # | msgid "Go to homepage"
-#: templates/core/base.html:36
+#: templates/core/base.html:40
 msgid "MRN Ilam homepage"
 msgstr "MRN इलाम गृहपृष्ठ"
 
 # Added during counseling-first production refactor
-#: templates/core/base.html:44
+#: templates/core/base.html:49
 msgid "Menu"
 msgstr "मेनु"
 
-#: templates/core/base.html:46
+#: templates/core/base.html:52
 msgid "Main navigation"
 msgstr "मुख्य नेभिगेसन"
 
-#: templates/core/base.html:47
+#: templates/core/base.html:53
 msgid "Home"
 msgstr "गृहपृष्ठ"
 
 # Added during counseling-first production refactor
-#: templates/core/base.html:49
+#: templates/core/base.html:55
 msgid "Counseling"
 msgstr "परामर्श"
 
-#: templates/core/base.html:51 templates/core/resources.html:4
+#: templates/core/base.html:58 templates/core/resources.html:4
 msgid "Resources"
 msgstr "स्रोत सामग्री"
 
-#: templates/core/base.html:52
-msgid "Programs"
-msgstr "कार्यक्रम"
-
 # Added during counseling-first production refactor
-#: templates/core/base.html:53
+#: templates/core/base.html:59
 msgid "News"
 msgstr "समाचार"
 
-#: templates/core/base.html:54
+#: templates/core/base.html:60
 msgid "Members"
 msgstr "सदस्यहरू"
 
-#: templates/core/base.html:56 templates/core/base.html:93
-#: templates/core/contact.html:5
+#: templates/core/base.html:61 templates/core/base.html:107 templates/core/home.html:91
+msgid "Apply for Membership"
+msgstr "सदस्यताका लागि आवेदन दिनुहोस्"
+
+#: templates/core/base.html:62 templates/core/contact.html:5
 msgid "Contact"
 msgstr "सम्पर्क"
 
 # Added during counseling-first production refactor
-#: templates/core/base.html:57
+#: templates/core/base.html:66
 msgid "Language"
 msgstr "भाषा"
 
-#: templates/core/base.html:75
+#: templates/core/base.html:93
 msgid ""
-"A public-interest platform for foreign-employment counseling, awareness, "
-"risk prevention, and member transparency."
-msgstr ""
-"वैदेशिक रोजगार परामर्श, सचेतना, जोखिम न्यूनीकरण र सदस्य पारदर्शिताका लागि सार्वजनिक "
-"हितको मञ्च।"
+"A public-interest platform for foreign-employment counseling, awareness, risk prevention, and "
+"member transparency."
+msgstr "वैदेशिक रोजगार परामर्श, सचेतना, जोखिम न्यूनीकरण र सदस्य पारदर्शिताका लागि सार्वजनिक हितको मञ्च।"
 
 # Added during counseling-first production refactor
-#: templates/core/base.html:79
+#: templates/core/base.html:97
 msgid "Get guidance"
 msgstr "मार्गदर्शन लिनुहोस्"
 
 # Added during counseling-first production refactor
-#: templates/core/base.html:80
+#: templates/core/base.html:98
 msgid "Request counseling"
 msgstr "परामर्श अनुरोध गर्नुहोस्"
 
 # Added during counseling-first production refactor
 # | msgid "Insurance and welfare awareness"
-#: templates/core/base.html:81
+#: templates/core/base.html:99
 msgid "Fraud and safety awareness"
 msgstr "ठगी तथा सुरक्षा सचेतना"
 
 # Added during counseling-first production refactor
-#: templates/core/base.html:82
+#: templates/core/base.html:100
 msgid "Official resources"
 msgstr "आधिकारिक स्रोतहरू"
 
 # Added during counseling-first production refactor
-#: templates/core/base.html:83 templates/core/faq.html:3
-msgid "Frequently asked questions"
-msgstr "बारम्बार सोधिने प्रश्नहरू"
-
-# Added during counseling-first production refactor
-#: templates/core/base.html:86
+#: templates/core/base.html:103
 msgid "Organization"
 msgstr "संस्था"
 
-#: templates/core/base.html:87 templates/core/membership_information.html:5
-msgid "Membership information"
-msgstr "सदस्यता जानकारी"
-
-#: templates/core/base.html:88 templates/core/home.html:91
-#: templates/core/membership_information.html:10
-msgid "Apply for Membership"
-msgstr "सदस्यताका लागि आवेदन दिनुहोस्"
-
-#: templates/core/base.html:89 templates/core/privacy.html:4
-msgid "Privacy policy"
-msgstr "गोपनीयता नीति"
-
-#: templates/core/base.html:90 templates/core/disclaimer.html:4
-msgid "Terms and disclaimer"
-msgstr "सर्त तथा अस्वीकरण"
-
-#: templates/core/base.html:94
+#: templates/core/base.html:104
 msgid "Phone"
 msgstr "फोन"
 
 # Added during counseling-first production refactor
-#: templates/core/base.html:99
+#: templates/core/base.html:115
 msgid ""
-"Information and counseling do not replace official government, legal, "
-"medical, or financial advice."
+"Information and counseling do not replace official government, legal, medical, or financial "
+"advice."
 msgstr "सूचना तथा परामर्शले सरकारी, कानुनी, चिकित्सकीय वा वित्तीय सल्लाहको स्थान लिँदैन।"
 
 # Added during counseling-first production refactor
@@ -1946,8 +1578,8 @@ msgstr "संस्थालाई सम्पर्क गर्नुहो�
 
 #: templates/core/contact.html:5
 msgid ""
-"For a foreign-employment concern that needs guidance, the counseling request "
-"form provides a clearer private workflow."
+"For a foreign-employment concern that needs guidance, the counseling request form provides a "
+"clearer private workflow."
 msgstr ""
 "वैदेशिक रोजगारसम्बन्धी जिज्ञासामा मार्गदर्शन चाहिँदा परामर्श अनुरोध फारामले स्पष्ट र निजी "
 "प्रक्रिया प्रदान गर्छ।"
@@ -1967,91 +1599,14 @@ msgstr "कृपया तलका त्रुटि सच्याउनु
 msgid "Send message"
 msgstr "सन्देश पठाउनुहोस्"
 
-#: templates/core/disclaimer.html:2
-msgid "Terms and Disclaimer"
-msgstr "सर्त तथा अस्वीकरण"
-
-#: templates/core/disclaimer.html:3
-msgid ""
-"Service boundaries, responsible use, and information disclaimer for MRN Ilam."
-msgstr "MRN इलामका सेवाको सीमा, जिम्मेवार प्रयोग र सूचना अस्वीकरण।"
-
-#: templates/core/disclaimer.html:4
-msgid "Service boundaries"
-msgstr "सेवाको सीमा"
-
-#: templates/core/disclaimer.html:4
-msgid "No visa or job guarantee"
-msgstr "भिसा वा रोजगारीको ग्यारेन्टी छैन"
-
-#: templates/core/disclaimer.html:4
-msgid ""
-"MRN Ilam does not issue visas, recruit workers, place people in jobs, or "
-"guarantee labor approval, employment, travel, or migration outcomes."
-msgstr ""
-"MRN इलामले भिसा जारी गर्दैन, श्रमिक भर्ती गर्दैन, रोजगारी दिलाउँदैन वा श्रम स्वीकृति, "
-"रोजगारी, यात्रा वा आप्रवासन नतिजाको ग्यारेन्टी गर्दैन।"
-
-#: templates/core/disclaimer.html:4
-msgid "General information"
-msgstr "सामान्य जानकारी"
-
-#: templates/core/disclaimer.html:4
-msgid ""
-"Website information is provided for awareness and guidance. Rules and "
-"official procedures may change. Verify important decisions with the relevant "
-"government authority, embassy, licensed professional, or official source."
-msgstr ""
-"वेबसाइटको जानकारी सचेतना र मार्गदर्शनका लागि हो। नियम र आधिकारिक प्रक्रिया बदलिन "
-"सक्छन्। महत्त्वपूर्ण निर्णय सम्बन्धित सरकारी निकाय, दूतावास, इजाजतप्राप्त पेशेवर वा "
-"आधिकारिक स्रोतसँग पुष्टि गर्नुहोस्।"
-
-#: templates/core/disclaimer.html:4
-msgid "Emergency situations"
-msgstr "आपतकालीन अवस्था"
-
-#: templates/core/disclaimer.html:4
-msgid ""
-"This website is not an emergency-response service. In immediate danger, "
-"contact police, emergency services, an embassy or consulate, a labor "
-"authority, or another appropriate official service."
-msgstr ""
-"यो वेबसाइट आपतकालीन प्रतिक्रिया सेवा होइन। तत्काल जोखिममा प्रहरी, आपतकालीन सेवा, "
-"दूतावास वा वाणिज्य दूतावास, श्रम निकाय वा उपयुक्त आधिकारिक सेवामा सम्पर्क गर्नुहोस्।"
-
-#: templates/core/disclaimer.html:4
-msgid ""
-"Submitting an application or payment does not itself confirm membership. "
-"Membership becomes active only after authorized staff review and approval."
-msgstr ""
-"आवेदन वा भुक्तानी पठाउँदैमा सदस्यता पुष्टि हुँदैन। अधिकृत कर्मचारीको समीक्षा र स्वीकृतिपछि "
-"मात्र सदस्यता सक्रिय हुन्छ।"
-
-#: templates/core/disclaimer.html:4
-msgid "Responsible use"
-msgstr "जिम्मेवार प्रयोग"
-
-#: templates/core/disclaimer.html:4
-msgid ""
-"Do not misuse forms, upload harmful files, impersonate another person, or "
-"submit false payment evidence. Access may be limited when abuse is detected."
-msgstr ""
-"फारामको दुरुपयोग नगर्नुहोस्, हानिकारक फाइल अपलोड नगर्नुहोस्, अरूको पहिचान नक्कल "
-"नगर्नुहोस् वा झुटो भुक्तानी प्रमाण नपठाउनुहोस्। दुरुपयोग भेटिए पहुँच सीमित हुन सक्छ।"
-
-#: templates/core/disclaimer.html:4
-msgid "Report inaccurate information"
-msgstr "गलत जानकारीबारे खबर गर्नुहोस्"
-
-#: templates/core/disclaimer.html:4
-msgid ""
-"Contact the organization when you find information that appears outdated, "
-"inaccurate, or unclear."
-msgstr "पुरानो, गलत वा अस्पष्ट देखिने जानकारी भेटिए संस्थालाई सम्पर्क गर्नुहोस्।"
-
 # Added during counseling-first production refactor
 #: templates/core/faq.html:2
 msgid "Frequently Asked Questions"
+msgstr "बारम्बार सोधिने प्रश्नहरू"
+
+# Added during counseling-first production refactor
+#: templates/core/faq.html:3
+msgid "Frequently asked questions"
 msgstr "बारम्बार सोधिने प्रश्नहरू"
 
 #: templates/core/faq.html:3
@@ -2081,11 +1636,11 @@ msgstr "हरेक चरणका प्रश्न र जाँच"
 
 #: templates/core/guidance.html:4
 msgid ""
-"This is general awareness guidance. Verify your individual case with the "
-"relevant official authority or qualified professional."
+"This is general awareness guidance. Verify your individual case with the relevant official "
+"authority or qualified professional."
 msgstr ""
-"यो सामान्य सचेतना मार्गदर्शन हो। आफ्नो अवस्थाबारे सम्बन्धित आधिकारिक निकाय वा योग्य "
-"पेशेवरसँग पुष्टि गर्नुहोस्।"
+"यो सामान्य सचेतना मार्गदर्शन हो। आफ्नो अवस्थाबारे सम्बन्धित आधिकारिक निकाय वा योग्य पेशेवरसँग "
+"पुष्टि गर्नुहोस्।"
 
 # Added during counseling-first production refactor
 #: templates/core/guidance.html:6
@@ -2093,9 +1648,7 @@ msgid "Before considering foreign employment"
 msgstr "वैदेशिक रोजगार सोच्नुअघि"
 
 #: templates/core/guidance.html:6
-msgid ""
-"Clarify your goal, skills, health, family responsibilities, expected costs, "
-"and acceptable risks."
+msgid "Clarify your goal, skills, health, family responsibilities, expected costs, and acceptable risks."
 msgstr ""
 "आफ्नो लक्ष्य, सीप, स्वास्थ्य, पारिवारिक जिम्मेवारी, अपेक्षित खर्च र स्वीकार्य जोखिम स्पष्ट "
 "गर्नुहोस्।"
@@ -2106,11 +1659,8 @@ msgid "Choosing a legitimate pathway"
 msgstr "वैध बाटो छनोट"
 
 #: templates/core/guidance.html:7
-msgid ""
-"Use official information and verify whether the recruiter, institution, or "
-"program is authorized."
-msgstr ""
-"आधिकारिक जानकारी प्रयोग गरी भर्ती पक्ष, संस्था वा कार्यक्रम अधिकृत छ कि छैन जाँच्नुहोस्।"
+msgid "Use official information and verify whether the recruiter, institution, or program is authorized."
+msgstr "आधिकारिक जानकारी प्रयोग गरी भर्ती पक्ष, संस्था वा कार्यक्रम अधिकृत छ कि छैन जाँच्नुहोस्।"
 
 # Added during counseling-first production refactor
 #: templates/core/guidance.html:8
@@ -2119,11 +1669,9 @@ msgstr "भर्ती पक्ष र रोजगारदाता प्�
 
 #: templates/core/guidance.html:8
 msgid ""
-"Check identities, licenses where applicable, employer details, written "
-"contacts, and official records."
-msgstr ""
-"पहिचान, आवश्यक इजाजतपत्र, रोजगारदाता विवरण, लिखित सम्पर्क र आधिकारिक अभिलेख "
-"जाँच्नुहोस्।"
+"Check identities, licenses where applicable, employer details, written contacts, and official "
+"records."
+msgstr "पहिचान, आवश्यक इजाजतपत्र, रोजगारदाता विवरण, लिखित सम्पर्क र आधिकारिक अभिलेख जाँच्नुहोस्।"
 
 # Added during counseling-first production refactor
 #: templates/core/guidance.html:9
@@ -2132,11 +1680,9 @@ msgstr "प्रस्ताव र करार समीक्षा"
 
 #: templates/core/guidance.html:9
 msgid ""
-"Compare job title, workplace, salary, deductions, hours, leave, "
-"accommodation, insurance, and return terms."
-msgstr ""
-"कामको पद, कार्यस्थल, तलब, कटौती, समय, बिदा, आवास, बीमा र फिर्तीका सर्त तुलना "
-"गर्नुहोस्।"
+"Compare job title, workplace, salary, deductions, hours, leave, accommodation, insurance, and "
+"return terms."
+msgstr "कामको पद, कार्यस्थल, तलब, कटौती, समय, बिदा, आवास, बीमा र फिर्तीका सर्त तुलना गर्नुहोस्।"
 
 # Added during counseling-first production refactor
 #: templates/core/guidance.html:10
@@ -2145,11 +1691,11 @@ msgstr "लागत बुझ्ने"
 
 #: templates/core/guidance.html:10
 msgid ""
-"Ask for a written breakdown and official receipts. Do not rely on verbal "
-"promises or personal-account transfers."
+"Ask for a written breakdown and official receipts. Do not rely on verbal promises or personal-"
+"account transfers."
 msgstr ""
-"लिखित खर्च विवरण र आधिकारिक रसिद माग्नुहोस्। मौखिक वाचा वा व्यक्तिगत खातामा रकम "
-"पठाउने कुरामा मात्र भर नपर्नुहोस्।"
+"लिखित खर्च विवरण र आधिकारिक रसिद माग्नुहोस्। मौखिक वाचा वा व्यक्तिगत खातामा रकम पठाउने कुरामा "
+"मात्र भर नपर्नुहोस्।"
 
 # Added during counseling-first production refactor
 #: templates/core/guidance.html:11
@@ -2157,11 +1703,8 @@ msgid "Labor approval and documentation awareness"
 msgstr "श्रम स्वीकृति तथा कागजात सचेतना"
 
 #: templates/core/guidance.html:11
-msgid ""
-"Confirm the required official approvals and make copies of important "
-"documents before departure."
-msgstr ""
-"आवश्यक आधिकारिक स्वीकृति पुष्टि गरी प्रस्थानअघि महत्त्वपूर्ण कागजातका प्रतिलिपि राख्नुहोस्।"
+msgid "Confirm the required official approvals and make copies of important documents before departure."
+msgstr "आवश्यक आधिकारिक स्वीकृति पुष्टि गरी प्रस्थानअघि महत्त्वपूर्ण कागजातका प्रतिलिपि राख्नुहोस्।"
 
 # Added during counseling-first production refactor
 #: templates/core/guidance.html:12
@@ -2169,11 +1712,8 @@ msgid "Insurance and welfare awareness"
 msgstr "बीमा तथा कल्याण सचेतना"
 
 #: templates/core/guidance.html:12
-msgid ""
-"Understand coverage, exclusions, claims, welfare provisions, beneficiaries, "
-"and contact channels."
-msgstr ""
-"बीमाको दायरा, नसमेटिने अवस्था, दाबी, कल्याण व्यवस्था, हकदार र सम्पर्क माध्यम बुझ्नुहोस्।"
+msgid "Understand coverage, exclusions, claims, welfare provisions, beneficiaries, and contact channels."
+msgstr "बीमाको दायरा, नसमेटिने अवस्था, दाबी, कल्याण व्यवस्था, हकदार र सम्पर्क माध्यम बुझ्नुहोस्।"
 
 # Added during counseling-first production refactor
 #: templates/core/guidance.html:13
@@ -2182,11 +1722,9 @@ msgstr "प्रस्थानपूर्व तयारी"
 
 #: templates/core/guidance.html:13
 msgid ""
-"Keep emergency contacts, document copies, contract details, medication "
-"information, and safe communication plans."
-msgstr ""
-"आपतकालीन सम्पर्क, कागजात प्रतिलिपि, करार विवरण, औषधि जानकारी र सुरक्षित सञ्चार "
-"योजना राख्नुहोस्।"
+"Keep emergency contacts, document copies, contract details, medication information, and safe "
+"communication plans."
+msgstr "आपतकालीन सम्पर्क, कागजात प्रतिलिपि, करार विवरण, औषधि जानकारी र सुरक्षित सञ्चार योजना राख्नुहोस्।"
 
 # Added during counseling-first production refactor
 #: templates/core/guidance.html:14
@@ -2195,10 +1733,9 @@ msgstr "विदेशमा काम गर्दा"
 
 #: templates/core/guidance.html:14
 msgid ""
-"Keep records of wages, hours, communications, receipts, and any difference "
-"between the contract and actual work."
-msgstr ""
-"तलब, कामको समय, सञ्चार, रसिद र करार तथा वास्तविक कामबीचका फरकको अभिलेख राख्नुहोस्।"
+"Keep records of wages, hours, communications, receipts, and any difference between the contract "
+"and actual work."
+msgstr "तलब, कामको समय, सञ्चार, रसिद र करार तथा वास्तविक कामबीचका फरकको अभिलेख राख्नुहोस्।"
 
 # Added during counseling-first production refactor
 #: templates/core/guidance.html:15
@@ -2207,11 +1744,11 @@ msgstr "विवाद वा खतरा सामना गर्दा"
 
 #: templates/core/guidance.html:15
 msgid ""
-"Prioritize immediate safety and contact the appropriate police, emergency, "
-"embassy, labor, legal, medical, or welfare channel."
+"Prioritize immediate safety and contact the appropriate police, emergency, embassy, labor, legal,"
+" medical, or welfare channel."
 msgstr ""
-"तत्काल सुरक्षालाई प्राथमिकता दिई उपयुक्त प्रहरी, आपतकालीन, दूतावास, श्रम, कानुनी, "
-"स्वास्थ्य वा कल्याण निकायलाई सम्पर्क गर्नुहोस्।"
+"तत्काल सुरक्षालाई प्राथमिकता दिई उपयुक्त प्रहरी, आपतकालीन, दूतावास, श्रम, कानुनी, स्वास्थ्य वा "
+"कल्याण निकायलाई सम्पर्क गर्नुहोस्।"
 
 # Added during counseling-first production refactor
 #: templates/core/guidance.html:16
@@ -2219,12 +1756,8 @@ msgid "Returning home"
 msgstr "घर फर्कँदा"
 
 #: templates/core/guidance.html:16
-msgid ""
-"Plan documents, final payments, claims, health needs, travel, and family "
-"communication."
-msgstr ""
-"कागजात, अन्तिम भुक्तानी, दाबी, स्वास्थ्य आवश्यकता, यात्रा र परिवारसँगको सञ्चार योजना "
-"बनाउनुहोस्।"
+msgid "Plan documents, final payments, claims, health needs, travel, and family communication."
+msgstr "कागजात, अन्तिम भुक्तानी, दाबी, स्वास्थ्य आवश्यकता, यात्रा र परिवारसँगको सञ्चार योजना बनाउनुहोस्।"
 
 # Added during counseling-first production refactor
 #: templates/core/guidance.html:17
@@ -2233,11 +1766,11 @@ msgstr "पुनःएकीकरण"
 
 #: templates/core/guidance.html:17
 msgid ""
-"Seek guidance on skills, livelihoods, financial planning, family adjustment, "
-"and available local support."
+"Seek guidance on skills, livelihoods, financial planning, family adjustment, and available local "
+"support."
 msgstr ""
-"सीप, जीविकोपार्जन, वित्तीय योजना, पारिवारिक समायोजन र उपलब्ध स्थानीय सहयोगबारे "
-"मार्गदर्शन लिनुहोस्।"
+"सीप, जीविकोपार्जन, वित्तीय योजना, पारिवारिक समायोजन र उपलब्ध स्थानीय सहयोगबारे मार्गदर्शन "
+"लिनुहोस्।"
 
 #: templates/core/guidance.html:18
 msgid "Ask about your next step"
@@ -2256,20 +1789,17 @@ msgstr "MRN इलाम"
 
 # Added during counseling-first production refactor
 #: templates/core/home.html:9
-msgid ""
-"Foreign-employment information and counseling you can understand and trust."
+msgid "Foreign-employment information and counseling you can understand and trust."
 msgstr "बुझ्न र भरोसा गर्न सकिने वैदेशिक रोजगार सूचना तथा परामर्श।"
 
 # Added during counseling-first production refactor
 #: templates/core/home.html:10
 msgid ""
-"We help individuals and families understand processes, recognize risks, "
-"prepare questions, and find appropriate official resources. We do not issue "
-"visas or operate as a recruitment agency."
+"We help individuals and families understand processes, recognize risks, prepare questions, and "
+"find appropriate official resources. We do not issue visas or operate as a recruitment agency."
 msgstr ""
-"हामी व्यक्ति तथा परिवारलाई प्रक्रिया बुझ्न, जोखिम चिन्न, आवश्यक प्रश्न तयार गर्न र "
-"उपयुक्त आधिकारिक स्रोत खोज्न सहयोग गर्छौं। हामी भिसा जारी गर्दैनौं र भर्ती एजेन्सीका "
-"रूपमा काम गर्दैनौं।"
+"हामी व्यक्ति तथा परिवारलाई प्रक्रिया बुझ्न, जोखिम चिन्न, आवश्यक प्रश्न तयार गर्न र उपयुक्त "
+"आधिकारिक स्रोत खोज्न सहयोग गर्छौं। हामी भिसा जारी गर्दैनौं र भर्ती एजेन्सीका रूपमा काम गर्दैनौं।"
 
 # Added during counseling-first production refactor
 #: templates/core/home.html:13
@@ -2324,9 +1854,7 @@ msgid "Process counseling"
 msgstr "प्रक्रियासम्बन्धी परामर्श"
 
 #: templates/core/home.html:42
-msgid ""
-"Understand the steps, documents, questions, and official channels involved "
-"in foreign employment."
+msgid "Understand the steps, documents, questions, and official channels involved in foreign employment."
 msgstr "वैदेशिक रोजगारमा पर्ने चरण, कागजात, प्रश्न र आधिकारिक माध्यम बुझ्नुहोस्।"
 
 #: templates/core/home.html:43
@@ -2334,9 +1862,7 @@ msgid "Risk awareness"
 msgstr "जोखिम सचेतना"
 
 #: templates/core/home.html:43
-msgid ""
-"Recognize suspicious offers, unclear fees, document differences, and "
-"pressure tactics."
+msgid "Recognize suspicious offers, unclear fees, document differences, and pressure tactics."
 msgstr "शंकास्पद प्रस्ताव, अस्पष्ट शुल्क, कागजातको फरक र दबाब दिने तरिका चिन्नुहोस्।"
 
 #: templates/core/home.html:44
@@ -2344,11 +1870,8 @@ msgid "Referral to authorities"
 msgstr "सम्बन्धित निकायमा सहजीकरण"
 
 #: templates/core/home.html:44
-msgid ""
-"Find appropriate government, embassy, labor, welfare, emergency, legal, or "
-"medical channels."
-msgstr ""
-"उपयुक्त सरकारी, दूतावास, श्रम, कल्याण, आपतकालीन, कानुनी वा स्वास्थ्य निकाय भेट्नुहोस्।"
+msgid "Find appropriate government, embassy, labor, welfare, emergency, legal, or medical channels."
+msgstr "उपयुक्त सरकारी, दूतावास, श्रम, कल्याण, आपतकालीन, कानुनी वा स्वास्थ्य निकाय भेट्नुहोस्।"
 
 # Added during counseling-first production refactor
 # | msgid "Private counseling request"
@@ -2379,11 +1902,8 @@ msgstr "कर्मचारी समीक्षा"
 # | "Authorized staff can now review it. The organization cannot promise an "
 # | "exact response time or outcome."
 #: templates/core/home.html:57
-msgid ""
-"Authorized staff review the private request and identify the appropriate "
-"response or referral."
-msgstr ""
-"अधिकृत कर्मचारीले निजी अनुरोध समीक्षा गरी उपयुक्त जवाफ वा सहजीकरण पहिचान गर्छन्।"
+msgid "Authorized staff review the private request and identify the appropriate response or referral."
+msgstr "अधिकृत कर्मचारीले निजी अनुरोध समीक्षा गरी उपयुक्त जवाफ वा सहजीकरण पहिचान गर्छन्।"
 
 # Added during counseling-first production refactor
 #: templates/core/home.html:58
@@ -2426,8 +1946,7 @@ msgstr "योग्य कानुनी, चिकित्सकीय व�
 # | "Please do not submit passwords, OTPs, bank PINs, or complete passport and "
 # | "citizenship details through this form."
 #: templates/core/home.html:68
-msgid ""
-"No request for passwords, OTPs, bank PINs, or complete identity documents."
+msgid "No request for passwords, OTPs, bank PINs, or complete identity documents."
 msgstr "पासवर्ड, OTP, बैंक PIN वा पूरा परिचयपत्र मागिँदैन।"
 
 # Added during counseling-first production refactor
@@ -2446,12 +1965,11 @@ msgstr "गोपनीयतालाई प्राथमिकता दि�
 
 #: templates/core/home.html:81
 msgid ""
-"The directory shows verified public membership relationships while keeping "
-"private phone numbers, email addresses, payment details, and internal notes "
-"off the public website."
+"The directory shows verified public membership relationships while keeping private phone numbers,"
+" email addresses, payment details, and internal notes off the public website."
 msgstr ""
-"निर्देशिकाले पुष्टि भएका सार्वजनिक सदस्यता देखाउँछ र निजी फोन, इमेल, भुक्तानी विवरण तथा "
-"आन्तरिक टिप्पणी सार्वजनिक वेबसाइटबाट लुकाउँछ।"
+"निर्देशिकाले पुष्टि भएका सार्वजनिक सदस्यता देखाउँछ र निजी फोन, इमेल, भुक्तानी विवरण तथा आन्तरिक "
+"टिप्पणी सार्वजनिक वेबसाइटबाट लुकाउँछ।"
 
 #: templates/core/home.html:82
 msgid "public people currently represented in the normalized member directory"
@@ -2470,19 +1988,16 @@ msgstr "अत्यावश्यक अवस्था"
 
 #: templates/core/home.html:98
 msgid ""
-"For immediate danger, trafficking, violence, detention, or medical "
-"emergency, contact the relevant emergency service, police, embassy/"
-"consulate, labor authority, or qualified professional. This website is not "
-"an emergency-response service."
+"For immediate danger, trafficking, violence, detention, or medical emergency, contact the "
+"relevant emergency service, police, embassy/consulate, labor authority, or qualified "
+"professional. This website is not an emergency-response service."
 msgstr ""
-"तत्काल जोखिम, मानव बेचबिखन, हिंसा, हिरासत वा स्वास्थ्य आपतकालमा सम्बन्धित आपतकालीन "
-"सेवा, प्रहरी, दूतावास/वाणिज्य दूतावास, श्रम निकाय वा योग्य पेशेवरलाई सम्पर्क गर्नुहोस्। यो "
-"वेबसाइट आपतकालीन प्रतिक्रिया सेवा होइन।"
+"तत्काल जोखिम, मानव बेचबिखन, हिंसा, हिरासत वा स्वास्थ्य आपतकालमा सम्बन्धित आपतकालीन सेवा, प्रहरी, "
+"दूतावास/वाणिज्य दूतावास, श्रम निकाय वा योग्य पेशेवरलाई सम्पर्क गर्नुहोस्। यो वेबसाइट आपतकालीन "
+"प्रतिक्रिया सेवा होइन।"
 
 #: templates/core/home.html:103
-msgid ""
-"Verified emergency contacts must be added by authorized staff in the admin "
-"area."
+msgid "Verified emergency contacts must be added by authorized staff in the admin area."
 msgstr "पुष्टि भएका आपतकालीन सम्पर्क अधिकृत कर्मचारीले प्रशासन क्षेत्रमा थप्नुपर्छ।"
 
 # Added during final production review
@@ -2506,8 +2021,7 @@ msgid "Need help understanding your situation?"
 msgstr "आफ्नो अवस्था बुझ्न सहयोग चाहिन्छ?"
 
 #: templates/core/home.html:134
-msgid ""
-"Submit a private counseling request. Payment is not required for counseling."
+msgid "Submit a private counseling request. Payment is not required for counseling."
 msgstr "निजी परामर्श अनुरोध पठाउनुहोस्। परामर्शका लागि भुक्तानी आवश्यक छैन।"
 
 # Added during counseling-first production refactor
@@ -2519,315 +2033,33 @@ msgstr "आधिकारिक स्रोतहरू खोज्नुह�
 msgid "Membership Application"
 msgstr "सदस्यता आवेदन"
 
-#: templates/core/membership_apply.html:3
-msgid ""
-"Apply for MRN Ilam membership and continue to the verified manual payment "
-"process."
-msgstr ""
-"MRN इलाम सदस्यताका लागि आवेदन गरी पुष्टि भएको म्यानुअल भुक्तानी प्रक्रियामा जानुहोस्।"
-
 # | msgid "Apply for membership"
-#: templates/core/membership_apply.html:9
+#: templates/core/membership_apply.html:4
 msgid "Apply for organization membership"
 msgstr "संस्थाको सदस्यताका लागि आवेदन दिनुहोस्"
 
-#: templates/core/membership_apply.html:10
-msgid ""
-"Membership and counseling are separate. Counseling does not require "
-"membership or payment."
+#: templates/core/membership_apply.html:4
+msgid "Membership and counseling are separate. Counseling does not require membership or payment."
 msgstr "सदस्यता र परामर्श अलग हुन्। परामर्शका लागि सदस्यता वा भुक्तानी आवश्यक छैन।"
 
-#: templates/core/membership_apply.html:15
+#: templates/core/membership_apply.html:4
 msgid ""
-"Payment is for the selected organization membership category only. It does "
-"not guarantee a visa, job, recruitment, or counseling outcome."
+"Payment is for the selected organization membership category only. It does not guarantee a visa, "
+"job, recruitment, or counseling outcome."
 msgstr ""
-"भुक्तानी चयन गरिएको संस्थागत सदस्यता श्रेणीका लागि मात्र हो। यसले भिसा, रोजगारी, भर्ती "
-"वा परामर्शको नतिजा ग्यारेन्टी गर्दैन।"
-
-#: templates/core/membership_apply.html:18
-msgid "Published membership fees"
-msgstr "प्रकाशित सदस्यता शुल्क"
-
-#: templates/core/membership_apply.html:23
-msgid "Payment is reviewed by authorized staff before membership is activated."
-msgstr "सदस्यता सक्रिय हुनुअघि अधिकृत कर्मचारीले भुक्तानी समीक्षा गर्छन्।"
-
-#: templates/core/membership_apply.html:26
-msgid ""
-"Online membership applications are temporarily paused until the organization "
-"publishes verified payment details."
-msgstr ""
-"संस्थाले पुष्टि भएको भुक्तानी विवरण प्रकाशित नगरेसम्म अनलाइन सदस्यता आवेदन अस्थायी रूपमा "
-"रोकिएको छ।"
+"भुक्तानी चयन गरिएको संस्थागत सदस्यता श्रेणीका लागि मात्र हो। यसले भिसा, रोजगारी, भर्ती वा "
+"परामर्शको नतिजा ग्यारेन्टी गर्दैन।"
 
 # Added during counseling-first production refactor
 # | msgid "Please correct the following information."
-#: templates/core/membership_apply.html:27
+#: templates/core/membership_apply.html:4
 msgid "Please correct the form."
 msgstr "कृपया फाराम सच्याउनुहोस्।"
 
-#: templates/core/membership_apply.html:34
-#, python-format
-msgid ""
-"By submitting, you confirm that the information is accurate and that you "
-"have read the <a href=\"%(privacy_url)s\">privacy policy</a>."
-msgstr ""
-"पठाएर तपाईंले जानकारी सही भएको र <a href=\"%(privacy_url)s\">गोपनीयता नीति</a> "
-"पढेको पुष्टि गर्नुहुन्छ।"
-
 # | msgid "Apply for Membership"
-#: templates/core/membership_apply.html:35
+#: templates/core/membership_apply.html:4
 msgid "Continue to membership payment"
 msgstr "सदस्यता भुक्तानीमा जानुहोस्"
-
-#: templates/core/membership_information.html:2
-msgid "Membership Information"
-msgstr "सदस्यता जानकारी"
-
-#: templates/core/membership_information.html:3
-msgid ""
-"Membership categories, application steps, payment review, privacy, and "
-"approval rules for MRN Ilam."
-msgstr ""
-"MRN इलामको सदस्यता श्रेणी, आवेदन चरण, भुक्तानी समीक्षा, गोपनीयता र स्वीकृति नियम।"
-
-#: templates/core/membership_information.html:5
-msgid ""
-"Membership supports the organization’s community work. It is separate from "
-"free counseling and does not provide a visa, job, recruitment, or migration "
-"guarantee."
-msgstr ""
-"सदस्यताले संस्थाको सामुदायिक कार्यलाई सहयोग गर्छ। यो निःशुल्क परामर्शबाट अलग हो र "
-"भिसा, रोजगारी, भर्ती वा आप्रवासनको ग्यारेन्टी दिँदैन।"
-
-#: templates/core/membership_information.html:7
-msgid "General Membership"
-msgstr "साधारण सदस्यता"
-
-#: templates/core/membership_information.html:7
-msgid ""
-"A standard organization membership recorded under the selected "
-"organizational unit after staff verification and approval."
-msgstr ""
-"कर्मचारीको प्रमाणीकरण र स्वीकृतिपछि चयन गरिएको संगठनात्मक एकाइअन्तर्गत अभिलेख हुने "
-"नियमित सदस्यता।"
-
-#: templates/core/membership_information.html:7
-#: templates/core/membership_information.html:8
-msgid "Published fee"
-msgstr "प्रकाशित शुल्क"
-
-#: templates/core/membership_information.html:7
-#: templates/core/membership_information.html:8
-msgid "The verified fee has not been published yet."
-msgstr "प्रमाणित शुल्क अझै प्रकाशित गरिएको छैन।"
-
-#: templates/core/membership_information.html:8
-msgid "Life Membership"
-msgstr "आजीवन सदस्यता"
-
-#: templates/core/membership_information.html:8
-msgid ""
-"A life membership recorded separately from any General Membership the same "
-"person may already hold."
-msgstr "एउटै व्यक्तिसँग रहेको साधारण सदस्यताभन्दा छुट्टै अभिलेख हुने आजीवन सदस्यता।"
-
-#: templates/core/membership_information.html:10
-msgid "How to apply"
-msgstr "आवेदन गर्ने तरिका"
-
-#: templates/core/membership_information.html:10
-msgid "Complete the membership application with a working phone number."
-msgstr "काम गर्ने फोन नम्बर सहित सदस्यता आवेदन पूरा गर्नुहोस्।"
-
-#: templates/core/membership_information.html:10
-msgid "Review the verified recipient, fee, and QR code."
-msgstr "पुष्टि भएको प्राप्तकर्ता, शुल्क र QR कोड जाँच्नुहोस्।"
-
-#: templates/core/membership_information.html:10
-msgid "Pay externally and upload the successful payment proof."
-msgstr "बाह्य माध्यमबाट भुक्तानी गरी सफल भुक्तानी प्रमाण अपलोड गर्नुहोस्।"
-
-#: templates/core/membership_information.html:10
-msgid "Authorized staff review the application and payment."
-msgstr "अधिकृत कर्मचारीले आवेदन र भुक्तानी समीक्षा गर्छन्।"
-
-#: templates/core/membership_information.html:10
-msgid ""
-"Approval creates or links the person and issues a permanent membership "
-"number."
-msgstr "स्वीकृतिले व्यक्तिलाई सिर्जना वा जोडेर स्थायी सदस्यता नम्बर जारी गर्छ।"
-
-#: templates/core/membership_information.html:10
-msgid "Important safeguards"
-msgstr "महत्त्वपूर्ण सुरक्षा उपाय"
-
-#: templates/core/membership_information.html:10
-msgid "Payment alone does not guarantee approval."
-msgstr "भुक्तानी मात्रले स्वीकृति ग्यारेन्टी गर्दैन।"
-
-#: templates/core/membership_information.html:10
-msgid ""
-"Never share an OTP, password, bank PIN, passport, or citizenship document "
-"through the payment form."
-msgstr ""
-"भुक्तानी फारामबाट OTP, पासवर्ड, बैंक PIN, राहदानी वा नागरिकता कागजात कहिल्यै साझा "
-"नगर्नुहोस्।"
-
-#: templates/core/membership_information.html:10
-msgid ""
-"A person may hold more than one valid membership, each with its own number."
-msgstr "एउटै व्यक्तिसँग एकभन्दा बढी वैध सदस्यता हुन सक्छ, प्रत्येकको छुट्टै नम्बर हुन्छ।"
-
-#: templates/core/membership_information.html:10
-msgid "Issued membership numbers are not reused after archiving."
-msgstr "जारी सदस्यता नम्बर अभिलेखीकरणपछि पुनः प्रयोग हुँदैन।"
-
-#: templates/core/membership_information.html:11
-msgid ""
-"Need counseling rather than membership? Counseling is available without "
-"becoming a member or paying a membership fee."
-msgstr ""
-"सदस्यताभन्दा परामर्श चाहिएको हो? सदस्य नबनी वा सदस्यता शुल्क नतिरी परामर्श लिन सकिन्छ।"
-
-#: templates/core/privacy.html:2
-msgid "Privacy Policy"
-msgstr "गोपनीयता नीति"
-
-#: templates/core/privacy.html:3
-msgid ""
-"How MRN Ilam handles counseling, contact, membership, and payment "
-"information."
-msgstr ""
-"MRN इलामले परामर्श, सम्पर्क, सदस्यता र भुक्तानीसम्बन्धी जानकारी कसरी व्यवस्थापन गर्छ।"
-
-#: templates/core/privacy.html:4
-msgid "Privacy"
-msgstr "गोपनीयता"
-
-#: templates/core/privacy.html:4
-msgid ""
-"We collect only the information needed to respond, manage membership, verify "
-"payments, and maintain accountable organizational records."
-msgstr ""
-"हामी जवाफ दिन, सदस्यता व्यवस्थापन गर्न, भुक्तानी प्रमाणित गर्न र उत्तरदायी संस्थागत "
-"अभिलेख राख्न आवश्यक जानकारी मात्र सङ्कलन गर्छौं।"
-
-#: templates/core/privacy.html:4
-msgid "Information we collect"
-msgstr "हामीले सङ्कलन गर्ने जानकारी"
-
-#: templates/core/privacy.html:4
-msgid ""
-"Depending on the service, this may include your name, phone number, email, "
-"general location, counseling concern, membership details, and payment "
-"evidence."
-msgstr ""
-"सेवाअनुसार नाम, फोन नम्बर, इमेल, सामान्य स्थान, परामर्श जिज्ञासा, सदस्यता विवरण र "
-"भुक्तानी प्रमाण समावेश हुन सक्छ।"
-
-#: templates/core/privacy.html:4
-msgid "Why we use it"
-msgstr "हामी किन प्रयोग गर्छौं"
-
-#: templates/core/privacy.html:4
-msgid ""
-"We use information to contact you, provide guidance, review membership "
-"applications, verify payments, prevent duplicates and fraud, and maintain "
-"required audit records."
-msgstr ""
-"तपाईंलाई सम्पर्क गर्न, मार्गदर्शन दिन, सदस्यता आवेदन समीक्षा गर्न, भुक्तानी पुष्टि गर्न, "
-"दोहोरो र ठगी रोक्न तथा आवश्यक लेखापरीक्षण अभिलेख राख्न जानकारी प्रयोग गर्छौं।"
-
-#: templates/core/privacy.html:4
-msgid "Who can access it"
-msgstr "कसले पहुँच पाउँछ"
-
-#: templates/core/privacy.html:4
-msgid ""
-"Private counseling and payment information is limited to authorized staff "
-"with the appropriate role. Public member pages show only fields approved for "
-"publication."
-msgstr ""
-"निजी परामर्श र भुक्तानी जानकारी उपयुक्त अधिकार भएका कर्मचारीमा सीमित हुन्छ। सार्वजनिक "
-"सदस्य पृष्ठमा प्रकाशन स्वीकृत विवरण मात्र देखिन्छ।"
-
-#: templates/core/privacy.html:4
-msgid "Storage and retention"
-msgstr "भण्डारण र राख्ने अवधि"
-
-#: templates/core/privacy.html:4
-#, python-format
-msgid ""
-"Records are retained according to the organization’s approved retention "
-"period: %(privacy_retention_period)s. Some membership-number and approval "
-"audit records may be retained longer to prevent number reuse and protect "
-"organizational integrity."
-msgstr ""
-"अभिलेखहरू संस्थाले स्वीकृत गरेको अवधिअनुसार राखिन्छन्: %(privacy_retention_period)s। "
-"सदस्यता नम्बर पुनः प्रयोग हुन नदिन र संस्थागत अभिलेखको विश्वसनीयता जोगाउन केही सदस्यता "
-"नम्बर तथा स्वीकृति अभिलेख अझ लामो समयसम्म राखिन सक्छन्।"
-
-#: templates/core/privacy.html:4
-msgid "Your choices"
-msgstr "तपाईंका विकल्प"
-
-#: templates/core/privacy.html:4
-msgid ""
-"You may ask the organization to correct inaccurate information or explain "
-"how your information is being used. Legal and audit requirements may limit "
-"deletion of some records."
-msgstr ""
-"तपाईंले गलत जानकारी सच्याउन वा जानकारी कसरी प्रयोग भइरहेको छ भन्ने व्याख्या माग्न "
-"सक्नुहुन्छ। कानुनी तथा लेखापरीक्षण आवश्यकताले केही अभिलेख मेटाउन सीमित गर्न सक्छ।"
-
-#: templates/core/privacy.html:4
-msgid ""
-"Never submit passwords, OTPs, bank PINs, or unnecessary identity documents. "
-"The website does not request these details."
-msgstr ""
-"पासवर्ड, OTP, बैंक PIN वा अनावश्यक परिचयपत्र कहिल्यै नपठाउनुहोस्। वेबसाइटले यी विवरण "
-"माग्दैन।"
-
-#: templates/core/privacy.html:4
-msgid "Privacy contact"
-msgstr "गोपनीयता सम्पर्क"
-
-#: templates/core/privacy.html:4
-msgid "Use the contact form to submit a privacy question."
-msgstr "गोपनीयतासम्बन्धी प्रश्न पठाउन सम्पर्क फाराम प्रयोग गर्नुहोस्।"
-
-#: templates/core/programs.html:2
-msgid "Programs and Activities"
-msgstr "कार्यक्रम तथा गतिविधि"
-
-#: templates/core/programs.html:3
-msgid "Published programs, community activities, and events from MRN Ilam."
-msgstr "MRN इलामका प्रकाशित कार्यक्रम, सामुदायिक गतिविधि र आयोजनाहरू।"
-
-#: templates/core/programs.html:4
-msgid "Community work"
-msgstr "सामुदायिक कार्य"
-
-#: templates/core/programs.html:4
-msgid "Programs and activities"
-msgstr "कार्यक्रम तथा गतिविधि"
-
-#: templates/core/programs.html:4
-msgid "Only reviewed and published organizational activities appear here."
-msgstr "समीक्षा भई प्रकाशित संस्थागत गतिविधि मात्र यहाँ देखिन्छन्।"
-
-#: templates/core/programs.html:4
-msgid "No programs are published yet"
-msgstr "अहिलेसम्म कुनै कार्यक्रम प्रकाशित छैन"
-
-#: templates/core/programs.html:4
-msgid ""
-"Authorized staff can publish verified programs and activities through the "
-"administration area."
-msgstr ""
-"अधिकृत कर्मचारीले प्रशासन क्षेत्रबाट पुष्टि भएका कार्यक्रम र गतिविधि प्रकाशित गर्न सक्छन्।"
 
 # Added during counseling-first production refactor
 #: templates/core/resources.html:2
@@ -2840,12 +2072,11 @@ msgstr "आधिकारिक जानकारी र सहायता �
 
 #: templates/core/resources.html:4
 msgid ""
-"Resources marked official should link to the issuing government, embassy, "
-"labor, welfare, emergency, or recognized institutional source. Staff should "
-"review dates and contacts regularly."
+"Resources marked official should link to the issuing government, embassy, labor, welfare, "
+"emergency, or recognized institutional source. Staff should review dates and contacts regularly."
 msgstr ""
-"आधिकारिक चिन्ह भएका स्रोत जारी गर्ने सरकारी, दूतावास, श्रम, कल्याण, आपतकालीन वा "
-"मान्य संस्थाको स्रोतसँग जोडिनुपर्छ। कर्मचारीले मिति र सम्पर्क नियमित रूपमा समीक्षा गर्नुपर्छ।"
+"आधिकारिक चिन्ह भएका स्रोत जारी गर्ने सरकारी, दूतावास, श्रम, कल्याण, आपतकालीन वा मान्य संस्थाको "
+"स्रोतसँग जोडिनुपर्छ। कर्मचारीले मिति र सम्पर्क नियमित रूपमा समीक्षा गर्नुपर्छ।"
 
 # Added during counseling-first production refactor
 #: templates/core/resources.html:6
@@ -2894,11 +2125,9 @@ msgstr "आधिकारिक माध्यम खोल्नुहोस�
 
 #: templates/core/resources.html:9
 msgid ""
-"No verified emergency resources are currently published. Do not rely on "
-"unverified template phone numbers."
-msgstr ""
-"हाल पुष्टि भएका आपतकालीन स्रोत प्रकाशित छैनन्। पुष्टि नभएका नमुना फोन नम्बरमा भर "
-"नपर्नुहोस्।"
+"No verified emergency resources are currently published. Do not rely on unverified template phone"
+" numbers."
+msgstr "हाल पुष्टि भएका आपतकालीन स्रोत प्रकाशित छैनन्। पुष्टि नभएका नमुना फोन नम्बरमा भर नपर्नुहोस्।"
 
 # Added during counseling-first production refactor
 #: templates/core/safety.html:2
@@ -2917,12 +2146,11 @@ msgstr "दबाब, असंगति र असुरक्षित अन�
 
 #: templates/core/safety.html:4
 msgid ""
-"A red flag does not by itself prove a crime. It means you should pause, "
-"preserve evidence, verify through official channels, and seek qualified help "
-"when necessary."
+"A red flag does not by itself prove a crime. It means you should pause, preserve evidence, verify"
+" through official channels, and seek qualified help when necessary."
 msgstr ""
-"चेतावनी संकेतले आफैं अपराध प्रमाणित गर्दैन। यसको अर्थ रोकिएर प्रमाण सुरक्षित गर्नु, "
-"आधिकारिक माध्यमबाट पुष्टि गर्नु र आवश्यक पर्दा योग्य सहायता लिनु हो।"
+"चेतावनी संकेतले आफैं अपराध प्रमाणित गर्दैन। यसको अर्थ रोकिएर प्रमाण सुरक्षित गर्नु, आधिकारिक "
+"माध्यमबाट पुष्टि गर्नु र आवश्यक पर्दा योग्य सहायता लिनु हो।"
 
 # Added during counseling-first production refactor
 #: templates/core/safety.html:6
@@ -2930,8 +2158,7 @@ msgid "Pressure to pay immediately"
 msgstr "तुरुन्तै पैसा तिर्न दबाब"
 
 #: templates/core/safety.html:6
-msgid ""
-"Urgency is used to stop you from checking documents or asking another person."
+msgid "Urgency is used to stop you from checking documents or asking another person."
 msgstr "कागजात जाँच्न वा अरूसँग सोध्न नदिन हतारको दबाब दिइन्छ।"
 
 # Added during counseling-first production refactor
@@ -2940,9 +2167,7 @@ msgid "No written documents"
 msgstr "लिखित कागजात नहुनु"
 
 #: templates/core/safety.html:7
-msgid ""
-"The person refuses to provide a clear offer, receipt, contract, or employer "
-"identity."
+msgid "The person refuses to provide a clear offer, receipt, contract, or employer identity."
 msgstr "व्यक्तिले स्पष्ट प्रस्ताव, रसिद, करार वा रोजगारदाताको पहिचान दिन अस्वीकार गर्छ।"
 
 # Added during counseling-first production refactor
@@ -2951,9 +2176,7 @@ msgid "Different promises"
 msgstr "फरक-फरक वाचा"
 
 #: templates/core/safety.html:8
-msgid ""
-"Salary, job, location, fees, or benefits differ across messages, receipts, "
-"and contracts."
+msgid "Salary, job, location, fees, or benefits differ across messages, receipts, and contracts."
 msgstr "सन्देश, रसिद र करारमा तलब, काम, स्थान, शुल्क वा सुविधा फरक हुन्छ।"
 
 # Added during counseling-first production refactor
@@ -2962,9 +2185,7 @@ msgid "Personal-account payment"
 msgstr "व्यक्तिगत खातामा भुक्तानी"
 
 #: templates/core/safety.html:9
-msgid ""
-"Money is requested through a personal account without a verifiable official "
-"purpose and receipt."
+msgid "Money is requested through a personal account without a verifiable official purpose and receipt."
 msgstr "पुष्टि गर्न सकिने आधिकारिक उद्देश्य र रसिदबिनै व्यक्तिगत खातामा रकम मागिन्छ।"
 
 # Added during counseling-first production refactor
@@ -2973,12 +2194,8 @@ msgid "OTP or password requests"
 msgstr "ओटीपी वा पासवर्ड माग्नु"
 
 #: templates/core/safety.html:10
-msgid ""
-"No legitimate counselor needs your password, OTP, bank PIN, or social-media "
-"login."
-msgstr ""
-"कुनै वैध परामर्शदातालाई तपाईंको पासवर्ड, OTP, बैंक PIN वा सामाजिक सञ्जाल लगइन आवश्यक "
-"हुँदैन।"
+msgid "No legitimate counselor needs your password, OTP, bank PIN, or social-media login."
+msgstr "कुनै वैध परामर्शदातालाई तपाईंको पासवर्ड, OTP, बैंक PIN वा सामाजिक सञ्जाल लगइन आवश्यक हुँदैन।"
 
 # Added during counseling-first production refactor
 #: templates/core/safety.html:11
@@ -2986,9 +2203,7 @@ msgid "Document confiscation"
 msgstr "कागजात नियन्त्रणमा लिनु"
 
 #: templates/core/safety.html:11
-msgid ""
-"Original documents are held without a clear lawful reason or safe return "
-"process."
+msgid "Original documents are held without a clear lawful reason or safe return process."
 msgstr "स्पष्ट कानुनी कारण वा सुरक्षित फिर्ता प्रक्रिया बिना सक्कल कागजात राखिन्छ।"
 
 # Added during counseling-first production refactor
@@ -2997,12 +2212,8 @@ msgid "Unclear employer"
 msgstr "अस्पष्ट रोजगारदाता"
 
 #: templates/core/safety.html:12
-msgid ""
-"You cannot verify who the employer is, where the workplace is, or who signed "
-"the offer."
-msgstr ""
-"रोजगारदाता को हो, कार्यस्थल कहाँ छ वा प्रस्तावमा कसले हस्ताक्षर गरेको हो पुष्टि गर्न "
-"सकिँदैन।"
+msgid "You cannot verify who the employer is, where the workplace is, or who signed the offer."
+msgstr "रोजगारदाता को हो, कार्यस्थल कहाँ छ वा प्रस्तावमा कसले हस्ताक्षर गरेको हो पुष्टि गर्न सकिँदैन।"
 
 # Added during counseling-first production refactor
 #: templates/core/safety.html:13
@@ -3010,9 +2221,7 @@ msgid "Social-media-only offer"
 msgstr "सामाजिक सञ्जालमै सीमित प्रस्ताव"
 
 #: templates/core/safety.html:13
-msgid ""
-"A job is offered through an unverified account with no trustworthy external "
-"record."
+msgid "A job is offered through an unverified account with no trustworthy external record."
 msgstr "विश्वसनीय बाह्य अभिलेख नभएको अपुष्ट खाताबाट काम प्रस्ताव गरिन्छ।"
 
 # Added during counseling-first production refactor
@@ -3021,12 +2230,10 @@ msgid "Guaranteed and unusually easy"
 msgstr "गारन्टी र अस्वाभाविक रूपमा सजिलो दाबी"
 
 #: templates/core/safety.html:14
-msgid ""
-"A person promises certain approval, unusually high income, or no normal "
-"verification process."
+msgid "A person promises certain approval, unusually high income, or no normal verification process."
 msgstr ""
-"व्यक्तिले निश्चित स्वीकृति, अस्वाभाविक रूपमा धेरै आम्दानी वा सामान्य जाँचबिनाको प्रक्रिया "
-"वाचा गर्छ।"
+"व्यक्तिले निश्चित स्वीकृति, अस्वाभाविक रूपमा धेरै आम्दानी वा सामान्य जाँचबिनाको प्रक्रिया वाचा "
+"गर्छ।"
 
 # Added during counseling-first production refactor
 #: templates/core/safety.html:16
@@ -3038,9 +2245,7 @@ msgid "Stop further payment when it is safe to do so."
 msgstr "सुरक्षित भए थप भुक्तानी रोक्नुहोस्।"
 
 #: templates/core/safety.html:16
-msgid ""
-"Preserve receipts, messages, names, phone numbers, documents, account "
-"details, and dates."
+msgid "Preserve receipts, messages, names, phone numbers, documents, account details, and dates."
 msgstr "रसिद, सन्देश, नाम, फोन नम्बर, कागजात, खाता विवरण र मिति सुरक्षित राख्नुहोस्।"
 
 #: templates/core/safety.html:16
@@ -3062,12 +2267,11 @@ msgstr "तत्काल खतरा"
 
 #: templates/core/safety.html:16
 msgid ""
-"For violence, trafficking, detention, threats, or medical emergency, "
-"prioritize immediate local emergency, police, embassy/consular, labor, "
-"medical, or legal assistance."
+"For violence, trafficking, detention, threats, or medical emergency, prioritize immediate local "
+"emergency, police, embassy/consular, labor, medical, or legal assistance."
 msgstr ""
-"हिंसा, मानव बेचबिखन, हिरासत, धम्की वा स्वास्थ्य आपतकालमा तत्काल स्थानीय आपतकालीन, "
-"प्रहरी, दूतावास/वाणिज्य दूतावास, श्रम, स्वास्थ्य वा कानुनी सहायता प्राथमिकता दिनुहोस्।"
+"हिंसा, मानव बेचबिखन, हिरासत, धम्की वा स्वास्थ्य आपतकालमा तत्काल स्थानीय आपतकालीन, प्रहरी, "
+"दूतावास/वाणिज्य दूतावास, श्रम, स्वास्थ्य वा कानुनी सहायता प्राथमिकता दिनुहोस्।"
 
 # Added during counseling-first production refactor
 # | msgid "Open official resources"
@@ -3076,8 +2280,7 @@ msgid "Open verified resource"
 msgstr "पुष्टि भएको स्रोत खोल्नुहोस्"
 
 #: templates/core/safety.html:16
-msgid ""
-"Authorized staff must add and regularly review official emergency resources."
+msgid "Authorized staff must add and regularly review official emergency resources."
 msgstr "अधिकृत कर्मचारीले आधिकारिक आपतकालीन स्रोत थपेर नियमित समीक्षा गर्नुपर्छ।"
 
 # Added during counseling-first production refactor
@@ -3106,44 +2309,1789 @@ msgstr "केही समस्या भयो"
 
 #: templates/errors/500.html:1
 msgid ""
-"The request could not be completed. Please try again later. Private form "
-"data is not shown on this error page."
+"The request could not be completed. Please try again later. Private form data is not shown on "
+"this error page."
 msgstr ""
 "अनुरोध पूरा हुन सकेन। कृपया पछि फेरि प्रयास गर्नुहोस्। यस त्रुटि पृष्ठमा निजी फाराम विवरण "
 "देखाइँदैन।"
 
-#~ msgid "Accepted formats include 98XXXXXXXX and +977 98XXXXXXXX."
-#~ msgstr ""
-#~ "पूर्ण फोन नम्बर लेख्नुहोस्। +977, +91 जस्ता देश कोडसहितका अन्तर्राष्ट्रिय ढाँचा स्वीकार "
-#~ "हुन्छन्।"
+msgid "General Membership fee"
+msgstr "साधारण सदस्यता शुल्क"
 
-# Added for international phone validation
-#~ msgid ""
-#~ "Enter a Nepal number or include + and the country code for an "
-#~ "international number."
-#~ msgstr ""
-#~ "नेपालको फोन नम्बर प्रविष्ट गर्नुहोस् वा अन्तर्राष्ट्रिय नम्बरका लागि + र देशको कोड "
-#~ "समावेश गर्नुहोस्।"
+msgid "Life Membership fee"
+msgstr "आजीवन सदस्यता शुल्क"
 
-# Added for international phone validation
-#~ msgid "Ten-digit Nepal mobile numbers normally begin with 97 or 98."
-#~ msgstr "दश अङ्कको नेपाली मोबाइल नम्बर सामान्यतया ९७ वा ९८ बाट सुरु हुन्छ।"
+msgid "Official payment recipient name"
+msgstr "आधिकारिक भुक्तानी प्राप्तकर्ताको नाम"
 
-#~ msgid ""
-#~ "Confirm that this is the organization’s current approved QR code and that "
-#~ "the amount and purpose are correct. A reference number alone is not "
-#~ "accepted as proof."
-#~ msgstr ""
-#~ "यो संस्थाको हाल स्वीकृत QR हो र रकम तथा उद्देश्य सही छन् भन्ने पुष्टि गर्नुहोस्। सन्दर्भ "
-#~ "नम्बर मात्र प्रमाणका रूपमा स्वीकार हुँदैन।"
+msgid "Official payment QR image"
+msgstr "आधिकारिक भुक्तानी QR तस्बिर"
 
-#~ msgid "Approved QR code for the membership fee shown on this page"
-#~ msgstr "यस पृष्ठमा देखाइएको सदस्यता शुल्कको स्वीकृत QR कोड"
+msgid "Payment account details (Nepali)"
+msgstr "भुक्तानी खाता विवरण (नेपाली)"
 
-#~ msgid ""
-#~ "Enter a rejection reason in the administrator note before rejecting "
-#~ "payment."
-#~ msgstr "भुक्तानी अस्वीकार गर्नुअघि प्रशासक टिप्पणीमा अस्वीकारको कारण लेख्नुहोस्।"
+msgid "Payment account details (English)"
+msgstr "भुक्तानी खाता विवरण (अंग्रेजी)"
+
+msgid "Payment instructions (Nepali)"
+msgstr "भुक्तानी निर्देशन (नेपाली)"
+
+msgid "Payment instructions (English)"
+msgstr "भुक्तानी निर्देशन (अंग्रेजी)"
+
+msgid "Membership payment settings"
+msgstr "सदस्यता भुक्तानी सेटिङ"
+
+msgid "Enable only after the QR, recipient name, and official fees have been verified."
+msgstr "QR, प्राप्तकर्ताको नाम र आधिकारिक शुल्क पुष्टि भएपछि मात्र सक्रिय गर्नुहोस्।"
+
+msgid ""
+"Upload only the QR confirmed by the organization. Verify the recipient name by scanning it before"
+" publishing."
+msgstr ""
+"संस्थाले पुष्टि गरेको QR मात्र अपलोड गर्नुहोस्। प्रकाशित गर्नुअघि स्क्यान गरी प्राप्तकर्ताको नाम "
+"पुष्टि गर्नुहोस्।"
+
+msgid "Image description (Nepali)"
+msgstr "तस्बिर विवरण (नेपाली)"
+
+msgid "Image description (English)"
+msgstr "तस्बिर विवरण (अंग्रेजी)"
+
+msgid "Expiry date"
+msgstr "म्याद सकिने मिति"
+
+msgid "Optional. After this time the item is automatically hidden from public pages."
+msgstr "वैकल्पिक। यस समयपछि सामग्री सार्वजनिक पृष्ठबाट स्वतः लुक्छ।"
+
+msgid "Inactive"
+msgstr "निष्क्रिय"
+
+msgid "Suspended"
+msgstr "निलम्बित"
+
+msgid "Membership number sequence"
+msgstr "सदस्यता नम्बर क्रम"
+
+msgid "Membership number sequences"
+msgstr "सदस्यता नम्बर क्रमहरू"
+
+msgid "Issued membership number"
+msgstr "जारी गरिएको सदस्यता नम्बर"
+
+msgid "Issued membership numbers"
+msgstr "जारी गरिएका सदस्यता नम्बरहरू"
+
+msgid ""
+"A membership number is permanent after issuance. Archive the membership instead of replacing its "
+"number."
+msgstr "सदस्यता नम्बर जारी भएपछि स्थायी हुन्छ। नम्बर बदल्नुको सट्टा सदस्यता अभिलेखीकरण गर्नुहोस्।"
+
+msgid "Programs"
+msgstr "कार्यक्रम"
+
+msgid "Membership information"
+msgstr "सदस्यता जानकारी"
+
+msgid "Privacy policy"
+msgstr "गोपनीयता नीति"
+
+msgid "Terms and disclaimer"
+msgstr "सर्त तथा अस्वीकरण"
+
+msgid "Programs and Activities"
+msgstr "कार्यक्रम तथा गतिविधि"
+
+msgid "Community work"
+msgstr "सामुदायिक कार्य"
+
+msgid "Programs and activities"
+msgstr "कार्यक्रम तथा गतिविधि"
+
+msgid "Only reviewed and published organizational activities appear here."
+msgstr "समीक्षा भई प्रकाशित संस्थागत गतिविधि मात्र यहाँ देखिन्छन्।"
+
+msgid "No programs are published yet"
+msgstr "अहिलेसम्म कुनै कार्यक्रम प्रकाशित छैन"
+
+msgid "Authorized staff can publish verified programs and activities through the administration area."
+msgstr "अधिकृत कर्मचारीले प्रशासन क्षेत्रबाट पुष्टि भएका कार्यक्रम र गतिविधि प्रकाशित गर्न सक्छन्।"
+
+msgid "Privacy Policy"
+msgstr "गोपनीयता नीति"
+
+msgid "Privacy"
+msgstr "गोपनीयता"
+
+msgid ""
+"We collect only the information needed to respond, manage membership, verify payments, and "
+"maintain accountable organizational records."
+msgstr ""
+"हामी जवाफ दिन, सदस्यता व्यवस्थापन गर्न, भुक्तानी प्रमाणित गर्न र उत्तरदायी संस्थागत अभिलेख राख्न "
+"आवश्यक जानकारी मात्र सङ्कलन गर्छौं।"
+
+msgid "Information we collect"
+msgstr "हामीले सङ्कलन गर्ने जानकारी"
+
+msgid ""
+"Depending on the service, this may include your name, phone number, email, general location, "
+"counseling concern, membership details, and payment evidence."
+msgstr ""
+"सेवाअनुसार नाम, फोन नम्बर, इमेल, सामान्य स्थान, परामर्श जिज्ञासा, सदस्यता विवरण र भुक्तानी प्रमाण"
+" समावेश हुन सक्छ।"
+
+msgid "Why we use it"
+msgstr "हामी किन प्रयोग गर्छौं"
+
+msgid ""
+"We use information to contact you, provide guidance, review membership applications, verify "
+"payments, prevent duplicates and fraud, and maintain required audit records."
+msgstr ""
+"तपाईंलाई सम्पर्क गर्न, मार्गदर्शन दिन, सदस्यता आवेदन समीक्षा गर्न, भुक्तानी पुष्टि गर्न, दोहोरो र"
+" ठगी रोक्न तथा आवश्यक लेखापरीक्षण अभिलेख राख्न जानकारी प्रयोग गर्छौं।"
+
+msgid "Who can access it"
+msgstr "कसले पहुँच पाउँछ"
+
+msgid ""
+"Private counseling and payment information is limited to authorized staff with the appropriate "
+"role. Public member pages show only fields approved for publication."
+msgstr ""
+"निजी परामर्श र भुक्तानी जानकारी उपयुक्त अधिकार भएका कर्मचारीमा सीमित हुन्छ। सार्वजनिक सदस्य "
+"पृष्ठमा प्रकाशन स्वीकृत विवरण मात्र देखिन्छ।"
+
+msgid "Storage and retention"
+msgstr "भण्डारण र राख्ने अवधि"
+
+msgid "Your choices"
+msgstr "तपाईंका विकल्प"
+
+msgid ""
+"You may ask the organization to correct inaccurate information or explain how your information is"
+" being used. Legal and audit requirements may limit deletion of some records."
+msgstr ""
+"तपाईंले गलत जानकारी सच्याउन वा जानकारी कसरी प्रयोग भइरहेको छ भन्ने व्याख्या माग्न सक्नुहुन्छ। "
+"कानुनी तथा लेखापरीक्षण आवश्यकताले केही अभिलेख मेटाउन सीमित गर्न सक्छ।"
+
+msgid ""
+"Never submit passwords, OTPs, bank PINs, or unnecessary identity documents. The website does not "
+"request these details."
+msgstr "पासवर्ड, OTP, बैंक PIN वा अनावश्यक परिचयपत्र कहिल्यै नपठाउनुहोस्। वेबसाइटले यी विवरण माग्दैन।"
+
+msgid "Privacy contact"
+msgstr "गोपनीयता सम्पर्क"
+
+msgid "Use the contact form to submit a privacy question."
+msgstr "गोपनीयतासम्बन्धी प्रश्न पठाउन सम्पर्क फाराम प्रयोग गर्नुहोस्।"
+
+msgid "Terms and Disclaimer"
+msgstr "सर्त तथा अस्वीकरण"
+
+msgid "Service boundaries"
+msgstr "सेवाको सीमा"
+
+msgid "No visa or job guarantee"
+msgstr "भिसा वा रोजगारीको ग्यारेन्टी छैन"
+
+msgid ""
+"MRN Ilam does not issue visas, recruit workers, place people in jobs, or guarantee labor "
+"approval, employment, travel, or migration outcomes."
+msgstr ""
+"MRN इलामले भिसा जारी गर्दैन, श्रमिक भर्ती गर्दैन, रोजगारी दिलाउँदैन वा श्रम स्वीकृति, रोजगारी, "
+"यात्रा वा आप्रवासन नतिजाको ग्यारेन्टी गर्दैन।"
+
+msgid "General information"
+msgstr "सामान्य जानकारी"
+
+msgid ""
+"Website information is provided for awareness and guidance. Rules and official procedures may "
+"change. Verify important decisions with the relevant government authority, embassy, licensed "
+"professional, or official source."
+msgstr ""
+"वेबसाइटको जानकारी सचेतना र मार्गदर्शनका लागि हो। नियम र आधिकारिक प्रक्रिया बदलिन सक्छन्। "
+"महत्त्वपूर्ण निर्णय सम्बन्धित सरकारी निकाय, दूतावास, इजाजतप्राप्त पेशेवर वा आधिकारिक स्रोतसँग "
+"पुष्टि गर्नुहोस्।"
+
+msgid "Emergency situations"
+msgstr "आपतकालीन अवस्था"
+
+msgid ""
+"This website is not an emergency-response service. In immediate danger, contact police, emergency"
+" services, an embassy or consulate, a labor authority, or another appropriate official service."
+msgstr ""
+"यो वेबसाइट आपतकालीन प्रतिक्रिया सेवा होइन। तत्काल जोखिममा प्रहरी, आपतकालीन सेवा, दूतावास वा "
+"वाणिज्य दूतावास, श्रम निकाय वा उपयुक्त आधिकारिक सेवामा सम्पर्क गर्नुहोस्।"
+
+msgid ""
+"Submitting an application or payment does not itself confirm membership. Membership becomes "
+"active only after authorized staff review and approval."
+msgstr ""
+"आवेदन वा भुक्तानी पठाउँदैमा सदस्यता पुष्टि हुँदैन। अधिकृत कर्मचारीको समीक्षा र स्वीकृतिपछि मात्र "
+"सदस्यता सक्रिय हुन्छ।"
+
+msgid "Responsible use"
+msgstr "जिम्मेवार प्रयोग"
+
+msgid ""
+"Do not misuse forms, upload harmful files, impersonate another person, or submit false payment "
+"evidence. Access may be limited when abuse is detected."
+msgstr ""
+"फारामको दुरुपयोग नगर्नुहोस्, हानिकारक फाइल अपलोड नगर्नुहोस्, अरूको पहिचान नक्कल नगर्नुहोस् वा "
+"झुटो भुक्तानी प्रमाण नपठाउनुहोस्। दुरुपयोग भेटिए पहुँच सीमित हुन सक्छ।"
+
+msgid "Report inaccurate information"
+msgstr "गलत जानकारीबारे खबर गर्नुहोस्"
+
+msgid "Contact the organization when you find information that appears outdated, inaccurate, or unclear."
+msgstr "पुरानो, गलत वा अस्पष्ट देखिने जानकारी भेटिए संस्थालाई सम्पर्क गर्नुहोस्।"
+
+msgid "Membership Information"
+msgstr "सदस्यता जानकारी"
+
+msgid ""
+"Membership categories, application steps, payment review, privacy, and approval rules for MRN "
+"Ilam."
+msgstr "MRN इलामको सदस्यता श्रेणी, आवेदन चरण, भुक्तानी समीक्षा, गोपनीयता र स्वीकृति नियम।"
+
+msgid ""
+"Membership supports the organization’s community work. It is separate from free counseling and "
+"does not provide a visa, job, recruitment, or migration guarantee."
+msgstr ""
+"सदस्यताले संस्थाको सामुदायिक कार्यलाई सहयोग गर्छ। यो निःशुल्क परामर्शबाट अलग हो र भिसा, रोजगारी, "
+"भर्ती वा आप्रवासनको ग्यारेन्टी दिँदैन।"
+
+msgid "General Membership"
+msgstr "साधारण सदस्यता"
+
+msgid ""
+"A standard organization membership recorded under the selected organizational unit after staff "
+"verification and approval."
+msgstr "कर्मचारीको प्रमाणीकरण र स्वीकृतिपछि चयन गरिएको संगठनात्मक एकाइअन्तर्गत अभिलेख हुने नियमित सदस्यता।"
+
+msgid "Published fee"
+msgstr "प्रकाशित शुल्क"
+
+msgid "Life Membership"
+msgstr "आजीवन सदस्यता"
+
+msgid ""
+"A life membership recorded separately from any General Membership the same person may already "
+"hold."
+msgstr "एउटै व्यक्तिसँग रहेको साधारण सदस्यताभन्दा छुट्टै अभिलेख हुने आजीवन सदस्यता।"
+
+msgid "How to apply"
+msgstr "आवेदन गर्ने तरिका"
+
+msgid "Complete the membership application with a working phone number."
+msgstr "काम गर्ने फोन नम्बर सहित सदस्यता आवेदन पूरा गर्नुहोस्।"
+
+msgid "Review the verified recipient, fee, and QR code."
+msgstr "पुष्टि भएको प्राप्तकर्ता, शुल्क र QR कोड जाँच्नुहोस्।"
+
+msgid "Pay externally and upload the successful payment proof."
+msgstr "बाह्य माध्यमबाट भुक्तानी गरी सफल भुक्तानी प्रमाण अपलोड गर्नुहोस्।"
+
+msgid "Authorized staff review the application and payment."
+msgstr "अधिकृत कर्मचारीले आवेदन र भुक्तानी समीक्षा गर्छन्।"
+
+msgid "Approval creates or links the person and issues a permanent membership number."
+msgstr "स्वीकृतिले व्यक्तिलाई सिर्जना वा जोडेर स्थायी सदस्यता नम्बर जारी गर्छ।"
+
+msgid "Important safeguards"
+msgstr "महत्त्वपूर्ण सुरक्षा उपाय"
+
+msgid "Payment alone does not guarantee approval."
+msgstr "भुक्तानी मात्रले स्वीकृति ग्यारेन्टी गर्दैन।"
+
+msgid ""
+"Never share an OTP, password, bank PIN, passport, or citizenship document through the payment "
+"form."
+msgstr "भुक्तानी फारामबाट OTP, पासवर्ड, बैंक PIN, राहदानी वा नागरिकता कागजात कहिल्यै साझा नगर्नुहोस्।"
+
+msgid "A person may hold more than one valid membership, each with its own number."
+msgstr "एउटै व्यक्तिसँग एकभन्दा बढी वैध सदस्यता हुन सक्छ, प्रत्येकको छुट्टै नम्बर हुन्छ।"
+
+msgid "Issued membership numbers are not reused after archiving."
+msgstr "जारी सदस्यता नम्बर अभिलेखीकरणपछि पुनः प्रयोग हुँदैन।"
+
+msgid ""
+"Need counseling rather than membership? Counseling is available without becoming a member or "
+"paying a membership fee."
+msgstr "सदस्यताभन्दा परामर्श चाहिएको हो? सदस्य नबनी वा सदस्यता शुल्क नतिरी परामर्श लिन सकिन्छ।"
+
+msgid "Apply for MRN Ilam membership and continue to the verified manual payment process."
+msgstr "MRN इलाम सदस्यताका लागि आवेदन गरी पुष्टि भएको म्यानुअल भुक्तानी प्रक्रियामा जानुहोस्।"
+
+msgid "Published membership fees"
+msgstr "प्रकाशित सदस्यता शुल्क"
+
+msgid "NPR"
+msgstr "रु."
+
+msgid "Payment is reviewed by authorized staff before membership is activated."
+msgstr "सदस्यता सक्रिय हुनुअघि अधिकृत कर्मचारीले भुक्तानी समीक्षा गर्छन्।"
+
+msgid ""
+"Online membership applications are temporarily paused until the organization publishes verified "
+"payment details."
+msgstr ""
+"संस्थाले पुष्टि भएको भुक्तानी विवरण प्रकाशित नगरेसम्म अनलाइन सदस्यता आवेदन अस्थायी रूपमा रोकिएको "
+"छ।"
+
+#, python-format
+msgid ""
+"By submitting, you confirm that the information is accurate and that you have read the <a "
+"href=\"%(privacy_url)s\">privacy policy</a>."
+msgstr ""
+"पठाएर तपाईंले जानकारी सही भएको र <a href=\"%(privacy_url)s\">गोपनीयता नीति</a> पढेको पुष्टि "
+"गर्नुहुन्छ।"
+
+msgid "Official recipient"
+msgstr "आधिकारिक प्राप्तकर्ता"
+
+msgid ""
+"Scan the QR and confirm that the recipient name exactly matches the official recipient shown on "
+"this page. Stop and contact the organization if anything differs."
+msgstr ""
+"QR स्क्यान गरी प्राप्तकर्ताको नाम यस पृष्ठमा देखाइएको आधिकारिक प्राप्तकर्तासँग ठ्याक्कै मिलेको "
+"पुष्टि गर्नुहोस्। फरक भए रोकिएर संस्थालाई सम्पर्क गर्नुहोस्।"
+
+msgid "Read how payment evidence is handled"
+msgstr "भुक्तानी प्रमाण कसरी व्यवस्थापन हुन्छ पढ्नुहोस्"
+
+msgid "Official membership-payment QR code"
+msgstr "आधिकारिक सदस्यता भुक्तानी QR कोड"
+
+msgid "Verify recipient"
+msgstr "प्राप्तकर्ता पुष्टि गर्नुहोस्"
+
+msgid "Online membership payment is temporarily unavailable"
+msgstr "अनलाइन सदस्यता भुक्तानी अस्थायी रूपमा उपलब्ध छैन"
+
+msgid ""
+"The organization has not yet published a verified QR code and recipient. Do not send money using "
+"an unverified QR. Contact the organization for current instructions."
+msgstr ""
+"संस्थाले पुष्टि भएको QR कोड र प्राप्तकर्ता अझै प्रकाशित गरेको छैन। पुष्टि नभएको QR प्रयोग गरी रकम"
+" नपठाउनुहोस्। हालको निर्देशनका लागि संस्थालाई सम्पर्क गर्नुहोस्।"
+
+msgid ""
+"Use a complete phone number. International formats such as +977, +91, +971, +974, +966, and +60 "
+"are accepted."
+msgstr ""
+"पूर्ण फोन नम्बर प्रयोग गर्नुहोस्। +977, +91, +971, +974, +966 र +60 जस्ता अन्तर्राष्ट्रिय ढाँचा "
+"स्वीकार हुन्छन्।"
+
+msgid "Enter a valid phone number, preferably with + and the country code."
+msgstr "सम्भव भए + र देश कोडसहित वैध फोन नम्बर लेख्नुहोस्।"
+
+msgid ""
+"I have read the privacy information and consent to the use of my details for this membership "
+"application."
+msgstr "मैले गोपनीयता जानकारी पढेको छु र यस सदस्यता आवेदनका लागि मेरा विवरण प्रयोग गर्न सहमति दिन्छु।"
+
+msgid "Privacy consent"
+msgstr "गोपनीयता सहमति"
+
+msgid "Privacy consent is required to submit a membership application."
+msgstr "सदस्यता आवेदन पठाउन गोपनीयता सहमति आवश्यक छ।"
+
+msgid ""
+"Online membership payment is temporarily unavailable. Please contact the organization before "
+"submitting an application."
+msgstr "अनलाइन सदस्यता भुक्तानी अस्थायी रूपमा उपलब्ध छैन। आवेदन पठाउनुअघि संस्थालाई सम्पर्क गर्नुहोस्।"
+
+msgid "Payment proof was received for membership verification."
+msgstr "सदस्यता प्रमाणीकरणका लागि भुक्तानी प्रमाण प्राप्त भयो।"
+
+msgid "Enter a rejection reason in the administrator note before rejecting payment."
+msgstr "भुक्तानी अस्वीकार गर्नुअघि प्रशासक टिप्पणीमा अस्वीकारको कारण लेख्नुहोस्।"
+
+msgid "How MRN Ilam handles counseling, contact, membership, and payment information."
+msgstr "MRN इलामले परामर्श, सम्पर्क, सदस्यता र भुक्तानीसम्बन्धी जानकारी कसरी व्यवस्थापन गर्छ।"
+
+msgid "Payment Screenshot"
+msgstr "भुक्तानीको स्क्रिनसट"
+
+msgid "Published programs, community activities, and events from MRN Ilam."
+msgstr "MRN इलामका प्रकाशित कार्यक्रम, सामुदायिक गतिविधि र आयोजनाहरू।"
+
+msgid "Service boundaries, responsible use, and information disclaimer for MRN Ilam."
+msgstr "MRN इलामका सेवाको सीमा, जिम्मेवार प्रयोग र सूचना अस्वीकरण।"
+
+msgid "The screenshot must be 5 MB or smaller."
+msgstr "स्क्रिनसट ५ एमबी वा सोभन्दा सानो हुनुपर्छ।"
+
+msgid "The uploaded screenshot is not a valid image."
+msgstr "अपलोड गरिएको स्क्रिनसट मान्य तस्बिर होइन।"
+
+msgid ""
+"This transaction reference has already been submitted. Contact the organization if you believe "
+"this is a mistake."
+msgstr ""
+"यो कारोबार सन्दर्भ नम्बर पहिले नै पेश गरिएको छ। यो त्रुटि हो जस्तो लागेमा संस्थासँग सम्पर्क "
+"गर्नुहोस्।"
+
+msgid "Transaction / Reference ID"
+msgstr "कारोबार / सन्दर्भ नम्बर"
+
+msgid "Upload a JPG, PNG, or WebP image."
+msgstr "JPG, PNG वा WebP तस्बिर अपलोड गर्नुहोस्।"
+
+msgid "The verified fee has not been published yet."
+msgstr "प्रमाणित शुल्क अझै प्रकाशित गरिएको छैन।"
+
+msgid "Address (English)"
+msgstr "ठेगाना (अङ्ग्रेजी)"
+
+msgid "Address (Nepali)"
+msgstr "ठेगाना (नेपाली)"
+
+msgid "Designation (English)"
+msgstr "पद (अङ्ग्रेजी)"
+
+msgid "Designation (Nepali)"
+msgstr "पद (नेपाली)"
+
+msgid "Enter the verified General Membership fee."
+msgstr "प्रमाणित साधारण सदस्यता शुल्क लेख्नुहोस्।"
+
+msgid "Enter the verified Life Membership fee."
+msgstr "प्रमाणित आजीवन सदस्यता शुल्क लेख्नुहोस्।"
+
+msgid "Enter the verified payment recipient name."
+msgstr "प्रमाणित भुक्तानी प्राप्तकर्ताको नाम लेख्नुहोस्।"
+
+msgid "Extension / Phone"
+msgstr "एक्सटेन्सन / फोन"
+
+msgid "Official Email"
+msgstr "आधिकारिक इमेल"
+
+msgid "Profile Photo"
+msgstr "प्रोफाइल तस्बिर"
+
+msgid "Registration authority"
+msgstr "दर्ता गर्ने निकाय"
+
+msgid "Service area"
+msgstr "सेवा क्षेत्र"
+
+msgid "Team Member"
+msgstr "समिति सदस्य"
+
+msgid "Team Members"
+msgstr "समिति सदस्यहरू"
+
+msgid "Upload the verified official payment QR image."
+msgstr "प्रमाणित आधिकारिक भुक्तानी QR तस्बिर अपलोड गर्नुहोस्।"
+
+# Final client-ready payment review translations
+msgid "Applicant-facing rejection reason"
+msgstr "आवेदकलाई देखाइने अस्वीकार कारण"
+
+msgid "Required before rejection. Write a clear reason safe to show to the applicant."
+msgstr "अस्वीकार गर्नुअघि आवेदकलाई देखाउन मिल्ने स्पष्ट कारण लेख्नुहोस्।"
+
+msgid "Internal staff note. This is not shown to the applicant."
+msgstr "आन्तरिक कर्मचारी टिप्पणी। यो आवेदकलाई देखाइँदैन।"
+
+msgid "Enter an applicant-facing rejection reason before rejecting payment."
+msgstr "भुक्तानी अस्वीकार गर्नुअघि आवेदकलाई देखाइने स्पष्ट कारण लेख्नुहोस्।"
+
+msgid "Reason"
+msgstr "कारण"
+
+msgid "Submit corrected payment proof"
+msgstr "सुधारिएको भुक्तानी प्रमाण पेश गर्नुहोस्"
+
+#, python-format
+msgid ""
+"Records are retained according to the organization’s approved retention period: "
+"%(privacy_retention_period)s. Some membership-number and approval audit records may be retained "
+"longer to prevent number reuse and protect organizational integrity."
+msgstr ""
+"अभिलेखहरू संस्थाले स्वीकृत गरेको अवधिअनुसार राखिन्छन्: %(privacy_retention_period)s। सदस्यता "
+"नम्बर पुनः प्रयोग हुन नदिन र संस्थागत अभिलेखको विश्वसनीयता जोगाउन केही सदस्यता नम्बर तथा स्वीकृति"
+" अभिलेख अझ लामो समयसम्म राखिन सक्छन्।"
+
+#: counseling/templates/counseling/request.html templates/core/contact.html
+#, python-format
+msgid ""
+"Read how we use and protect your information in the <a href=\"%(privacy_url)s\">privacy "
+"policy</a>."
+msgstr ""
+"हामीले तपाईंको जानकारी कसरी प्रयोग र सुरक्षित गर्छौं भन्ने कुरा <a "
+"href=\"%(privacy_url)s\">गोपनीयता नीतिमा</a> पढ्नुहोस्।"
+
+msgid "A chairperson's message has not been published yet."
+msgstr "अध्यक्षको सन्देश अझै प्रकाशित गरिएको छैन।"
+
+msgid ""
+"A genuine counselor or office should not ask for your password, OTP, bank PIN, or social-media "
+"login."
+msgstr ""
+"विश्वसनीय परामर्शदाता वा कार्यालयले तपाईंको पासवर्ड, OTP, बैंक PIN वा सामाजिक सञ्जालको लगइन "
+"माग्नु हुँदैन।"
+
+msgid ""
+"A person may have more than one membership. Private contact, payment, and internal information is"
+" not shown."
+msgstr "एउटै व्यक्तिको एकभन्दा बढी सदस्यता हुन सक्छ। निजी सम्पर्क, भुक्तानी र आन्तरिक विवरण देखाइँदैन।"
+
+msgid ""
+"A person may have more than one membership. Private contact, payment, identity-document, and "
+"internal information is not shown."
+msgstr ""
+"एउटै व्यक्तिको एकभन्दा बढी सदस्यता हुन सक्छ। निजी सम्पर्क, भुक्तानी, परिचयपत्र र आन्तरिक विवरण "
+"देखाइँदैन।"
+
+msgid ""
+"A verified QR code and recipient are not currently available. Do not pay through an unverified "
+"QR. Contact the organization for current instructions."
+msgstr ""
+"अहिले प्रमाणित QR कोड र प्राप्तकर्ताको विवरण उपलब्ध छैन। अप्रमाणित QR बाट भुक्तानी नगर्नुहोस्। "
+"हालको निर्देशनका लागि संस्थासँग सम्पर्क गर्नुहोस्।"
+
+msgid "About"
+msgstr "हाम्रो बारेमा"
+
+msgid "Add only information that helps staff verify the payment."
+msgstr "भुक्तानी पुष्टि गर्न कर्मचारीलाई आवश्यक पर्ने जानकारी मात्र लेख्नुहोस्।"
+
+msgid "Address or locality"
+msgstr "ठेगाना वा टोल"
+
+msgid "After approval, the person is linked or created and a permanent membership number is issued."
+msgstr "स्वीकृत भएपछि व्यक्तिको विवरण जोडिन्छ वा नयाँ विवरण बनाइन्छ र स्थायी सदस्यता नम्बर जारी हुन्छ।"
+
+msgid "After returning home"
+msgstr "स्वदेश फर्किएपछि"
+
+msgid "All membership types"
+msgstr "सबै सदस्यता प्रकार"
+
+msgid ""
+"Answers to common questions about counseling, membership, safety, and foreign-employment "
+"information."
+msgstr "परामर्श, सदस्यता, सुरक्षा र वैदेशिक रोजगारसम्बन्धी सामान्य प्रश्नका उत्तर।"
+
+msgid "Application"
+msgstr "आवेदन"
+
+msgid "Application details"
+msgstr "आवेदन विवरण"
+
+msgid "Apply for MRN Ilam membership and continue to the verified payment step."
+msgstr "MRN इलामको सदस्यताका लागि आवेदन दिनुहोस् र प्रमाणित भुक्तानी चरणमा जानुहोस्।"
+
+msgid "Apply for membership"
+msgstr "सदस्यताका लागि आवेदन दिनुहोस्"
+
+msgid "Ask about membership"
+msgstr "सदस्यताबारे सोध्नुहोस्"
+
+msgid "Ask about your situation"
+msgstr "आफ्नो अवस्थाबारे सोध्नुहोस्"
+
+msgid "Ask an official office for help"
+msgstr "आधिकारिक निकायसँग सहयोग माग्नुहोस्"
+
+msgid ""
+"Ask for a written list of charges and official receipts. Do not rely only on verbal promises or "
+"personal-account transfers."
+msgstr ""
+"लाग्ने शुल्कको लिखित सूची र आधिकारिक रसिद माग्नुहोस्। मौखिक वाचा वा व्यक्तिगत खातामा गरिएको "
+"भुक्तानीमा मात्र भर नपर्नुहोस्।"
+
+msgid "Authorized staff can now review it. Response time depends on the request and staff availability."
+msgstr ""
+"अब अधिकृत कर्मचारीले अनुरोध हेर्न सक्छन्। जवाफ दिन लाग्ने समय अनुरोधको प्रकृति र कर्मचारीको "
+"उपलब्धतामा निर्भर हुन्छ।"
+
+msgid "Authorized staff check the application and payment proof."
+msgstr "अधिकृत कर्मचारीले आवेदन र भुक्तानी प्रमाण जाँच गर्छन्।"
+
+msgid "Authorized staff check what information or support you may need."
+msgstr "अधिकृत कर्मचारीले तपाईंलाई कस्तो जानकारी वा सहयोग चाहिन्छ भनेर हेर्छन्।"
+
+msgid ""
+"Authorized staff still need to verify it. Sending proof does not by itself confirm payment or "
+"activate membership."
+msgstr ""
+"अधिकृत कर्मचारीले अझै प्रमाणित गर्न बाँकी छ। प्रमाण पठाउँदैमा भुक्तानी पुष्टि वा सदस्यता सक्रिय "
+"हुँदैन।"
+
+msgid "Become a member of MRN Ilam"
+msgstr "MRN इलामको सदस्य बन्नुहोस्"
+
+msgid "Before deciding to work abroad"
+msgstr "विदेश जाने निर्णय गर्नुअघि"
+
+msgid "Before you apply"
+msgstr "आवेदन दिनुअघि"
+
+msgid "Before you pay"
+msgstr "भुक्तानी गर्नुअघि"
+
+msgid "Best time to contact you (optional)"
+msgstr "तपाईंलाई सम्पर्क गर्न उपयुक्त समय (वैकल्पिक)"
+
+msgid "Check before paying"
+msgstr "भुक्तानी गर्नुअघि जाँच गर्नुहोस्"
+
+msgid "Check everything before you pay"
+msgstr "पैसा तिर्नुअघि सबै कुरा जाँच गर्नुहोस्"
+
+msgid "Check important information with the official source"
+msgstr "महत्त्वपूर्ण जानकारी आधिकारिक स्रोतबाट जाँच गर्नुहोस्"
+
+msgid "Check safety information"
+msgstr "सुरक्षा जानकारी हेर्नुहोस्"
+
+msgid "Check the fee and recipient"
+msgstr "शुल्क र प्राप्तकर्ता जाँच गर्नुहोस्"
+
+msgid "Check the information and try again. If the problem continues, return to the homepage."
+msgstr "जानकारी जाँच गरी फेरि प्रयास गर्नुहोस्। समस्या कायम रहे गृहपृष्ठमा फर्कनुहोस्।"
+
+msgid "Check the recruiter and employer"
+msgstr "म्यानपावर र रोजगारदाता जाँच गर्नुहोस्"
+
+msgid "Check the recruiter and employer through official sources."
+msgstr "म्यानपावर र रोजगारदाता आधिकारिक स्रोतबाट जाँच गर्नुहोस्।"
+
+msgid ""
+"Check the required official approvals and keep safe copies of important documents before "
+"departure."
+msgstr ""
+"प्रस्थानअघि आवश्यक आधिकारिक स्वीकृति जाँच गर्नुहोस् र महत्त्वपूर्ण कागजातका प्रतिलिपि सुरक्षित "
+"राख्नुहोस्।"
+
+msgid "Check the spelling, try the membership number, or use fewer filters."
+msgstr "हिज्जे जाँच गर्नुहोस्, सदस्यता नम्बर प्रयोग गर्नुहोस् वा कम फिल्टर छान्नुहोस्।"
+
+msgid "Choose a legal and verified process"
+msgstr "कानुनी र प्रमाणित प्रक्रिया रोज्नुहोस्"
+
+msgid "Choose language"
+msgstr "भाषा छान्नुहोस्"
+
+msgid "Clear filters"
+msgstr "फिल्टर हटाउनुहोस्"
+
+msgid ""
+"Clear foreign-employment information, counseling, safety guidance, official resources, and public"
+" membership records for Ilam."
+msgstr ""
+"इलामका लागि वैदेशिक रोजगारसम्बन्धी स्पष्ट जानकारी, परामर्श, सुरक्षा मार्गदर्शन, आधिकारिक स्रोत र "
+"सार्वजनिक सदस्य विवरण।"
+
+msgid "Clear guidance for safer foreign employment"
+msgstr "सुरक्षित वैदेशिक रोजगारीका लागि स्पष्ट मार्गदर्शन"
+
+msgid "Clear guidance for safer foreign employment."
+msgstr "सुरक्षित वैदेशिक रोजगारीका लागि स्पष्ट मार्गदर्शन।"
+
+msgid ""
+"Clear guidance on foreign-employment processes, job-offer checks, fraud warning signs, "
+"counseling, and official help."
+msgstr ""
+"वैदेशिक रोजगार प्रक्रिया, रोजगारी प्रस्ताव जाँच, ठगीका संकेत, परामर्श र आधिकारिक सहयोगबारे स्पष्ट"
+" मार्गदर्शन।"
+
+msgid "Close menu"
+msgstr "मेनु बन्द गर्नुहोस्"
+
+msgid ""
+"Common warning signs of unsafe job offers, payment pressure, document problems, and foreign-"
+"employment fraud."
+msgstr ""
+"असुरक्षित रोजगारी प्रस्ताव, पैसा तिर्ने दबाब, कागजातको समस्या र वैदेशिक रोजगार ठगीका सामान्य "
+"चेतावनी संकेत।"
+
+msgid ""
+"Compare the job, workplace, salary, deductions, working hours, leave, accommodation, insurance, "
+"and return terms."
+msgstr "काम, कार्यस्थल, तलब, कटौती, काम गर्ने समय, बिदा, बसोबास, बीमा र फर्कने सर्तहरू तुलना गर्नुहोस्।"
+
+msgid "Complete the application"
+msgstr "आवेदन पूरा गर्नुहोस्"
+
+msgid "Complete the private form and explain your question or problem."
+msgstr "गोप्य फाराम भरी आफ्नो प्रश्न वा समस्या लेख्नुहोस्।"
+
+msgid "Confirm labor approval and documents"
+msgstr "श्रम स्वीकृति र कागजात पुष्टि गर्नुहोस्"
+
+msgid ""
+"Confirm names, licenses where required, employer details, contact information, and official "
+"records."
+msgstr "नाम, आवश्यक इजाजतपत्र, रोजगारदाताको विवरण, सम्पर्क जानकारी र आधिकारिक अभिलेख पुष्टि गर्नुहोस्।"
+
+msgid "Contact the organization if you find information that is outdated, inaccurate, or unclear."
+msgstr "पुरानो, गलत वा अस्पष्ट जानकारी भेटिए संस्थासँग सम्पर्क गर्नुहोस्।"
+
+msgid ""
+"Contact the relevant government office, police, embassy, labor authority, or qualified "
+"professional."
+msgstr "सम्बन्धित सरकारी कार्यालय, प्रहरी, दूतावास, श्रम निकाय वा योग्य विशेषज्ञसँग सम्पर्क गर्नुहोस्।"
+
+msgid "Continue to payment details"
+msgstr "भुक्तानी विवरणमा जानुहोस्"
+
+msgid ""
+"Counseling and membership are separate. You do not need to become a member or pay to receive "
+"counseling."
+msgstr "परामर्श र सदस्यता फरक सेवा हुन्। परामर्श लिन सदस्य बन्न वा शुल्क तिर्न आवश्यक छैन।"
+
+msgid "Counseling is free. You do not need to be a member."
+msgstr "परामर्श निःशुल्क छ। सदस्य हुन आवश्यक छैन।"
+
+msgid "Counseling request form"
+msgstr "परामर्श अनुरोध फाराम"
+
+msgid "Counseling request sent"
+msgstr "परामर्श अनुरोध पठाइयो"
+
+msgid "Country of foreign employment (optional)"
+msgstr "वैदेशिक रोजगारीको देश (वैकल्पिक)"
+
+msgid "Current membership fees"
+msgstr "हालको सदस्यता शुल्क"
+
+msgid "Current safety alerts"
+msgstr "हालका सुरक्षा सूचना"
+
+msgid ""
+"Depending on the service, this may include your name, phone number, email, general location, "
+"counseling concern, membership details, and payment proof."
+msgstr ""
+"सेवाअनुसार यसमा तपाईंको नाम, फोन नम्बर, इमेल, सामान्य स्थान, परामर्शको विषय, सदस्यता विवरण र "
+"भुक्तानी प्रमाण पर्न सक्छ।"
+
+msgid "Details do not match"
+msgstr "विवरणहरू मेल खाँदैनन्"
+
+msgid "Do not include passwords, OTPs, bank PINs, or full identity-document details."
+msgstr "पासवर्ड, OTP, बैंक PIN वा परिचयपत्रको पूरा विवरण नलेख्नुहोस्।"
+
+msgid "Do not include passwords, OTPs, bank PINs, or full passport or citizenship details."
+msgstr "पासवर्ड, OTP, बैंक PIN वा राहदानी वा नागरिकताको पूरा विवरण नलेख्नुहोस्।"
+
+msgid ""
+"Do not misuse forms, upload harmful files, pretend to be another person, or submit false payment "
+"proof. Access may be limited when misuse is detected."
+msgstr ""
+"फारामको दुरुपयोग नगर्नुहोस्, हानिकारक फाइल नअपलोड गर्नुहोस्, अरू व्यक्ति बनेर विवरण नदिनुहोस् र "
+"झुटो भुक्तानी प्रमाण नपठाउनुहोस्। दुरुपयोग भेटिए पहुँच सीमित हुन सक्छ।"
+
+msgid "Do not post private identity, banking, or contact details publicly."
+msgstr "निजी परिचय, बैंक वा सम्पर्क विवरण सार्वजनिक रूपमा नपोस्ट गर्नुहोस्।"
+
+msgid "Do not send more money until you have checked the situation, when it is safe to stop."
+msgstr "रोक्न सुरक्षित हुँदा, अवस्था जाँच नगरेसम्म थप पैसा नपठाउनुहोस्।"
+
+msgid "Do not send passwords, OTPs, bank PINs, or full passport or citizenship details."
+msgstr "पासवर्ड, OTP, बैंक PIN वा राहदानी वा नागरिकताको पूरा विवरण नपठाउनुहोस्।"
+
+msgid "Do not share this status link publicly. It contains private application information."
+msgstr "यो स्थिति लिङ्क सार्वजनिक रूपमा नबाँड्नुहोस्। यसमा आवेदनको निजी जानकारी छ।"
+
+msgid ""
+"Do not upload citizenship, passport, password, OTP, or bank PIN information. Payment proof is "
+"visible only to authorized reviewers."
+msgstr ""
+"नागरिकता, राहदानी, पासवर्ड, OTP वा बैंक PIN को जानकारी अपलोड नगर्नुहोस्। भुक्तानी प्रमाण अधिकृत "
+"समीक्षकले मात्र देख्न सक्छन्।"
+
+msgid "Emergency and urgent contacts"
+msgstr "आपतकालीन तथा अत्यावश्यक सम्पर्क"
+
+msgid "Emergency contact details will appear here after they are verified by the organization."
+msgstr "संस्थाले प्रमाणित गरेपछि आपतकालीन सम्पर्क विवरण यहाँ देखिनेछ।"
+
+msgid "Emergency help"
+msgstr "आपतकालीन सहयोग"
+
+msgid "Enter a general locality only. Do not enter a private street address unless necessary."
+msgstr "सामान्य टोल वा स्थान मात्र लेख्नुहोस्। आवश्यक नभएसम्म निजी घरको ठेगाना नलेख्नुहोस्।"
+
+msgid "Enter a phone number that the organization can use to contact you."
+msgstr "संस्थाले तपाईंलाई सम्पर्क गर्न सक्ने फोन नम्बर लेख्नुहोस्।"
+
+msgid "Enter accurate details and a phone number the organization can use to contact you."
+msgstr "सही विवरण र संस्थाले सम्पर्क गर्न सक्ने फोन नम्बर लेख्नुहोस्।"
+
+msgid "Enter the reference shown on the successful payment receipt, when available."
+msgstr "उपलब्ध भए सफल भुक्तानी रसिदमा देखिएको सन्दर्भ नम्बर लेख्नुहोस्।"
+
+msgid "Established"
+msgstr "स्थापना"
+
+msgid "Fee"
+msgstr "शुल्क"
+
+msgid "Fields marked as required must be completed before you can send the message."
+msgstr "सन्देश पठाउनुअघि अनिवार्य भनेर चिनाइएका सबै विवरण भर्नुहोस्।"
+
+msgid "Find a member"
+msgstr "सदस्य खोज्नुहोस्"
+
+msgid "Find official information and support"
+msgstr "आधिकारिक जानकारी र सहयोग खोज्नुहोस्"
+
+msgid "Find official resources"
+msgstr "आधिकारिक स्रोत खोज्नुहोस्"
+
+msgid "Find simple answers to common questions about our services and safer foreign employment."
+msgstr "हाम्रा सेवा र सुरक्षित वैदेशिक रोजगारीसम्बन्धी सामान्य प्रश्नका सरल उत्तर खोज्नुहोस्।"
+
+msgid "Find the right office or service"
+msgstr "सम्बन्धित निकाय वा सेवा खोज्नुहोस्"
+
+msgid ""
+"Find verified government, embassy, labor, welfare, and emergency information related to foreign "
+"employment."
+msgstr "वैदेशिक रोजगारसम्बन्धी प्रमाणित सरकारी, दूतावास, श्रम, कल्याण र आपतकालीन जानकारी खोज्नुहोस्।"
+
+msgid ""
+"For trafficking, violence, detention, threats, or a medical emergency, contact the relevant "
+"police, emergency service, embassy or consulate, labor authority, or medical service immediately."
+msgstr ""
+"मानव बेचबिखन, हिंसा, हिरासत, धम्की वा स्वास्थ्य आपतकाल भए सम्बन्धित प्रहरी, आपतकालीन सेवा, "
+"दूतावास वा वाणिज्य दूतावास, श्रम निकाय वा स्वास्थ्य सेवामा तुरुन्त सम्पर्क गर्नुहोस्।"
+
+msgid ""
+"For violence, trafficking, detention, threats, or a medical emergency, contact the relevant local"
+" emergency service, police, embassy or consulate, labor authority, medical service, or legal "
+"support immediately."
+msgstr ""
+"हिंसा, मानव बेचबिखन, हिरासत, धम्की वा स्वास्थ्य आपतकाल भए स्थानीय आपतकालीन सेवा, प्रहरी, दूतावास "
+"वा वाणिज्य दूतावास, श्रम निकाय, स्वास्थ्य सेवा वा कानुनी सहयोगमा तुरुन्त सम्पर्क गर्नुहोस्।"
+
+msgid "Foreign-employment information and counseling"
+msgstr "वैदेशिक रोजगार सूचना तथा परामर्श"
+
+msgid "Fraud warning signs and safety information"
+msgstr "ठगीका चेतावनी संकेत र सुरक्षा जानकारी"
+
+msgid "From the chairperson"
+msgstr "अध्यक्षको सन्देश"
+
+msgid "Get counseling"
+msgstr "परामर्श लिनुहोस्"
+
+msgid "Get help when there is a problem or danger"
+msgstr "समस्या वा खतरा हुँदा सहयोग लिनुहोस्"
+
+msgid "Get immediate help when someone is in danger"
+msgstr "कोही खतरामा भए तुरुन्त सहयोग लिनुहोस्"
+
+msgid "Get urgent help now"
+msgstr "अहिले नै अत्यावश्यक सहयोग लिनुहोस्"
+
+msgid "Give only the information needed to explain your concern. Required fields are clearly marked."
+msgstr "आफ्नो समस्या बुझाउन आवश्यक जानकारी मात्र दिनुहोस्। अनिवार्य विवरण स्पष्ट रूपमा चिनाइएको छ।"
+
+msgid "Go to counseling form"
+msgstr "परामर्श फाराममा जानुहोस्"
+
+msgid "Go to homepage"
+msgstr "गृहपृष्ठमा जानुहोस्"
+
+msgid "Have a question about foreign employment?"
+msgstr "वैदेशिक रोजगारीबारे प्रश्न छ?"
+
+msgid "Help"
+msgstr "सहयोग"
+
+msgid "Help and information"
+msgstr "सहयोग र जानकारी"
+
+msgid "How MRN Ilam uses and protects counseling, contact, membership, and payment information."
+msgstr "MRN इलामले परामर्श, सम्पर्क, सदस्यता र भुक्तानीसम्बन्धी जानकारी कसरी प्रयोग र सुरक्षित गर्छ।"
+
+msgid "How long records are kept"
+msgstr "अभिलेख कति समय राखिन्छ"
+
+msgid "How should we contact you?"
+msgstr "हामीले तपाईंलाई कसरी सम्पर्क गर्ने?"
+
+msgid "How we can help"
+msgstr "हामी कसरी सहयोग गर्छौं"
+
+msgid "How we protect payment proof"
+msgstr "भुक्तानी प्रमाण कसरी सुरक्षित राखिन्छ"
+
+msgid "How we use your information"
+msgstr "तपाईंको जानकारी कसरी प्रयोग गर्छौं"
+
+msgid "I agree that MRN Ilam may contact me about this message."
+msgstr "यस सन्देशबारे MRN इलामले मलाई सम्पर्क गर्न सक्छ भन्नेमा म सहमत छु।"
+
+msgid "I agree that MRN Ilam may contact me about this request."
+msgstr "यस अनुरोधबारे MRN इलामले मलाई सम्पर्क गर्न सक्छ भन्नेमा म सहमत छु।"
+
+msgid "I consent to the use of my details for this membership application."
+msgstr "यस सदस्यता आवेदनका लागि मेरो विवरण प्रयोग गर्न म सहमति दिन्छु।"
+
+msgid ""
+"If someone is in immediate danger, contact the relevant police, emergency service, embassy or "
+"consulate, labor authority, medical service, or other official service immediately."
+msgstr ""
+"कोही तुरुन्त खतरामा भए सम्बन्धित प्रहरी, आपतकालीन सेवा, दूतावास वा वाणिज्य दूतावास, श्रम निकाय, "
+"स्वास्थ्य सेवा वा अन्य आधिकारिक सेवामा तुरुन्त सम्पर्क गर्नुहोस्।"
+
+msgid ""
+"If someone is in immediate danger, contact the relevant police, emergency service, embassy or "
+"consulate, labor authority, or medical service now."
+msgstr ""
+"कोही तुरुन्त खतरामा भए सम्बन्धित प्रहरी, आपतकालीन सेवा, दूतावास वा वाणिज्य दूतावास, श्रम निकाय वा"
+" स्वास्थ्य सेवामा अहिले नै सम्पर्क गर्नुहोस्।"
+
+msgid "If you think something may be wrong"
+msgstr "केही गलत भएको शंका लागेमा"
+
+msgid "Important information"
+msgstr "महत्त्वपूर्ण जानकारी"
+
+msgid "Important limits of MRN Ilam's information, counseling, membership, and website services."
+msgstr "MRN इलामको सूचना, परामर्श, सदस्यता र वेबसाइट सेवाका महत्त्वपूर्ण सीमाहरू।"
+
+msgid "Information we may collect"
+msgstr "हामीले लिन सक्ने जानकारी"
+
+msgid "Issued membership numbers are not reused after a record is archived."
+msgstr "अभिलेख सुरक्षित राखिएपछि जारी भएको सदस्यता नम्बर फेरि प्रयोग गरिँदैन।"
+
+msgid "It is available only to authorized staff and is not published on the website."
+msgstr "यो अधिकृत कर्मचारीले मात्र हेर्न सक्छन् र वेबसाइटमा प्रकाशित हुँदैन।"
+
+msgid ""
+"Keep records of wages, working hours, messages, receipts, and any difference between your "
+"contract and actual work."
+msgstr "तलब, काम गर्ने समय, सन्देश, रसिद र करार तथा वास्तविक कामबीचको फरकको अभिलेख राख्नुहोस्।"
+
+msgid "Keep the evidence"
+msgstr "प्रमाण सुरक्षित राख्नुहोस्"
+
+msgid "Keep the successful payment receipt or screenshot."
+msgstr "सफल भुक्तानीको रसिद वा स्क्रिनसट सुरक्षित राख्नुहोस्।"
+
+msgid "Keep this number for your records. It cannot be used to view private details online."
+msgstr "यो नम्बर आफ्नो अभिलेखका लागि सुरक्षित राख्नुहोस्। यसबाट अनलाइन निजी विवरण हेर्न मिल्दैन।"
+
+msgid ""
+"Keep this private link. Authorized staff may contact the applicant using the details provided in "
+"the application."
+msgstr ""
+"यो निजी लिङ्क सुरक्षित राख्नुहोस्। अधिकृत कर्मचारीले आवेदनमा दिएको विवरण प्रयोग गरी आवेदकलाई "
+"सम्पर्क गर्न सक्छन्।"
+
+msgid ""
+"Know what is covered, what is not covered, how to make a claim, and whom your family should "
+"contact."
+msgstr "के समेटिन्छ, के समेटिँदैन, दाबी कसरी गर्ने र परिवारले कसलाई सम्पर्क गर्ने भन्ने बुझ्नुहोस्।"
+
+msgid "Last checked"
+msgstr "अन्तिम पटक जाँच गरिएको"
+
+msgid "Latest updates"
+msgstr "पछिल्ला सूचना"
+
+msgid "Leadership details have not been published yet."
+msgstr "नेतृत्वसम्बन्धी विवरण अझै प्रकाशित गरिएको छैन।"
+
+msgid "Learn about General and Life Membership, fees, application steps, payment review, and privacy."
+msgstr "साधारण र आजीवन सदस्यता, शुल्क, आवेदन चरण, भुक्तानी समीक्षा र गोपनीयताबारे जान्नुहोस्।"
+
+msgid "Learn about MRN Ilam, its purpose, leadership, official details, and chairperson's message."
+msgstr "MRN इलाम, यसको उद्देश्य, नेतृत्व, आधिकारिक विवरण र अध्यक्षको सन्देशबारे जान्नुहोस्।"
+
+msgid "Leave this blank if you do not use an English spelling."
+msgstr "अङ्ग्रेजी हिज्जे प्रयोग नगर्ने भए यो खाली छोड्नुहोस्।"
+
+msgid "Locality"
+msgstr "टोल वा स्थान"
+
+msgid "Long-term membership recorded separately from General Membership."
+msgstr "साधारण सदस्यताभन्दा छुट्टै अभिलेख हुने दीर्घकालीन सदस्यता।"
+
+msgid "Look for support with skills, work or business plans, finances, health, and family adjustment."
+msgstr ""
+"सीप, रोजगारी वा व्यवसाय योजना, आर्थिक अवस्था, स्वास्थ्य र पारिवारिक समायोजनका लागि सहयोग "
+"खोज्नुहोस्।"
+
+msgid ""
+"MRN Ilam provides information and counseling. It does not recruit workers, place people in jobs, "
+"issue visas, or guarantee labor approval, employment, travel, compensation, or any other result."
+msgstr ""
+"MRN इलामले सूचना र परामर्श प्रदान गर्छ। यसले श्रमिक भर्ती गर्दैन, रोजगारीमा पठाउँदैन, भिसा जारी "
+"गर्दैन र श्रम स्वीकृति, रोजगारी, यात्रा, क्षतिपूर्ति वा अन्य कुनै नतिजाको ग्यारेन्टी दिँदैन।"
+
+msgid ""
+"MRN Ilam provides reliable foreign-employment information, counseling, safety awareness, and "
+"member services."
+msgstr "MRN इलामले वैदेशिक रोजगारसम्बन्धी भरपर्दो सूचना, परामर्श, सुरक्षा सचेतना र सदस्य सेवा प्रदान गर्छ।"
+
+msgid "Make sure the job, salary, costs, and contract details match."
+msgstr "काम, तलब, खर्च र करारका विवरण मेल खान्छन् भन्ने सुनिश्चित गर्नुहोस्।"
+
+msgid "Member directory"
+msgstr "सदस्य निर्देशिका"
+
+msgid "Membership is activated"
+msgstr "सदस्यता सक्रिय हुन्छ"
+
+msgid "Membership payment"
+msgstr "सदस्यता भुक्तानी"
+
+msgid "Membership records"
+msgstr "सदस्यता अभिलेख"
+
+msgid "Membership requires approval"
+msgstr "सदस्यताका लागि स्वीकृति आवश्यक हुन्छ"
+
+msgid ""
+"Membership supports the organization and its community work. Counseling is free and available "
+"even if you are not a member."
+msgstr "सदस्यताले संस्था र यसको सामुदायिक कार्यलाई सहयोग गर्छ। सदस्य नभए पनि निःशुल्क परामर्श लिन सकिन्छ।"
+
+msgid "Membership type"
+msgstr "सदस्यता प्रकार"
+
+msgid "Money is requested through a personal account without a clear official reason and receipt."
+msgstr "स्पष्ट आधिकारिक कारण र रसिदबिना व्यक्तिगत खातामा पैसा मागिन्छ।"
+
+msgid "More review needed"
+msgstr "थप समीक्षा आवश्यक"
+
+msgid "Municipality or current location"
+msgstr "नगरपालिका वा हालको स्थान"
+
+msgid "Municipality or rural municipality"
+msgstr "नगरपालिका वा गाउँपालिका"
+
+msgid "Need counseling instead?"
+msgstr "परामर्श चाहिएको हो?"
+
+msgid "Never send an OTP, password, bank PIN, passport, or citizenship document through the payment form."
+msgstr "भुक्तानी फारामबाट OTP, पासवर्ड, बैंक PIN, राहदानी वा नागरिकताको कागजात कहिल्यै नपठाउनुहोस्।"
+
+msgid ""
+"Never send passwords, OTPs, bank PINs, or unnecessary identity documents. The website does not "
+"ask for them."
+msgstr "पासवर्ड, OTP, बैंक PIN वा अनावश्यक परिचयपत्र कहिल्यै नपठाउनुहोस्। वेबसाइटले यी माग्दैन।"
+
+msgid "Never share your OTP, password, or bank PIN."
+msgstr "आफ्नो OTP, पासवर्ड वा बैंक PIN कहिल्यै नबाँड्नुहोस्।"
+
+msgid "News and notices"
+msgstr "समाचार तथा सूचना"
+
+msgid "News, notices, and safety information"
+msgstr "समाचार, सूचना र सुरक्षा जानकारी"
+
+msgid "News, notices, events, and safety updates"
+msgstr "समाचार, सूचना, कार्यक्रम र सुरक्षा जानकारी"
+
+msgid "No clear written documents"
+msgstr "स्पष्ट लिखित कागजात छैन"
+
+msgid "No frequently asked questions have been published yet."
+msgstr "बारम्बार सोधिने प्रश्नहरू अझै प्रकाशित गरिएको छैन।"
+
+msgid "No public membership records are currently available."
+msgstr "हाल सार्वजनिक सदस्यता अभिलेख उपलब्ध छैन।"
+
+msgid "No resources are available in this category yet"
+msgstr "यस श्रेणीमा हाल कुनै स्रोत उपलब्ध छैन"
+
+msgid "Not approved"
+msgstr "स्वीकृत भएन"
+
+msgid "Note for the reviewer (optional)"
+msgstr "समीक्षकका लागि टिप्पणी (वैकल्पिक)"
+
+msgid "Official QR code for the selected membership fee"
+msgstr "छनोट गरिएको सदस्यता शुल्कको आधिकारिक QR कोड"
+
+msgid "Official information"
+msgstr "आधिकारिक जानकारी"
+
+msgid ""
+"Official registration and office details will be shown here after they are published by the "
+"organization."
+msgstr "संस्थाले प्रकाशित गरेपछि आधिकारिक दर्ता र कार्यालय विवरण यहाँ देखिनेछ।"
+
+msgid "One person may have more than one valid membership, each with its own number."
+msgstr "एउटै व्यक्तिको एकभन्दा बढी वैध सदस्यता हुन सक्छ र प्रत्येकको छुट्टै नम्बर हुन्छ।"
+
+msgid ""
+"One warning sign does not prove fraud, but it is a reason to stop, keep the evidence, and check "
+"through official sources before paying or agreeing."
+msgstr ""
+"एउटा चेतावनी संकेतले मात्र ठगी प्रमाणित गर्दैन, तर भुक्तानी वा सहमति दिनुअघि रोकिएर प्रमाण "
+"सुरक्षित राख्न र आधिकारिक स्रोतबाट जाँच गर्नुपर्ने कारण हो।"
+
+msgid ""
+"Online applications are paused because verified payment details are not currently available. "
+"Please contact the organization before paying anyone."
+msgstr ""
+"प्रमाणित भुक्तानी विवरण हाल उपलब्ध नभएकाले अनलाइन आवेदन रोकिएको छ। कसैलाई पैसा तिर्नुअघि "
+"संस्थासँग सम्पर्क गर्नुहोस्।"
+
+msgid ""
+"Only approved public membership information is shown. Phone numbers, email addresses, payment "
+"details, identity documents, and internal notes remain private."
+msgstr ""
+"स्वीकृत सार्वजनिक सदस्यता जानकारी मात्र देखाइन्छ। फोन नम्बर, इमेल, भुक्तानी विवरण, परिचयपत्र र "
+"आन्तरिक टिप्पणी निजी रहन्छन्।"
+
+msgid ""
+"Only authorized staff with the correct role can access private counseling and payment "
+"information. Public member pages show only information approved for publication."
+msgstr ""
+"उचित जिम्मेवारी भएका अधिकृत कर्मचारीले मात्र निजी परामर्श र भुक्तानी जानकारी हेर्न सक्छन्। "
+"सार्वजनिक सदस्य पृष्ठमा प्रकाशनका लागि स्वीकृत जानकारी मात्र देखाइन्छ।"
+
+msgid "Open official contact"
+msgstr "आधिकारिक सम्पर्क खोल्नुहोस्"
+
+msgid "Open official website"
+msgstr "आधिकारिक वेबसाइट खोल्नुहोस्"
+
+msgid "Organization details"
+msgstr "संस्थाको विवरण"
+
+msgid "Original documents are kept"
+msgstr "मूल कागजात राखिन्छ"
+
+msgid "Our commitment"
+msgstr "हाम्रो प्रतिबद्धता"
+
+msgid "Our purpose"
+msgstr "हाम्रो उद्देश्य"
+
+msgid "Our services"
+msgstr "हाम्रा सेवा"
+
+msgid "Our team reviews it"
+msgstr "हाम्रो टोलीले समीक्षा गर्छ"
+
+msgid "PDF, JPG, PNG, or WebP only, up to 5 MB. Upload a file only when it helps explain your concern."
+msgstr ""
+"PDF, JPG, PNG वा WebP मात्र, अधिकतम ५ एमबी। आफ्नो समस्या बुझाउन आवश्यक भए मात्र फाइल अपलोड "
+"गर्नुहोस्।"
+
+msgid "Pay and upload proof"
+msgstr "भुक्तानी गरी प्रमाण अपलोड गर्नुहोस्"
+
+msgid "Pay outside the website and upload the successful receipt or screenshot for private review."
+msgstr "वेबसाइटबाहिर भुक्तानी गरी सफल रसिद वा स्क्रिनसट निजी समीक्षाका लागि अपलोड गर्नुहोस्।"
+
+msgid "Pay the exact amount"
+msgstr "ठ्याक्कै तोकिएको रकम तिर्नुहोस्"
+
+msgid "Pay the membership fee and upload proof"
+msgstr "सदस्यता शुल्क तिरी प्रमाण अपलोड गर्नुहोस्"
+
+msgid "Pay the published membership fee and submit private payment proof for staff review."
+msgstr "प्रकाशित सदस्यता शुल्क तिरी कर्मचारीको समीक्षाका लागि निजी भुक्तानी प्रमाण पठाउनुहोस्।"
+
+msgid "Payment alone does not confirm membership."
+msgstr "भुक्तानी मात्रले सदस्यता पुष्टि हुँदैन।"
+
+msgid "Payment details"
+msgstr "भुक्तानी विवरण"
+
+msgid "Payment receipt or screenshot"
+msgstr "भुक्तानी रसिद वा स्क्रिनसट"
+
+msgid "Payment to a personal account"
+msgstr "व्यक्तिगत खातामा भुक्तानी"
+
+msgid "Plan your documents, final pay, claims, health needs, travel, and communication with your family."
+msgstr "कागजात, अन्तिम तलब, दाबी, स्वास्थ्य आवश्यकता, यात्रा र परिवारसँग सम्पर्कको योजना बनाउनुहोस्।"
+
+msgid "Please check again later for new activities and events."
+msgstr "नयाँ गतिविधि र कार्यक्रमका लागि पछि फेरि हेर्नुहोस्।"
+
+msgid "Please check again later."
+msgstr "कृपया पछि फेरि हेर्नुहोस्।"
+
+msgid "Please check the highlighted fields"
+msgstr "चिनाइएका विवरण जाँच गर्नुहोस्"
+
+msgid "Please know"
+msgstr "कृपया ध्यान दिनुहोस्"
+
+msgid "Please wait before trying again"
+msgstr "फेरि प्रयास गर्नुअघि केही समय पर्खनुहोस्"
+
+msgid "Practical checks to follow before leaving, while working abroad, and after returning home."
+msgstr "विदेश जानुअघि, विदेशमा काम गर्दा र स्वदेश फर्किएपछि पालना गर्नुपर्ने व्यावहारिक जाँचहरू।"
+
+msgid "Prepare before leaving"
+msgstr "प्रस्थानअघि तयारी गर्नुहोस्"
+
+msgid "Prepare to return home"
+msgstr "स्वदेश फर्कने तयारी गर्नुहोस्"
+
+msgid "Privacy questions"
+msgstr "गोपनीयतासम्बन्धी प्रश्न"
+
+msgid "Private counseling"
+msgstr "गोप्य परामर्श"
+
+msgid "Private status of a membership payment review."
+msgstr "सदस्यता भुक्तानी समीक्षाको निजी स्थिति।"
+
+msgid "Promises that sound too good to be true"
+msgstr "विश्वास गर्नै गाह्रो हुने आकर्षक वाचा"
+
+msgid "Protect private information"
+msgstr "निजी जानकारी सुरक्षित राख्नुहोस्"
+
+msgid "Protect your information"
+msgstr "आफ्नो जानकारी सुरक्षित राख्नुहोस्"
+
+msgid "Protect yourself while working abroad"
+msgstr "विदेशमा काम गर्दा आफूलाई सुरक्षित राख्नुहोस्"
+
+msgid "Public MRN Ilam membership records for"
+msgstr "MRN इलामका सार्वजनिक सदस्यता अभिलेख —"
+
+msgid "Public member record"
+msgstr "सार्वजनिक सदस्य विवरण"
+
+msgid ""
+"Put your immediate safety first and contact the relevant police, emergency service, embassy, "
+"labor office, medical service, or qualified professional."
+msgstr ""
+"सबैभन्दा पहिले आफ्नो तत्काल सुरक्षा सुनिश्चित गर्नुहोस् र सम्बन्धित प्रहरी, आपतकालीन सेवा, "
+"दूतावास, श्रम कार्यालय, स्वास्थ्य सेवा वा योग्य विशेषज्ञसँग सम्पर्क गर्नुहोस्।"
+
+msgid "Read MRN Ilam news, notices, events, and safety updates."
+msgstr "MRN इलामका समाचार, सूचना, कार्यक्रम र सुरक्षा जानकारी पढ्नुहोस्।"
+
+msgid "Read the full disclaimer"
+msgstr "पूरा अस्वीकरण पढ्नुहोस्"
+
+msgid "Read the latest information published by MRN Ilam."
+msgstr "MRN इलामले प्रकाशित गरेको पछिल्लो जानकारी पढ्नुहोस्।"
+
+msgid "Read the offer and contract carefully"
+msgstr "प्रस्ताव र करार ध्यानपूर्वक पढ्नुहोस्"
+
+msgid "Read the reason below and contact the organization before paying again."
+msgstr "तलको कारण पढ्नुहोस् र फेरि भुक्तानी गर्नुअघि संस्थासँग सम्पर्क गर्नुहोस्।"
+
+msgid "Recipient name"
+msgstr "प्राप्तकर्ताको नाम"
+
+msgid "Recognize fraud and risk"
+msgstr "ठगी र जोखिम चिन्नुहोस्"
+
+msgid "Registered with"
+msgstr "दर्ता निकाय"
+
+msgid "Regular membership in the selected local or district unit."
+msgstr "छनोट गरिएको स्थानीय वा जिल्ला एकाइअन्तर्गतको नियमित सदस्यता।"
+
+msgid "Request received"
+msgstr "अनुरोध प्राप्त भयो"
+
+msgid "Requests for OTPs or passwords"
+msgstr "OTP वा पासवर्ड मागिन्छ"
+
+msgid "Review date not available"
+msgstr "समीक्षा मिति उपलब्ध छैन"
+
+msgid "Review the published membership fee, recipient name, and official QR before paying."
+msgstr "भुक्तानी गर्नुअघि प्रकाशित सदस्यता शुल्क, प्राप्तकर्ताको नाम र आधिकारिक QR जाँच गर्नुहोस्।"
+
+msgid "Role in the organization (optional)"
+msgstr "संस्थामा जिम्मेवारी (वैकल्पिक)"
+
+msgid ""
+"Rules, procedures, fees, and contact details can change. Confirm important decisions with the "
+"relevant government office, embassy, licensed professional, or official source."
+msgstr ""
+"नियम, प्रक्रिया, शुल्क र सम्पर्क विवरण परिवर्तन हुन सक्छन्। महत्त्वपूर्ण निर्णय सम्बन्धित सरकारी "
+"कार्यालय, दूतावास, इजाजतप्राप्त विशेषज्ञ वा आधिकारिक स्रोतबाट पुष्टि गर्नुहोस्।"
+
+msgid "Safer foreign employment, one step at a time"
+msgstr "सुरक्षित वैदेशिक रोजगारी, एक–एक चरणमा"
+
+msgid "Safety information"
+msgstr "सुरक्षा जानकारी"
+
+msgid ""
+"Save emergency contacts, document copies, contract details, medicine information, and a safe way "
+"to stay in touch with family."
+msgstr ""
+"आपतकालीन सम्पर्क, कागजातका प्रतिलिपि, करार विवरण, औषधि जानकारी र परिवारसँग सुरक्षित रूपमा सम्पर्क"
+" गर्ने उपाय सुरक्षित राख्नुहोस्।"
+
+msgid "Save receipts, messages, names, phone numbers, documents, account details, and dates."
+msgstr "रसिद, सन्देश, नाम, फोन नम्बर, कागजात, खाता विवरण र मिति सुरक्षित राख्नुहोस्।"
+
+msgid "Save the receipt"
+msgstr "रसिद सुरक्षित राख्नुहोस्"
+
+msgid ""
+"Scan the QR and confirm that the recipient name exactly matches the official recipient shown "
+"here. If it does not match, stop and contact the organization."
+msgstr ""
+"QR स्क्यान गरी प्राप्तकर्ताको नाम यहाँ देखाइएको आधिकारिक नामसँग ठ्याक्कै मिल्छ भन्ने पुष्टि "
+"गर्नुहोस्। नमिलेमा रोक्नुहोस् र संस्थासँग सम्पर्क गर्नुहोस्।"
+
+msgid "Search members"
+msgstr "सदस्य खोज्नुहोस्"
+
+msgid ""
+"Search the public MRN Ilam member directory by name, membership number, type, status, or "
+"organization unit."
+msgstr ""
+"नाम, सदस्यता नम्बर, प्रकार, स्थिति वा संस्थागत एकाइबाट MRN इलामको सार्वजनिक सदस्य निर्देशिकामा "
+"खोज्नुहोस्।"
+
+msgid "Search the public member directory"
+msgstr "सार्वजनिक सदस्य निर्देशिकामा खोज्नुहोस्"
+
+msgid "See the full step-by-step guide"
+msgstr "पूरा चरणबद्ध मार्गदर्शन हेर्नुहोस्"
+
+msgid "See the programs, events, and community activities published by MRN Ilam."
+msgstr "MRN इलामले प्रकाशित गरेका कार्यक्रम, घटना र सामुदायिक गतिविधि हेर्नुहोस्।"
+
+msgid ""
+"Send a general message to MRN Ilam or use the private counseling form for a personal foreign-"
+"employment concern."
+msgstr ""
+"MRN इलामलाई सामान्य सन्देश पठाउनुहोस् वा व्यक्तिगत वैदेशिक रोजगारसम्बन्धी समस्याका लागि गोप्य "
+"परामर्श फाराम प्रयोग गर्नुहोस्।"
+
+msgid "Send a privacy question through the contact form"
+msgstr "सम्पर्क फारामबाट गोपनीयतासम्बन्धी प्रश्न पठाउनुहोस्"
+
+msgid "Send a private counseling request. No membership or payment is required."
+msgstr "गोप्य परामर्श अनुरोध पठाउनुहोस्। सदस्यता वा भुक्तानी आवश्यक छैन।"
+
+msgid "Send a private foreign-employment question or concern to MRN Ilam for review."
+msgstr "समीक्षाका लागि वैदेशिक रोजगारसम्बन्धी निजी प्रश्न वा समस्या MRN इलामलाई पठाउनुहोस्।"
+
+msgid "Send counseling request"
+msgstr "परामर्श अनुरोध पठाउनुहोस्"
+
+msgid "Send us a message"
+msgstr "हामीलाई सन्देश पठाउनुहोस्"
+
+msgid ""
+"Sending an application or payment proof does not confirm membership. Membership becomes active "
+"only after authorized staff approve the application and payment."
+msgstr ""
+"आवेदन वा भुक्तानी प्रमाण पठाउँदैमा सदस्यता पुष्टि हुँदैन। अधिकृत कर्मचारीले आवेदन र भुक्तानी "
+"स्वीकृत गरेपछि मात्र सदस्यता सक्रिय हुन्छ।"
+
+msgid "Show all resources"
+msgstr "सबै स्रोत देखाउनुहोस्"
+
+msgid "Some information is missing or needs to be corrected."
+msgstr "केही जानकारी छुटेको छ वा सच्याउन आवश्यक छ।"
+
+msgid "Someone keeps your original documents without a clear lawful reason or safe return process."
+msgstr "स्पष्ट कानुनी कारण वा सुरक्षित फिर्ता प्रक्रिया नभई कसैले तपाईंका मूल कागजात राख्छ।"
+
+msgid ""
+"Someone promises certain approval, unusually high income, or an easy process with no normal "
+"checks."
+msgstr ""
+"कसैले निश्चित स्वीकृति, अस्वाभाविक रूपमा धेरै आम्दानी वा सामान्य जाँचबिनाको सजिलो प्रक्रिया वाचा "
+"गर्छ।"
+
+msgid "Someone rushes you so you do not have time to check documents or ask for advice."
+msgstr "कसैले कागजात जाँच्न वा सल्लाह लिन समय नदिई हतार गराउँछ।"
+
+msgid "Something went wrong. Please try again later. Private form information is not shown on this page."
+msgstr "केही समस्या भयो। कृपया पछि फेरि प्रयास गर्नुहोस्। निजी फारामको जानकारी यस पृष्ठमा देखाइँदैन।"
+
+msgid "Staff check your question and decide what information or support may help."
+msgstr "कर्मचारीले तपाईंको प्रश्न हेरेर कुन जानकारी वा सहयोग उपयोगी हुन्छ भन्ने तय गर्छन्।"
+
+msgid "Staff must verify the application and payment before membership becomes active."
+msgstr "सदस्यता सक्रिय हुनुअघि कर्मचारीले आवेदन र भुक्तानी प्रमाणित गर्नुपर्छ।"
+
+msgid "Staff need to check more information"
+msgstr "कर्मचारीले थप जानकारी जाँच गर्नुपर्छ"
+
+msgid "Staff review the application"
+msgstr "कर्मचारीले आवेदन समीक्षा गर्छन्"
+
+msgid "Start a counseling request"
+msgstr "परामर्श अनुरोध सुरु गर्नुहोस्"
+
+msgid "Step-by-step foreign-employment guidance"
+msgstr "वैदेशिक रोजगारीका लागि चरणबद्ध मार्गदर्शन"
+
+msgid "Step-by-step guidance"
+msgstr "चरणबद्ध मार्गदर्शन"
+
+msgid "Stop paying"
+msgstr "भुक्तानी रोक्नुहोस्"
+
+msgid "Submit corrected proof"
+msgstr "सच्याइएको प्रमाण पठाउनुहोस्"
+
+msgid "Tell us about incorrect information"
+msgstr "गलत जानकारीबारे हामीलाई बताउनुहोस्"
+
+msgid "Tell us about your question or problem"
+msgstr "आफ्नो प्रश्न वा समस्या हामीलाई बताउनुहोस्"
+
+msgid "Tell us what happened or what you need help with"
+msgstr "के भयो वा के सहयोग चाहिएको हो बताउनुहोस्"
+
+msgid "Tell us your concern"
+msgstr "आफ्नो समस्या बताउनुहोस्"
+
+msgid "The employer cannot be verified"
+msgstr "रोजगारदाता पुष्टि गर्न सकिँदैन"
+
+msgid "The image is stored privately for authorized staff review."
+msgstr "तस्बिर अधिकृत कर्मचारीको निजी समीक्षाका लागि सुरक्षित राखिन्छ।"
+
+msgid "The job comes from an unverified account and cannot be confirmed anywhere trustworthy."
+msgstr "रोजगारीको सूचना अप्रमाणित खाताबाट आएको छ र कुनै भरपर्दो स्रोतबाट पुष्टि गर्न सकिँदैन।"
+
+msgid "The link may be incorrect, expired, or moved."
+msgstr "लिङ्क गलत, म्याद सकिएको वा सारिएको हुन सक्छ।"
+
+msgid ""
+"The membership fee is only for the selected membership type. It does not buy counseling, a job, a"
+" visa, recruitment, or any guaranteed result."
+msgstr ""
+"सदस्यता शुल्क छनोट गरिएको सदस्यता प्रकारका लागि मात्र हो। यसले परामर्श, रोजगारी, भिसा, भर्ती वा "
+"कुनै निश्चित नतिजा किन्दैन।"
+
+msgid "The offer exists only on social media"
+msgstr "प्रस्ताव सामाजिक सञ्जालमा मात्र छ"
+
+msgid "The payment proof could not be approved"
+msgstr "भुक्तानी प्रमाण स्वीकृत हुन सकेन"
+
+msgid "The salary, job, workplace, fees, or benefits are different in messages, receipts, and contracts."
+msgstr "सन्देश, रसिद र करारमा तलब, काम, कार्यस्थल, शुल्क वा सुविधा फरक छन्।"
+
+msgid "The service is temporarily unavailable"
+msgstr "सेवा अस्थायी रूपमा उपलब्ध छैन"
+
+msgid "The uploaded PDF is invalid or corrupted."
+msgstr "अपलोड गरिएको PDF मान्य छैन वा बिग्रिएको छ।"
+
+msgid ""
+"The website is temporarily unavailable while essential maintenance is completed. Please try again"
+" later."
+msgstr "आवश्यक मर्मत भइरहेकोले वेबसाइट अस्थायी रूपमा उपलब्ध छैन। कृपया पछि फेरि प्रयास गर्नुहोस्।"
+
+msgid "There are no published programs at the moment"
+msgstr "हाल कुनै कार्यक्रम प्रकाशित गरिएको छैन"
+
+msgid "There are no published updates at the moment"
+msgstr "हाल कुनै नयाँ सूचना प्रकाशित गरिएको छैन"
+
+msgid ""
+"Think about your goal, skills, health, family responsibilities, expected costs, and the risks you"
+" can accept."
+msgstr ""
+"आफ्नो लक्ष्य, सीप, स्वास्थ्य, पारिवारिक जिम्मेवारी, अनुमानित खर्च र स्वीकार गर्न सक्ने जोखिमबारे "
+"सोच्नुहोस्।"
+
+msgid "This button will be available after the organization publishes verified payment details."
+msgstr "संस्थाले प्रमाणित भुक्तानी विवरण प्रकाशित गरेपछि यो बटन उपलब्ध हुनेछ।"
+
+msgid "This is not an emergency service"
+msgstr "यो आपतकालीन सेवा होइन"
+
+msgid "This is not an emergency service."
+msgstr "यो आपतकालीन सेवा होइन।"
+
+msgid "This page is private or your account does not have permission to view it."
+msgstr "यो पृष्ठ निजी छ वा तपाईंको खातालाई हेर्ने अनुमति छैन।"
+
+msgid ""
+"This payment is only for the selected membership application. It does not guarantee a job, visa, "
+"recruitment, counseling result, or government approval."
+msgstr ""
+"यो भुक्तानी छनोट गरिएको सदस्यता आवेदनका लागि मात्र हो। यसले रोजगारी, भिसा, भर्ती, परामर्शको नतिजा"
+" वा सरकारी स्वीकृतिको ग्यारेन्टी दिँदैन।"
+
+msgid "Too many requests were sent in a short time. Wait a little and then try again."
+msgstr "छोटो समयमा धेरै अनुरोध पठाइयो। केही समय पर्खेर फेरि प्रयास गर्नुहोस्।"
+
+msgid "Transaction or reference number (optional)"
+msgstr "कारोबार वा सन्दर्भ नम्बर (वैकल्पिक)"
+
+msgid "Try again"
+msgstr "फेरि प्रयास गर्नुहोस्"
+
+msgid "Try another category or check again later."
+msgstr "अर्को श्रेणी छान्नुहोस् वा पछि फेरि हेर्नुहोस्।"
+
+msgid "Under review"
+msgstr "समीक्षामा"
+
+msgid "Understand every cost"
+msgstr "सबै खर्च बुझ्नुहोस्"
+
+msgid "Understand insurance and available support"
+msgstr "बीमा र उपलब्ध सहयोग बुझ्नुहोस्"
+
+msgid "Understand the process"
+msgstr "प्रक्रिया बुझ्नुहोस्"
+
+msgid "Understand the process, check job offers, recognize fraud, and find the right official help."
+msgstr ""
+"प्रक्रिया बुझ्नुहोस्, रोजगारीको प्रस्ताव जाँच्नुहोस्, ठगीका संकेत चिन्नुहोस् र आवश्यक आधिकारिक "
+"सहायता खोज्नुहोस्।"
+
+msgid "Updates"
+msgstr "सूचना"
+
+msgid "Upload a clear JPG, PNG, or WebP image up to 5 MB."
+msgstr "अधिकतम ५ एमबीको स्पष्ट JPG, PNG वा WebP तस्बिर अपलोड गर्नुहोस्।"
+
+msgid "Upload the proof"
+msgstr "प्रमाण अपलोड गर्नुहोस्"
+
+msgid "Urgent help"
+msgstr "अत्यावश्यक सहयोग"
+
+msgid ""
+"Use links from government offices, embassies, labor authorities, welfare services, and other "
+"recognized institutions. Check the review date before relying on a contact or procedure."
+msgstr ""
+"सरकारी कार्यालय, दूतावास, श्रम निकाय, कल्याण सेवा र अन्य मान्य संस्थाका लिङ्क प्रयोग गर्नुहोस्। "
+"सम्पर्क वा प्रक्रियामा भर पर्नुअघि समीक्षा मिति जाँच गर्नुहोस्।"
+
+msgid "Use official information and check whether the recruiter, institution, or program is authorized."
+msgstr "आधिकारिक जानकारी प्रयोग गर्नुहोस् र म्यानपावर, संस्था वा कार्यक्रम अधिकृत छ कि छैन जाँच गर्नुहोस्।"
+
+msgid "Use the amount shown in the application details."
+msgstr "आवेदन विवरणमा देखाइएको रकम प्रयोग गर्नुहोस्।"
+
+msgid "Use the website responsibly"
+msgstr "वेबसाइट जिम्मेवारीपूर्वक प्रयोग गर्नुहोस्"
+
+msgid ""
+"Use these checks to prepare questions and avoid common risks. Confirm important decisions with "
+"the relevant official office."
+msgstr ""
+"यी जाँचहरू प्रयोग गरी प्रश्न तयार गर्नुहोस् र सामान्य जोखिमबाट बच्नुहोस्। महत्त्वपूर्ण निर्णय "
+"सम्बन्धित आधिकारिक निकायबाट पुष्टि गर्नुहोस्।"
+
+msgid ""
+"Use this form for general questions. For a personal foreign-employment problem, use the private "
+"counseling form."
+msgstr ""
+"सामान्य प्रश्नका लागि यो फाराम प्रयोग गर्नुहोस्। व्यक्तिगत वैदेशिक रोजगारसम्बन्धी समस्याका लागि "
+"गोप्य परामर्श फाराम प्रयोग गर्नुहोस्।"
+
+msgid ""
+"Use this private form to explain your concern. Our team will review it and contact you using your"
+" preferred method."
+msgstr ""
+"आफ्नो समस्या लेख्न यो गोप्य फाराम प्रयोग गर्नुहोस्। हाम्रो टोलीले समीक्षा गरी तपाईंले रोजेको "
+"माध्यमबाट सम्पर्क गर्नेछ।"
+
+msgid "View all updates"
+msgstr "सबै सूचना हेर्नुहोस्"
+
+msgid "Warning signs of fraud and unsafe job offers"
+msgstr "ठगी र असुरक्षित रोजगारी प्रस्तावका चेतावनी संकेत"
+
+msgid "We cannot guarantee an approval or result."
+msgstr "हामी कुनै स्वीकृति वा नतिजाको ग्यारेन्टी दिन सक्दैनौं।"
+
+msgid ""
+"We collect only the information needed to respond to requests, manage membership, verify "
+"payments, and keep reliable records."
+msgstr ""
+"अनुरोधको जवाफ दिन, सदस्यता व्यवस्थापन गर्न, भुक्तानी पुष्टि गर्न र भरपर्दो अभिलेख राख्न आवश्यक "
+"जानकारी मात्र लिन्छौं।"
+
+msgid "We contact you"
+msgstr "हामी सम्पर्क गर्छौं"
+
+msgid "We could not find a matching member"
+msgstr "मिल्ने सदस्य भेटिएन"
+
+msgid "We could not process the request"
+msgstr "अनुरोध प्रक्रिया गर्न सकिएन"
+
+msgid "We do not arrange jobs or visas"
+msgstr "हामी रोजगारी वा भिसाको व्यवस्था गर्दैनौं"
+
+msgid "We do not arrange jobs, visas, or work permits."
+msgstr "हामी रोजगारी, भिसा वा कार्य अनुमति मिलाइदिँदैनौं।"
+
+msgid "We do not ask for passwords, OTPs, or bank PINs."
+msgstr "हामी पासवर्ड, OTP वा बैंक PIN माग्दैनौं।"
+
+msgid "We do not replace legal, medical, or financial professionals."
+msgstr "हामी कानुनी, स्वास्थ्य वा वित्तीय विशेषज्ञको विकल्प होइनौं।"
+
+msgid ""
+"We explain documents, contracts, costs, labor approval, insurance, and preparation before "
+"departure."
+msgstr "हामी कागजात, करार, खर्च, श्रम स्वीकृति, बीमा र प्रस्थानपूर्व तयारीबारे बुझाउँछौं।"
+
+msgid "We explain the process, help you notice risks, and guide you to the right office or service."
+msgstr ""
+"हामी प्रक्रिया बुझाउँछौं, जोखिम चिन्न सहयोग गर्छौं र सम्बन्धित निकाय वा सेवासम्म पुग्न मार्गदर्शन"
+" गर्छौं।"
+
+msgid ""
+"We guide you to the relevant government office, embassy, labor authority, welfare service, or "
+"qualified professional."
+msgstr ""
+"हामी तपाईंलाई आवश्यक सरकारी कार्यालय, दूतावास, श्रम निकाय, कल्याण सेवा वा योग्य विशेषज्ञसम्म "
+"पुग्न मार्गदर्शन गर्छौं।"
+
+msgid "We help you identify suspicious offers, hidden fees, mismatched contracts, and pressure to pay."
+msgstr ""
+"हामी शंकास्पद प्रस्ताव, लुकाइएका शुल्क, नमिलेका करार र पैसा तिर्ने दबाबका संकेत चिन्न सहयोग "
+"गर्छौं।"
+
+msgid ""
+"We provide information and counseling. We do not arrange jobs or visas and cannot guarantee any "
+"result."
+msgstr ""
+"हामी सूचना र परामर्श प्रदान गर्छौं। हामी रोजगारी वा भिसाको व्यवस्था गर्दैनौं र कुनै नतिजाको "
+"ग्यारेन्टी दिँदैनौं।"
+
+msgid "We reply through your preferred contact method whenever possible."
+msgstr "सम्भव भएसम्म तपाईंले रोजेको माध्यमबाट जवाफ दिन्छौं।"
+
+msgid ""
+"We use it to contact you, provide guidance, review membership applications, verify payments, "
+"prevent duplicate or false records, and keep required audit records."
+msgstr ""
+"हामी यसलाई तपाईंलाई सम्पर्क गर्न, मार्गदर्शन दिन, सदस्यता आवेदन समीक्षा गर्न, भुक्तानी पुष्टि "
+"गर्न, दोहोरो वा गलत अभिलेख रोक्न र आवश्यक लेखापरीक्षण अभिलेख राख्न प्रयोग गर्छौं।"
+
+msgid "Website maintenance"
+msgstr "वेबसाइट मर्मत"
+
+msgid "What is your message about?"
+msgstr "तपाईंको सन्देश कुन विषयमा हो?"
+
+msgid "What is your question or problem about?"
+msgstr "तपाईंको प्रश्न वा समस्या कुन विषयमा हो?"
+
+msgid "What the organization does not do"
+msgstr "संस्थाले नगर्ने काम"
+
+msgid "What to do"
+msgstr "के गर्ने"
+
+msgid "What we are committed to"
+msgstr "हाम्रो प्रतिबद्धता"
+
+msgid "What we work for"
+msgstr "हामी केका लागि काम गर्छौं"
+
+msgid "Where we work"
+msgstr "हामीले सेवा दिने क्षेत्र"
+
+msgid "Who can see private information"
+msgstr "निजी जानकारी कसले हेर्न सक्छ"
+
+msgid "You are not given a clear job offer, receipt, contract, or employer details."
+msgstr "तपाईंलाई स्पष्ट रोजगारी प्रस्ताव, रसिद, करार वा रोजगारदाताको विवरण दिइँदैन।"
+
+msgid "You can receive counseling without becoming a member or paying a membership fee."
+msgstr "सदस्य नबनी वा सदस्यता शुल्क नतिरी पनि परामर्श लिन सकिन्छ।"
+
+msgid "You cannot confirm who the employer is, where the workplace is, or who signed the offer."
+msgstr "रोजगारदाता को हो, कार्यस्थल कहाँ हो वा प्रस्तावमा कसले हस्ताक्षर गरेको हो पुष्टि गर्न सकिँदैन।"
+
+msgid "You cannot open this page"
+msgstr "तपाईंले यो पृष्ठ खोल्न सक्नुहुन्न"
+
+msgid ""
+"You may ask us to correct inaccurate information or explain how your information is being used. "
+"Some records may need to be kept for legal, audit, or membership-number purposes."
+msgstr ""
+"तपाईं गलत जानकारी सच्याउन वा आफ्नो जानकारी कसरी प्रयोग भइरहेको छ भन्ने बुझाउन अनुरोध गर्न "
+"सक्नुहुन्छ। कानुनी, लेखापरीक्षण वा सदस्यता नम्बरसम्बन्धी कारणले केही अभिलेख राख्नुपर्ने हुन सक्छ।"
+
+msgid "You must agree before the counseling team can contact you."
+msgstr "परामर्श टोलीले सम्पर्क गर्नुअघि तपाईंले सहमति दिनुपर्छ।"
+
+msgid "You must agree before the team can contact you."
+msgstr "टोलीले सम्पर्क गर्नुअघि तपाईंले सहमति दिनुपर्छ।"
+
+msgid "You must consent before submitting the membership application."
+msgstr "सदस्यता आवेदन पठाउनुअघि तपाईंले सहमति दिनुपर्छ।"
+
+msgid "Your counseling request has been sent"
+msgstr "तपाईंको परामर्श अनुरोध पठाइएको छ"
+
+msgid "Your membership payment was approved"
+msgstr "तपाईंको सदस्यता भुक्तानी स्वीकृत भयो"
+
+msgid "Your message"
+msgstr "तपाईंको सन्देश"
+
+msgid "Your payment proof was received"
+msgstr "तपाईंको भुक्तानी प्रमाण प्राप्त भयो"
+
+msgid "Your reference number"
+msgstr "तपाईंको सन्दर्भ नम्बर"
+
+msgid "Your request stays private"
+msgstr "तपाईंको अनुरोध गोप्य रहन्छ"
+
+msgid "membership records"
+msgstr "सदस्यता अभिलेख"
+
+msgid "people listed"
+msgstr "जना सूचीबद्ध"
+
+msgid "required"
+msgstr "अनिवार्य"
+
+#, python-format
+msgid ""
+"By submitting this form, you confirm that the information is accurate and that you have read the "
+"<a href=\"%(privacy_url)s\">privacy policy</a>."
+msgstr ""
+"यो फाराम पठाउँदा तपाईंले दिएको जानकारी सही छ र <a href=\"%(privacy_url)s\">गोपनीयता नीति</a> "
+"पढ्नुभएको छ भन्ने पुष्टि गर्नुहुन्छ।"
+
+#, python-format
+msgid ""
+"The organization uses this retention period: %(privacy_retention_period)s. Membership-number and "
+"approval records may be kept longer to prevent number reuse and protect the accuracy of "
+"organizational records."
+msgstr ""
+"संस्थाले अभिलेख राख्ने अवधि: %(privacy_retention_period)s। सदस्यता नम्बर दोहोरिन नदिन र संस्थाको "
+"अभिलेख सही राख्न सदस्यता नम्बर तथा स्वीकृतिसम्बन्धी अभिलेख अझ लामो समयसम्म राख्न सकिन्छ।"
+
+msgid ""
+"This information is general. Check your own situation with the relevant official office or "
+"qualified professional."
+msgstr "यो सामान्य जानकारी हो। आफ्नो अवस्था सम्बन्धित आधिकारिक निकाय वा योग्य विशेषज्ञसँग जाँच गर्नुहोस्।"
+
+msgid ""
+"Online applications are temporarily paused because verified payment details are not currently "
+"available. Please contact the organization before paying anyone."
+msgstr ""
+"प्रमाणित भुक्तानी विवरण हाल उपलब्ध नभएकाले अनलाइन आवेदन अस्थायी रूपमा रोकिएको छ। कसैलाई पैसा "
+"तिर्नुअघि संस्थासँग सम्पर्क गर्नुहोस्।"
 
 #~ msgid "Member"
 #~ msgstr "सदस्यहरू"
@@ -3188,11 +4136,9 @@ msgstr ""
 #~ msgstr "भुक्तानी समीक्षा हुँदैछ"
 
 #~ msgid ""
-#~ "Your MRN Ilam membership payment proof has been submitted and is waiting "
-#~ "for admin verification."
-#~ msgstr ""
-#~ "एमआरएन इलाम सदस्यताको भुक्तानी प्रमाण पेश गरिएको छ र हाल प्रशासकबाट प्रमाणिकरणको "
-#~ "प्रतीक्षामा छ।"
+#~ "Your MRN Ilam membership payment proof has been "
+#~ "submitted and is waiting for admin verification."
+#~ msgstr "एमआरएन इलाम सदस्यताको भुक्तानी प्रमाण पेश गरिएको छ र हाल प्रशासकबाट प्रमाणिकरणको प्रतीक्षामा छ।"
 
 #~ msgid "Verification Pending"
 #~ msgstr "प्रमाणिकरण बाँकी"
@@ -3201,16 +4147,16 @@ msgstr ""
 #~ msgstr "भुक्तानी प्रमाण सफलतापूर्वक पेश भयो"
 
 #~ msgid ""
-#~ "Thank you. Your payment proof has been received and is now waiting for "
-#~ "admin verification. Your membership will be updated after the payment is "
+#~ "Thank you. Your payment proof has been received "
+#~ "and is now waiting for admin verification. Your "
+#~ "membership will be updated after the payment is "
 #~ "confirmed."
 #~ msgstr ""
-#~ "धन्यवाद। तपाईंको भुक्तानी प्रमाण प्राप्त भएको छ र हाल प्रशासकबाट प्रमाणिकरणको "
-#~ "प्रतीक्षामा छ। भुक्तानी पुष्टि भएपछि तपाईंको सदस्यता अद्यावधिक गरिनेछ।"
+#~ "धन्यवाद। तपाईंको भुक्तानी प्रमाण प्राप्त भएको छ र"
+#~ " हाल प्रशासकबाट प्रमाणिकरणको प्रतीक्षामा छ। भुक्तानी "
+#~ "पुष्टि भएपछि तपाईंको सदस्यता अद्यावधिक गरिनेछ।"
 
-#~ msgid ""
-#~ "Please keep this information for your reference until verification is "
-#~ "complete."
+#~ msgid "Please keep this information for your reference until verification is complete."
 #~ msgstr "प्रमाणिकरण पूरा नभएसम्म कृपया यो विवरण सुरक्षित राख्नुहोस्।"
 
 #~ msgid "Current Status"
@@ -3219,33 +4165,29 @@ msgstr ""
 #~ msgid "1. Admin review"
 #~ msgstr "१. प्रशासक समीक्षा"
 
-#~ msgid ""
-#~ "An authorized admin will check the uploaded screenshot and transaction "
-#~ "details."
+#~ msgid "An authorized admin will check the uploaded screenshot and transaction details."
 #~ msgstr "अधिकृत प्रशासकले अपलोड गरिएको स्क्रिनसट र कारोबार विवरण जाँच गर्नेछन्।"
 
 #~ msgid "2. Verification"
 #~ msgstr "२. प्रमाणिकरण"
 
-#~ msgid ""
-#~ "If the payment is valid, your membership payment status will be marked as "
-#~ "completed."
-#~ msgstr ""
-#~ "भुक्तानी मान्य भएमा तपाईंको सदस्यता भुक्तानी अवस्था पूरा भएको रूपमा चिन्ह लगाइनेछ।"
+#~ msgid "If the payment is valid, your membership payment status will be marked as completed."
+#~ msgstr "भुक्तानी मान्य भएमा तपाईंको सदस्यता भुक्तानी अवस्था पूरा भएको रूपमा चिन्ह लगाइनेछ।"
 
 #~ msgid "3. Membership update"
 #~ msgstr "३. सदस्यता अद्यावधिक"
 
-#~ msgid ""
-#~ "Your membership record will be approved or updated after confirmation."
+#~ msgid "Your membership record will be approved or updated after confirmation."
 #~ msgstr "पुष्टि भएपछि तपाईंको सदस्यता अभिलेख स्वीकृत वा अद्यावधिक गरिनेछ।"
 
 #~ msgid ""
-#~ "Please do not submit the same payment again unless the admin asks you to "
-#~ "resubmit. Duplicate submissions may delay verification."
+#~ "Please do not submit the same payment again "
+#~ "unless the admin asks you to resubmit. Duplicate "
+#~ "submissions may delay verification."
 #~ msgstr ""
-#~ "प्रशासकले पुनः पेश गर्न नभनेसम्म कृपया एउटै भुक्तानी फेरि पेश नगर्नुहोस्। दोहोरिएको पेश्कीले "
-#~ "प्रमाणिकरण ढिलो हुन सक्छ।"
+#~ "प्रशासकले पुनः पेश गर्न नभनेसम्म कृपया एउटै भुक्तानी"
+#~ " फेरि पेश नगर्नुहोस्। दोहोरिएको पेश्कीले प्रमाणिकरण "
+#~ "ढिलो हुन सक्छ।"
 
 #~ msgid "Back to Homepage"
 #~ msgstr "मुख्य पृष्ठमा फर्कनुहोस्"
@@ -3296,13 +4238,15 @@ msgstr ""
 #~ msgstr "नेभिगेसन मेनु खोल्नुहोस्"
 
 #~ msgid ""
-#~ "MRN Ilam supports safe, informed, and dignified foreign employment by "
-#~ "providing public resources, verified member records, notices, and "
-#~ "community support services in Ilam, Nepal."
+#~ "MRN Ilam supports safe, informed, and dignified "
+#~ "foreign employment by providing public resources, verified"
+#~ " member records, notices, and community support "
+#~ "services in Ilam, Nepal."
 #~ msgstr ""
-#~ "एमआरएन इलामले इलाम, नेपालमा सार्वजनिक स्रोत सामग्री, प्रमाणित सदस्य अभिलेख, सूचना "
-#~ "र समुदाय-आधारित सहयोग सेवामार्फत सुरक्षित, सचेत र मर्यादित वैदेशिक रोजगारीलाई "
-#~ "सहयोग गर्छ।"
+#~ "एमआरएन इलामले इलाम, नेपालमा सार्वजनिक स्रोत सामग्री, "
+#~ "प्रमाणित सदस्य अभिलेख, सूचना र समुदाय-आधारित सहयोग "
+#~ "सेवामार्फत सुरक्षित, सचेत र मर्यादित वैदेशिक रोजगारीलाई"
+#~ " सहयोग गर्छ।"
 
 #~ msgid "Quick Links"
 #~ msgstr "छिटो लिंकहरू"
@@ -3334,10 +4278,8 @@ msgstr ""
 #~ msgid "All rights reserved."
 #~ msgstr "सर्वाधिकार सुरक्षित।"
 
-#~ msgid ""
-#~ "Built for safe migration awareness, transparency, and public service."
-#~ msgstr ""
-#~ "सुरक्षित आप्रवासन सचेतना, पारदर्शिता र सार्वजनिक सेवाका लागि निर्माण गरिएको।"
+#~ msgid "Built for safe migration awareness, transparency, and public service."
+#~ msgstr "सुरक्षित आप्रवासन सचेतना, पारदर्शिता र सार्वजनिक सेवाका लागि निर्माण गरिएको।"
 
 #~ msgid "Close navigation menu"
 #~ msgstr "नेभिगेसन मेनु बन्द गर्नुहोस्"
@@ -3348,12 +4290,14 @@ msgstr ""
 #~ msgstr "इलाममा सुरक्षित वैदेशिक रोजगारी सहायता"
 
 #~ msgid ""
-#~ "We help workers, returnees, families, and community members access "
-#~ "reliable information, verified records, and support related to safe "
-#~ "foreign employment."
+#~ "We help workers, returnees, families, and community "
+#~ "members access reliable information, verified records, and"
+#~ " support related to safe foreign employment."
 #~ msgstr ""
-#~ "हामी कामदार, फर्किएका व्यक्ति, परिवार र समुदायका सदस्यहरूलाई सुरक्षित वैदेशिक "
-#~ "रोजगारी सम्बन्धी भरपर्दो सूचना, प्रमाणित अभिलेख र सहयोग उपलब्ध गराउन मद्दत गर्छौं।"
+#~ "हामी कामदार, फर्किएका व्यक्ति, परिवार र समुदायका "
+#~ "सदस्यहरूलाई सुरक्षित वैदेशिक रोजगारी सम्बन्धी भरपर्दो "
+#~ "सूचना, प्रमाणित अभिलेख र सहयोग उपलब्ध गराउन मद्दत"
+#~ " गर्छौं।"
 
 #~ msgid "View Our Services"
 #~ msgstr "हाम्रा सेवाहरू हेर्नुहोस्"
@@ -3401,8 +4345,8 @@ msgstr ""
 #~ msgstr "हाम्रा कार्यसमिति सदस्यहरू"
 
 #~ msgid ""
-#~ "Meet the executive members responsible for guiding the organization and "
-#~ "supporting the community."
+#~ "Meet the executive members responsible for guiding "
+#~ "the organization and supporting the community."
 #~ msgstr "संस्थालाई मार्गदर्शन गर्ने र समुदायलाई सहयोग गर्ने कार्यसमिति सदस्यहरूलाई चिनौँ।"
 
 #~ msgid "Photo coming soon"
@@ -3415,12 +4359,13 @@ msgstr ""
 #~ msgstr "प्रमाणित सदस्य अभिलेख खोज्नुहोस्"
 
 #~ msgid ""
-#~ "Browse district and municipality records, including life members and "
-#~ "general members. Search by name, member number, committee, address, or "
-#~ "status."
+#~ "Browse district and municipality records, including life"
+#~ " members and general members. Search by name, "
+#~ "member number, committee, address, or status."
 #~ msgstr ""
-#~ "आजीवन सदस्य र साधारण सदस्यसहित जिल्ला र नगरपालिकाका अभिलेखहरू हेर्नुहोस्। नाम, "
-#~ "सदस्य नम्बर, समिति, ठेगाना वा अवस्थाबाट खोज्न सकिन्छ।"
+#~ "आजीवन सदस्य र साधारण सदस्यसहित जिल्ला र नगरपालिकाका"
+#~ " अभिलेखहरू हेर्नुहोस्। नाम, सदस्य नम्बर, समिति, ठेगाना"
+#~ " वा अवस्थाबाट खोज्न सकिन्छ।"
 
 #~ msgid "Open Member Directory"
 #~ msgstr "सदस्य निर्देशिका खोल्नुहोस्"
@@ -3441,11 +4386,11 @@ msgstr ""
 #~ msgstr "सुरक्षित वैदेशिक रोजगारीका लागि सहयोग"
 
 #~ msgid ""
-#~ "Access practical guidance, documents, and community support before, "
-#~ "during, and after foreign employment."
+#~ "Access practical guidance, documents, and community "
+#~ "support before, during, and after foreign employment."
 #~ msgstr ""
-#~ "वैदेशिक रोजगारी अघि, समयमा र फर्किएपछि आवश्यक मार्गदर्शन, कागजात र समुदायको "
-#~ "सहयोग प्राप्त गर्नुहोस्।"
+#~ "वैदेशिक रोजगारी अघि, समयमा र फर्किएपछि आवश्यक "
+#~ "मार्गदर्शन, कागजात र समुदायको सहयोग प्राप्त गर्नुहोस्।"
 
 #~ msgid "How to get help"
 #~ msgstr "सहयोग कसरी लिने"
@@ -3456,8 +4401,7 @@ msgstr ""
 #~ msgid "Notices & Updates"
 #~ msgstr "सूचना तथा अद्यावधिक"
 
-#~ msgid ""
-#~ "Read recent updates, alerts, and information shared by the organization."
+#~ msgid "Read recent updates, alerts, and information shared by the organization."
 #~ msgstr "संस्थाले सार्वजनिक गरेका नयाँ सूचना, सतर्कता र जानकारी पढ्नुहोस्।"
 
 #~ msgid "No image available"
@@ -3473,11 +4417,13 @@ msgstr ""
 #~ msgstr "कुनै एजेन्टलाई पैसा तिर्नुअघि कागजात जाँच गर्नुहोस्"
 
 #~ msgid ""
-#~ "Before paying money or signing documents, verify the agency, demand "
-#~ "official receipts, and confirm your labour approval and insurance details."
+#~ "Before paying money or signing documents, verify the"
+#~ " agency, demand official receipts, and confirm your "
+#~ "labour approval and insurance details."
 #~ msgstr ""
-#~ "पैसा तिर्नु वा कागजातमा हस्ताक्षर गर्नु अघि एजेन्सी प्रमाणित गर्नुहोस्, आधिकारिक रसिद "
-#~ "माग्नुहोस् र श्रम स्वीकृति तथा बीमा विवरण पुष्टि गर्नुहोस्।"
+#~ "पैसा तिर्नु वा कागजातमा हस्ताक्षर गर्नु अघि एजेन्सी"
+#~ " प्रमाणित गर्नुहोस्, आधिकारिक रसिद माग्नुहोस् र श्रम"
+#~ " स्वीकृति तथा बीमा विवरण पुष्टि गर्नुहोस्।"
 
 #~ msgid "Warning signs"
 #~ msgstr "सावधानीका संकेतहरू"
@@ -3509,9 +4455,7 @@ msgstr ""
 #~ msgid "Labour approval"
 #~ msgstr "श्रम स्वीकृति"
 
-#~ msgid ""
-#~ "Verify your labour approval through the official foreign employment "
-#~ "system."
+#~ msgid "Verify your labour approval through the official foreign employment system."
 #~ msgstr "आधिकारिक वैदेशिक रोजगार प्रणालीमार्फत आफ्नो श्रम स्वीकृति जाँच गर्नुहोस्।"
 
 #~ msgid "Insurance and welfare fund"
@@ -3527,11 +4471,13 @@ msgstr ""
 #~ msgstr "लागत र रेमिट्यान्स मूल्य अनुमान गर्नुहोस्"
 
 #~ msgid ""
-#~ "Use these tools for basic planning. Always verify final costs and "
-#~ "exchange rates from official sources."
+#~ "Use these tools for basic planning. Always verify"
+#~ " final costs and exchange rates from official "
+#~ "sources."
 #~ msgstr ""
-#~ "यी उपकरणहरू प्रारम्भिक योजना बनाउनका लागि हुन्। अन्तिम लागत र विनिमय दर सधैं "
-#~ "आधिकारिक स्रोतबाट पुष्टि गर्नुहोस्।"
+#~ "यी उपकरणहरू प्रारम्भिक योजना बनाउनका लागि हुन्। "
+#~ "अन्तिम लागत र विनिमय दर सधैं आधिकारिक स्रोतबाट "
+#~ "पुष्टि गर्नुहोस्।"
 
 #~ msgid "Cost estimator"
 #~ msgstr "लागत अनुमानकर्ता"
@@ -3560,9 +4506,7 @@ msgstr ""
 #~ msgid "Equivalent in Nepali rupees"
 #~ msgstr "नेपाली रुपैयाँमा बराबर रकम"
 
-#~ msgid ""
-#~ "Fill in your details. After submitting, you will continue to QR payment "
-#~ "verification."
+#~ msgid "Fill in your details. After submitting, you will continue to QR payment verification."
 #~ msgstr "आफ्ना विवरण भर्नुहोस्। पेश गरेपछि QR भुक्तानी प्रमाणीकरणमा जानुहुनेछ।"
 
 #~ msgid "Local level"
@@ -3582,3 +4526,4 @@ msgstr ""
 
 #~ msgid "Use this form for questions, support requests, or suggestions."
 #~ msgstr "प्रश्न, सहयोग अनुरोध वा सुझावका लागि यो फारम प्रयोग गर्नुहोस्।"
+

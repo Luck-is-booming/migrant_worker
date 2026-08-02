@@ -1,38 +1,51 @@
-{% extends "core/base.html" %}{% load i18n %}
-{% block title %}{% translate "Membership Application" %} — MRN Ilam{% endblock %}
-{% block meta_description %}{% translate "Apply for MRN Ilam membership and continue to the verified manual payment process." %}{% endblock %}
+{% extends "core/base.html" %}
+{% load i18n %}
+{% block title %}{% translate "Membership application" %} — MRN Ilam{% endblock %}
+{% block meta_description %}{% translate "Apply for MRN Ilam membership and continue to the verified payment step." %}{% endblock %}
 {% block robots %}noindex,nofollow{% endblock %}
 {% block content %}{% url 'privacy' as privacy_url %}
-<section class="section section--soft">
+<section class="page-hero">
   <div class="container narrow">
     <p class="eyebrow">{% translate "Membership" %}</p>
-    <h1>{% translate "Apply for organization membership" %}</h1>
-    <p class="lead">{% translate "Membership and counseling are separate. Counseling does not require membership or payment." %}</p>
+    <h1>{% translate "Apply for membership" %}</h1>
+    <p class="lead">{% translate "Counseling and membership are separate. You do not need to become a member or pay to receive counseling." %}</p>
   </div>
 </section>
+
 <section class="section">
   <div class="container form-shell">
-    <div class="notice"><p>{% translate "Payment is for the selected organization membership category only. It does not guarantee a visa, job, recruitment, or counseling outcome." %}</p></div>
     {% if payment_ready %}
-      <div class="card compact-card">
-        <h2>{% translate "Published membership fees" %}</h2>
+      <div class="card fee-summary">
+        <h2>{% translate "Current membership fees" %}</h2>
         <dl class="summary-list">
-          <div><dt>{% translate "General Member" %}</dt><dd>{% translate "NPR" %} {{ payment_settings.general_member_amount }}</dd></div>
-          <div><dt>{% translate "Life Member" %}</dt><dd>{% translate "NPR" %} {{ payment_settings.life_member_amount }}</dd></div>
+          <div><dt>{% translate "General Membership" %}</dt><dd>{% translate "NPR" %} {{ payment_settings.general_member_amount }}</dd></div>
+          <div><dt>{% translate "Life Membership" %}</dt><dd>{% translate "NPR" %} {{ payment_settings.life_member_amount }}</dd></div>
         </dl>
-        <p class="small muted">{% translate "Payment is reviewed by authorized staff before membership is activated." %}</p>
+        <p class="small muted">{% translate "Staff must verify the application and payment before membership becomes active." %}</p>
+      </div>
+    {% else %}
+      <div class="notice notice--warning" role="status"><p>{% translate "Online applications are temporarily paused because verified payment details are not currently available. Please contact the organization before paying anyone." %}</p></div>
+    {% endif %}
+
+    <div class="notice"><p>{% translate "The membership fee is only for the selected membership type. It does not buy counseling, a job, a visa, recruitment, or any guaranteed result." %}</p></div>
+
+    {% if form.errors %}
+      <div class="error-summary" role="alert" tabindex="-1">
+        <h2>{% translate "Please check the highlighted fields" %}</h2>
+        <p>{% translate "Some information is missing or needs to be corrected." %}</p>
+        {{ form.non_field_errors }}
       </div>
     {% endif %}
-    {% if not payment_ready %}<div class="notice notice--warning"><p>{% translate "Online membership applications are temporarily paused until the organization publishes verified payment details." %}</p></div>{% endif %}
-    {% if form.errors %}<div class="error-summary" role="alert"><h2>{% translate "Please correct the form." %}</h2>{{ form.non_field_errors }}</div>{% endif %}
+
     <form method="post" novalidate>
       {% csrf_token %}
       {{ form.website }}{{ form.form_started }}
       <div class="form-grid">
         {% for field in form %}{% if field.name != 'website' and field.name != 'form_started' %}{% include "core/partials/form_field.html" with field=field %}{% endif %}{% endfor %}
       </div>
-      <p class="form-help">{% blocktranslate %}By submitting, you confirm that the information is accurate and that you have read the <a href="{{ privacy_url }}">privacy policy</a>.{% endblocktranslate %}</p>
-      <button class="button button--primary" type="submit"{% if not payment_ready %} disabled{% endif %}>{% translate "Continue to membership payment" %}</button>
+      <p class="form-help">{% blocktranslate %}By submitting this form, you confirm that the information is accurate and that you have read the <a href="{{ privacy_url }}">privacy policy</a>.{% endblocktranslate %}</p>
+      <button class="button button--primary" type="submit"{% if not payment_ready %} disabled aria-describedby="payment-unavailable"{% endif %}>{% translate "Continue to payment details" %}</button>
+      {% if not payment_ready %}<p id="payment-unavailable" class="form-help">{% translate "This button will be available after the organization publishes verified payment details." %}</p>{% endif %}
     </form>
   </div>
 </section>

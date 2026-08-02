@@ -1,13 +1,14 @@
 {% extends "core/base.html" %}
 {% load i18n %}
-{% block title %}{% if LANGUAGE_CODE == 'ne' %}मर्मत कार्य भइरहेको छ{% else %}Maintenance in progress{% endif %}{% endblock %}
+{% block title %}{% translate "Website maintenance" %} — MRN Ilam{% endblock %}
+{% block robots %}noindex,nofollow{% endblock %}
 {% block content %}
-<section class="section">
-  <div class="container form-shell">
-    <p class="eyebrow">MRN Ilam</p>
-    <h1>{% if LANGUAGE_CODE == 'ne' %}मर्मत कार्य भइरहेको छ{% else %}Maintenance in progress{% endif %}</h1>
-    <p class="lead">{% if LANGUAGE_CODE == 'ne' %}आवश्यक मर्मत कार्यका कारण वेबसाइट अस्थायी रूपमा उपलब्ध छैन।{% else %}The website is temporarily unavailable while essential maintenance is completed.{% endif %}</p>
-    <div class="action-row"><a class="button button--primary" href="/{{ LANGUAGE_CODE }}/">{% if LANGUAGE_CODE == 'ne' %}गृहपृष्ठमा फर्कनुहोस्{% else %}Return to homepage{% endif %}</a></div>
+<section class="error-page">
+  <div class="container narrow">
+    <div class="error-logo-wrap">{% include "core/partials/site_logo.html" with logo_class="error-logo" logo_width="96" logo_height="96" %}</div>
+    <h1>{% translate "Website maintenance" %}</h1>
+    <p class="lead">{% translate "The website is temporarily unavailable while essential maintenance is completed. Please try again later." %}</p>
+    <a class="button button--primary" href="{% url 'index' %}">{% translate "Try again" %}</a>
   </div>
 </section>
 {% endblock %}

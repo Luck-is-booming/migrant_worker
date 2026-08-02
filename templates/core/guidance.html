@@ -1,19 +1,36 @@
-{% extends "core/base.html" %}{% load i18n %}
-{% block title %}{% translate "Foreign Employment Guidance" %} — MRN Ilam{% endblock %}
+{% extends "core/base.html" %}
+{% load i18n %}
+{% block title %}{% translate "Step-by-step foreign-employment guidance" %} — MRN Ilam{% endblock %}
+{% block meta_description %}{% translate "Practical checks to follow before leaving, while working abroad, and after returning home." %}{% endblock %}
 {% block content %}
-<section class="section section--soft"><div class="container"><p class="eyebrow">{% translate "Foreign-employment journey" %}</p><h1>{% translate "Questions and checks for every stage" %}</h1><p class="lead">{% translate "This is general awareness guidance. Verify your individual case with the relevant official authority or qualified professional." %}</p></div></section>
-<section class="section"><div class="container"><ol class="steps">
-<li><strong>{% translate "Before considering foreign employment" %}</strong><br>{% translate "Clarify your goal, skills, health, family responsibilities, expected costs, and acceptable risks." %}</li>
-<li><strong>{% translate "Choosing a legitimate pathway" %}</strong><br>{% translate "Use official information and verify whether the recruiter, institution, or program is authorized." %}</li>
-<li><strong>{% translate "Verifying recruiters and employers" %}</strong><br>{% translate "Check identities, licenses where applicable, employer details, written contacts, and official records." %}</li>
-<li><strong>{% translate "Reviewing offers and contracts" %}</strong><br>{% translate "Compare job title, workplace, salary, deductions, hours, leave, accommodation, insurance, and return terms." %}</li>
-<li><strong>{% translate "Understanding costs" %}</strong><br>{% translate "Ask for a written breakdown and official receipts. Do not rely on verbal promises or personal-account transfers." %}</li>
-<li><strong>{% translate "Labor approval and documentation awareness" %}</strong><br>{% translate "Confirm the required official approvals and make copies of important documents before departure." %}</li>
-<li><strong>{% translate "Insurance and welfare awareness" %}</strong><br>{% translate "Understand coverage, exclusions, claims, welfare provisions, beneficiaries, and contact channels." %}</li>
-<li><strong>{% translate "Pre-departure preparation" %}</strong><br>{% translate "Keep emergency contacts, document copies, contract details, medication information, and safe communication plans." %}</li>
-<li><strong>{% translate "Working abroad" %}</strong><br>{% translate "Keep records of wages, hours, communications, receipts, and any difference between the contract and actual work." %}</li>
-<li><strong>{% translate "Handling disputes or danger" %}</strong><br>{% translate "Prioritize immediate safety and contact the appropriate police, emergency, embassy, labor, legal, medical, or welfare channel." %}</li>
-<li><strong>{% translate "Returning home" %}</strong><br>{% translate "Plan documents, final payments, claims, health needs, travel, and family communication." %}</li>
-<li><strong>{% translate "Reintegration" %}</strong><br>{% translate "Seek guidance on skills, livelihoods, financial planning, family adjustment, and available local support." %}</li>
-</ol><div class="action-row"><a class="button button--primary" href="{% url 'counseling:request' %}">{% translate "Ask about your next step" %}</a><a class="button button--secondary" href="{% url 'resources' %}">{% translate "Open official resources" %}</a></div></div></section>
+<section class="page-hero">
+  <div class="container narrow">
+    <p class="eyebrow">{% translate "Step-by-step guidance" %}</p>
+    <h1>{% translate "Safer foreign employment, one step at a time" %}</h1>
+    <p class="lead">{% translate "Use these checks to prepare questions and avoid common risks. Confirm important decisions with the relevant official office." %}</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container narrow-wide">
+    <ol class="steps steps--journey">
+      <li><strong>{% translate "Before deciding to work abroad" %}</strong><span>{% translate "Think about your goal, skills, health, family responsibilities, expected costs, and the risks you can accept." %}</span></li>
+      <li><strong>{% translate "Choose a legal and verified process" %}</strong><span>{% translate "Use official information and check whether the recruiter, institution, or program is authorized." %}</span></li>
+      <li><strong>{% translate "Check the recruiter and employer" %}</strong><span>{% translate "Confirm names, licenses where required, employer details, contact information, and official records." %}</span></li>
+      <li><strong>{% translate "Read the offer and contract carefully" %}</strong><span>{% translate "Compare the job, workplace, salary, deductions, working hours, leave, accommodation, insurance, and return terms." %}</span></li>
+      <li><strong>{% translate "Understand every cost" %}</strong><span>{% translate "Ask for a written list of charges and official receipts. Do not rely only on verbal promises or personal-account transfers." %}</span></li>
+      <li><strong>{% translate "Confirm labor approval and documents" %}</strong><span>{% translate "Check the required official approvals and keep safe copies of important documents before departure." %}</span></li>
+      <li><strong>{% translate "Understand insurance and available support" %}</strong><span>{% translate "Know what is covered, what is not covered, how to make a claim, and whom your family should contact." %}</span></li>
+      <li><strong>{% translate "Prepare before leaving" %}</strong><span>{% translate "Save emergency contacts, document copies, contract details, medicine information, and a safe way to stay in touch with family." %}</span></li>
+      <li><strong>{% translate "Protect yourself while working abroad" %}</strong><span>{% translate "Keep records of wages, working hours, messages, receipts, and any difference between your contract and actual work." %}</span></li>
+      <li><strong>{% translate "Get help when there is a problem or danger" %}</strong><span>{% translate "Put your immediate safety first and contact the relevant police, emergency service, embassy, labor office, medical service, or qualified professional." %}</span></li>
+      <li><strong>{% translate "Prepare to return home" %}</strong><span>{% translate "Plan your documents, final pay, claims, health needs, travel, and communication with your family." %}</span></li>
+      <li><strong>{% translate "After returning home" %}</strong><span>{% translate "Look for support with skills, work or business plans, finances, health, and family adjustment." %}</span></li>
+    </ol>
+    <div class="action-row">
+      <a class="button button--primary" href="{% url 'counseling:request' %}">{% translate "Ask about your situation" %}</a>
+      <a class="button button--secondary" href="{% url 'resources' %}">{% translate "Find official resources" %}</a>
+    </div>
+  </div>
+</section>
 {% endblock %}

@@ -1,38 +1,40 @@
-{% extends "core/base.html" %}{% load i18n %}
+{% extends "core/base.html" %}
+{% load i18n %}
 {% block title %}{% translate "Membership payment status" %} — MRN Ilam{% endblock %}
-{% block meta_description %}{% translate "Private membership payment verification status." %}{% endblock %}
+{% block meta_description %}{% translate "Private status of a membership payment review." %}{% endblock %}
 {% block robots %}noindex,nofollow,noarchive{% endblock %}
 {% block content %}
-<section class="section section--soft">
+<section class="page-hero">
   <div class="container narrow">
     {% if payment.status == "approved" %}
       <span class="badge badge--success">{% translate "Approved" %}</span>
-      <h1>{% translate "Membership payment verified" %}</h1>
+      <h1>{% translate "Your membership payment was approved" %}</h1>
       <p class="lead">{% translate "Authorized staff verified the payment and activated the related membership record." %}</p>
     {% elif payment.status == "rejected" %}
-      <span class="badge badge--danger">{% translate "Rejected" %}</span>
-      <h1>{% translate "The proof could not be approved" %}</h1>
-      <p class="lead">{% translate "Contact the organization through an official channel before making another payment. A new proof may be submitted only after the rejected record allows it." %}</p>
+      <span class="badge badge--danger">{% translate "Not approved" %}</span>
+      <h1>{% translate "The payment proof could not be approved" %}</h1>
+      <p class="lead">{% translate "Read the reason below and contact the organization before paying again." %}</p>
       {% if payment.rejection_reason %}<div class="notice notice--warning"><p><strong>{% translate "Reason" %}:</strong> {{ payment.rejection_reason|linebreaksbr }}</p></div>{% endif %}
-      {% if retry_url %}<a class="button button--primary" href="{{ retry_url }}">{% translate "Submit corrected payment proof" %}</a>{% endif %}
+      {% if retry_url %}<a class="button button--primary" href="{{ retry_url }}">{% translate "Submit corrected proof" %}</a>{% endif %}
     {% elif payment.status == "needs_review" %}
-      <span class="badge badge--warning">{% translate "Needs review" %}</span>
-      <h1>{% translate "Staff need to check additional details" %}</h1>
-      <p class="lead">{% translate "Keep this private status link. Authorized staff may contact the applicant using the contact details supplied with the application." %}</p>
+      <span class="badge badge--warning">{% translate "More review needed" %}</span>
+      <h1>{% translate "Staff need to check more information" %}</h1>
+      <p class="lead">{% translate "Keep this private link. Authorized staff may contact the applicant using the details provided in the application." %}</p>
     {% else %}
-      <span class="badge badge--warning">{% translate "Pending" %}</span>
-      <h1>{% translate "Payment proof received" %}</h1>
-      <p class="lead">{% translate "The evidence is waiting for authorized staff verification. Submission does not by itself confirm payment or activate membership." %}</p>
+      <span class="badge badge--warning">{% translate "Under review" %}</span>
+      <h1>{% translate "Your payment proof was received" %}</h1>
+      <p class="lead">{% translate "Authorized staff still need to verify it. Sending proof does not by itself confirm payment or activate membership." %}</p>
     {% endif %}
   </div>
 </section>
+
 <section class="section">
   <div class="container narrow">
     <article class="card">
-      <h2>{% translate "Private reference summary" %}</h2>
+      <h2>{% translate "Application summary" %}</h2>
       <dl class="summary-list">
         <div><dt>{% translate "Applicant" %}</dt><dd>{{ payment.membership.name }}</dd></div>
-        <div><dt>{% translate "Membership category" %}</dt><dd>{{ payment.membership.get_membership_type_display }}</dd></div>
+        <div><dt>{% translate "Membership type" %}</dt><dd>{{ payment.membership.get_membership_type_display }}</dd></div>
         <div><dt>{% translate "Amount" %}</dt><dd>{% translate "NPR" %} {{ payment.amount }}</dd></div>
         <div><dt>{% translate "Submitted" %}</dt><dd>{{ payment.submitted_at|date:"SHORT_DATETIME_FORMAT" }}</dd></div>
         <div><dt>{% translate "Status" %}</dt><dd>{{ payment.get_status_display }}</dd></div>
@@ -41,7 +43,7 @@
           <div><dt>{% translate "Organization unit" %}</dt><dd>{{ official_membership.organization_unit.name }}</dd></div>
         {% endif %}
       </dl>
-      <p class="form-help">{% translate "Do not share this status link publicly. It contains private application context." %}</p>
+      <p class="form-help">{% translate "Do not share this status link publicly. It contains private application information." %}</p>
       <a class="button button--secondary" href="{% url 'contact' %}">{% translate "Contact the organization" %}</a>
     </article>
   </div>

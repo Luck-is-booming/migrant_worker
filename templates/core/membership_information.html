@@ -1,12 +1,68 @@
-{% extends "core/base.html" %}{% load i18n %}
-{% block title %}{% translate "Membership Information" %} — MRN Ilam{% endblock %}
-{% block meta_description %}{% translate "Membership categories, application steps, payment review, privacy, and approval rules for MRN Ilam." %}{% endblock %}
+{% extends "core/base.html" %}
+{% load i18n %}
+{% block title %}{% translate "Membership" %} — MRN Ilam{% endblock %}
+{% block meta_description %}{% translate "Learn about General and Life Membership, fees, application steps, payment review, and privacy." %}{% endblock %}
 {% block content %}
-<section class="section section--soft"><div class="container narrow"><p class="eyebrow">{% translate "Membership" %}</p><h1>{% translate "Membership information" %}</h1><p class="lead">{% translate "Membership supports the organization’s community work. It is separate from free counseling and does not provide a visa, job, recruitment, or migration guarantee." %}</p></div></section>
-<section class="section"><div class="container grid grid--2">
-  <article class="card"><h2>{% translate "General Membership" %}</h2><p>{% translate "A standard organization membership recorded under the selected organizational unit after staff verification and approval." %}</p>{% if payment_ready %}<p><strong>{% translate "Published fee" %}: {% translate "NPR" %} {{ payment_settings.general_member_amount }}</strong></p>{% else %}<p class="muted">{% translate "The verified fee has not been published yet." %}</p>{% endif %}</article>
-  <article class="card"><h2>{% translate "Life Membership" %}</h2><p>{% translate "A life membership recorded separately from any General Membership the same person may already hold." %}</p>{% if payment_ready %}<p><strong>{% translate "Published fee" %}: {% translate "NPR" %} {{ payment_settings.life_member_amount }}</strong></p>{% else %}<p class="muted">{% translate "The verified fee has not been published yet." %}</p>{% endif %}</article>
-</div></section>
-<section class="section section--soft"><div class="container grid grid--2"><div><h2>{% translate "How to apply" %}</h2><ol class="steps"><li>{% translate "Complete the membership application with a working phone number." %}</li><li>{% translate "Review the verified recipient, fee, and QR code." %}</li><li>{% translate "Pay externally and upload the successful payment proof." %}</li><li>{% translate "Authorized staff review the application and payment." %}</li><li>{% translate "Approval creates or links the person and issues a permanent membership number." %}</li></ol></div><div class="card"><h2>{% translate "Important safeguards" %}</h2><ul class="check-list"><li>{% translate "Payment alone does not guarantee approval." %}</li><li>{% translate "Never share an OTP, password, bank PIN, passport, or citizenship document through the payment form." %}</li><li>{% translate "A person may hold more than one valid membership, each with its own number." %}</li><li>{% translate "Issued membership numbers are not reused after archiving." %}</li></ul><a class="button button--primary{% if not payment_ready %} is-disabled{% endif %}" href="{% if payment_ready %}{% url 'membership_apply' %}{% else %}{% url 'contact' %}{% endif %}">{% if payment_ready %}{% translate "Apply for Membership" %}{% else %}{% translate "Contact the organization" %}{% endif %}</a></div></div></section>
-<section class="section"><div class="container narrow"><div class="notice"><p>{% translate "Need counseling rather than membership? Counseling is available without becoming a member or paying a membership fee." %}</p></div><a class="button button--secondary" href="{% url 'counseling:request' %}">{% translate "Request Counseling" %}</a></div></section>
+<section class="page-hero">
+  <div class="container narrow">
+    <p class="eyebrow">{% translate "Membership" %}</p>
+    <h1>{% translate "Become a member of MRN Ilam" %}</h1>
+    <p class="lead">{% translate "Membership supports the organization and its community work. Counseling is free and available even if you are not a member." %}</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container grid grid--2">
+    <article class="card membership-type-card">
+      <p class="eyebrow">{% translate "Membership type" %}</p>
+      <h2>{% translate "General Membership" %}</h2>
+      <p>{% translate "Regular membership in the selected local or district unit." %}</p>
+      {% if payment_ready %}<p class="fee"><span>{% translate "Fee" %}</span><strong>{% translate "NPR" %} {{ payment_settings.general_member_amount }}</strong></p>{% else %}<p class="muted">{% translate "The verified fee has not been published yet." %}</p>{% endif %}
+    </article>
+
+    <article class="card membership-type-card">
+      <p class="eyebrow">{% translate "Membership type" %}</p>
+      <h2>{% translate "Life Membership" %}</h2>
+      <p>{% translate "Long-term membership recorded separately from General Membership." %}</p>
+      {% if payment_ready %}<p class="fee"><span>{% translate "Fee" %}</span><strong>{% translate "NPR" %} {{ payment_settings.life_member_amount }}</strong></p>{% else %}<p class="muted">{% translate "The verified fee has not been published yet." %}</p>{% endif %}
+    </article>
+  </div>
+</section>
+
+<section class="section section--soft">
+  <div class="container split-layout">
+    <div>
+      <p class="eyebrow">{% translate "Application" %}</p>
+      <h2>{% translate "How to apply" %}</h2>
+      <ol class="steps">
+        <li><strong>{% translate "Complete the application" %}</strong><span>{% translate "Enter accurate details and a phone number the organization can use to contact you." %}</span></li>
+        <li><strong>{% translate "Check the fee and recipient" %}</strong><span>{% translate "Review the published membership fee, recipient name, and official QR before paying." %}</span></li>
+        <li><strong>{% translate "Pay and upload proof" %}</strong><span>{% translate "Pay outside the website and upload the successful receipt or screenshot for private review." %}</span></li>
+        <li><strong>{% translate "Staff review the application" %}</strong><span>{% translate "Authorized staff check the application and payment proof." %}</span></li>
+        <li><strong>{% translate "Membership is activated" %}</strong><span>{% translate "After approval, the person is linked or created and a permanent membership number is issued." %}</span></li>
+      </ol>
+    </div>
+
+    <aside class="card card--shadow">
+      <p class="eyebrow">{% translate "Before you apply" %}</p>
+      <h2>{% translate "Important information" %}</h2>
+      <ul class="check-list">
+        <li>{% translate "Payment alone does not confirm membership." %}</li>
+        <li>{% translate "Never send an OTP, password, bank PIN, passport, or citizenship document through the payment form." %}</li>
+        <li>{% translate "One person may have more than one valid membership, each with its own number." %}</li>
+        <li>{% translate "Issued membership numbers are not reused after a record is archived." %}</li>
+      </ul>
+      <a class="button button--primary" href="{% if payment_ready %}{% url 'membership_apply' %}{% else %}{% url 'contact' %}{% endif %}">
+        {% if payment_ready %}{% translate "Apply for membership" %}{% else %}{% translate "Ask about membership" %}{% endif %}
+      </a>
+    </aside>
+  </div>
+</section>
+
+<section class="section section--compact">
+  <div class="container callout-row">
+    <div><h2>{% translate "Need counseling instead?" %}</h2><p>{% translate "You can receive counseling without becoming a member or paying a membership fee." %}</p></div>
+    <a class="button button--secondary" href="{% url 'counseling:request' %}">{% translate "Get counseling" %}</a>
+  </div>
+</section>
 {% endblock %}

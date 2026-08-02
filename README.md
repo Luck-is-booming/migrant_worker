@@ -223,6 +223,7 @@ The command reports missing verified organization contacts, payment setup, publi
 - `docs/MEMBERSHIP_NUMBERING.md`
 - `docs/MEMBER_IMPORT.md`
 - `docs/CLIENT_ADMIN_GUIDE.md`
+- `docs/ADMIN_OPERATIONS_GUIDE.md`
 - `docs/CLIENT_HANDOVER_OVERVIEW.md`
 - `docs/EXTERNAL_CONFIGURATION_REQUIRED.md`
 - `docs/LOCAL_SETUP_AND_PACKAGING.md`

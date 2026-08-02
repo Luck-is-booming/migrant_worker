@@ -51,11 +51,11 @@ def _info_context(db_info, lang):
             "established_date": None,
             "service_area": "",
             "disclaimer": (
-                "हामी वैदेशिक रोजगारसम्बन्धी सूचना, सचेतना र परामर्श प्रदान गर्छौं। "
-                "हामी भिसा जारी गर्दैनौं वा रोजगारीको ग्यारेन्टी गर्दैनौं।"
+                "हामी सूचना र परामर्श प्रदान गर्छौं। हामी रोजगारी वा भिसाको व्यवस्था "
+                "गर्दैनौं र कुनै नतिजाको ग्यारेन्टी दिँदैनौं।"
                 if lang == "ne"
-                else "We provide foreign-employment information, awareness, and counseling. "
-                "We do not issue visas or guarantee employment."
+                else "We provide information and counseling. We do not arrange jobs or visas "
+                "and cannot guarantee any result."
             ),
         }
     )

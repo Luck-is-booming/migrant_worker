@@ -1,67 +1,98 @@
-{% extends "core/base.html" %}{% load i18n %}
-{% block title %}{% translate "About Us" %} — MRN Ilam{% endblock %}
-{% block meta_description %}{% translate "Mission, objectives, leadership, service area, and non-agency position of MRN Ilam." %}{% endblock %}
+{% extends "core/base.html" %}
+{% load i18n %}
+{% block title %}{% translate "About" %} — MRN Ilam{% endblock %}
+{% block meta_description %}{% translate "Learn about MRN Ilam, its purpose, leadership, official details, and chairperson's message." %}{% endblock %}
 {% block content %}
-<section class="section section--soft">
-  <div class="container">
+<section class="page-hero">
+  <div class="container narrow">
     <p class="eyebrow">{% translate "About MRN Ilam" %}</p>
-    <h1 class="page-title">{{ info.name }}</h1>
-    <p class="lead">{{ info.slogan }}</p>
-    <div class="notice"><p>{{ info.disclaimer|linebreaksbr }}</p></div>
+    <h1>{{ info.name }}</h1>
+    {% if info.slogan %}<p class="lead">{{ info.slogan }}</p>{% endif %}
   </div>
 </section>
 
 <section class="section">
   <div class="container grid grid--2">
-    <article><h2>{% translate "Mission and objectives" %}</h2><p>{{ info.objective|linebreaksbr }}</p></article>
-    <article><h2>{% translate "Commitment" %}</h2><p>{{ info.commitment|linebreaksbr }}</p></article>
+    <article class="content-card">
+      <p class="eyebrow">{% translate "Our purpose" %}</p>
+      <h2>{% translate "What we work for" %}</h2>
+      <div class="prose">{{ info.objective|linebreaks }}</div>
+    </article>
+    <article class="content-card">
+      <p class="eyebrow">{% translate "Our commitment" %}</p>
+      <h2>{% translate "What we are committed to" %}</h2>
+      <div class="prose">{{ info.commitment|linebreaks }}</div>
+    </article>
   </div>
 </section>
 
-<section class="section section--soft">
+<section class="section section--soft" aria-labelledby="leadership-heading">
   <div class="container">
-    <h2>{% translate "Leadership" %}</h2>
+    <p class="eyebrow">{% translate "People" %}</p>
+    <h2 id="leadership-heading">{% translate "Leadership" %}</h2>
     <div class="grid grid--3">
       {% for member in team_members %}
-        <article class="card">
+        <article class="card team-card">
           {% if member.image %}<img src="{{ member.image.url }}" alt="{{ member.name }}" loading="lazy" width="320" height="320">{% endif %}
           <h3>{{ member.name }}</h3>
           <p><strong>{{ member.designation }}</strong></p>
           {% if member.address %}<p class="muted">{{ member.address }}</p>{% endif %}
         </article>
       {% empty %}
-        <div class="empty-state"><p>{% translate "Leadership information must be entered and approved by authorized staff." %}</p></div>
+        <div class="empty-state grid-span-full"><p>{% translate "Leadership details have not been published yet." %}</p></div>
       {% endfor %}
     </div>
   </div>
 </section>
 
 <section class="section">
-  <div class="container grid grid--2">
+  <div class="container split-layout">
     <div>
-      <h2>{% translate "Transparency information" %}</h2>
+      <p class="eyebrow">{% translate "Organization details" %}</p>
+      <h2>{% translate "Official information" %}</h2>
       {% if info.registration_number or info.registration_authority or info.established_date or info.office_address or info.service_area or info.service_hours %}
-        <dl>
-          {% if info.registration_number %}<dt>{% translate "Registration number" %}</dt><dd>{{ info.registration_number }}</dd>{% endif %}
-          {% if info.registration_authority %}<dt>{% translate "Registration authority" %}</dt><dd>{{ info.registration_authority }}</dd>{% endif %}
-          {% if info.established_date %}<dt>{% translate "Established date" %}</dt><dd>{{ info.established_date }}</dd>{% endif %}
-          {% if info.office_address %}<dt>{% translate "Office address" %}</dt><dd>{{ info.office_address|linebreaksbr }}</dd>{% endif %}
-          {% if info.service_area %}<dt>{% translate "Service area" %}</dt><dd>{{ info.service_area|linebreaksbr }}</dd>{% endif %}
-          {% if info.service_hours %}<dt>{% translate "Service hours" %}</dt><dd>{{ info.service_hours|linebreaksbr }}</dd>{% endif %}
+        <dl class="detail-list">
+          {% if info.registration_number %}<div><dt>{% translate "Registration number" %}</dt><dd>{{ info.registration_number }}</dd></div>{% endif %}
+          {% if info.registration_authority %}<div><dt>{% translate "Registered with" %}</dt><dd>{{ info.registration_authority }}</dd></div>{% endif %}
+          {% if info.established_date %}<div><dt>{% translate "Established" %}</dt><dd>{{ info.established_date }}</dd></div>{% endif %}
+          {% if info.office_address %}<div><dt>{% translate "Office address" %}</dt><dd>{{ info.office_address|linebreaksbr }}</dd></div>{% endif %}
+          {% if info.service_area %}<div><dt>{% translate "Where we work" %}</dt><dd>{{ info.service_area|linebreaksbr }}</dd></div>{% endif %}
+          {% if info.service_hours %}<div><dt>{% translate "Service hours" %}</dt><dd>{{ info.service_hours|linebreaksbr }}</dd></div>{% endif %}
         </dl>
       {% else %}
-        <p class="muted">{% translate "Verified registration, address, and service-hour information is awaiting an authorized update." %}</p>
+        <p class="muted">{% translate "Official registration and office details will be shown here after they are published by the organization." %}</p>
       {% endif %}
     </div>
-    <div>
-      <h2>{% translate "Chairperson's message" %}</h2>
-      {% if info.message or info.chairperson %}
-        {% if info.message %}<blockquote>{{ info.message|linebreaksbr }}</blockquote>{% endif %}
-        {% if info.chairperson %}<p><strong>{{ info.chairperson }}</strong></p>{% endif %}
-      {% else %}
-        <p class="muted">{% translate "An approved chairperson message has not yet been published." %}</p>
+
+    <div class="chairperson-message{% if info.chairperson_photo %} chairperson-message--with-photo{% endif %}">
+      {% if info.chairperson_photo %}
+        <figure class="chairperson-photo">
+          <img
+            src="{{ info.chairperson_photo.url }}"
+            alt="{% if info.chairperson %}{{ info.chairperson }}{% else %}{% translate "Chairperson Photo" %}{% endif %}"
+            width="420"
+            height="520"
+            loading="lazy"
+          >
+        </figure>
       {% endif %}
+      <div class="chairperson-message__content">
+        <p class="eyebrow">{% translate "From the chairperson" %}</p>
+        <h2>{% translate "Chairperson's message" %}</h2>
+        {% if info.message or info.chairperson %}
+          {% if info.message %}<blockquote>{{ info.message|linebreaksbr }}</blockquote>{% endif %}
+          {% if info.chairperson %}<p class="signature"><strong>{{ info.chairperson }}</strong></p>{% endif %}
+        {% else %}
+          <p class="muted">{% translate "A chairperson's message has not been published yet." %}</p>
+        {% endif %}
+      </div>
     </div>
   </div>
 </section>
+
+{% if info.disclaimer %}
+<section class="section section--compact">
+  <div class="container"><div class="notice"><p>{{ info.disclaimer|linebreaksbr }}</p></div></div>
+</section>
+{% endif %}
 {% endblock %}

@@ -13,11 +13,33 @@ class ManualPaymentForm(forms.ModelForm):
     class Meta:
         model = ManualPayment
         fields = ["transaction_id", "screenshot", "note"]
+        labels = {
+            "transaction_id": _("Transaction or reference number (optional)"),
+            "screenshot": _("Payment receipt or screenshot"),
+            "note": _("Note for the reviewer (optional)"),
+        }
+        help_texts = {
+            "transaction_id": _("Enter the reference shown on the successful payment receipt, when available."),
+            "screenshot": _("Upload a clear JPG, PNG, or WebP image up to 5 MB."),
+            "note": _("Add only information that helps staff verify the payment."),
+        }
         widgets = {
             "transaction_id": forms.TextInput(attrs={"class": "form-control", "autocomplete": "off"}),
             "screenshot": forms.ClearableFileInput(attrs={"class": "form-control", "accept": "image/jpeg,image/png,image/webp"}),
             "note": forms.Textarea(attrs={"class": "form-control", "rows": 3}),
         }
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        for name, field in self.fields.items():
+            described_by = []
+            if field.help_text:
+                described_by.append(f"id_{name}-help")
+            if name in self.errors:
+                described_by.append(f"id_{name}-errors")
+                field.widget.attrs["aria-invalid"] = "true"
+            if described_by:
+                field.widget.attrs["aria-describedby"] = " ".join(described_by)
 
     def clean_transaction_id(self):
         value = str(self.cleaned_data.get("transaction_id") or "").strip()

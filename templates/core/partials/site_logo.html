@@ -1,0 +1,9 @@
+{% load static i18n %}
+<img
+  class="{{ logo_class|default:'brand-logo' }}"
+  src="{% static 'core/images/logo-official-192.png' %}"
+  alt="{% if LANGUAGE_CODE == 'ne' %}{{ site_info.name_ne|default:'MRN Ilam' }}{% else %}{{ site_info.name_en|default:'MRN Ilam' }}{% endif %}"
+  width="{{ logo_width|default:'52' }}"
+  height="{{ logo_height|default:'52' }}"
+  decoding="async"
+>

@@ -1,4 +1,34 @@
-{% extends "core/base.html" %}{% load i18n %}
-{% block title %}{% translate "Terms and Disclaimer" %} — MRN Ilam{% endblock %}
-{% block meta_description %}{% translate "Service boundaries, responsible use, and information disclaimer for MRN Ilam." %}{% endblock %}
-{% block content %}<section class="section section--soft"><div class="container article-body"><p class="eyebrow">{% translate "Service boundaries" %}</p><h1>{% translate "Terms and disclaimer" %}</h1><p class="lead">{{ info.disclaimer }}</p></div></section><section class="section"><div class="container article-body prose"><h2>{% translate "No visa or job guarantee" %}</h2><p>{% translate "MRN Ilam does not issue visas, recruit workers, place people in jobs, or guarantee labor approval, employment, travel, or migration outcomes." %}</p><h2>{% translate "General information" %}</h2><p>{% translate "Website information is provided for awareness and guidance. Rules and official procedures may change. Verify important decisions with the relevant government authority, embassy, licensed professional, or official source." %}</p><h2>{% translate "Emergency situations" %}</h2><p>{% translate "This website is not an emergency-response service. In immediate danger, contact police, emergency services, an embassy or consulate, a labor authority, or another appropriate official service." %}</p><h2>{% translate "Membership" %}</h2><p>{% translate "Submitting an application or payment does not itself confirm membership. Membership becomes active only after authorized staff review and approval." %}</p><h2>{% translate "Responsible use" %}</h2><p>{% translate "Do not misuse forms, upload harmful files, impersonate another person, or submit false payment evidence. Access may be limited when abuse is detected." %}</p><h2>{% translate "Report inaccurate information" %}</h2><p>{% translate "Contact the organization when you find information that appears outdated, inaccurate, or unclear." %}</p></div></section>{% endblock %}
+{% extends "core/base.html" %}
+{% load i18n %}
+{% block title %}{% translate "Terms and disclaimer" %} — MRN Ilam{% endblock %}
+{% block meta_description %}{% translate "Important limits of MRN Ilam's information, counseling, membership, and website services." %}{% endblock %}
+{% block content %}
+<section class="page-hero">
+  <div class="container article-body">
+    <p class="eyebrow">{% translate "Important information" %}</p>
+    <h1>{% translate "Terms and disclaimer" %}</h1>
+    {% if info.disclaimer %}<p class="lead">{{ info.disclaimer }}</p>{% endif %}
+  </div>
+</section>
+<section class="section">
+  <div class="container article-body prose">
+    <h2>{% translate "We do not arrange jobs or visas" %}</h2>
+    <p>{% translate "MRN Ilam provides information and counseling. It does not recruit workers, place people in jobs, issue visas, or guarantee labor approval, employment, travel, compensation, or any other result." %}</p>
+
+    <h2>{% translate "Check important information with the official source" %}</h2>
+    <p>{% translate "Rules, procedures, fees, and contact details can change. Confirm important decisions with the relevant government office, embassy, licensed professional, or official source." %}</p>
+
+    <h2>{% translate "This is not an emergency service" %}</h2>
+    <p>{% translate "If someone is in immediate danger, contact the relevant police, emergency service, embassy or consulate, labor authority, medical service, or other official service immediately." %}</p>
+
+    <h2>{% translate "Membership requires approval" %}</h2>
+    <p>{% translate "Sending an application or payment proof does not confirm membership. Membership becomes active only after authorized staff approve the application and payment." %}</p>
+
+    <h2>{% translate "Use the website responsibly" %}</h2>
+    <p>{% translate "Do not misuse forms, upload harmful files, pretend to be another person, or submit false payment proof. Access may be limited when misuse is detected." %}</p>
+
+    <h2>{% translate "Tell us about incorrect information" %}</h2>
+    <p>{% translate "Contact the organization if you find information that is outdated, inaccurate, or unclear." %}</p>
+  </div>
+</section>
+{% endblock %}

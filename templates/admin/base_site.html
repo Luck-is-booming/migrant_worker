@@ -1,0 +1,39 @@
+{% extends "admin/base.html" %}
+{% load static %}
+
+{% block title %}{{ title }} | {{ site_title|default:"MRN Ilam Admin" }}{% endblock %}
+
+{% block extrahead %}
+  {{ block.super }}
+  <link rel="icon" href="{% static 'core/images/favicon.ico' %}" sizes="any">
+  <link rel="icon" type="image/png" sizes="48x48" href="{% static 'core/images/favicon-48x48.png' %}">
+  <link rel="apple-touch-icon" href="{% static 'core/images/apple-touch-icon.png' %}">
+{% endblock %}
+
+{% block extrastyle %}
+  {{ block.super }}
+  <link rel="stylesheet" href="{% static 'admin/css/mrnilam-admin.css' %}">
+{% endblock %}
+
+{% block branding %}
+  <div id="site-name" class="mrn-admin-brand">
+    <a href="{% url 'admin:index' %}">
+      <img
+        src="{% static 'core/images/logo-official-192.png' %}"
+        width="44"
+        height="44"
+        alt="MRN Ilam logo"
+      >
+      <span>
+        <strong>MRN Ilam Management</strong>
+        <small>Organization administration</small>
+      </span>
+    </a>
+  </div>
+{% endblock %}
+
+{% block nav-global %}
+  <a class="mrn-view-site" href="/en/" target="_blank" rel="noopener noreferrer">
+    View public website
+  </a>
+{% endblock %}

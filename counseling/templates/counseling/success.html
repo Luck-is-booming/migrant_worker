@@ -1,4 +1,26 @@
-{% extends "core/base.html" %}{% load i18n %}
-{% block title %}{% translate "Request Submitted" %} — MRN Ilam{% endblock %}
+{% extends "core/base.html" %}
+{% load i18n %}
+{% block title %}{% translate "Counseling request sent" %} — MRN Ilam{% endblock %}
 {% block robots %}noindex,nofollow,noarchive{% endblock %}
-{% block content %}<section class="section"><div class="container form-shell"><div class="card card--shadow"><p class="eyebrow">{% translate "Submitted" %}</p><h1>{% translate "Your counseling request was saved." %}</h1><p>{% translate "Authorized staff can now review it. The organization cannot promise an exact response time or outcome." %}</p>{% if reference %}<p><strong>{% translate "Private reference" %}:</strong> {{ reference }}</p><p class="small muted">{% translate "Keep this reference for your own records. It cannot be used to view private details online." %}</p>{% endif %}<div class="action-row"><a class="button button--primary" href="{% url 'index' %}">{% translate "Return home" %}</a><a class="button button--secondary" href="{% url 'resources' %}">{% translate "View official resources" %}</a></div></div></div></section>{% endblock %}
+{% block content %}
+<section class="section">
+  <div class="container narrow">
+    <div class="card card--shadow success-card" role="status">
+      <p class="eyebrow">{% translate "Request received" %}</p>
+      <h1>{% translate "Your counseling request has been sent" %}</h1>
+      <p>{% translate "Authorized staff can now review it. Response time depends on the request and staff availability." %}</p>
+      {% if reference %}
+        <div class="reference-box">
+          <span>{% translate "Your reference number" %}</span>
+          <strong>{{ reference }}</strong>
+        </div>
+        <p class="small muted">{% translate "Keep this number for your records. It cannot be used to view private details online." %}</p>
+      {% endif %}
+      <div class="action-row">
+        <a class="button button--primary" href="{% url 'index' %}">{% translate "Go to homepage" %}</a>
+        <a class="button button--secondary" href="{% url 'resources' %}">{% translate "View official resources" %}</a>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

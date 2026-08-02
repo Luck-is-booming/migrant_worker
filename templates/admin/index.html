@@ -1,0 +1,176 @@
+{% extends "admin/base_site.html" %}
+{% load log %}
+
+{% block bodyclass %}{{ block.super }} dashboard mrn-dashboard{% endblock %}
+{% block breadcrumbs %}{% endblock %}
+
+{% block content %}
+<div id="content-main" class="mrn-dashboard-main">
+  <section class="mrn-dashboard-intro" aria-labelledby="dashboard-heading">
+    <div>
+      <p class="mrn-eyebrow">MRN Ilam</p>
+      <h1 id="dashboard-heading">What do you need to manage today?</h1>
+      <p>Choose a task below. Technical and legacy records are kept out of the daily workspace so staff can focus on real work.</p>
+    </div>
+  </section>
+
+  <section class="mrn-admin-section" aria-labelledby="daily-work-heading">
+    <div class="mrn-section-heading">
+      <div>
+        <p class="mrn-eyebrow">Daily work</p>
+        <h2 id="daily-work-heading">Requests, applications and members</h2>
+      </div>
+    </div>
+    <div class="mrn-admin-grid">
+      {% if perms.counseling.view_counselingrequest %}
+        <a class="mrn-admin-card mrn-admin-card--priority" href="{% url 'admin:counseling_counselingrequest_changelist' %}">
+          <span class="mrn-card-label">Counseling requests</span>
+          <strong class="mrn-card-count">{{ dashboard_counts.new_counseling|default_if_none:"—" }}</strong>
+          <span>new requests waiting for review</span>
+        </a>
+      {% endif %}
+
+      {% if perms.core.view_contactmessage %}
+        <a class="mrn-admin-card" href="{% url 'admin:core_contactmessage_changelist' %}">
+          <span class="mrn-card-label">General enquiries</span>
+          <strong class="mrn-card-count">{{ dashboard_counts.new_enquiries|default_if_none:"—" }}</strong>
+          <span>new messages from the public</span>
+        </a>
+      {% endif %}
+
+      {% if perms.core.view_membership %}
+        <a class="mrn-admin-card" href="{% url 'admin:core_membership_changelist' %}">
+          <span class="mrn-card-label">Membership applications</span>
+          <strong class="mrn-card-count">{{ dashboard_counts.open_applications|default_if_none:"—" }}</strong>
+          <span>applications not yet completed</span>
+        </a>
+      {% endif %}
+
+      {% if perms.payments.view_manualpayment %}
+        <a class="mrn-admin-card mrn-admin-card--priority" href="{% url 'admin:payments_manualpayment_changelist' %}">
+          <span class="mrn-card-label">Payment reviews</span>
+          <strong class="mrn-card-count">{{ dashboard_counts.payments_to_review|default_if_none:"—" }}</strong>
+          <span>payments waiting for a decision</span>
+        </a>
+      {% endif %}
+
+      {% if perms.members.view_person %}
+        <a class="mrn-admin-card" href="{% url 'admin:members_person_changelist' %}">
+          <span class="mrn-card-label">People</span>
+          <strong class="mrn-card-count">{{ dashboard_counts.public_people|default_if_none:"—" }}</strong>
+          <span>people in the public registry</span>
+        </a>
+      {% endif %}
+
+      {% if perms.members.view_membershiprecord %}
+        <a class="mrn-admin-card" href="{% url 'admin:members_membershiprecord_changelist' %}">
+          <span class="mrn-card-label">Issued memberships</span>
+          <strong class="mrn-card-count">{{ dashboard_counts.active_memberships|default_if_none:"—" }}</strong>
+          <span>currently active memberships</span>
+        </a>
+      {% endif %}
+    </div>
+  </section>
+
+  <section class="mrn-admin-section" aria-labelledby="content-heading">
+    <div class="mrn-section-heading">
+      <div>
+        <p class="mrn-eyebrow">Website content</p>
+        <h2 id="content-heading">Publish and update information</h2>
+      </div>
+      {% if perms.blog.view_article %}
+        <span class="mrn-section-count">
+          {{ dashboard_counts.draft_content|default_if_none:"—" }} draft or archived items
+        </span>
+      {% endif %}
+    </div>
+    <div class="mrn-link-grid">
+      {% if perms.blog.view_article %}<a href="{% url 'admin:blog_article_changelist' %}">News, notices and programs</a>{% endif %}
+      {% if perms.core.view_officialresource %}<a href="{% url 'admin:core_officialresource_changelist' %}">Official resources</a>{% endif %}
+      {% if perms.core.view_frequentlyaskedquestion %}<a href="{% url 'admin:core_frequentlyaskedquestion_changelist' %}">Frequently asked questions</a>{% endif %}
+      {% if perms.core.view_servicecard %}<a href="{% url 'admin:core_servicecard_changelist' %}">Homepage services</a>{% endif %}
+      {% if perms.core.view_teammember %}<a href="{% url 'admin:core_teammember_changelist' %}">Committee and team</a>{% endif %}
+      {% if perms.core.view_emergencyresource %}<a href="{% url 'admin:core_emergencyresource_changelist' %}">Emergency contacts</a>{% endif %}
+      {% if perms.core.view_resourcecategory %}<a href="{% url 'admin:core_resourcecategory_changelist' %}">Resource categories</a>{% endif %}
+    </div>
+  </section>
+
+  <section class="mrn-admin-section" aria-labelledby="settings-heading">
+    <div class="mrn-section-heading">
+      <div>
+        <p class="mrn-eyebrow">Organization settings</p>
+        <h2 id="settings-heading">Details that control the website</h2>
+      </div>
+    </div>
+    <div class="mrn-link-grid">
+      {% if perms.core.view_organizationinfo %}<a href="{% url 'admin:core_organizationinfo_changelist' %}">Organization information</a>{% endif %}
+      {% if perms.core.view_membershippaymentsettings %}<a href="{% url 'admin:core_membershippaymentsettings_changelist' %}">Membership payment settings</a>{% endif %}
+      {% if perms.members.view_organizationunit %}<a href="{% url 'admin:members_organizationunit_changelist' %}">Membership units</a>{% endif %}
+      {% if perms.members.view_membershipcategory %}<a href="{% url 'admin:members_membershipcategory_changelist' %}">Membership categories</a>{% endif %}
+      {% if perms.counseling.view_counselingcategory %}<a href="{% url 'admin:counseling_counselingcategory_changelist' %}">Counseling categories</a>{% endif %}
+    </div>
+  </section>
+
+  {% if perms.members.view_potentialduplicate or user.is_superuser %}
+    <section class="mrn-admin-section" aria-labelledby="review-heading">
+      <div class="mrn-section-heading">
+        <div>
+          <p class="mrn-eyebrow">Review and audit</p>
+          <h2 id="review-heading">Records that need careful checking</h2>
+        </div>
+      </div>
+      <div class="mrn-link-grid">
+        {% if perms.members.view_potentialduplicate %}
+          <a href="{% url 'admin:members_potentialduplicate_changelist' %}">
+            Duplicate reviews
+            <span class="mrn-pill">{{ dashboard_counts.duplicate_reviews|default_if_none:"—" }}</span>
+          </a>
+        {% endif %}
+        {% if user.is_superuser %}
+          <a href="{% url 'admin:members_membershipnumberissue_changelist' %}">Membership number audit</a>
+          <a href="{% url 'admin:members_importbatch_changelist' %}">Member import history</a>
+          <a href="{% url 'admin:auth_user_changelist' %}">Staff accounts</a>
+          <a href="{% url 'admin:auth_group_changelist' %}">Staff roles and permissions</a>
+        {% endif %}
+      </div>
+    </section>
+  {% endif %}
+
+  <section class="mrn-admin-section mrn-workflow" aria-labelledby="workflow-heading">
+    <div>
+      <p class="mrn-eyebrow">Simple daily workflow</p>
+      <h2 id="workflow-heading">For the person managing the website</h2>
+    </div>
+    <ol>
+      <li><strong>Check new requests.</strong> Start with counseling requests, enquiries and payments marked as new or pending.</li>
+      <li><strong>Open one record.</strong> Read the person's details, update the status and add an internal note when needed.</li>
+      <li><strong>Publish content carefully.</strong> Write both English and Nepali versions, preview the page and publish only verified information.</li>
+      <li><strong>Use audit tools only when necessary.</strong> Do not change membership numbers or merge possible duplicates without checking the original records.</li>
+    </ol>
+  </section>
+</div>
+
+<aside id="content-related" class="mrn-recent-actions" aria-labelledby="recent-actions-heading">
+  <div class="module">
+    <h2 id="recent-actions-heading">Your recent changes</h2>
+    {% get_admin_log 8 as admin_log for_user user %}
+    {% if not admin_log %}
+      <p class="quiet">No recent changes.</p>
+    {% else %}
+      <ul class="actionlist">
+        {% for entry in admin_log %}
+          <li class="{% if entry.is_addition %}addlink{% endif %}{% if entry.is_change %}changelink{% endif %}{% if entry.is_deletion %}deletelink{% endif %}">
+            {% if entry.is_deletion or not entry.get_admin_url %}
+              {{ entry.object_repr }}
+            {% else %}
+              <a href="{{ entry.get_admin_url }}">{{ entry.object_repr }}</a>
+            {% endif %}
+            <br>
+            <span class="mini quiet">{{ entry.content_type.name|capfirst }} · {{ entry.action_time|timesince }} ago</span>
+          </li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  </div>
+</aside>
+{% endblock %}

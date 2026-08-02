@@ -1,46 +1,30 @@
 {
-  "python_files_ast_parsed": 124,
-  "test_methods": 50,
-  "migration_files": 39,
-  "html_templates": 29,
-  "nepali_catalog_messages": 596,
-  "Life Time Member of MRN District.xlsm": {
-    "sheets": [
-      "Sheet1"
-    ],
-    "dimensions": [
-      [
-        21,
-        10
-      ]
-    ]
-  },
-  "MRN Ilam nagar level all Member List.xlsm": {
-    "sheets": [
-      "Sheet1"
-    ],
-    "dimensions": [
-      [
-        257,
-        11
-      ]
-    ]
-  },
-  "Mrn District Level exaucative commetee.xlsm": {
-    "sheets": [
-      "Sheet1"
-    ],
-    "dimensions": [
-      [
-        13,
-        5
-      ]
-    ]
-  },
-  "Phakphokthum Rural Commeetee.docx": {
-    "tables": 1,
-    "table_rows": [
-      13
-    ]
-  }
+  "python_files_ast_parsed": 129,
+  "test_methods_discovered_statically": 50,
+  "migration_files": 41,
+  "html_templates": 32,
+  "nepali_catalog_active_messages": 943,
+  "nepali_catalog_duplicate_active_messages": 0,
+  "nepali_catalog_untranslated_active_messages": 0,
+  "nepali_catalog_fuzzy_active_messages": 0,
+  "duplicate_static_logical_paths": 0,
+  "legacy_member_admin_registered": false,
+  "legacy_resource_admin_registered": false,
+  "technical_audit_models_superuser_only": true,
+  "chairperson_photo_admin_preview_present": true,
+  "chairperson_photo_public_rendering_present": true,
+  "shared_form_partial_loads_i18n": true,
+  "responsive_widths_to_verify_in_runtime": [
+    320,
+    360,
+    375,
+    390,
+    430,
+    768,
+    1024,
+    1120,
+    1366,
+    1440
+  ],
+  "note": "Python syntax, template i18n loading, static path uniqueness, translation catalogue structure, shell syntax, and archive integrity were checked statically. Run the Django runtime test suite in the project's existing virtual environment before deployment."
 }

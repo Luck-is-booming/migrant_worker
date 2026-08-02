@@ -1,7 +1,61 @@
-{% extends "core/base.html" %}{% load i18n %}
-{% block title %}{% translate "Request Counseling" %} — MRN Ilam{% endblock %}
-{% block robots %}index,follow{% endblock %}
+{% extends "core/base.html" %}
+{% load i18n %}
+{% block title %}{% translate "Get counseling" %} — MRN Ilam{% endblock %}
+{% block meta_description %}{% translate "Send a private foreign-employment question or concern to MRN Ilam for review." %}{% endblock %}
 {% block content %}{% url 'privacy' as privacy_url %}
-<section class="section section--soft"><div class="container"><p class="eyebrow">{% translate "Private counseling request" %}</p><h1>{% translate "Tell us what you need help understanding" %}</h1><p class="lead">{% translate "The team provides general information, awareness, counseling, and appropriate referrals. It does not issue visas, guarantee jobs, or replace professional legal, medical, or financial advice." %}</p></div></section>
-<section class="section"><div class="container grid grid--2"><div class="form-shell"><h2>{% translate "Request form" %}</h2><div class="notice notice--warning"><p>{% translate "Please do not submit passwords, OTPs, bank PINs, or complete passport and citizenship details through this form." %}</p></div>{% if form.errors %}<div class="error-summary" role="alert" tabindex="-1"><h3>{% translate "Please correct the following information." %}</h3>{{ form.non_field_errors }}</div>{% endif %}<form method="post" enctype="multipart/form-data" novalidate>{% csrf_token %}{{ form.website }}{{ form.form_started }}<div class="form-grid">{% include "core/partials/form_field.html" with field=form.full_name %}{% include "core/partials/form_field.html" with field=form.phone %}{% include "core/partials/form_field.html" with field=form.email %}{% include "core/partials/form_field.html" with field=form.preferred_language %}{% include "core/partials/form_field.html" with field=form.location %}{% include "core/partials/form_field.html" with field=form.category %}{% include "core/partials/form_field.html" with field=form.preferred_contact_method %}{% include "core/partials/form_field.html" with field=form.availability %}{% include "core/partials/form_field.html" with field=form.message full=True %}{% if form.attachment %}{% include "core/partials/form_field.html" with field=form.attachment full=True %}{% endif %}{% include "core/partials/form_field.html" with field=form.consent_to_contact full=True %}</div><p class="form-help">{% blocktranslate %}Read how we use and protect your information in the <a href="{{ privacy_url }}">privacy policy</a>.{% endblocktranslate %}</p><button class="button button--primary" type="submit">{% translate "Submit private request" %}</button></form></div><aside><h2>{% translate "What happens next" %}</h2><ol class="steps"><li>{% translate "Your request is stored privately and is not published." %}</li><li>{% translate "Authorized staff review the category and concern." %}</li><li>{% translate "Staff may contact you or refer you to an appropriate official or qualified professional." %}</li></ol><div class="notice notice--danger"><p>{% translate "This form is not monitored as an emergency service. For immediate danger, contact local emergency, police, medical, embassy/consular, labor, or other appropriate authorities." %}</p></div></aside></div></section>
+<section class="page-hero">
+  <div class="container narrow">
+    <p class="eyebrow">{% translate "Private counseling" %}</p>
+    <h1>{% translate "Tell us about your question or problem" %}</h1>
+    <p class="lead">{% translate "Use this private form to explain your concern. Our team will review it and contact you using your preferred method." %}</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container form-and-help">
+    <div class="form-shell">
+      <h2>{% translate "Counseling request form" %}</h2>
+      <p class="form-intro">{% translate "Give only the information needed to explain your concern. Required fields are clearly marked." %}</p>
+      <div class="notice notice--warning"><p>{% translate "Do not send passwords, OTPs, bank PINs, or full passport or citizenship details." %}</p></div>
+
+      {% if form.errors %}
+        <div class="error-summary" role="alert" tabindex="-1">
+          <h3>{% translate "Please check the highlighted fields" %}</h3>
+          <p>{% translate "Some information is missing or needs to be corrected." %}</p>
+          {{ form.non_field_errors }}
+        </div>
+      {% endif %}
+
+      <form method="post" enctype="multipart/form-data" novalidate>
+        {% csrf_token %}
+        {{ form.website }}{{ form.form_started }}
+        <div class="form-grid">
+          {% include "core/partials/form_field.html" with field=form.full_name %}
+          {% include "core/partials/form_field.html" with field=form.phone %}
+          {% include "core/partials/form_field.html" with field=form.email %}
+          {% include "core/partials/form_field.html" with field=form.preferred_language %}
+          {% include "core/partials/form_field.html" with field=form.location %}
+          {% include "core/partials/form_field.html" with field=form.category %}
+          {% include "core/partials/form_field.html" with field=form.preferred_contact_method %}
+          {% include "core/partials/form_field.html" with field=form.availability %}
+          {% include "core/partials/form_field.html" with field=form.message full=True %}
+          {% if form.attachment %}{% include "core/partials/form_field.html" with field=form.attachment full=True %}{% endif %}
+          {% include "core/partials/form_field.html" with field=form.consent_to_contact full=True %}
+        </div>
+        <p class="form-help">{% blocktranslate %}Read how we use and protect your information in the <a href="{{ privacy_url }}">privacy policy</a>.{% endblocktranslate %}</p>
+        <button class="button button--primary" type="submit">{% translate "Send counseling request" %}</button>
+      </form>
+    </div>
+
+    <aside class="side-help" aria-labelledby="next-heading">
+      <h2 id="next-heading">{% translate "What happens next" %}</h2>
+      <ol class="steps">
+        <li><strong>{% translate "Your request stays private" %}</strong><span>{% translate "It is available only to authorized staff and is not published on the website." %}</span></li>
+        <li><strong>{% translate "Our team reviews it" %}</strong><span>{% translate "Staff check your question and decide what information or support may help." %}</span></li>
+        <li><strong>{% translate "We contact you" %}</strong><span>{% translate "We reply through your preferred contact method whenever possible." %}</span></li>
+      </ol>
+      <div class="notice notice--danger"><p><strong>{% translate "This is not an emergency service." %}</strong> {% translate "If someone is in immediate danger, contact the relevant police, emergency service, embassy or consulate, labor authority, or medical service now." %}</p></div>
+    </aside>
+  </div>
+</section>
 {% endblock %}
