@@ -1,6 +1,6 @@
 {% load static i18n i18n_urls %}
 <!doctype html>
-<html lang="{{ LANGUAGE_CODE|default:'ne' }}">
+<html lang="{{ LANGUAGE_CODE|default:'ne' }}" translate="no" class="notranslate">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -8,6 +8,7 @@
   <title>{% block title %}MRN Ilam — {% translate "Foreign-employment information and counseling" %}{% endblock %}</title>
   <meta name="description" content="{% block meta_description %}{% translate 'Clear foreign-employment information, counseling, safety guidance, official resources, and public membership records for Ilam.' %}{% endblock %}">
   <meta name="robots" content="{% block robots %}index,follow,max-image-preview:large{% endblock %}">
+  <meta name="googlebot" content="notranslate">
   <link rel="canonical" href="{{ request.scheme }}://{{ request.get_host }}{{ request.path }}">
   {% get_available_languages as SEO_LANGUAGES %}
   {% for code, name in SEO_LANGUAGES %}{% translated_url code as alternate_path %}<link rel="alternate" hreflang="{{ code }}" href="{{ request.scheme }}://{{ request.get_host }}{{ alternate_path }}">{% endfor %}
