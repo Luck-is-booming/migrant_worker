@@ -94,6 +94,10 @@ def backfill_ledger(apps, schema_editor):
 
 
 class Migration(migrations.Migration):
+    # PostgreSQL cannot create the final unique index while the preceding
+    # data updates still have deferred trigger events in the same transaction.
+    atomic = False
+
     dependencies = [
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
         ("members", "0007_membershiprecord_ordering"),
@@ -229,7 +233,7 @@ class Migration(migrations.Migration):
             model_name="membershipnumberissue",
             index=models.Index(fields=["category", "organization_unit", "number_int"], name="members_num_issue_scope_idx"),
         ),
-        migrations.RunPython(backfill_ledger, migrations.RunPython.noop),
+        migrations.RunPython(backfill_ledger, migrations.RunPython.noop, atomic=True),
         migrations.AddConstraint(
             model_name="membershiprecord",
             constraint=models.UniqueConstraint(
