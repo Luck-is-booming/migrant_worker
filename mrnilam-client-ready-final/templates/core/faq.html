@@ -1,3 +1,0 @@
-{% extends "core/base.html" %}{% load i18n %}
-{% block title %}{% translate "Frequently Asked Questions" %} — MRN Ilam{% endblock %}
-{% block content %}<section class="section section--soft"><div class="container"><h1>{% translate "Frequently asked questions" %}</h1><p class="lead">{% translate "General answers about counseling and foreign-employment awareness." %}</p></div></section><section class="section"><div class="container article-body">{% for faq in faqs %}<details class="card"><summary><strong>{{ faq.question }}</strong></summary><p>{{ faq.answer }}</p></details>{% empty %}<div class="empty-state"><p>{% translate "Frequently asked questions have not been published yet." %}</p></div>{% endfor %}</div></section>{% endblock %}
