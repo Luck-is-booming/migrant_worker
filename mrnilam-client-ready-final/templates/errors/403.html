@@ -1,0 +1,13 @@
+{% extends "core/base.html" %}
+{% load i18n %}
+{% block title %}{% if LANGUAGE_CODE == 'ne' %}पहुँच अस्वीकार गरियो{% else %}Access denied{% endif %}{% endblock %}
+{% block content %}
+<section class="section">
+  <div class="container form-shell">
+    <p class="eyebrow">MRN Ilam</p>
+    <h1>{% if LANGUAGE_CODE == 'ne' %}पहुँच अस्वीकार गरियो{% else %}Access denied{% endif %}</h1>
+    <p class="lead">{% if LANGUAGE_CODE == 'ne' %}तपाईंलाई यो पृष्ठ हेर्ने अनुमति छैन।{% else %}You do not have permission to view this page.{% endif %}</p>
+    <div class="action-row"><a class="button button--primary" href="/{{ LANGUAGE_CODE }}/">{% if LANGUAGE_CODE == 'ne' %}गृहपृष्ठमा फर्कनुहोस्{% else %}Return to homepage{% endif %}</a></div>
+  </div>
+</section>
+{% endblock %}

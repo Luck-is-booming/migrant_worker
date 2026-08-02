@@ -1,0 +1,35 @@
+.env
+.env.*
+!.env.example
+
+__pycache__/
+*.py[cod]
+*.sqlite3
+db.sqlite3
+
+.venv/
+venv/
+env/
+
+media/
+staticfiles/
+
+.pytest_cache/
+.coverage
+htmlcov/
+
+.DS_Store
+.idea/
+.vscode/
+
+# Private operational exports
+backups/
+import_reports/
+*.log
+
+# Local temporary artifacts
+*.zip
+
+data/private/
+audit_reports/*.json
+audit_reports/*.csv
